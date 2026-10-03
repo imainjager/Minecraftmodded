@@ -1,0 +1,53 @@
+{
+  "_comment": "Single source of truth for Forged Ascent gear. Read by the Java mod (registration) and tools/gen_assets.py (textures, models, recipes, tags, names). Armor defense is per piece. move_speed and burning_time are per-piece multipliers.",
+  "ingots": [
+    { "id": "pewter", "name": "Pewter", "color": "#8E979C" }
+  ],
+  "gear": [
+    {
+      "id": "tin", "name": "Tin", "tier": 2, "color": "#C7CFD4", "repair": "c:ingots/tin",
+      "tool": { "uses": 150, "speed": 5.5, "attack": 1.0, "enchant": 14 },
+      "armor": { "durability": 9, "helmet": 1, "chestplate": 4, "leggings": 3, "boots": 1, "toughness": 0.0, "knockback": 0.0, "enchant": 14, "move_speed": 0.01, "burning_time": 0.0 }
+    },
+    {
+      "id": "zinc", "name": "Zinc", "tier": 2, "color": "#A9BDB7", "repair": "c:ingots/zinc",
+      "tool": { "uses": 220, "speed": 4.5, "attack": 1.5, "enchant": 8 },
+      "armor": { "durability": 13, "helmet": 2, "chestplate": 4, "leggings": 4, "boots": 1, "toughness": 0.0, "knockback": 0.0, "enchant": 8, "move_speed": 0.0, "burning_time": 0.0 }
+    },
+    {
+      "id": "lead", "name": "Lead", "tier": 3, "color": "#6B6F8E", "repair": "c:ingots/lead",
+      "tool": { "uses": 230, "speed": 5.0, "attack": 2.5, "enchant": 6 },
+      "armor": { "durability": 14, "helmet": 2, "chestplate": 6, "leggings": 5, "boots": 2, "toughness": 0.0, "knockback": 0.05, "enchant": 6, "move_speed": -0.03, "burning_time": 0.0 }
+    },
+    {
+      "id": "nickel", "name": "Nickel", "tier": 3, "color": "#D2CDA8", "repair": "c:ingots/nickel",
+      "tool": { "uses": 290, "speed": 6.0, "attack": 2.0, "enchant": 10 },
+      "armor": { "durability": 16, "helmet": 2, "chestplate": 5, "leggings": 4, "boots": 2, "toughness": 0.0, "knockback": 0.0, "enchant": 10, "move_speed": 0.0, "burning_time": 0.0 }
+    },
+    {
+      "id": "aluminum", "name": "Aluminum", "tier": 3, "color": "#E2E6EA", "repair": "c:ingots/aluminum",
+      "tool": { "uses": 210, "speed": 6.5, "attack": 1.5, "enchant": 12 },
+      "armor": { "durability": 13, "helmet": 2, "chestplate": 4, "leggings": 3, "boots": 2, "toughness": 0.0, "knockback": 0.0, "enchant": 12, "move_speed": 0.025, "burning_time": 0.0 }
+    },
+    {
+      "id": "pewter", "name": "Pewter", "tier": 3, "color": "#8E979C", "repair": "c:ingots/pewter",
+      "tool": { "uses": 200, "speed": 6.0, "attack": 1.5, "enchant": 22 },
+      "armor": { "durability": 12, "helmet": 2, "chestplate": 5, "leggings": 4, "boots": 1, "toughness": 0.0, "knockback": 0.0, "enchant": 22, "move_speed": 0.0, "burning_time": 0.0 }
+    },
+    {
+      "id": "brass", "name": "Brass", "tier": 4, "color": "#D8B24C", "repair": "c:ingots/brass",
+      "tool": { "uses": 330, "speed": 7.5, "attack": 2.5, "enchant": 14 },
+      "armor": { "durability": 17, "helmet": 2, "chestplate": 6, "leggings": 5, "boots": 2, "toughness": 0.0, "knockback": 0.0, "enchant": 14, "move_speed": 0.0, "burning_time": 0.0 }
+    },
+    {
+      "id": "invar", "name": "Invar", "tier": 4, "color": "#B9BDAA", "repair": "c:ingots/invar",
+      "tool": { "uses": 520, "speed": 5.5, "attack": 2.5, "enchant": 10 },
+      "armor": { "durability": 24, "helmet": 2, "chestplate": 6, "leggings": 5, "boots": 2, "toughness": 0.0, "knockback": 0.0, "enchant": 10, "move_speed": 0.0, "burning_time": 0.0 }
+    },
+    {
+      "id": "constantan", "name": "Constantan", "tier": 4, "color": "#C8865A", "repair": "c:ingots/constantan",
+      "tool": { "uses": 400, "speed": 6.5, "attack": 2.5, "enchant": 12 },
+      "armor": { "durability": 20, "helmet": 2, "chestplate": 6, "leggings": 5, "boots": 2, "toughness": 0.0, "knockback": 0.0, "enchant": 12, "move_speed": 0.0, "burning_time": -0.15 }
+    }
+  ]
+}

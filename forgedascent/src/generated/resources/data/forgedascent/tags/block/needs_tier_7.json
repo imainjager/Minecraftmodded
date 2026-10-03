@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "#c:ores/tungsten",
+      "required": false
+    },
+    {
+      "id": "#c:ores/iridium",
+      "required": false
+    }
+  ]
+}

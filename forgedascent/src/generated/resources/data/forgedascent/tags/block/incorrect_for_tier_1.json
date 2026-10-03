@@ -1,0 +1,8 @@
+{
+  "values": [
+    "#forgedascent:needs_tier_2",
+    "#forgedascent:incorrect_for_tier_2",
+    "#minecraft:needs_iron_tool",
+    "#minecraft:needs_diamond_tool"
+  ]
+}

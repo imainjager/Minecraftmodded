@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "#c:ores/copper",
+      "required": false
+    },
+    {
+      "id": "#c:ores/tin",
+      "required": false
+    },
+    {
+      "id": "#c:ores/zinc",
+      "required": false
+    }
+  ]
+}

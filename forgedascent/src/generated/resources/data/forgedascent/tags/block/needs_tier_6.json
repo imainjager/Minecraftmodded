@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "#c:ores/ruby",
+      "required": false
+    },
+    {
+      "id": "#c:ores/sapphire",
+      "required": false
+    }
+  ]
+}

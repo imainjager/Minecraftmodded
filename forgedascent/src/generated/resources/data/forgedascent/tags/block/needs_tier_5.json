@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "#c:ores/diamond",
+      "required": false
+    },
+    {
+      "id": "#c:ores/platinum",
+      "required": false
+    },
+    {
+      "id": "#c:ores/monazite",
+      "required": false
+    }
+  ]
+}

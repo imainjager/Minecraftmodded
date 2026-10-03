@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "#c:ingots/copper",
+      "required": false
+    },
+    {
+      "id": "#c:ingots/tin",
+      "required": false
+    },
+    {
+      "id": "#c:ingots/zinc",
+      "required": false
+    }
+  ]
+}

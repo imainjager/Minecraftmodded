@@ -1,0 +1,20 @@
+{
+  "values": [
+    {
+      "id": "#c:ores/osmium",
+      "required": false
+    },
+    {
+      "id": "#c:ores/antimony",
+      "required": false
+    },
+    {
+      "id": "#c:ores/emerald",
+      "required": false
+    },
+    {
+      "id": "#c:ores/peridot",
+      "required": false
+    }
+  ]
+}
