@@ -1,0 +1,24 @@
+{
+  "type": "forgedascent:anvil_shaped",
+  "tier": 5,
+  "key": {
+    "I": {
+      "tag": "c:ingots/osmium"
+    }
+  },
+  "pattern": [
+    "I I",
+    "III",
+    "III"
+  ],
+  "result": {
+    "count": 1,
+    "id": "mekanismtools:osmium_chestplate"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanismtools"
+    }
+  ]
+}

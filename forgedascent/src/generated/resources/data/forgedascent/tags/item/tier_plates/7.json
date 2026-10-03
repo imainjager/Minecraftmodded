@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "#c:plates/titanium",
+      "required": false
+    },
+    {
+      "id": "#c:plates/chromium",
+      "required": false
+    },
+    {
+      "id": "#c:plates/stainless_steel",
+      "required": false
+    },
+    {
+      "id": "#c:plates/chromoly",
+      "required": false
+    },
+    {
+      "id": "#c:plates/titanium_alloy",
+      "required": false
+    }
+  ]
+}

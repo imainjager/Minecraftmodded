@@ -13,6 +13,13 @@ public final class MobConfig {
     public static final ModConfigSpec.ConfigValue<List<? extends Double>> ELITE_CHANCE;
     public static final ModConfigSpec.DoubleValue ELITE_CAP;
     public static final ModConfigSpec.DoubleValue HARDENED_CHANCE;
+    public static final ModConfigSpec.BooleanValue BLOOD_MOON;
+    public static final ModConfigSpec.DoubleValue BLOOD_MOON_CHANCE;
+    public static final ModConfigSpec.DoubleValue BLOOD_MOON_SPAWNS;
+    public static final ModConfigSpec.BooleanValue DIGGING;
+    public static final ModConfigSpec.BooleanValue RESTORE_AT_DAWN;
+    public static final ModConfigSpec.IntValue MAX_DIGGERS;
+    public static final ModConfigSpec.IntValue MAX_BROKEN;
 
     static {
         ModConfigSpec.Builder b = new ModConfigSpec.Builder();
@@ -28,6 +35,16 @@ public final class MobConfig {
         ELITE_CAP = b.comment("Maximum elite chance after place bonuses").defineInRange("eliteCap", 0.5, 0.0, 1.0);
         HARDENED_CHANCE = b.comment("Chance a normal mob is Hardened (Ascent and up) or Ancient (Pinnacle)")
                 .defineInRange("hardenedChance", 0.3, 0.0, 1.0);
+        b.pop();
+        b.comment("Blood moon (starts after a Gate I boss is beaten)").push("blood_moon");
+        BLOOD_MOON = b.define("enabled", true);
+        BLOOD_MOON_CHANCE = b.comment("Chance each night").defineInRange("chance", 0.125, 0.0, 1.0);
+        BLOOD_MOON_SPAWNS = b.comment("Monster spawn multiplier during a blood moon").defineInRange("spawnMultiplier", 2.0, 1.0, 4.0);
+        DIGGING = b.comment("Zombies, husks, Brutes and Dread elites dig toward players they can't reach").define("digging", true);
+        RESTORE_AT_DAWN = b.comment("Put broken blocks back at sunrise (false = permanent damage, blocks drop as items)")
+                .define("restoreAtDawn", false);
+        MAX_DIGGERS = b.comment("Most mobs digging at the same time").defineInRange("maxDiggers", 6, 0, 64);
+        MAX_BROKEN = b.comment("Most blocks broken per blood moon").defineInRange("maxBrokenBlocks", 150, 0, 10000);
         b.pop();
         SPEC = b.build();
     }

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/template_anvil",
+  "textures": {
+    "top": "forgedascent:block/netherite_anvil_top",
+    "body": "forgedascent:block/netherite_anvil",
+    "particle": "forgedascent:block/netherite_anvil"
+  }
+}

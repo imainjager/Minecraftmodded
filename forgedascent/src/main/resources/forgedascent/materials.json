@@ -1524,5 +1524,139 @@
         "silentgems:end_black_diamond_ore"
       ]
     }
+  ],
+  "gates": [
+    {
+      "gate": 1,
+      "name": "Gate I",
+      "color": "#3FAE4A",
+      "bosses": [
+        "twilightforest:naga",
+        "aether:slider",
+        "minecraft:elder_guardian"
+      ],
+      "accessories": [
+        "artifacts:running_shoes",
+        "artifacts:cloud_in_a_bottle",
+        "artifacts:lucky_scarf",
+        "artifacts:snorkel",
+        "artifacts:night_vision_goggles",
+        "artifacts:digging_claws"
+      ]
+    },
+    {
+      "gate": 2,
+      "name": "Gate II",
+      "color": "#4A7FD8",
+      "bosses": [
+        "twilightforest:lich",
+        "aether:valkyrie_queen",
+        "undergarden:forgotten_guardian",
+        "irons_spellbooks:dead_king"
+      ],
+      "accessories": [
+        "artifacts:power_glove",
+        "artifacts:feral_claws",
+        "artifacts:bunny_hoppers",
+        "artifacts:steadfast_spikes",
+        "artifacts:flippers",
+        "artifacts:golden_hook"
+      ]
+    },
+    {
+      "gate": 3,
+      "name": "Gate III",
+      "color": "#C0392B",
+      "bosses": [
+        "twilightforest:minoshroom",
+        "twilightforest:hydra",
+        "cataclysm:netherite_monstrosity",
+        "eternal_starlight:starlight_golem"
+      ],
+      "accessories": [
+        "artifacts:antidote_vessel",
+        "artifacts:obsidian_skull",
+        "artifacts:cross_necklace",
+        "artifacts:flame_pendant",
+        "artifacts:thorn_pendant",
+        "artifacts:panic_necklace"
+      ]
+    },
+    {
+      "gate": 4,
+      "name": "Gate IV",
+      "color": "#8E44AD",
+      "bosses": [
+        "minecraft:wither",
+        "twilightforest:knight_phantom",
+        "cataclysm:ender_guardian",
+        "aether:sun_spirit"
+      ],
+      "accessories": [
+        "artifacts:fire_gauntlet",
+        "artifacts:shock_pendant",
+        "artifacts:vampiric_glove",
+        "artifacts:aqua_dashers",
+        "artifacts:pocket_piston",
+        "artifacts:superstitious_hat"
+      ]
+    },
+    {
+      "gate": 5,
+      "name": "Gate V",
+      "color": "#E0A030",
+      "bosses": [
+        "minecraft:ender_dragon",
+        "cataclysm:ignis",
+        "twilightforest:ur_ghast",
+        "cataclysm:the_leviathan",
+        "minecraft:warden"
+      ],
+      "accessories": [
+        "artifacts:crystal_heart",
+        "artifacts:universal_attractor",
+        "artifacts:withered_bracelet",
+        "artifacts:chorus_totem",
+        "artifacts:scarf_of_invisibility",
+        "artifacts:helium_flamingo"
+      ]
+    },
+    {
+      "gate": 6,
+      "name": "Gate VI",
+      "color": "#20C0D0",
+      "bosses": [
+        "twilightforest:snow_queen",
+        "cataclysm:the_harbinger",
+        "cataclysm:ancient_remnant",
+        "cataclysm:maledictus"
+      ],
+      "accessories": [
+        "relics:reflective_necklace",
+        "relics:ring_of_the_seven_deadly_sins",
+        "relics:midnight_mantle",
+        "relics:sphere_of_self_sacrifice",
+        "relics:ghostly_mantle",
+        "relics:springy_boot"
+      ]
+    },
+    {
+      "gate": 7,
+      "name": "Final Gate",
+      "color": "#F0F0F0",
+      "bosses": [
+        "cataclysm:scylla",
+        "eternal_starlight:lunar_monstrosity",
+        "irons_spellbooks:fire_boss"
+      ],
+      "accessories": [
+        "relics:shield_of_retaliation",
+        "relics:chorus_staff",
+        "relics:clot_of_time",
+        "relics:glitchy_mantle",
+        "relics:experience_disperser",
+        "relics:roller_skate"
+      ]
+    }
   ]
 }

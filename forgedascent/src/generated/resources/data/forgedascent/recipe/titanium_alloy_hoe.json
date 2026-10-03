@@ -1,6 +1,6 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "equipment",
+  "type": "forgedascent:anvil_shaped",
+  "tier": 7,
   "key": {
     "X": {
       "tag": "c:ingots/titanium_alloy"

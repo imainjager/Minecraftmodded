@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "type": "create:pressing",
+  "ingredients": [
+    {
+      "tag": "c:ingots/bismuth_bronze"
+    }
+  ],
+  "results": [
+    {
+      "id": "forgedascent:bismuth_bronze_plate"
+    }
+  ]
+}

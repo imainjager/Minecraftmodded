@@ -1,6 +1,6 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "equipment",
+  "type": "forgedascent:anvil_shaped",
+  "tier": 5,
   "key": {
     "X": {
       "tag": "c:gems/garnet"

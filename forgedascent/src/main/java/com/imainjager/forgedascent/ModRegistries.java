@@ -22,6 +22,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import com.imainjager.forgedascent.smithy.GearTiers;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.SimpleTier;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -54,6 +55,7 @@ public final class ModRegistries {
     public static void register(IEventBus modBus) {
         for (Materials.Ingot ingot : Materials.INGOTS) {
             TAB_ITEMS.add(ITEMS.registerSimpleItem(ingot.id() + "_ingot"));
+            TAB_ITEMS.add(ITEMS.registerSimpleItem(ingot.id() + "_plate"));
             DeferredBlock<Block> block = BLOCKS.registerSimpleBlock(ingot.id() + "_block",
                     BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK));
             TAB_ITEMS.add(ITEMS.registerSimpleBlockItem(block));
@@ -107,6 +109,9 @@ public final class ModRegistries {
 
     private static void registerGear(Materials.Gear gear) {
         String name = gear.id();
+        for (String kind : List.of("sword", "pickaxe", "axe", "shovel", "hoe", "helmet", "chestplate", "leggings", "boots")) {
+            GearTiers.OWN.put(name + "_" + kind, gear.tier());
+        }
         TagKey<Item> repairTag = TagKey.create(Registries.ITEM, ResourceLocation.parse(gear.repair()));
 
         Materials.ToolStats t = gear.tool();

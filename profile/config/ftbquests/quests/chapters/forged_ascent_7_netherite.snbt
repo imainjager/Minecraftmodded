@@ -1,0 +1,272 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "circle"
+	filename: "forged_ascent_7_netherite"
+	group: "F0A6ED5A5CE47001"
+	icon: {
+		id: "minecraft:netherite_pickaxe"
+	}
+	id: "433779294FB2EA11"
+	order_index: 6
+	quest_links: [ ]
+	subtitle: [
+		"Tier 9: netherite and the final bosses"
+	]
+	title: "Netherite Age"
+	quests: [
+		{
+			id: "D6988A837570F3E4"
+			title: "Forge the Netherite Anvil"
+			x: 0.0d
+			y: 0.0d
+			subtitle: "Unlocks tier-9 gear"
+			description: [
+				"Craft the &bNetherite Anvil&r from the previous anvil, the Sigil you won and tier-8 plates."
+				"It crafts every gear recipe up to &etier 9&r (JEI: the 'Smithy Anvil' tab)."
+				"Anvils also &breinforce&r gear: put gear + a reinforced plate of the same tier or higher in the grid."
+			]
+			shape: "gear"
+			size: 1.5d
+			tasks: [
+				{
+					id: "533D39D0C72DD775"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:netherite_anvil"
+					}
+					count: 1
+				}
+			]
+			rewards: [
+				{
+					id: "982A611B1232B60A"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:reinforced_plate_9"
+					}
+					count: 1
+				}
+				{
+					id: "3920142FA9B90FED"
+					type: "xp"
+					xp: 100
+				}
+			]
+		}
+		{
+			id: "D55357FE92A38F58"
+			title: "Find Netherite Ingot"
+			x: 2.0d
+			y: -1.0d
+			description: [
+				"Needs a tier-8 pickaxe or better."
+			]
+			dependencies: [
+				"D6988A837570F3E4"
+			]
+			tasks: [
+				{
+					id: "BAA8363AD3DC3980"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:netherite_ingot"
+					}
+					count: 1
+				}
+			]
+		}
+		{
+			id: "7454FAF694612E69"
+			title: "Hammer some plates"
+			x: 3.0d
+			y: -1.0d
+			description: [
+				"4 plates of this tier make the reinforced plate. Reinforce your best gear at your anvil!"
+			]
+			dependencies: [
+				"D55357FE92A38F58"
+			]
+			tasks: [
+				{
+					id: "5954BFF49E1CBC15"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:reinforced_plate_9"
+					}
+					count: 1
+				}
+			]
+		}
+		{
+			id: "0CD8C1056438DB64"
+			title: "Gear up: Netherite Pickaxe"
+			x: 4.0d
+			y: 0.0d
+			description: [
+				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
+			]
+			dependencies: [
+				"7454FAF694612E69"
+			]
+			tasks: [
+				{
+					id: "019CE0F9152A4093"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:netherite_pickaxe"
+					}
+					count: 1
+				}
+			]
+			rewards: [
+				{
+					id: "39EA6ACD7BA43448"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:experience_bottle"
+					}
+					count: 4
+				}
+			]
+		}
+		{
+			id: "362F47231FE2B5E5"
+			title: "Gear up: Netherite Chestplate"
+			x: 5.0d
+			y: 0.0d
+			description: [
+				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
+			]
+			dependencies: [
+				"0CD8C1056438DB64"
+			]
+			tasks: [
+				{
+					id: "29158A184C8EBEDD"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:netherite_chestplate"
+					}
+					count: 1
+				}
+			]
+			rewards: [
+				{
+					id: "39392E6A80E3A627"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:experience_bottle"
+					}
+					count: 4
+				}
+			]
+		}
+		{
+			id: "515285699DC89E6B"
+			title: "Defeat: Scylla"
+			x: 7.0d
+			y: -2.0d
+			subtitle: "Final Gate boss"
+			description: [
+				"Cataclysm: the Acropolis in the ocean."
+				"Any one boss of this gate is enough."
+			]
+			dependencies: [
+				"362F47231FE2B5E5"
+			]
+			shape: "hexagon"
+			optional: true
+			tasks: [
+				{
+					id: "DD16795030EA730B"
+					type: "kill"
+					entity: "cataclysm:scylla"
+					value: 1
+				}
+			]
+		}
+		{
+			id: "48AF4FF2DB6E6FBE"
+			title: "Defeat: Lunar Monstrosity"
+			x: 7.0d
+			y: -0.7d
+			subtitle: "Final Gate boss"
+			description: [
+				"Eternal Starlight: the Cursed Garden."
+				"Any one boss of this gate is enough."
+			]
+			dependencies: [
+				"362F47231FE2B5E5"
+			]
+			shape: "hexagon"
+			optional: true
+			tasks: [
+				{
+					id: "1015815A027E65E9"
+					type: "kill"
+					entity: "eternal_starlight:lunar_monstrosity"
+					value: 1
+				}
+			]
+		}
+		{
+			id: "7417058CFC9FDB83"
+			title: "Defeat: Tyros"
+			x: 7.0d
+			y: 0.6000000000000001d
+			subtitle: "Final Gate boss"
+			description: [
+				"Iron's Spells: the Ancient Fire Temple in the Nether."
+				"Any one boss of this gate is enough."
+			]
+			dependencies: [
+				"362F47231FE2B5E5"
+			]
+			shape: "hexagon"
+			optional: true
+			tasks: [
+				{
+					id: "B1D5133936844B4C"
+					type: "kill"
+					entity: "irons_spellbooks:fire_boss"
+					value: 1
+				}
+			]
+		}
+		{
+			id: "D686C62FD8FA9CAF"
+			title: "Conquer the Final Gate"
+			x: 9.0d
+			y: 0.0d
+			description: [
+				"Beat any final boss above for the Final Treasure Bag. Beyond this lies ATM's own Allthemodium ladder."
+			]
+			dependencies: [
+				"362F47231FE2B5E5"
+			]
+			shape: "gear"
+			size: 1.5d
+			tasks: [
+				{
+					id: "8D456DFFED270971"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "8FC15203931B0629"
+					type: "xp"
+					xp: 500
+				}
+			]
+		}
+	]
+}

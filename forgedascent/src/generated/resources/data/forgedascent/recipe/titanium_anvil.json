@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "T": {
+      "tag": "forgedascent:tier_plates/7"
+    },
+    "P": {
+      "tag": "forgedascent:tier_plates/7"
+    },
+    "A": {
+      "item": "forgedascent:gemstone_anvil"
+    },
+    "S": {
+      "item": "forgedascent:sigil_4"
+    }
+  },
+  "pattern": [
+    "TTT",
+    "PAP",
+    "PSP"
+  ],
+  "result": {
+    "count": 1,
+    "id": "forgedascent:titanium_anvil"
+  }
+}

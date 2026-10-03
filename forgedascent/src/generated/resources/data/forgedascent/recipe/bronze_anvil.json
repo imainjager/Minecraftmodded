@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": {
+      "tag": "forgedascent:tier_plates/4"
+    },
+    "S": {
+      "item": "forgedascent:sigil_1"
+    },
+    "I": {
+      "tag": "c:storage_blocks/iron"
+    }
+  },
+  "pattern": [
+    "PPP",
+    " S ",
+    "III"
+  ],
+  "result": {
+    "count": 1,
+    "id": "forgedascent:bronze_anvil"
+  }
+}

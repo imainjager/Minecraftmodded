@@ -1,0 +1,520 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "circle"
+	filename: "forged_ascent_1_stone"
+	group: "F0A6ED5A5CE47001"
+	icon: {
+		id: "minecraft:stone_pickaxe"
+	}
+	id: "C4189FDEBE994BAD"
+	order_index: 0
+	quest_links: [ ]
+	subtitle: [
+		"Tiers 1-3: copper, tin and zinc, then iron"
+	]
+	title: "Stone Age"
+	quests: [
+		{
+			id: "CB7A5CD4EFB28513"
+			title: "Welcome to Forged Ascent"
+			x: 0.0d
+			y: 0.0d
+			subtitle: "Read me first"
+			description: [
+				"This pack has a long gear ladder: &etiers 1 to 9&r."
+				"Every ore needs a pickaxe of its tier. A &6stone&r pickaxe can't mine iron any more: you need copper, tin or zinc first."
+				"Tier 4+ gear is crafted at a &bSmithy Anvil&r. Each anvil is unlocked by beating a &cboss gate&r and using its &dSigil&r, Terraria style."
+				"Mobs get stronger with your Apotheosis world tier, deep underground and in other dimensions. Watch out for &4blood moons&r."
+			]
+			icon: {
+				id: "forgedascent:tin_pickaxe"
+			}
+			shape: "gear"
+			size: 1.5d
+			tasks: [
+				{
+					id: "325F81BF560405BE"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "C7521ADE466249D2"
+					type: "item"
+					item: {
+						count: 1
+						id: "alltheores:tin_ingot"
+					}
+					count: 4
+				}
+				{
+					id: "C40A63930DF7360C"
+					type: "xp"
+					xp: 50
+				}
+			]
+		}
+		{
+			id: "A3F80C96F7E738A4"
+			title: "Find Raw Copper"
+			x: 2.0d
+			y: -1.0d
+			description: [
+				"Mine it with the right pickaxe tier."
+			]
+			dependencies: [
+				"CB7A5CD4EFB28513"
+			]
+			tasks: [
+				{
+					id: "65E39353BE2BE716"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:raw_copper"
+					}
+					count: 1
+				}
+			]
+		}
+		{
+			id: "C58ED70008C195D9"
+			title: "Find Raw Tin"
+			x: 3.0d
+			y: 1.0d
+			description: [
+				"Mine it with the right pickaxe tier."
+			]
+			dependencies: [
+				"A3F80C96F7E738A4"
+			]
+			tasks: [
+				{
+					id: "950438E78039D221"
+					type: "item"
+					item: {
+						count: 1
+						id: "alltheores:raw_tin"
+					}
+					count: 1
+				}
+			]
+		}
+		{
+			id: "D7BF859E609C01D5"
+			title: "Find Raw Zinc"
+			x: 4.0d
+			y: -1.0d
+			description: [
+				"Mine it with the right pickaxe tier."
+			]
+			dependencies: [
+				"C58ED70008C195D9"
+			]
+			tasks: [
+				{
+					id: "6F42DEF8858F3384"
+					type: "item"
+					item: {
+						count: 1
+						id: "alltheores:raw_zinc"
+					}
+					count: 1
+				}
+			]
+		}
+		{
+			id: "ED3DD5C29FC7157D"
+			title: "Find Raw Iron"
+			x: 5.0d
+			y: 1.0d
+			description: [
+				"Mine it with the right pickaxe tier."
+			]
+			dependencies: [
+				"D7BF859E609C01D5"
+			]
+			tasks: [
+				{
+					id: "9448BFC8C4199E8F"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:raw_iron"
+					}
+					count: 1
+				}
+			]
+		}
+		{
+			id: "33CE4C41D2F68277"
+			title: "Find Raw Lead"
+			x: 6.0d
+			y: -1.0d
+			description: [
+				"Mine it with the right pickaxe tier."
+			]
+			dependencies: [
+				"ED3DD5C29FC7157D"
+			]
+			tasks: [
+				{
+					id: "8C28C2F29A189F78"
+					type: "item"
+					item: {
+						count: 1
+						id: "alltheores:raw_lead"
+					}
+					count: 1
+				}
+			]
+		}
+		{
+			id: "18C76FF242F6CF1D"
+			title: "Find Raw Nickel"
+			x: 7.0d
+			y: 1.0d
+			description: [
+				"Mine it with the right pickaxe tier."
+			]
+			dependencies: [
+				"33CE4C41D2F68277"
+			]
+			tasks: [
+				{
+					id: "865F21F1D81661D3"
+					type: "item"
+					item: {
+						count: 1
+						id: "alltheores:raw_nickel"
+					}
+					count: 1
+				}
+			]
+		}
+		{
+			id: "16F55EC8E67FC72B"
+			title: "Find Raw Aluminum"
+			x: 8.0d
+			y: -1.0d
+			description: [
+				"Mine it with the right pickaxe tier."
+			]
+			dependencies: [
+				"18C76FF242F6CF1D"
+			]
+			tasks: [
+				{
+					id: "CF17E560574FD129"
+					type: "item"
+					item: {
+						count: 1
+						id: "alltheores:raw_aluminum"
+					}
+					count: 1
+				}
+			]
+		}
+		{
+			id: "85C6FF8AE0405683"
+			title: "Find Raw Bismuth"
+			x: 9.0d
+			y: 1.0d
+			description: [
+				"Mine it with the right pickaxe tier."
+			]
+			dependencies: [
+				"16F55EC8E67FC72B"
+			]
+			tasks: [
+				{
+					id: "2C632CA0915B9DA9"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:raw_bismuth"
+					}
+					count: 1
+				}
+			]
+		}
+		{
+			id: "7B1B088915D03F1A"
+			title: "Alloy: Pewter Ingot"
+			x: 10.0d
+			y: 0.0d
+			description: [
+				"Alloys are mixed in a crafting table for now (check JEI for the real-world ratios)."
+			]
+			dependencies: [
+				"85C6FF8AE0405683"
+			]
+			tasks: [
+				{
+					id: "7F268EDE5A623CFB"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:pewter_ingot"
+					}
+					count: 1
+				}
+			]
+		}
+		{
+			id: "4657658AF27E0444"
+			title: "Hammer some plates"
+			x: 11.0d
+			y: -1.0d
+			description: [
+				"Plates come from an All the Ores hammer (2 ingots), the IE Metal Press, Create's press or the MI compressor."
+				"4 plates of a tier make a &breinforced plate&r of that tier."
+			]
+			dependencies: [
+				"7B1B088915D03F1A"
+			]
+			tasks: [
+				{
+					id: "30CDF81D76A5BB3F"
+					type: "item"
+					item: {
+						count: 1
+						id: "alltheores:iron_plate"
+					}
+					count: 1
+				}
+			]
+		}
+		{
+			id: "CE7B42C24C05BDB2"
+			title: "Gear up: Tin Pickaxe"
+			x: 12.0d
+			y: 0.0d
+			description: [
+				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
+			]
+			dependencies: [
+				"4657658AF27E0444"
+			]
+			tasks: [
+				{
+					id: "6A6E6271214EA7CB"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:tin_pickaxe"
+					}
+					count: 1
+				}
+			]
+			rewards: [
+				{
+					id: "28487BDC6CABC6E2"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:experience_bottle"
+					}
+					count: 4
+				}
+			]
+		}
+		{
+			id: "BBDB9BC72BC26846"
+			title: "Gear up: Iron Pickaxe"
+			x: 13.0d
+			y: 0.0d
+			description: [
+				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
+			]
+			dependencies: [
+				"CE7B42C24C05BDB2"
+			]
+			tasks: [
+				{
+					id: "0370606F47545471"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:iron_pickaxe"
+					}
+					count: 1
+				}
+			]
+			rewards: [
+				{
+					id: "55E9F21DB00621E7"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:experience_bottle"
+					}
+					count: 4
+				}
+			]
+		}
+		{
+			id: "A7D04715A4A2B8C4"
+			title: "Gear up: Lead Chestplate"
+			x: 14.0d
+			y: 0.0d
+			description: [
+				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
+			]
+			dependencies: [
+				"BBDB9BC72BC26846"
+			]
+			tasks: [
+				{
+					id: "AA1754C3D7035E25"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:lead_chestplate"
+					}
+					count: 1
+				}
+			]
+			rewards: [
+				{
+					id: "59097F014256447A"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:experience_bottle"
+					}
+					count: 4
+				}
+			]
+		}
+		{
+			id: "24F5D2CEF2001387"
+			title: "Beware the blood moon"
+			x: 15.0d
+			y: 1.0d
+			description: [
+				"After your first gate boss, roughly 1 night in 8 is a &4blood moon&r: twice the monsters, more elites, no sleeping, better drops."
+				"Zombies and Brutes &cdig through walls&r to reach you. They can't break machines, chests or obsidian-tier blocks."
+			]
+			icon: {
+				id: "minecraft:zombie_head"
+			}
+			dependencies: [
+				"A7D04715A4A2B8C4"
+			]
+			optional: true
+			tasks: [
+				{
+					id: "4079862A1D9017BE"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			id: "86F289E501548634"
+			title: "Defeat: Naga"
+			x: 17.0d
+			y: -2.0d
+			subtitle: "Gate I boss"
+			description: [
+				"Twilight Forest: the big stone courtyard in the forest. Easiest gate boss."
+				"Any one boss of this gate is enough."
+			]
+			dependencies: [
+				"A7D04715A4A2B8C4"
+			]
+			shape: "hexagon"
+			optional: true
+			tasks: [
+				{
+					id: "2EE1B5D4645E103C"
+					type: "kill"
+					entity: "twilightforest:naga"
+					value: 1
+				}
+			]
+		}
+		{
+			id: "849DE3498620532C"
+			title: "Defeat: Slider"
+			x: 17.0d
+			y: -0.7d
+			subtitle: "Gate I boss"
+			description: [
+				"The Aether: the Bronze Dungeon. A sliding stone block; hit it with a pickaxe."
+				"Any one boss of this gate is enough."
+			]
+			dependencies: [
+				"A7D04715A4A2B8C4"
+			]
+			shape: "hexagon"
+			optional: true
+			tasks: [
+				{
+					id: "B0E57FA80ED25E6A"
+					type: "kill"
+					entity: "aether:slider"
+					value: 1
+				}
+			]
+		}
+		{
+			id: "C4F28B82F7D1BE19"
+			title: "Defeat: Elder Guardian"
+			x: 17.0d
+			y: 0.6000000000000001d
+			subtitle: "Gate I boss"
+			description: [
+				"Ocean Monuments. Bring Water Breathing and milk."
+				"Any one boss of this gate is enough."
+			]
+			dependencies: [
+				"A7D04715A4A2B8C4"
+			]
+			shape: "hexagon"
+			optional: true
+			tasks: [
+				{
+					id: "A1C87B1B13CC3A07"
+					type: "kill"
+					entity: "minecraft:elder_guardian"
+					value: 1
+				}
+			]
+		}
+		{
+			id: "6126530C21C580EC"
+			title: "Gate I Sigil"
+			x: 19.0d
+			y: 0.0d
+			subtitle: "Beat any boss above"
+			description: [
+				"Every Gate I boss drops a &dTreasure Bag&r with this Sigil, tier materials, rough gems and an accessory."
+				"Use the Sigil to forge the next Smithy Anvil."
+			]
+			dependencies: [
+				"A7D04715A4A2B8C4"
+			]
+			shape: "gear"
+			size: 1.5d
+			tasks: [
+				{
+					id: "733A94384DAD6FB6"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:sigil_1"
+					}
+					count: 1
+				}
+			]
+			rewards: [
+				{
+					id: "B2C1F3A044DAD619"
+					type: "xp"
+					xp: 250
+				}
+			]
+		}
+	]
+}

@@ -349,8 +349,33 @@ EXTRA_GEAR = {
     6: ["minecraft:diamond_pickaxe", "minecraft:diamond_sword", "minecraft:diamond_chestplate"],
     8: ["minecraft:netherite_pickaxe", "minecraft:netherite_sword", "minecraft:netherite_chestplate"],
 }
-# Apotheosis world tier -> gear tier needed to unlock it (PLAN.md section 8).
+# Apotheosis world tier -> gear tier counted for forgedascent:gear/tier_N tags.
 WORLD_TIER_GEAR = {"frontier": 4, "ascent": 6, "summit": 7, "pinnacle": 8}
+# Apotheosis world tier -> boss gate Sigil needed to unlock it (PLAN.md "Update 4 design").
+WORLD_TIER_SIGIL = {"frontier": 2, "ascent": 3, "summit": 5, "pinnacle": 6}
+
+# Smithy anvils (must match smithy/SmithyRegistries.java): (id, tier, color, display name)
+FIRST_ANVIL_TIER = 4
+ANVILS = [("bronze", 4, "#C08A4A", "Bronze"), ("steel", 5, "#8A949C", "Steel"), ("gemstone", 6, "#3FB8B0", "Gemstone"),
+          ("titanium", 7, "#B7B4C7", "Titanium"), ("tungsten", 8, "#5C5F66", "Tungsten"),
+          ("netherite", 9, "#4A3C3E", "Netherite")]
+PLATE_GRADES = {2: ("Copper", "#C87C4A"), 3: ("Iron", "#D8D8D8"), 4: ("Bronze", "#C08A4A"), 5: ("Steel", "#8A949C"),
+                6: ("Gem", "#3FB8B0"), 7: ("Titanium", "#B7B4C7"), 8: ("Tungsten", "#5C5F66"),
+                9: ("Netherite", "#4A3C3E")}
+# Plates per tier, for reinforced plates and anvils. Our gear metals are added from the table.
+TIER_PLATES = {2: ["c:plates/copper"], 3: ["c:plates/iron"], 4: ["c:plates/bronze", "c:plates/silver"],
+               5: ["c:plates/steel", "c:plates/osmium"], 9: ["c:plates/netherite"]}
+
+# Other gear moved onto anvils: (item id prefix, item kinds, tier). Their crafting recipes are converted.
+GEAR_KINDS = ["sword", "pickaxe", "axe", "shovel", "hoe", "helmet", "chestplate", "leggings", "boots"]
+MOVED_GEAR = (
+    [(f"minecraft:diamond_{k}", 6) for k in GEAR_KINDS]
+    + [(f"mekanismtools:{m}_{k}", t) for m, t in (("bronze", 4), ("steel", 5), ("osmium", 5),
+                                                     ("refined_glowstone", 6), ("refined_obsidian", 8))
+       for k in GEAR_KINDS + ["paxel"]]
+    + [(f"immersiveengineering:{k}_steel", 5) for k in ("sword", "pickaxe", "axe", "shovel", "hoe")]
+    + [(f"immersiveengineering:armor_steel_{k}", 5) for k in ("helmet", "chestplate", "leggings", "boots")]
+)
 APOTHEOSIS_JAR_GLOB = "Apotheosis-*.jar"
 
 # Elite mobs (must match mobs/EliteType.java and mobs/EliteMobs.java).
@@ -444,6 +469,7 @@ def gen_ingots():
         self_drop(f"{iid}_block")
         LANG[f"item.{NS}.{iid}_ingot"] = f"{ingot['name']} Ingot"
         LANG[f"block.{NS}.{iid}_block"] = f"Block of {ingot['name']}"
+        gen_plate(iid, ingot["name"], color, style)
         shaped(f"{iid}_block", f"{NS}:{iid}_block", ["XXX", "XXX", "XXX"], {"X": ing(iid)}, "building")
         shapeless(f"{iid}_ingot_from_block", [{"tag": f"c:storage_blocks/{iid}"}], f"{NS}:{iid}_ingot", 9)
         tag("item", f"c:ingots/{iid}", f"{NS}:{iid}_ingot")
@@ -453,6 +479,40 @@ def gen_ingots():
             tag(reg, "c:storage_blocks", f"#c:storage_blocks/{iid}")
         tag("block", "minecraft:mineable/pickaxe", f"{NS}:{iid}_block")
         tag("block", "minecraft:needs_stone_tool", f"{NS}:{iid}_block")
+
+
+def gen_plate(iid, name, color, style):
+    """A plate for one of our ingots, made the ways the pack already makes plates (PLAN.md "Update 4 design")."""
+    plate = f"{iid}_plate"
+    save_png(f"assets/{NS}/textures/item/{plate}.png",
+             source_or_fallback(f"alltheores:item/{style}_plate", color, "minecraft:item/iron_ingot"))
+    item_model(plate, "minecraft:item/generated", plate)
+    LANG[f"item.{NS}.{plate}"] = f"{name} Plate"
+    tag("item", f"c:plates/{iid}", f"{NS}:{plate}")
+    tag("item", "c:plates", f"#c:plates/{iid}")
+    out = {"count": 1, "id": f"{NS}:{plate}"}
+    cond = lambda mod: [{"type": "neoforge:mod_loaded", "modid": mod}]
+    write_json(f"data/{NS}/recipe/plates/{iid}_hammer.json", {
+        "neoforge:conditions": cond("alltheores"), "type": "minecraft:crafting_shaped", "category": "misc",
+        "key": {"a": ing(iid), "h": {"tag": "alltheores:ore_hammers"}}, "pattern": ["   ", "ha ", "a  "], "result": out})
+    write_json(f"data/{NS}/recipe/plates/{iid}_metal_press.json", {
+        "neoforge:conditions": cond("immersiveengineering"), "type": "immersiveengineering:metal_press",
+        "energy": 51200, "input": ing(iid), "mold": "immersiveengineering:mold_plate", "result": {"item": f"{NS}:{plate}"}})
+    write_json(f"data/{NS}/recipe/plates/{iid}_pressing.json", {
+        "neoforge:conditions": cond("create"), "type": "create:pressing",
+        "ingredients": [ing(iid)], "results": [{"id": f"{NS}:{plate}"}]})
+    write_json(f"data/{NS}/recipe/plates/{iid}_compressor.json", {
+        "neoforge:conditions": cond("modern_industrialization"), "type": "modern_industrialization:compressor",
+        "duration": 100, "eu": 2, "item_inputs": [{"amount": 1, "tag": f"c:ingots/{iid}"}],
+        "item_outputs": [{"amount": 1, "item": f"{NS}:{plate}"}]})
+
+
+def anvil_shaped(name, result, pattern, key, tier, needs_mod=None):
+    data = {"type": f"{NS}:anvil_shaped", "tier": tier, "key": key, "pattern": pattern,
+            "result": {"count": 1, "id": result}}
+    if needs_mod:
+        data["neoforge:conditions"] = [{"type": "neoforge:mod_loaded", "modid": needs_mod}]
+    write_json(f"data/{NS}/recipe/{name}.json", data)
 
 
 def gen_ores():
@@ -524,6 +584,14 @@ def gen_ores():
                 "features": f"{NS}:{fid}", "step": "underground_ores"})
 
 
+def gear_recipe(item, pattern, key, tier):
+    """Tier 1-3 gear is made in a crafting table; tier 4+ needs a Smithy Anvil of that tier."""
+    if tier >= FIRST_ANVIL_TIER:
+        anvil_shaped(item, f"{NS}:{item}", pattern, key, tier)
+    else:
+        shaped(item, f"{NS}:{item}", pattern, key)
+
+
 def gen_gear():
     for m in TABLE["gear"]:
         mid, name, color, tier = m["id"], m["name"], m["color"], m["tier"]
@@ -542,7 +610,7 @@ def gen_gear():
                 img = source_or_fallback(f"{tns}:item/{tprefix}_{kind}", color, f"minecraft:item/iron_{kind}", tool=True)
             save_png(f"assets/{NS}/textures/item/{item}.png", img)
             item_model(item, "minecraft:item/handheld", item)
-            shaped(item, f"{NS}:{item}", TOOL_PATTERNS[kind], key_tool)
+            gear_recipe(item, TOOL_PATTERNS[kind], key_tool, tier)
             tag("item", f"minecraft:{TOOL_TAGS[kind]}", f"{NS}:{item}")
             LANG[f"item.{NS}.{item}"] = f"{name} {kind.capitalize()}"
         ans, aprefix = m["armor_from"].split(":")
@@ -551,7 +619,7 @@ def gen_gear():
             save_png(f"assets/{NS}/textures/item/{item}.png",
                      source_or_fallback(f"{ans}:item/{aprefix}_{kind}", color, f"minecraft:item/iron_{kind}"))
             item_model(item, "minecraft:item/generated", item)
-            shaped(item, f"{NS}:{item}", ARMOR_PATTERNS[kind], {"X": {"tag": m["repair"]}})
+            gear_recipe(item, ARMOR_PATTERNS[kind], {"X": {"tag": m["repair"]}}, tier)
             tag("item", f"minecraft:{ARMOR_TAGS[kind]}", f"{NS}:{item}")
             tag("item", "minecraft:trimmable_armor", f"{NS}:{item}")
             LANG[f"item.{NS}.{item}"] = f"{name} {kind.capitalize()}"
@@ -649,6 +717,123 @@ def gen_elites():
                                   "expand": True}]}]})
 
 
+def gen_smithy():
+    """Plates per tier, reinforced plates, Smithy Anvils, Sigils, Treasure Bags, moved recipes (PLAN.md "Update 4 design")."""
+    for m in TABLE["gear"]:
+        if m["repair"].startswith("c:ingots/"):
+            TIER_PLATES.setdefault(m["tier"], []).append("c:plates/" + m["repair"].split("/", 1)[1])
+    for tier, plates in TIER_PLATES.items():
+        tag("item", f"{NS}:tier_plates/{tier}", *[opt("#" + p) for p in dict.fromkeys(plates)])
+
+    # Reinforced plates: 4 plates of a tier -> 1 reinforced plate of that tier.
+    for tier, (grade, color) in PLATE_GRADES.items():
+        item = f"reinforced_plate_{tier}"
+        save_png(f"assets/{NS}/textures/item/{item}.png",
+                 source_or_fallback("immersiveengineering:item/plate_steel", color, "alltheores:item/steel_plate"))
+        item_model(item, "minecraft:item/generated", item)
+        LANG[f"item.{NS}.{item}"] = f"{grade}-Grade Reinforced Plate"
+        shaped(item, f"{NS}:{item}", ["PP", "PP"], {"P": {"tag": f"{NS}:tier_plates/{tier}"}}, "misc")
+    write_json(f"data/{NS}/recipe/anvil_reinforce.json", {"type": f"{NS}:anvil_reinforce"})
+
+    # Sigils and Treasure Bags per gate.
+    for gate in TABLE["gates"]:
+        n, color, gname = gate["gate"], gate["color"], gate["name"]
+        LANG[f"gate.{NS}.{n}"] = gname
+        if n <= 6:
+            sigil = f"sigil_{n}"
+            save_png(f"assets/{NS}/textures/item/{sigil}.png",
+                     source_or_fallback("minecraft:item/nether_star", color, "minecraft:item/emerald"))
+            item_model(sigil, "minecraft:item/generated", sigil)
+            LANG[f"item.{NS}.{sigil}"] = f"{gname} Sigil"
+        bag = f"treasure_bag_{n}"
+        save_png(f"assets/{NS}/textures/item/{bag}.png",
+                 source_or_fallback("minecraft:item/bundle", color, "minecraft:item/leather"))
+        item_model(bag, "minecraft:item/generated", bag)
+        LANG[f"item.{NS}.{bag}"] = f"{gname} Treasure Bag"
+        tier = min(8, n + 3)
+        pools = []
+        if n <= 6:
+            pools.append({"rolls": 1, "entries": [{"type": "minecraft:item", "name": f"{NS}:sigil_{n}"}]})
+        pools += [
+            {"rolls": 3, "entries": [{"type": "minecraft:tag", "name": f"{NS}:tier_materials/{tier}", "expand": True,
+                                      "functions": [{"function": "minecraft:set_count",
+                                                     "count": {"type": "minecraft:uniform", "min": 2, "max": 4}}]}]},
+            {"rolls": {"type": "minecraft:uniform", "min": 1, "max": 2},
+             "entries": [{"type": "minecraft:tag", "name": f"{NS}:rough_gems", "expand": True}]},
+            {"rolls": 1, "entries": [{"type": "minecraft:item", "name": f"{NS}:reinforced_plate_{min(9, n + 3)}"}]},
+            {"rolls": 1, "entries": [{"type": "minecraft:loot_table", "value": f"{NS}:bags/accessories_{n}"}]},
+        ]
+        write_json(f"data/{NS}/loot_table/bags/gate_{n}.json", {"type": "minecraft:gift", "pools": pools})
+        # Accessories live in their own table that only loads when their mods are installed.
+        mods = sorted({a.split(":")[0] for a in gate["accessories"]})
+        write_json(f"data/{NS}/loot_table/bags/accessories_{n}.json", {
+            "neoforge:conditions": [{"type": "neoforge:mod_loaded", "modid": m} for m in mods],
+            "type": "minecraft:gift",
+            "pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": a} for a in gate["accessories"]]}]})
+
+    # Smithy Anvils: crafted (in a crafting table) from the previous anvil, a Sigil and plates of the new tier.
+    vanilla_anvil, vanilla_top = SRC.get("minecraft:block/anvil"), SRC.get("minecraft:block/anvil_top")
+    for i, (aid, tier, color, name) in enumerate(ANVILS):
+        block = f"{aid}_anvil"
+        save_png(f"assets/{NS}/textures/block/{block}.png", recolor(vanilla_anvil.copy(), color))
+        save_png(f"assets/{NS}/textures/block/{block}_top.png", recolor(vanilla_top.copy(), color))
+        write_json(f"assets/{NS}/models/block/{block}.json", {
+            "parent": "minecraft:block/template_anvil",
+            "textures": {"top": f"{NS}:block/{block}_top", "body": f"{NS}:block/{block}",
+                         "particle": f"{NS}:block/{block}"}})
+        write_json(f"assets/{NS}/models/item/{block}.json", {"parent": f"{NS}:block/{block}"})
+        write_json(f"assets/{NS}/blockstates/{block}.json", {"variants": {
+            f"facing={d}": {"model": f"{NS}:block/{block}", "y": y}
+            for d, y in (("north", 90), ("east", 180), ("south", 270), ("west", 0))}})
+        self_drop(block)
+        tag("block", "minecraft:mineable/pickaxe", f"{NS}:{block}")
+        LANG[f"block.{NS}.{block}"] = f"{name} Anvil"
+        plates = {"tag": f"{NS}:tier_plates/{min(tier, 8)}"}
+        sigil = {"item": f"{NS}:sigil_{i + 1}"}
+        if i == 0:
+            shaped(block, f"{NS}:{block}", ["PPP", " S ", "III"],
+                   {"P": plates, "S": sigil, "I": {"tag": "c:storage_blocks/iron"}}, "misc")
+        else:
+            prev = {"item": f"{NS}:{ANVILS[i - 1][0]}_anvil"}
+            top = {"tag": "c:ingots/netherite"} if aid == "netherite" else plates
+            shaped(block, f"{NS}:{block}", ["TTT", "PAP", "PSP"], {"T": top, "P": plates, "A": prev, "S": sigil}, "misc")
+
+    # Vanilla diamond/netherite and major mods' tier 4+ gear move onto anvils.
+    targets = dict(MOVED_GEAR)
+    found = set()
+    jars = [VANILLA_JAR] + sorted(PACK_MODS.glob("*.jar"))
+    for jar in jars:
+        with zipfile.ZipFile(jar) as z:
+            for n in z.namelist():
+                if not (n.startswith("data/") and "/recipe" in n and n.endswith(".json")):
+                    continue
+                try:
+                    data = json.loads(z.read(n))
+                except Exception:
+                    continue
+                result = data.get("result")
+                rid = result.get("id") if isinstance(result, dict) else None
+                if rid not in targets or rid in found or "pattern" not in data or "key" not in data:
+                    continue
+                found.add(rid)
+                ns, path = rid.split(":")
+                anvil_shaped(f"moved/{ns}/{path}", rid, data["pattern"], data["key"], targets[rid],
+                             None if ns == "minecraft" else ns)
+    for k in GEAR_KINDS:
+        write_json(f"data/{NS}/recipe/moved/minecraft/netherite_{k}.json", {
+            "type": f"{NS}:anvil_shapeless", "tier": 9, "copy_components": True,
+            "ingredients": [{"item": f"minecraft:diamond_{k}"}, {"tag": "c:ingots/netherite"},
+                            {"tag": f"{NS}:tier_materials/8"}],
+            "result": {"count": 1, "id": f"minecraft:netherite_{k}"}})
+        found.add(f"minecraft:netherite_{k}")
+    MOVED.extend(sorted(found))
+    tag("block", f"{NS}:siege_proof", opt("#c:obsidians"), "minecraft:obsidian", "minecraft:crying_obsidian",
+        "minecraft:reinforced_deepslate", "minecraft:netherite_block", "minecraft:respawn_anchor")
+
+
+MOVED = []
+
+
 def gen_loot_modifiers():
     write_json(f"data/{NS}/loot_modifiers/tiered_chest_loot.json",
                {"type": f"{NS}:tiered_chest_loot", "conditions": []})
@@ -700,16 +885,16 @@ def gen_profile():
     apoth = next(PACK_MODS.glob(APOTHEOSIS_JAR_GLOB), None)
     if apoth:
         with zipfile.ZipFile(apoth) as z:
-            for world_tier, gear_tier in WORLD_TIER_GEAR.items():
+            for world_tier, gate in WORLD_TIER_SIGIL.items():
                 adv = json.loads(z.read(f"data/apotheosis/advancement/progression/{world_tier}.json"))
-                adv["criteria"]["forgedascent_gear"] = {
+                adv["criteria"]["forgedascent_gate"] = {
                     "trigger": "minecraft:inventory_changed",
-                    "conditions": {"items": [{"items": f"#{NS}:gear/tier_{gear_tier}"}]}}
-                adv["requirements"].append(["forgedascent_gear"])
+                    "conditions": {"items": [{"items": f"{NS}:sigil_{gate}"}]}}
+                adv["requirements"].append(["forgedascent_gate"])
                 adv["display"]["description"] = {"translate": f"advancements.{NS}.{world_tier}.desc"}
+                gate_name = next(g["name"] for g in TABLE["gates"] if g["gate"] == gate)
                 LANG[f"advancements.{NS}.{world_tier}.desc"] = (
-                    f"Equip affixed gear in every slot and own tier-{gear_tier} gear from Forged Ascent "
-                    f"(or something as strong)")
+                    f"Equip affixed gear in every slot and beat a {gate_name} boss (get its Sigil)")
                 write_json(f"kubejs/data/apotheosis/advancement/progression/{world_tier}.json", adv, base=PROFILE_OUT)
     else:
         print("WARNING: Apotheosis jar not found; world tier unlocks not generated")
@@ -719,6 +904,12 @@ def gen_profile():
              "ServerEvents.recipes(event => {"]
     for output, old, tier in GATING:
         lines.append(f"  event.replaceInput({{ output: '{output}' }}, '{old}', '#{NS}:tier_materials/{tier}')")
+    lines.append("")
+    lines.append("  // Gear moved onto Smithy Anvils: remove its crafting-table and smithing-table recipes.")
+    lines.append("  const moved = " + json.dumps(MOVED))
+    lines.append("  const tableTypes = ['minecraft:crafting_shaped', 'minecraft:crafting_shapeless', "
+                 "'minecraft:smithing_transform', 'mekanism:mek_data']")
+    lines.append("  moved.forEach(id => tableTypes.forEach(type => event.remove({ output: id, type: type })))")
     lines.append("})")
     path = PROFILE_OUT / "kubejs/server_scripts/zz_forgedascent/gating.js"
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -737,7 +928,20 @@ def write_tags():
         write_json(f"data/{ns}/tags/{registry}/{path}.json", {"values": values})
 
 
-LANG = {"itemGroup.forgedascent": "Forged Ascent"}
+LANG = {
+    "itemGroup.forgedascent": "Forged Ascent",
+    "tooltip.forgedascent.reinforced": "Reinforced",
+    "tooltip.forgedascent.reinforced_plate": "Reinforces gear up to tier %s at a Smithy Anvil",
+    "tooltip.forgedascent.treasure_bag": "Right-click to open",
+    "gui.forgedascent.anvil_tier": "Tier %s",
+    "jei.forgedascent.anvil": "Smithy Anvil",
+    "jei.forgedascent.needs_anvil": "Needs: %s or better",
+    "jei.forgedascent.reinforce": "Put this plate and a tool, weapon or armor piece into a Smithy Anvil to reinforce "
+                                  "it: +1 armor or +1 attack damage, +25% durability. Works on gear up to the plate's tier.",
+    "message.forgedascent.gate_cleared": "%s cleared %s! A new Smithy Anvil can now be forged.",
+    "message.forgedascent.blood_moon_rise": "The moon rises blood red... the dead are restless tonight.",
+    "message.forgedascent.blood_moon_set": "The blood moon sets. You survived the night.",
+}
 
 
 def main():
@@ -752,6 +956,7 @@ def main():
     gen_tiers()
     gen_alloys()
     gen_elites()
+    gen_smithy()
     gen_loot_modifiers()
     gen_profile()
     write_tags()

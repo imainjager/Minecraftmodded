@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "#c:plates/steel",
+      "required": false
+    },
+    {
+      "id": "#c:plates/osmium",
+      "required": false
+    },
+    {
+      "id": "#c:plates/cobalt",
+      "required": false
+    },
+    {
+      "id": "#c:plates/manganese_steel",
+      "required": false
+    },
+    {
+      "id": "#c:plates/alnico",
+      "required": false
+    }
+  ]
+}

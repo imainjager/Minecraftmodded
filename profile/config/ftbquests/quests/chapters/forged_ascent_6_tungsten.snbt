@@ -1,0 +1,453 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "circle"
+	filename: "forged_ascent_6_tungsten"
+	group: "F0A6ED5A5CE47001"
+	icon: {
+		id: "forgedascent:tungsten_carbide_pickaxe"
+	}
+	id: "013918C6D669405E"
+	order_index: 5
+	quest_links: [ ]
+	subtitle: [
+		"Tier 8: superalloys"
+	]
+	title: "Tungsten Age"
+	quests: [
+		{
+			id: "2F9893E3A2D9032B"
+			title: "Forge the Tungsten Anvil"
+			x: 0.0d
+			y: 0.0d
+			subtitle: "Unlocks tier-8 gear"
+			description: [
+				"Craft the &bTungsten Anvil&r from the previous anvil, the Sigil you won and tier-8 plates."
+				"It crafts every gear recipe up to &etier 8&r (JEI: the 'Smithy Anvil' tab)."
+				"Anvils also &breinforce&r gear: put gear + a reinforced plate of the same tier or higher in the grid."
+			]
+			shape: "gear"
+			size: 1.5d
+			tasks: [
+				{
+					id: "23483AE050525B4B"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:tungsten_anvil"
+					}
+					count: 1
+				}
+			]
+			rewards: [
+				{
+					id: "37A446237F6B26E3"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:reinforced_plate_8"
+					}
+					count: 1
+				}
+				{
+					id: "63E1AD5BB62BBDE7"
+					type: "xp"
+					xp: 100
+				}
+			]
+		}
+		{
+			id: "1B915EB7619058FD"
+			title: "Find Ancient Debris"
+			x: 2.0d
+			y: -1.0d
+			description: [
+				"Needs a tier-7 pickaxe or better."
+			]
+			dependencies: [
+				"2F9893E3A2D9032B"
+			]
+			tasks: [
+				{
+					id: "2064A6DDA30BE28F"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:ancient_debris"
+					}
+					count: 1
+				}
+			]
+		}
+		{
+			id: "2B100DEFBB276134"
+			title: "Alloy: Tungsten Carbide Ingot"
+			x: 3.0d
+			y: 0.0d
+			description: [
+				"Alloys are mixed in a crafting table for now (check JEI for the real-world ratios)."
+			]
+			dependencies: [
+				"1B915EB7619058FD"
+			]
+			tasks: [
+				{
+					id: "C3BF6B4334F4D201"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:tungsten_carbide_ingot"
+					}
+					count: 1
+				}
+			]
+		}
+		{
+			id: "FB42910756DEA7F0"
+			title: "Alloy: High Speed Steel Ingot"
+			x: 4.0d
+			y: 0.0d
+			description: [
+				"Alloys are mixed in a crafting table for now (check JEI for the real-world ratios)."
+			]
+			dependencies: [
+				"2B100DEFBB276134"
+			]
+			tasks: [
+				{
+					id: "41D91209A939239E"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:high_speed_steel_ingot"
+					}
+					count: 1
+				}
+			]
+		}
+		{
+			id: "FE66E99F9639B9CD"
+			title: "Alloy: Stellite Ingot"
+			x: 5.0d
+			y: 0.0d
+			description: [
+				"Alloys are mixed in a crafting table for now (check JEI for the real-world ratios)."
+			]
+			dependencies: [
+				"FB42910756DEA7F0"
+			]
+			tasks: [
+				{
+					id: "F933C63EA159E740"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:stellite_ingot"
+					}
+					count: 1
+				}
+			]
+		}
+		{
+			id: "6FB114F98F6DD12D"
+			title: "Alloy: Inconel Ingot"
+			x: 6.0d
+			y: 0.0d
+			description: [
+				"Alloys are mixed in a crafting table for now (check JEI for the real-world ratios)."
+			]
+			dependencies: [
+				"FE66E99F9639B9CD"
+			]
+			tasks: [
+				{
+					id: "A01805322ABF0684"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:inconel_ingot"
+					}
+					count: 1
+				}
+			]
+		}
+		{
+			id: "4B92C5534367D5D4"
+			title: "Alloy: Osmiridium Ingot"
+			x: 7.0d
+			y: 0.0d
+			description: [
+				"Alloys are mixed in a crafting table for now (check JEI for the real-world ratios)."
+			]
+			dependencies: [
+				"6FB114F98F6DD12D"
+			]
+			tasks: [
+				{
+					id: "D0C98167D197873C"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:osmiridium_ingot"
+					}
+					count: 1
+				}
+			]
+		}
+		{
+			id: "9700CB16CAF784D7"
+			title: "Hammer some plates"
+			x: 8.0d
+			y: -1.0d
+			description: [
+				"4 plates of this tier make the reinforced plate. Reinforce your best gear at your anvil!"
+			]
+			dependencies: [
+				"4B92C5534367D5D4"
+			]
+			tasks: [
+				{
+					id: "02D99840BC9C98B3"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:reinforced_plate_8"
+					}
+					count: 1
+				}
+			]
+		}
+		{
+			id: "4CACE00BD5DE10CB"
+			title: "Gear up: Tungsten Carbide Pickaxe"
+			x: 9.0d
+			y: 0.0d
+			description: [
+				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
+			]
+			dependencies: [
+				"9700CB16CAF784D7"
+			]
+			tasks: [
+				{
+					id: "75892E049450DA25"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:tungsten_carbide_pickaxe"
+					}
+					count: 1
+				}
+			]
+			rewards: [
+				{
+					id: "4C5900B16E4E3DD7"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:experience_bottle"
+					}
+					count: 4
+				}
+			]
+		}
+		{
+			id: "5ED1E400009E8DB2"
+			title: "Gear up: Iridium Chestplate"
+			x: 10.0d
+			y: 0.0d
+			description: [
+				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
+			]
+			dependencies: [
+				"4CACE00BD5DE10CB"
+			]
+			tasks: [
+				{
+					id: "1D1166D1E33710BB"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:iridium_chestplate"
+					}
+					count: 1
+				}
+			]
+			rewards: [
+				{
+					id: "C04224F8811C58EA"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:experience_bottle"
+					}
+					count: 4
+				}
+			]
+		}
+		{
+			id: "57ED6E62052DEB81"
+			title: "Gear up: Black Diamond Sword"
+			x: 11.0d
+			y: 0.0d
+			description: [
+				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
+			]
+			dependencies: [
+				"5ED1E400009E8DB2"
+			]
+			tasks: [
+				{
+					id: "811F0EF0CEEBB378"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:black_diamond_sword"
+					}
+					count: 1
+				}
+			]
+			rewards: [
+				{
+					id: "7BB181DF027680F8"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:experience_bottle"
+					}
+					count: 4
+				}
+			]
+		}
+		{
+			id: "F32426904F861B38"
+			title: "Defeat: Snow Queen"
+			x: 13.0d
+			y: -2.0d
+			subtitle: "Gate VI boss"
+			description: [
+				"Twilight Forest: the Aurora Palace on the glacier."
+				"Any one boss of this gate is enough."
+			]
+			dependencies: [
+				"57ED6E62052DEB81"
+			]
+			shape: "hexagon"
+			optional: true
+			tasks: [
+				{
+					id: "391A0D0D58F02AEF"
+					type: "kill"
+					entity: "twilightforest:snow_queen"
+					value: 1
+				}
+			]
+		}
+		{
+			id: "B6D9681277D3179A"
+			title: "Defeat: Harbinger"
+			x: 13.0d
+			y: -0.7d
+			subtitle: "Gate VI boss"
+			description: [
+				"Cataclysm: the Wither Lab ruins."
+				"Any one boss of this gate is enough."
+			]
+			dependencies: [
+				"57ED6E62052DEB81"
+			]
+			shape: "hexagon"
+			optional: true
+			tasks: [
+				{
+					id: "68350A5596AFA16A"
+					type: "kill"
+					entity: "cataclysm:the_harbinger"
+					value: 1
+				}
+			]
+		}
+		{
+			id: "6892E016D70738C9"
+			title: "Defeat: Ancient Remnant"
+			x: 13.0d
+			y: 0.6000000000000001d
+			subtitle: "Gate VI boss"
+			description: [
+				"Cataclysm: the Cursed Pyramid in deserts."
+				"Any one boss of this gate is enough."
+			]
+			dependencies: [
+				"57ED6E62052DEB81"
+			]
+			shape: "hexagon"
+			optional: true
+			tasks: [
+				{
+					id: "08B65BB07D3FFDB3"
+					type: "kill"
+					entity: "cataclysm:ancient_remnant"
+					value: 1
+				}
+			]
+		}
+		{
+			id: "43ABDC84B95698FF"
+			title: "Defeat: Maledictus"
+			x: 13.0d
+			y: 1.9000000000000004d
+			subtitle: "Gate VI boss"
+			description: [
+				"Cataclysm: the Frosted Prison in snowy biomes."
+				"Any one boss of this gate is enough."
+			]
+			dependencies: [
+				"57ED6E62052DEB81"
+			]
+			shape: "hexagon"
+			optional: true
+			tasks: [
+				{
+					id: "A0ABCC527A4D7464"
+					type: "kill"
+					entity: "cataclysm:maledictus"
+					value: 1
+				}
+			]
+		}
+		{
+			id: "800109E0FF7D5596"
+			title: "Gate VI Sigil"
+			x: 15.0d
+			y: 0.0d
+			subtitle: "Beat any boss above"
+			description: [
+				"Every Gate VI boss drops a &dTreasure Bag&r with this Sigil, tier materials, rough gems and an accessory."
+				"Use the Sigil to forge the next Smithy Anvil."
+				"It also unlocks the Apotheosis world tier &ePinnacle&r."
+			]
+			dependencies: [
+				"57ED6E62052DEB81"
+			]
+			shape: "gear"
+			size: 1.5d
+			tasks: [
+				{
+					id: "3E57A63816F7241B"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:sigil_6"
+					}
+					count: 1
+				}
+			]
+			rewards: [
+				{
+					id: "F3F8E45A2C6FA64C"
+					type: "xp"
+					xp: 250
+				}
+			]
+		}
+	]
+}

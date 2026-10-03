@@ -112,6 +112,22 @@ def patch_osmium():
     print(f"  osmium veins: {'patched' if changed else 'already up to date'}")
 
 
+QUEST_GROUP = '{ id: "F0A6ED5A5CE47001", title: "Forged Ascent" }'
+
+
+def patch_quest_group():
+    """Adds the Forged Ascent chapter group (chapters come from profile/) at the top of ATM10's quest groups."""
+    path = PROFILE / "config/ftbquests/quests/chapter_groups.snbt"
+    text = path.read_text(encoding="utf-8")
+    if "F0A6ED5A5CE47001" in text:
+        print("  quest group: already present")
+        return
+    backup(path)
+    new = re.sub(r"chapter_groups:\s*\[\s*\n", lambda m: m.group(0) + "\t\t" + QUEST_GROUP + "\n", text, count=1)
+    path.write_text(new, encoding="utf-8")
+    print("  quest group: added")
+
+
 def main():
     if not PROFILE.exists():
         sys.exit(f"Profile not found: {PROFILE}")
@@ -122,6 +138,7 @@ def main():
     copy_overlay()
     patch_mekanism()
     patch_osmium()
+    patch_quest_group()
     if BACKUP.exists():
         print(f"Backups of replaced files: {BACKUP}")
     print("Done.")

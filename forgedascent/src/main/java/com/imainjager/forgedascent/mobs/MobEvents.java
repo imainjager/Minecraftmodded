@@ -2,6 +2,7 @@ package com.imainjager.forgedascent.mobs;
 
 import com.imainjager.forgedascent.ForgedAscent;
 import com.imainjager.forgedascent.Materials;
+import com.imainjager.forgedascent.world.BloodMoon;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -100,7 +101,19 @@ public final class MobEvents {
 
         int tier = WorldTiers.near(level, pos);
         Place place = Place.of(level, block);
-        double eliteChance = Math.min(MobConfig.ELITE_CAP.get(), MobConfig.pick(MobConfig.ELITE_CHANCE, tier) + place.elite());
+        double eliteChance = Math.min(MobConfig.ELITE_CAP.get(), MobConfig.pick(MobConfig.ELITE_CHANCE, tier)
+                + place.elite() + BloodMoon.eliteBonus(level));
+
+        // Blood moon: one extra copy of naturally spawned monsters.
+        if (spawnType == MobSpawnType.NATURAL && BloodMoon.shouldDouble(level, mob)
+                && mob.getType().create(level) instanceof Mob extra) {
+            extra.moveTo(pos.x + random.nextInt(5) - 2, pos.y, pos.z + random.nextInt(5) - 2, random.nextFloat() * 360, 0);
+            if (extra.checkSpawnObstruction(level)) {
+                extra.finalizeSpawn(accessor, event.getDifficulty(), spawnType, null);
+                extra.getPersistentData().put(PENDING, pending(tier, place, "", 1.0, false));
+                accessor.addFreshEntityWithPassengers(extra);
+            }
+        }
         EliteType own = EliteMobs.eliteOf(mob.getType());
 
         // Swap the mob for an elite version of itself.

@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "forgedascent:block/bronze_anvil",
+      "y": 90
+    },
+    "facing=east": {
+      "model": "forgedascent:block/bronze_anvil",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "forgedascent:block/bronze_anvil",
+      "y": 270
+    },
+    "facing=west": {
+      "model": "forgedascent:block/bronze_anvil",
+      "y": 0
+    }
+  }
+}

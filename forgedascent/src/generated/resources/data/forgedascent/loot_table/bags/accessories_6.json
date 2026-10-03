@@ -1,0 +1,40 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "relics"
+    }
+  ],
+  "type": "minecraft:gift",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "relics:reflective_necklace"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "relics:ring_of_the_seven_deadly_sins"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "relics:midnight_mantle"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "relics:sphere_of_self_sacrifice"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "relics:ghostly_mantle"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "relics:springy_boot"
+        }
+      ]
+    }
+  ]
+}

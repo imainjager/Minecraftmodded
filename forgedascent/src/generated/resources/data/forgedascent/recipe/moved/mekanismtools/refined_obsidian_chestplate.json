@@ -1,0 +1,24 @@
+{
+  "type": "forgedascent:anvil_shaped",
+  "tier": 8,
+  "key": {
+    "I": {
+      "tag": "c:ingots/refined_obsidian"
+    }
+  },
+  "pattern": [
+    "I I",
+    "III",
+    "III"
+  ],
+  "result": {
+    "count": 1,
+    "id": "mekanismtools:refined_obsidian_chestplate"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanismtools"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "type": "forgedascent:anvil_shaped",
+  "tier": 6,
+  "key": {
+    "I": {
+      "tag": "c:ingots/refined_glowstone"
+    },
+    "R": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    "II",
+    " R",
+    " R"
+  ],
+  "result": {
+    "count": 1,
+    "id": "mekanismtools:refined_glowstone_hoe"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanismtools"
+    }
+  ]
+}

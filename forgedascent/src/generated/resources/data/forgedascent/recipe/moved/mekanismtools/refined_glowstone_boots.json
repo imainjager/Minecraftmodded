@@ -1,0 +1,23 @@
+{
+  "type": "forgedascent:anvil_shaped",
+  "tier": 6,
+  "key": {
+    "I": {
+      "tag": "c:ingots/refined_glowstone"
+    }
+  },
+  "pattern": [
+    "I I",
+    "I I"
+  ],
+  "result": {
+    "count": 1,
+    "id": "mekanismtools:refined_glowstone_boots"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanismtools"
+    }
+  ]
+}

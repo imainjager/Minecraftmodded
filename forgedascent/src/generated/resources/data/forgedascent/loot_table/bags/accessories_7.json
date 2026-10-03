@@ -1,0 +1,40 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "relics"
+    }
+  ],
+  "type": "minecraft:gift",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "relics:shield_of_retaliation"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "relics:chorus_staff"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "relics:clot_of_time"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "relics:glitchy_mantle"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "relics:experience_disperser"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "relics:roller_skate"
+        }
+      ]
+    }
+  ]
+}

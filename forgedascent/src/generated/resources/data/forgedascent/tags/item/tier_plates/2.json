@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "#c:plates/copper",
+      "required": false
+    },
+    {
+      "id": "#c:plates/tin",
+      "required": false
+    },
+    {
+      "id": "#c:plates/zinc",
+      "required": false
+    }
+  ]
+}

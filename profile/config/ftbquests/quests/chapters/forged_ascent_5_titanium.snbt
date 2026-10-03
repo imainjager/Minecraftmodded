@@ -1,0 +1,477 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "circle"
+	filename: "forged_ascent_5_titanium"
+	group: "F0A6ED5A5CE47001"
+	icon: {
+		id: "forgedascent:titanium_pickaxe"
+	}
+	id: "BB61109072D0ACF9"
+	order_index: 4
+	quest_links: [ ]
+	subtitle: [
+		"Tier 7: refractory metals"
+	]
+	title: "Titanium Age"
+	quests: [
+		{
+			id: "318BF3777EED8172"
+			title: "Forge the Titanium Anvil"
+			x: 0.0d
+			y: 0.0d
+			subtitle: "Unlocks tier-7 gear"
+			description: [
+				"Craft the &bTitanium Anvil&r from the previous anvil, the Sigil you won and tier-7 plates."
+				"It crafts every gear recipe up to &etier 7&r (JEI: the 'Smithy Anvil' tab)."
+				"Anvils also &breinforce&r gear: put gear + a reinforced plate of the same tier or higher in the grid."
+			]
+			shape: "gear"
+			size: 1.5d
+			tasks: [
+				{
+					id: "ADD68B3F69FE8D2D"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:titanium_anvil"
+					}
+					count: 1
+				}
+			]
+			rewards: [
+				{
+					id: "EB7737A81BAA9996"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:reinforced_plate_7"
+					}
+					count: 1
+				}
+				{
+					id: "2723F5C9867D7FEB"
+					type: "xp"
+					xp: 100
+				}
+			]
+		}
+		{
+			id: "F130A85A0BFBEE56"
+			title: "Find Raw Tungsten"
+			x: 2.0d
+			y: -1.0d
+			description: [
+				"Needs a tier-6 pickaxe or better."
+			]
+			dependencies: [
+				"318BF3777EED8172"
+			]
+			tasks: [
+				{
+					id: "BFEE5DCCD1A9CEC0"
+					type: "item"
+					item: {
+						count: 1
+						id: "modern_industrialization:raw_tungsten"
+					}
+					count: 1
+				}
+			]
+		}
+		{
+			id: "6B3D738F431BC6E7"
+			title: "Find Raw Iridium"
+			x: 3.0d
+			y: 1.0d
+			description: [
+				"Needs a tier-6 pickaxe or better."
+			]
+			dependencies: [
+				"F130A85A0BFBEE56"
+			]
+			tasks: [
+				{
+					id: "FC448D2271D5C360"
+					type: "item"
+					item: {
+						count: 1
+						id: "alltheores:raw_iridium"
+					}
+					count: 1
+				}
+			]
+		}
+		{
+			id: "6F6E079DBF44693F"
+			title: "Find Rough Black Diamond"
+			x: 4.0d
+			y: -1.0d
+			description: [
+				"Needs a tier-6 pickaxe or better."
+			]
+			dependencies: [
+				"6B3D738F431BC6E7"
+			]
+			tasks: [
+				{
+					id: "B72E7BA5D4E67E5C"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:rough_black_diamond"
+					}
+					count: 1
+				}
+			]
+		}
+		{
+			id: "97312EBB4A8A7652"
+			title: "Alloy: Chromoly Ingot"
+			x: 5.0d
+			y: 0.0d
+			description: [
+				"Alloys are mixed in a crafting table for now (check JEI for the real-world ratios)."
+			]
+			dependencies: [
+				"6F6E079DBF44693F"
+			]
+			tasks: [
+				{
+					id: "8F3323D287749866"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:chromoly_ingot"
+					}
+					count: 1
+				}
+			]
+		}
+		{
+			id: "240BCE092EAAA757"
+			title: "Alloy: Titanium Alloy Ingot"
+			x: 6.0d
+			y: 0.0d
+			description: [
+				"Alloys are mixed in a crafting table for now (check JEI for the real-world ratios)."
+			]
+			dependencies: [
+				"97312EBB4A8A7652"
+			]
+			tasks: [
+				{
+					id: "D54A75F82040D596"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:titanium_alloy_ingot"
+					}
+					count: 1
+				}
+			]
+		}
+		{
+			id: "040384A0DDEF3200"
+			title: "Alloy: Stainless Steel Ingot"
+			x: 7.0d
+			y: 0.0d
+			description: [
+				"Alloys are mixed in a crafting table for now (check JEI for the real-world ratios)."
+			]
+			dependencies: [
+				"240BCE092EAAA757"
+			]
+			tasks: [
+				{
+					id: "3E1991497965CA29"
+					type: "item"
+					item: {
+						count: 1
+						id: "modern_industrialization:stainless_steel_ingot"
+					}
+					count: 1
+				}
+			]
+		}
+		{
+			id: "0E735555B3EB187F"
+			title: "Hammer some plates"
+			x: 8.0d
+			y: -1.0d
+			description: [
+				"4 plates of this tier make the reinforced plate. Reinforce your best gear at your anvil!"
+			]
+			dependencies: [
+				"040384A0DDEF3200"
+			]
+			tasks: [
+				{
+					id: "749F002ABA503819"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:reinforced_plate_7"
+					}
+					count: 1
+				}
+			]
+		}
+		{
+			id: "9371F663084053C6"
+			title: "Gear up: Titanium Pickaxe"
+			x: 9.0d
+			y: 0.0d
+			description: [
+				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
+			]
+			dependencies: [
+				"0E735555B3EB187F"
+			]
+			tasks: [
+				{
+					id: "6CFFF45B2606DF45"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:titanium_pickaxe"
+					}
+					count: 1
+				}
+			]
+			rewards: [
+				{
+					id: "D79E2BE4978943BC"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:experience_bottle"
+					}
+					count: 4
+				}
+			]
+		}
+		{
+			id: "5F2AA9930F4D3790"
+			title: "Gear up: Titanium Alloy Chestplate"
+			x: 10.0d
+			y: 0.0d
+			description: [
+				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
+			]
+			dependencies: [
+				"9371F663084053C6"
+			]
+			tasks: [
+				{
+					id: "168B182F62316980"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:titanium_alloy_chestplate"
+					}
+					count: 1
+				}
+			]
+			rewards: [
+				{
+					id: "67C5A37472B49279"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:experience_bottle"
+					}
+					count: 4
+				}
+			]
+		}
+		{
+			id: "FCBE017216A04581"
+			title: "Gear up: Ruby Sword"
+			x: 11.0d
+			y: 0.0d
+			description: [
+				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
+			]
+			dependencies: [
+				"5F2AA9930F4D3790"
+			]
+			tasks: [
+				{
+					id: "F0A1786B96C6C082"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:ruby_sword"
+					}
+					count: 1
+				}
+			]
+			rewards: [
+				{
+					id: "6E756CB82CC1AC1D"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:experience_bottle"
+					}
+					count: 4
+				}
+			]
+		}
+		{
+			id: "6C7CA7CB3CD5DF33"
+			title: "Defeat: Ender Dragon"
+			x: 13.0d
+			y: -2.0d
+			subtitle: "Gate V boss"
+			description: [
+				"The End. Bring a bow and blocks."
+				"Any one boss of this gate is enough."
+			]
+			dependencies: [
+				"FCBE017216A04581"
+			]
+			shape: "hexagon"
+			optional: true
+			tasks: [
+				{
+					id: "0E2383EB8EA3F12E"
+					type: "kill"
+					entity: "minecraft:ender_dragon"
+					value: 1
+				}
+			]
+		}
+		{
+			id: "FCD6F5B90FE8A863"
+			title: "Defeat: Ignis"
+			x: 13.0d
+			y: -0.7d
+			subtitle: "Gate V boss"
+			description: [
+				"Cataclysm: the Burning Arena in the Nether."
+				"Any one boss of this gate is enough."
+			]
+			dependencies: [
+				"FCBE017216A04581"
+			]
+			shape: "hexagon"
+			optional: true
+			tasks: [
+				{
+					id: "2ADCA5900DE3DC2B"
+					type: "kill"
+					entity: "cataclysm:ignis"
+					value: 1
+				}
+			]
+		}
+		{
+			id: "DFC3EDE4EED820F5"
+			title: "Defeat: Ur-Ghast"
+			x: 13.0d
+			y: 0.6000000000000001d
+			subtitle: "Gate V boss"
+			description: [
+				"Twilight Forest: the Dark Tower."
+				"Any one boss of this gate is enough."
+			]
+			dependencies: [
+				"FCBE017216A04581"
+			]
+			shape: "hexagon"
+			optional: true
+			tasks: [
+				{
+					id: "2B7EAAA588491F4E"
+					type: "kill"
+					entity: "twilightforest:ur_ghast"
+					value: 1
+				}
+			]
+		}
+		{
+			id: "2AC4DBD053D0A717"
+			title: "Defeat: Leviathan"
+			x: 13.0d
+			y: 1.9000000000000004d
+			subtitle: "Gate V boss"
+			description: [
+				"Cataclysm: the Sunken City in deep oceans."
+				"Any one boss of this gate is enough."
+			]
+			dependencies: [
+				"FCBE017216A04581"
+			]
+			shape: "hexagon"
+			optional: true
+			tasks: [
+				{
+					id: "AD5EFB57EB576CEC"
+					type: "kill"
+					entity: "cataclysm:the_leviathan"
+					value: 1
+				}
+			]
+		}
+		{
+			id: "7F53B89C362BA536"
+			title: "Defeat: Warden"
+			x: 13.0d
+			y: 3.2d
+			subtitle: "Gate V boss"
+			description: [
+				"Ancient Cities in the Deep Dark. Keep quiet... or don't."
+				"Any one boss of this gate is enough."
+			]
+			dependencies: [
+				"FCBE017216A04581"
+			]
+			shape: "hexagon"
+			optional: true
+			tasks: [
+				{
+					id: "D23242722A102F74"
+					type: "kill"
+					entity: "minecraft:warden"
+					value: 1
+				}
+			]
+		}
+		{
+			id: "F9B99346E4A1ED67"
+			title: "Gate V Sigil"
+			x: 15.0d
+			y: 0.0d
+			subtitle: "Beat any boss above"
+			description: [
+				"Every Gate V boss drops a &dTreasure Bag&r with this Sigil, tier materials, rough gems and an accessory."
+				"Use the Sigil to forge the next Smithy Anvil."
+				"It also unlocks the Apotheosis world tier &eSummit&r."
+			]
+			dependencies: [
+				"FCBE017216A04581"
+			]
+			shape: "gear"
+			size: 1.5d
+			tasks: [
+				{
+					id: "76288C040983E272"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:sigil_5"
+					}
+					count: 1
+				}
+			]
+			rewards: [
+				{
+					id: "2EE158D2DF5D5677"
+					type: "xp"
+					xp: 250
+				}
+			]
+		}
+	]
+}

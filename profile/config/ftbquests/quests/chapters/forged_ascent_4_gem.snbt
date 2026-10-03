@@ -1,0 +1,475 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "circle"
+	filename: "forged_ascent_4_gem"
+	group: "F0A6ED5A5CE47001"
+	icon: {
+		id: "forgedascent:emerald_pickaxe"
+	}
+	id: "2C287210ACA7A855"
+	order_index: 3
+	quest_links: [ ]
+	subtitle: [
+		"Tier 6: precious metals and cut gems"
+	]
+	title: "Gem Age"
+	quests: [
+		{
+			id: "66B9EAB03690841F"
+			title: "Forge the Gemstone Anvil"
+			x: 0.0d
+			y: 0.0d
+			subtitle: "Unlocks tier-6 gear"
+			description: [
+				"Craft the &bGemstone Anvil&r from the previous anvil, the Sigil you won and tier-6 plates."
+				"It crafts every gear recipe up to &etier 6&r (JEI: the 'Smithy Anvil' tab)."
+				"Anvils also &breinforce&r gear: put gear + a reinforced plate of the same tier or higher in the grid."
+			]
+			shape: "gear"
+			size: 1.5d
+			tasks: [
+				{
+					id: "33FA893AA93430AC"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:gemstone_anvil"
+					}
+					count: 1
+				}
+			]
+			rewards: [
+				{
+					id: "366B600CA85EEDC4"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:reinforced_plate_6"
+					}
+					count: 1
+				}
+				{
+					id: "E8DEA75B17B14B91"
+					type: "xp"
+					xp: 100
+				}
+			]
+		}
+		{
+			id: "092EBB58480C1685"
+			title: "Find Raw Titanium"
+			x: 2.0d
+			y: -1.0d
+			description: [
+				"Needs a tier-5 pickaxe or better."
+			]
+			dependencies: [
+				"66B9EAB03690841F"
+			]
+			tasks: [
+				{
+					id: "37EDB2C3805DE95E"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:raw_titanium"
+					}
+					count: 1
+				}
+			]
+		}
+		{
+			id: "B250FB46BF6566DC"
+			title: "Find Raw Chromium"
+			x: 3.0d
+			y: 1.0d
+			description: [
+				"Needs a tier-5 pickaxe or better."
+			]
+			dependencies: [
+				"092EBB58480C1685"
+			]
+			tasks: [
+				{
+					id: "937A14B434EE31EC"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:raw_chromium"
+					}
+					count: 1
+				}
+			]
+		}
+		{
+			id: "A43133089D0C0D34"
+			title: "Find Rough Ruby"
+			x: 4.0d
+			y: -1.0d
+			description: [
+				"Needs a tier-5 pickaxe or better."
+			]
+			dependencies: [
+				"B250FB46BF6566DC"
+			]
+			tasks: [
+				{
+					id: "38CC6533B2C66F1F"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:rough_ruby"
+					}
+					count: 1
+				}
+			]
+		}
+		{
+			id: "14CE4ED3355F67DC"
+			title: "Find Rough Sapphire"
+			x: 5.0d
+			y: 1.0d
+			description: [
+				"Needs a tier-5 pickaxe or better."
+			]
+			dependencies: [
+				"A43133089D0C0D34"
+			]
+			tasks: [
+				{
+					id: "AF1028D36F2C1B02"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:rough_sapphire"
+					}
+					count: 1
+				}
+			]
+		}
+		{
+			id: "B7458A4DE4C516C9"
+			title: "Find Rough Alexandrite"
+			x: 6.0d
+			y: -1.0d
+			description: [
+				"Needs a tier-5 pickaxe or better."
+			]
+			dependencies: [
+				"14CE4ED3355F67DC"
+			]
+			tasks: [
+				{
+					id: "F8FDA4EE832419CD"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:rough_alexandrite"
+					}
+					count: 1
+				}
+			]
+		}
+		{
+			id: "96FEBF7BA25D194C"
+			title: "Alloy: Vanadium Steel Ingot"
+			x: 7.0d
+			y: 0.0d
+			description: [
+				"Alloys are mixed in a crafting table for now (check JEI for the real-world ratios)."
+			]
+			dependencies: [
+				"B7458A4DE4C516C9"
+			]
+			tasks: [
+				{
+					id: "09C678C7D2F276C1"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:vanadium_steel_ingot"
+					}
+					count: 1
+				}
+			]
+		}
+		{
+			id: "F0031B5074A5B42E"
+			title: "Alloy: White Gold Ingot"
+			x: 8.0d
+			y: 0.0d
+			description: [
+				"Alloys are mixed in a crafting table for now (check JEI for the real-world ratios)."
+			]
+			dependencies: [
+				"96FEBF7BA25D194C"
+			]
+			tasks: [
+				{
+					id: "3A08FA341829DCEB"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:white_gold_ingot"
+					}
+					count: 1
+				}
+			]
+		}
+		{
+			id: "2DBB1FB4176F6D2B"
+			title: "Hammer some plates"
+			x: 9.0d
+			y: -1.0d
+			description: [
+				"4 plates of this tier make the reinforced plate. Reinforce your best gear at your anvil!"
+			]
+			dependencies: [
+				"F0031B5074A5B42E"
+			]
+			tasks: [
+				{
+					id: "3839D6D5047DFD54"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:reinforced_plate_6"
+					}
+					count: 1
+				}
+			]
+		}
+		{
+			id: "4842F9BE4F7F9E90"
+			title: "Gear up: Platinum Pickaxe"
+			x: 10.0d
+			y: 0.0d
+			description: [
+				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
+			]
+			dependencies: [
+				"2DBB1FB4176F6D2B"
+			]
+			tasks: [
+				{
+					id: "F963FAB62242A204"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:platinum_pickaxe"
+					}
+					count: 1
+				}
+			]
+			rewards: [
+				{
+					id: "567960F3F42EFC5E"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:experience_bottle"
+					}
+					count: 4
+				}
+			]
+		}
+		{
+			id: "98FEFEB55546B4D9"
+			title: "Gear up: Diamond Chestplate"
+			x: 11.0d
+			y: 0.0d
+			description: [
+				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
+			]
+			dependencies: [
+				"4842F9BE4F7F9E90"
+			]
+			tasks: [
+				{
+					id: "0D701C6B1457AE05"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:diamond_chestplate"
+					}
+					count: 1
+				}
+			]
+			rewards: [
+				{
+					id: "39BCD7F9E83EDAAC"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:experience_bottle"
+					}
+					count: 4
+				}
+			]
+		}
+		{
+			id: "72DBAF3A005ACA38"
+			title: "Gear up: Topaz Sword"
+			x: 12.0d
+			y: 0.0d
+			description: [
+				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
+			]
+			dependencies: [
+				"98FEFEB55546B4D9"
+			]
+			tasks: [
+				{
+					id: "57CA7BE1C17D607D"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:topaz_sword"
+					}
+					count: 1
+				}
+			]
+			rewards: [
+				{
+					id: "76DE05D494FCA678"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:experience_bottle"
+					}
+					count: 4
+				}
+			]
+		}
+		{
+			id: "1EFD80A216B2C4DD"
+			title: "Defeat: Wither"
+			x: 14.0d
+			y: -2.0d
+			subtitle: "Gate IV boss"
+			description: [
+				"Build it yourself from soul sand and wither skeleton skulls. Fight it underground."
+				"Any one boss of this gate is enough."
+			]
+			dependencies: [
+				"72DBAF3A005ACA38"
+			]
+			shape: "hexagon"
+			optional: true
+			tasks: [
+				{
+					id: "2AB40ACBD695F292"
+					type: "kill"
+					entity: "minecraft:wither"
+					value: 1
+				}
+			]
+		}
+		{
+			id: "FB5594C975734EF5"
+			title: "Defeat: Knight Phantoms"
+			x: 14.0d
+			y: -0.7d
+			subtitle: "Gate IV boss"
+			description: [
+				"Twilight Forest: the Stronghold (Dark Forest)."
+				"Any one boss of this gate is enough."
+			]
+			dependencies: [
+				"72DBAF3A005ACA38"
+			]
+			shape: "hexagon"
+			optional: true
+			tasks: [
+				{
+					id: "C93480E3010A0D3B"
+					type: "kill"
+					entity: "twilightforest:knight_phantom"
+					value: 1
+				}
+			]
+		}
+		{
+			id: "D58BFFE02F3B9D94"
+			title: "Defeat: Ender Guardian"
+			x: 14.0d
+			y: 0.6000000000000001d
+			subtitle: "Gate IV boss"
+			description: [
+				"Cataclysm: the Ruined Citadel in the End."
+				"Any one boss of this gate is enough."
+			]
+			dependencies: [
+				"72DBAF3A005ACA38"
+			]
+			shape: "hexagon"
+			optional: true
+			tasks: [
+				{
+					id: "A26B5A3F8A6CE407"
+					type: "kill"
+					entity: "cataclysm:ender_guardian"
+					value: 1
+				}
+			]
+		}
+		{
+			id: "FE38F0B4DDBD1F6B"
+			title: "Defeat: Sun Spirit"
+			x: 14.0d
+			y: 1.9000000000000004d
+			subtitle: "Gate IV boss"
+			description: [
+				"The Aether: the Gold Dungeon."
+				"Any one boss of this gate is enough."
+			]
+			dependencies: [
+				"72DBAF3A005ACA38"
+			]
+			shape: "hexagon"
+			optional: true
+			tasks: [
+				{
+					id: "C66FAE6A084D7EFE"
+					type: "kill"
+					entity: "aether:sun_spirit"
+					value: 1
+				}
+			]
+		}
+		{
+			id: "81B4C36BB8936892"
+			title: "Gate IV Sigil"
+			x: 16.0d
+			y: 0.0d
+			subtitle: "Beat any boss above"
+			description: [
+				"Every Gate IV boss drops a &dTreasure Bag&r with this Sigil, tier materials, rough gems and an accessory."
+				"Use the Sigil to forge the next Smithy Anvil."
+			]
+			dependencies: [
+				"72DBAF3A005ACA38"
+			]
+			shape: "gear"
+			size: 1.5d
+			tasks: [
+				{
+					id: "F477FA5743DFDD2C"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:sigil_4"
+					}
+					count: 1
+				}
+			]
+			rewards: [
+				{
+					id: "8CEF4E9A40FEA62C"
+					type: "xp"
+					xp: 250
+				}
+			]
+		}
+	]
+}

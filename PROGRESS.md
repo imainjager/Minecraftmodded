@@ -2,9 +2,23 @@
 
 Read [`PLAN.md`](PLAN.md) first. This file says where the build stopped and how to continue.
 
-## Current state (2026-10-03, update 4 in progress)
+## Current state (2026-10-03, update 4 built)
 
-**Update 4 design is in [`PLAN.md`](PLAN.md) under "Update 4 design" (player-approved).** Built so far (mod 0.4.0, installed):
+**Update 4 is built and installed (mod 0.5.0). Waiting for the player's in-game test: [`docs/UPDATE4_TEST.md`](docs/UPDATE4_TEST.md).**
+Design: [`PLAN.md`](PLAN.md) "Update 4 design". Untested in the full pack: anvil screen, JEI tab, quest book, blood moon digging.
+
+| Done in 0.5.0 | Where |
+|---|---|
+| Other mods' gear boosted to the curve by tier; Reinforced bonus + tooltip | `smithy/GearTiers.java` |
+| Plates for our 23 ingots (ATO hammer, IE press, Create press, MI compressor); tier plate tags; reinforced plates 2–9 | `gen_assets.py` `gen_plate`, `gen_smithy` |
+| 6 Smithy Anvils (block, screen, `forgedascent:anvil_shaped/anvil_shapeless/anvil_reinforce` recipes), JEI tab | `smithy/*`, `client/*`, `client/jei/ForgedAscentJei.java` (compileOnly JEI jar from the profile) |
+| Tier 4+ gear (ours, vanilla diamond/netherite, Mekanism Tools, IE steel) moved onto anvils; crafting/smithing versions removed by KubeJS | `gen_smithy` (`MOVED_GEAR`), `profile/kubejs/server_scripts/zz_forgedascent/gating.js` |
+| Boss gates: Treasure Bags (Sigil, tier materials, rough gems, reinforced plate, Artifacts/Relics accessory), gate-cleared tracking | `world/BossGates.java`, `gates` in `materials.json`, `loot_table/bags/*` |
+| Apotheosis world tiers need Sigils (Frontier II, Ascent III, Summit V, Pinnacle VI) | `gen_profile` |
+| Blood moon (after Gate I, 1/8 nights, 2× spawns, +15% elites, drops, no sleep, digging, red fog, permanent damage by default) | `world/BloodMoon.java`, config `[blood_moon]` |
+| Quest book: "Forged Ascent" group, 7 chapters | `tools/gen_quests.py` → `profile/config/ftbquests/quests/chapters/`, group added by `install.py` |
+
+Earlier in update 4 (0.4.0):
 
 | Done | Detail |
 |---|---|
@@ -13,14 +27,8 @@ Read [`PLAN.md`](PLAN.md) first. This file says where the build stopped and how 
 | Mob trim | Health ×4 Summit, ×5 Pinnacle (default + patched in the profile's `config/forgedascent-common.toml`) |
 | Spawn eggs | `forgedascent:<elite>_<base>_spawn_egg` for all 42 elites |
 
-**Still to build for update 4 (in this order):**
-1. Other mods' gear boosted by tier (tools: tier from the blocks they can't mine; armor: Mekanism/IE/Everything is Copper/Ice and Fire explicit, others heuristic) + Mekanism Tools config to the curve
-2. Plates for our ingots (hand hammer + Create press / IE metal press / MI compressor recipes) and tiered reinforced plates
-3. Anvils: 6 blocks (Bronze → Netherite) with a crafting screen and `forgedascent:anvil_*` recipe types; move our tier 4+ gear, vanilla diamond/netherite gear and Mekanism/IE tier 4+ gear onto anvils (remove their crafting/smithing recipes via KubeJS); reinforcing at anvils
-4. Boss Sigils (Gate I–VI) + Treasure Bags dropped by the gate bosses (LivingDropsEvent), bag loot = Sigil + tier materials + rough gems + an Artifacts/Relics accessory
-5. Blood moon (permanent damage default, never breaks block entities) with digging zombies/husks/Brutes/Dread
-6. Quest book: new FTB Quests chapter group + 7 chapters (check ATM10's `config/ftbquests/quests` format and split lang files first; back up)
-7. Apotheosis world tier unlocks switched from gear tiers to gates
+**Next:** player tests update 4; then later: flawless gems + inlays, realism ideas the player picks.
+Regenerate quests with `cd forgedascent` then `python tools/gen_quests.py` (then `python tools/install.py`).
 
 **Phases 3–5 (gems, mobs, loot): built and installed in the `Claude` profile (mod version 0.3.0). Waiting for the player's in-game test** ([`docs/PHASE3-5_TEST.md`](docs/PHASE3-5_TEST.md)). Phase 2 was installed but not yet tested in game when 3–5 were built.
 Phase 1 was tested in game by the player: worked; only complaint was texture quality (fixed in Phase 2, see "Texture rule").

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/template_anvil",
+  "textures": {
+    "top": "forgedascent:block/tungsten_anvil_top",
+    "body": "forgedascent:block/tungsten_anvil",
+    "particle": "forgedascent:block/tungsten_anvil"
+  }
+}

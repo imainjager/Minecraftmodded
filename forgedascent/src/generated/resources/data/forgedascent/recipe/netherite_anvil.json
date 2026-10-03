@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "T": {
+      "tag": "c:ingots/netherite"
+    },
+    "P": {
+      "tag": "forgedascent:tier_plates/8"
+    },
+    "A": {
+      "item": "forgedascent:tungsten_anvil"
+    },
+    "S": {
+      "item": "forgedascent:sigil_6"
+    }
+  },
+  "pattern": [
+    "TTT",
+    "PAP",
+    "PSP"
+  ],
+  "result": {
+    "count": 1,
+    "id": "forgedascent:netherite_anvil"
+  }
+}

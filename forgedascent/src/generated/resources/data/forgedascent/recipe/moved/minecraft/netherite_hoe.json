@@ -1,0 +1,20 @@
+{
+  "type": "forgedascent:anvil_shapeless",
+  "tier": 9,
+  "copy_components": true,
+  "ingredients": [
+    {
+      "item": "minecraft:diamond_hoe"
+    },
+    {
+      "tag": "c:ingots/netherite"
+    },
+    {
+      "tag": "forgedascent:tier_materials/8"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:netherite_hoe"
+  }
+}

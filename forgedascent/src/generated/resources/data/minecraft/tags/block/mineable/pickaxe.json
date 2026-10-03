@@ -43,6 +43,12 @@
     "forgedascent:raw_titanium_block",
     "forgedascent:deepslate_chromium_ore",
     "forgedascent:nether_chromium_ore",
-    "forgedascent:raw_chromium_block"
+    "forgedascent:raw_chromium_block",
+    "forgedascent:bronze_anvil",
+    "forgedascent:steel_anvil",
+    "forgedascent:gemstone_anvil",
+    "forgedascent:titanium_anvil",
+    "forgedascent:tungsten_anvil",
+    "forgedascent:netherite_anvil"
   ]
 }

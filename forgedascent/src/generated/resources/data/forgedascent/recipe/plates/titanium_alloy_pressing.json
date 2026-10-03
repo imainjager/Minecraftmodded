@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "type": "create:pressing",
+  "ingredients": [
+    {
+      "tag": "c:ingots/titanium_alloy"
+    }
+  ],
+  "results": [
+    {
+      "id": "forgedascent:titanium_alloy_plate"
+    }
+  ]
+}

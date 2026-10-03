@@ -1,0 +1,27 @@
+{
+  "type": "forgedascent:anvil_shaped",
+  "tier": 5,
+  "key": {
+    "I": {
+      "tag": "c:ingots/osmium"
+    },
+    "R": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    "III",
+    " R ",
+    " R "
+  ],
+  "result": {
+    "count": 1,
+    "id": "mekanismtools:osmium_pickaxe"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanismtools"
+    }
+  ]
+}

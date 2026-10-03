@@ -1,0 +1,40 @@
+{
+  "values": [
+    {
+      "id": "#c:plates/bronze",
+      "required": false
+    },
+    {
+      "id": "#c:plates/silver",
+      "required": false
+    },
+    {
+      "id": "#c:plates/brass",
+      "required": false
+    },
+    {
+      "id": "#c:plates/invar",
+      "required": false
+    },
+    {
+      "id": "#c:plates/constantan",
+      "required": false
+    },
+    {
+      "id": "#c:plates/bismuth_bronze",
+      "required": false
+    },
+    {
+      "id": "#c:plates/duralumin",
+      "required": false
+    },
+    {
+      "id": "#c:plates/electrum",
+      "required": false
+    },
+    {
+      "id": "#c:plates/rose_gold",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/template_anvil",
+  "textures": {
+    "top": "forgedascent:block/bronze_anvil_top",
+    "body": "forgedascent:block/bronze_anvil",
+    "particle": "forgedascent:block/bronze_anvil"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "values": [
+    {
+      "id": "#c:plates/tungsten",
+      "required": false
+    },
+    {
+      "id": "#c:plates/tungsten_carbide",
+      "required": false
+    },
+    {
+      "id": "#c:plates/high_speed_steel",
+      "required": false
+    },
+    {
+      "id": "#c:plates/stellite",
+      "required": false
+    },
+    {
+      "id": "#c:plates/inconel",
+      "required": false
+    },
+    {
+      "id": "#c:plates/iridium",
+      "required": false
+    },
+    {
+      "id": "#c:plates/osmiridium",
+      "required": false
+    }
+  ]
+}

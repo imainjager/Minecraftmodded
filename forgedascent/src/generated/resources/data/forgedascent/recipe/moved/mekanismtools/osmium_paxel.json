@@ -1,0 +1,33 @@
+{
+  "type": "forgedascent:anvil_shaped",
+  "tier": 5,
+  "key": {
+    "A": {
+      "item": "mekanismtools:osmium_axe"
+    },
+    "P": {
+      "item": "mekanismtools:osmium_pickaxe"
+    },
+    "R": {
+      "tag": "c:rods/wooden"
+    },
+    "S": {
+      "item": "mekanismtools:osmium_shovel"
+    }
+  },
+  "pattern": [
+    "APS",
+    " R ",
+    " R "
+  ],
+  "result": {
+    "count": 1,
+    "id": "mekanismtools:osmium_paxel"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanismtools"
+    }
+  ]
+}

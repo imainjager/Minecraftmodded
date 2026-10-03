@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "#c:plates/platinum",
+      "required": false
+    },
+    {
+      "id": "#c:plates/vanadium_steel",
+      "required": false
+    },
+    {
+      "id": "#c:plates/white_gold",
+      "required": false
+    }
+  ]
+}

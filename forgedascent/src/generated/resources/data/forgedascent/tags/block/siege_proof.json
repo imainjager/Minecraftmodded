@@ -1,0 +1,13 @@
+{
+  "values": [
+    {
+      "id": "#c:obsidians",
+      "required": false
+    },
+    "minecraft:obsidian",
+    "minecraft:crying_obsidian",
+    "minecraft:reinforced_deepslate",
+    "minecraft:netherite_block",
+    "minecraft:respawn_anchor"
+  ]
+}

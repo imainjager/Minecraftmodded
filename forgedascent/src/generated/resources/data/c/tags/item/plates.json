@@ -1,0 +1,27 @@
+{
+  "values": [
+    "#c:plates/pewter",
+    "#c:plates/bismuth",
+    "#c:plates/manganese",
+    "#c:plates/cobalt",
+    "#c:plates/molybdenum",
+    "#c:plates/vanadium",
+    "#c:plates/titanium",
+    "#c:plates/chromium",
+    "#c:plates/rose_gold",
+    "#c:plates/bismuth_bronze",
+    "#c:plates/duralumin",
+    "#c:plates/manganese_steel",
+    "#c:plates/alnico",
+    "#c:plates/vanadium_steel",
+    "#c:plates/white_gold",
+    "#c:plates/chromoly",
+    "#c:plates/titanium_alloy",
+    "#c:plates/tungsten_carbide",
+    "#c:plates/high_speed_steel",
+    "#c:plates/stellite",
+    "#c:plates/inconel",
+    "#c:plates/osmiridium",
+    "#c:plates/nichrome"
+  ]
+}
