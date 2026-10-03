@@ -1,94 +1,67 @@
-# Project Plan: Custom ATM10 Progression Overhaul (v2)
+# Project Plan: Custom ATM10 Progression Overhaul (v3)
 
-Status: **draft v2, waiting for player approval.** Built from the Phase 0 scan
-([`docs/PACK_SCAN.md`](docs/PACK_SCAN.md)). Every number here is a first guess
-and gets tuned by playtesting.
+Status: **final draft, waiting for go-ahead.** Built from the Phase 0 scan
+([`docs/PACK_SCAN.md`](docs/PACK_SCAN.md)) and the planning conversation of
+2026-10-03. All numbers are first guesses, tuned by playtesting. Items marked
+*(verify)* are checked in game or in code before they're built.
 
-## Decisions so far
+## Decisions
 
 | Question | Answer |
 |---|---|
-| Modpack | All the Mods 10, version **10.8.2** |
-| Minecraft / loader | **1.21.1**, **NeoForge** 21.1.251 |
-| Single player or server | **Single player only** |
-| Profile Claude works in | CurseForge profile **`Claude`** (copy). The main ATM10 profile is never touched |
-| Reinforced gear | **Stats only** (does not raise mining tier) |
-| Pack updates | Never: the copy is frozen, so existing mods can be changed freely |
+| Modpack | All the Mods 10 **10.8.2**, Minecraft **1.21.1**, NeoForge **21.1.251** |
+| Play mode | **Single player only**, Windows 11, CurseForge |
+| Profile Claude edits | **`Claude`** (copy). The main ATM10 profile is never touched |
+| Pack updates | Never. Existing mods can be changed freely |
 | Uranium | Leave alone |
-| Cobalt | **Wanted**: add it as a new ore |
-| Breadth | **Several materials per tier**, each with its own strengths, so there are different routes up |
-
-## Goal
-
-1. A **long, wide gear ladder**: 10 tiers, 3–5 materials per tier, so you can
-   climb through whatever you find instead of one fixed path.
-2. **Every useful ingot gets a job**: tools, armor, an alloy, or a key recipe.
-3. **No skipping**: ore gates, plus machines that ignore pickaxe tiers get
-   locked behind the right tier.
-4. **Stronger mobs** that scale with Apotheosis world tiers.
+| Mod name | **TBD** (placeholder id `forgedascent`) |
+| Models | Flat item icons, simple block models, mobs reuse vanilla bodies (recolored/scaled). No new 3D mob models |
+| Reinforced gear | **Smithing upgrade on the existing item**, stats only, never raises mining tier |
+| Gems | **In**, with hardness-based tiers and a Lapidary Bench cutting system |
+| Elite Essence | **No** |
+| Way of working | **Live:** player plays the `Claude` profile, asks for changes, Claude rebuilds and updates it |
 
 ---
 
-## 1. How tiers work (the idea behind everything)
+## 1. How tiers work
 
-**Mining tier.** Every ore gets a tier number. A pickaxe can mine an ore if its
-tier is at least that number. Tier N ore → makes tier N+1 gear → which mines
-tier N+1 ore.
+- **Mining tier:** every ore has a tier number. A pickaxe mines an ore if its tier
+  is at least that number. Tier N ore → tier N+1 gear → mines tier N+1 ore.
+- **Tier tags ("any wood makes a chest"):** every tier has a tag listing all its
+  ingots, gems and plates. Progression recipes take *any* item from the tier's tag, so
+  any material in a tier keeps you moving. The material only changes stats and trait.
+- **Personalities:** same-tier materials have similar total strength, with different trade-offs (traits).
+- **Existing gear:** tools from other mods follow their vanilla tier (iron → 3, diamond → 6,
+  netherite → 9). Gear we place on a rung (Everything is Copper, Mekanism bronze/steel/osmium,
+  Ice and Fire silver) gets its tier tags edited one by one.
+- **Same tier in every stone:** stone, deepslate, nether and end versions of an ore need the
+  same tier, done through the common tags (`c:ores/<name>`).
 
-**Different routes ("any wood makes a chest").** Each tier has a **tier
-tag** such as `tier_metals/4` that lists every ingot or gem of that tier.
-Progression recipes ask for *any* item from the tag, not one specific
-metal. Examples:
-- The Alloy Forge upgrade needs "any 4 tier-5 ingots".
-- The Create Mechanical Drill needs "any tier-4 plate".
-- Reinforced plates accept any tier's plates.
+## 2. The full ladder
 
-So if you found cobalt but no osmium, you still move up. Like planks for
-a chest, the material changes the stats, not whether you can progress.
+Legend: ✅ exists in pack · 🆕 we add · 🔧 existing, changed · *(side)* off the main line
 
-**Each material has a personality.** Materials in the same tier have about the
-same overall strength but trade off differently (see **Traits** below). That's
-what makes the routes feel different and not just recolors.
-
-**Existing gear lands automatically.** Tools from other mods that copy a vanilla
-tier (iron, diamond, netherite) get moved with that vanilla tier. Tools we put on
-a specific rung (Mekanism bronze, steel and osmium; Everything is Copper; Ice and
-Fire silver) get their tier tags edited one by one.
-
----
-
-## 2. The tier ladder
-
-**Legend:** ✅ = already in the pack, reused · 🆕 = we add it · 🔧 = existing, we change it
-
-| Tier | Name | Gear made from | Pickaxe can newly mine |
+| Tier | Metal gear | Gem gear | Pickaxe newly mines |
 |---|---|---|---|
-| 0 | Wood | Wood ✅ (+ wooden armor 🆕, optional) | Stone, coal, salt, sulfur |
-| 1 | Stone | Stone ✅, flint 🆕 (optional) | **Copper, tin, zinc** |
-| 2 | **Soft metals** | Copper ✅ (Everything is Copper), **Tin** 🆕, **Zinc** 🆕 | **Iron, lead, nickel, aluminum**, nether quartz |
-| 3 | **Common metals** | Iron 🔧 (nerfed), **Lead** 🆕, **Nickel** 🆕, **Aluminum** 🆕, **Pewter** 🆕 (alloy) | **Gold, silver, redstone, lapis**, fluorite, cinnabar |
-| 4 | **First alloys** | Bronze ✅ (Mekanism), **Brass** 🆕, **Invar** 🆕, **Constantan** 🆕, Silver ✅ (Ice and Fire) | **Cobalt** 🆕, **osmium** 🔧, antimony, emerald |
-| 5 | **Hardened** | Steel ✅ (Mekanism), **Cobalt** 🆕, Osmium 🔧 (Mekanism, nerfed), **Cobalt Bronze** 🆕 (alloy) | **Diamond** 🔧, **ruby, sapphire, peridot**, **platinum**, monazite |
-| 6 | **Precious** | Diamond 🔧 (nerfed), **Ruby** 🆕, **Sapphire** 🆕, **Peridot** 🆕, **Platinum** 🆕, refined glowstone ✅ (Mekanism) | **Titanium** 🆕, **chromite** 🆕 |
-| 7 | **Refractory** | **Titanium** 🆕, **Chromium** 🆕, **Stainless steel** 🆕 (alloy) | **Tungsten**, **iridium** |
-| 8 | **Superalloys** | **Tungsten** 🆕, **Tungsten steel** 🆕 (alloy), **Iridium** 🆕, **Osmiridium** 🆕 (alloy), refined obsidian ✅ (Mekanism) | **Ancient debris** |
-| 9 | Netherite | Netherite ✅ (recipe 🔧: needs a tier-8 alloy) | ATM ores (allthemodium, etc.) |
-| 10+ | ATM end-game | Allthemodium → vibranium → unobtainium ✅ (unchanged) | |
-
-**Side materials** (off the main ladder, special traits):
-- **Gold** ✅: very fast, very enchantable, fragile. Usable early as a "glass cannon"
-- **Electrum** 🆕 (tier 4): enchantability king, low durability
-- **Rose gold** 🆕 (tier 4, gold + copper): bonus luck/looting, soft
-- **Lapis** ✅ (Mekanism, tier 3): enchantable support set
-- **Lead** (tier 3) doubles as the heavy-tank set (see traits)
+| 0 | Wood ✅ | — | Stone, coal, salt, sulfur |
+| 1 | Stone ✅ | — | Copper, tin, zinc, **bismuth** 🆕 |
+| 2 | Copper ✅ (Everything is Copper), Tin 🆕, Zinc 🆕 | — | Iron, lead, nickel, aluminum, nether quartz |
+| 3 | Iron 🔧, Lead 🆕, Nickel 🆕, Aluminum 🆕, Pewter 🆕, Lapis ✅ *(side)* | — | Gold, silver, redstone, lapis, fluorite, cinnabar, **manganese** 🆕, soft gems, amethyst |
+| 4 | Bronze ✅, Brass 🆕, Bismuth bronze 🆕, Invar 🆕, Constantan 🆕, Duralumin 🆕, Silver ✅, Gold ✅ *(side)*, Electrum 🆕 *(side)*, Rose gold 🆕 *(side)* | Amethyst 🆕 | **Cobalt** 🆕, osmium 🔧, antimony, emerald, **molybdenum** 🆕, jade, garnet, peridot, iolite, tanzanite |
+| 5 | Steel ✅, Cobalt 🆕, Osmium 🔧, Manganese steel 🆕, Alnico 🆕 *(side)* | Jade 🆕, Garnet 🆕, Peridot 🆕 | Diamond 🔧, platinum, monazite, **vanadium** 🆕, emerald-family, topaz |
+| 6 | Platinum 🆕, Vanadium steel 🆕, Refined glowstone ✅, White gold 🆕 *(side)* | Diamond 🔧, Emerald 🆕, Topaz 🆕 | **Titanium** 🆕, **chromium** 🆕, ruby, sapphire, alexandrite |
+| 7 | Titanium 🆕, Chromium 🆕, Stainless steel 🆕, Chromoly 🆕, Titanium alloy 🆕 | Ruby 🆕, Sapphire 🆕, Alexandrite 🆕 | Tungsten, iridium, black diamond |
+| 8 | Tungsten 🆕, Tungsten carbide 🆕, High-speed steel 🆕, Stellite 🆕, Inconel 🆕, Iridium 🆕, Osmiridium 🆕, PCD 🆕, Refined obsidian ✅ | Black diamond 🆕 | Ancient debris |
+| 9 | Netherite 🔧 (upgrade also needs a tier-8 alloy) | — | ATM ores (allthemodium etc.) |
+| 10+ | Allthemodium → vibranium → unobtainium ✅ (unchanged) | — | — |
 
 Other dimensions' gear (Twilight Forest, Aether, Undergarden, Eternal Starlight,
-Ice and Fire dragon gear, Mystical Agriculture...) **stays as-is**. It lands where
-its vanilla tier puts it. Fixing each one is optional polish later.
+Ice and Fire dragon gear, Mystical Agriculture...) keeps its vanilla-matched tier.
+Fixing individual ones is later polish.
 
-### Rough stat curve (first guesses, per tier average)
+### Stat curve (per-tier average, first guesses)
 
-| Tier | Tool durability | Mining speed | Bonus attack | Armor (full set) | Toughness (set) |
+| Tier | Tool durability | Mining speed | Bonus attack | Armor (set) | Toughness (set) |
 |---|---|---|---|---|---|
 | 1 | 131 | 4 | +1 | — | — |
 | 2 | 180 | 5 | +1.5 | 11 | 0 |
@@ -98,214 +71,391 @@ its vanilla tier puts it. Fixing each one is optional polish later.
 | 6 | 1000 | 8 | +3 | 18 (diamond nerfed from 20) | 4 (diamond nerfed from 8) |
 | 7 | 1400 | 8.5 | +3.5 | 19 | 6 |
 | 8 | 1800 | 9 | +4 | 20 | 9 |
-| 9 | 2031 | 9 | +4 | 20 | 12 (vanilla netherite) |
+| 9 | 2031 | 9 | +4 | 20 | 12 |
 
-### Traits (what makes same-tier materials different)
+### Traits
 
 | Material | Trait |
 |---|---|
 | Tin | Cheap, light, low durability |
-| Zinc | Resists rust: high durability for the tier, slower |
-| Copper | Everything is Copper's oxidation, kept as-is |
-| Iron | Balanced (baseline) |
-| Lead | **Heavy:** high knockback resistance + armor, slower movement |
-| Nickel | Balanced, slightly better durability than iron |
-| Aluminum | **Light:** small movement-speed bonus, low armor |
-| Pewter | Cheap alloy, good enchantability |
-| Bronze | Balanced alloy, durable |
+| Zinc | High durability for the tier, slower |
+| Copper | Everything is Copper's oxidation, as-is |
+| Iron | Baseline |
+| Lead | Heavy: knockback resistance + armor, slower movement |
+| Nickel | Slightly better durability than iron |
+| Aluminum | Light: movement-speed bonus, low armor |
+| Pewter | Cheap, enchantable |
+| Bronze | Durable all-rounder |
 | Brass | Faster mining, less durability |
+| Bismuth bronze | Tougher bronze |
 | Invar | Very durable, slow |
-| Constantan | Fire-resistant gear (less fire/lava damage) |
+| Constantan | Less fire/lava damage |
+| Duralumin | Light: speed bonus |
 | Silver | Bonus damage vs undead |
-| Steel | Balanced, high durability |
-| Cobalt | **Fast:** highest mining speed of its tier |
+| Gold *(side)* | Very fast, very enchantable, fragile |
+| Electrum *(side)* | Top early enchantability, low durability |
+| Rose gold *(side)* | Luck / looting bonus |
+| Steel | Durable all-rounder |
+| Cobalt | Fastest mining of its tier |
 | Osmium | Heavy hitter, slow (nerfed) |
-| Cobalt bronze | Mix of cobalt speed and bronze durability |
-| Diamond / ruby / sapphire / peridot | Gems: diamond balanced, ruby more damage, sapphire more armor, peridot more durability |
-| Platinum | Very enchantable precious metal |
-| Titanium | Light + strong: armor without a speed penalty |
-| Chromium | Hard: armor toughness |
-| Stainless steel | Balanced, never-ending durability for the tier |
-| Tungsten | Heaviest: huge damage, slow, knockback resistance |
-| Tungsten steel | Balanced top tier |
-| Iridium | Toughest armor, very slow to wear down |
+| Manganese steel | Huge durability, armor knockback resistance |
+| Alnico *(side)* | Magnetic: nearby item drops fly to you |
+| Platinum | Very enchantable |
+| Vanadium steel | Strong all-rounder |
+| White gold *(side)* | Highest enchantability |
+| Titanium | Armor with no speed penalty |
+| Chromium | Armor toughness |
+| Stainless steel | Very high durability |
+| Chromoly | Light and strong |
+| Titanium alloy | Light, strong, no slowdown |
+| Tungsten | Huge damage, slow, knockback resistance |
+| Tungsten carbide | Best pickaxe material among metals |
+| High-speed steel | Fastest mining |
+| Stellite | Barely wears down |
+| Inconel | Full set: fire and lava immunity |
+| Iridium | Toughest armor, slow to wear |
 | Osmiridium | Mining speed + durability |
+| PCD | Ultimate pickaxe (tools only) |
+| Amethyst | Enchantable early gem |
+| Jade | Durability king of its tier |
+| Garnet | More damage |
+| Peridot | More durability |
+| Diamond | Balanced |
+| Emerald | Enchantable, villager-themed luck |
+| Topaz | Mining speed |
+| Ruby | More damage |
+| Sapphire | More armor |
+| Alexandrite | Different bonuses by day and by night |
+| Black diamond | Toughest gem gear |
 
 ---
 
 ## 3. Ores
 
-### Carried over (already spawn, we only change mining tier / rarity)
+### Carried over (already spawn: we change tier/rarity only)
 
 | Ore | From | Mining tier | Change |
 |---|---|---|---|
-| Coal | Vanilla | 0 | — |
-| Copper | Vanilla | 1 | Tier only |
-| Tin, zinc | All the Ores | 1 | Tier only |
-| Iron | Vanilla | 2 | Tier only (was stone-level) |
-| Lead, nickel, aluminum | All the Ores | 2 | Tier only |
+| Coal, salt, sulfur | Vanilla / ATO | 0 | — |
+| Copper | Vanilla | 1 | Tier |
+| Tin, zinc | All the Ores | 1 | Tier |
+| Iron | Vanilla | 2 | Tier (was stone-level) |
+| Lead, nickel, aluminum | All the Ores | 2 | Tier |
+| Nether quartz | Vanilla | 2 | — |
 | Gold, redstone, lapis | Vanilla | 3 | — |
 | Silver, fluorite, cinnabar | All the Ores | 3 | — |
 | Osmium | All the Ores | 4 | **Rarer veins, no raw osmium blocks in veins** |
 | Antimony | Modern Industrialization | 4 | — |
-| Emerald | Vanilla | 4 | — |
-| Diamond | Vanilla | 5 | **Less in chest loot** |
-| Ruby, sapphire, peridot, platinum | All the Ores | 5 | — |
+| Emerald | Vanilla | 4 | Drops rough emerald |
+| Diamond | Vanilla | 5 | **Drops rough diamond**, less in chest loot |
+| Platinum | All the Ores | 5 | — |
 | Monazite | Modern Industrialization | 5 | — |
-| Tungsten | Modern Industrialization | 7 | — |
+| Ruby, sapphire, peridot | All the Ores | per gem table | Drop rough gems |
+| Silent's Gems ores | Silent's Gems *(verify they spawn)* | per gem table | Drop rough gems |
+| Tungsten | Modern Industrialization | 7 | Smelts only in the Blast Alloy Forge |
 | Iridium | All the Ores | 7 | — |
 | Ancient debris | Vanilla | 8 | — |
 | Uranium | All the Ores | — | **Don't touch** |
 
-Gating uses the common ore tags (`c:ores/tin` and so on). Stone, deepslate,
-nether and end variants, and any duplicate ore from another mod, get the same
-tier automatically.
-
 ### New ores 🆕
 
-| Ore | Where it spawns | Mining tier | Drops | Why |
+| Ore | Real mineral | Where it spawns | Mining tier | Notes |
 |---|---|---|---|---|
-| **Cobalt** | **Nether** (common) + deep deepslate (rare) | 4 | Raw cobalt | Your request. Makes a Nether trip a real route to tier 5 |
-| **Titanium** | Deep deepslate, mountains (more common under mountain biomes) | 6 | Raw titanium | Has no ore in the pack today |
-| **Chromite** | Deep deepslate + basalt deltas (Nether) | 6 | Raw chromite → chromium ingot | Chromium has no ore today |
+| Bismuth | Bismuthinite | Shallow stone, near copper | 1 | Ingredient (bismuth bronze) |
+| Manganese | Pyrolusite + manganese nodules | Stone, **plus nodules on the deep ocean floor** | 3 | Ingredient (duralumin, manganese steel) |
+| Cobalt | Cobaltite | **Nether** (common) + deep deepslate (rare) | 4 | Gear + ingredient |
+| Molybdenum | Molybdenite | **Mountain** biomes, near copper | 4 | Ingredient (chromoly, high-speed steel) |
+| Vanadium | Vanadinite | **Desert and badlands** | 5 | Ingredient (vanadium steel, titanium alloy) |
+| Titanium | Rutile + **black sand** | Deep deepslate, **plus black sand on beaches** | 6 | Smelts only in the Blast Alloy Forge |
+| Chromium | Chromite | Deep deepslate + Nether basalt deltas | 6 | Smelts only in the Blast Alloy Forge |
 
-All three get ore, deepslate ore, raw item, raw block, ingot, nugget, plate and
-storage block. All three join the common tags (`c:ores/cobalt`, `c:ingots/cobalt`...),
-so other mods' machines (crushers, Mekanism ore processing) can use them where the
-mods support tags. We reuse the existing MI titanium and chromium ingots
-instead of adding duplicates, if Almost Unified allows (*verify*).
+Each new ore comes with: ore + deepslate ore (plus the special forms above), raw item,
+raw block, ingot, nugget, plate, storage block, and common tags. We reuse MI's titanium,
+chromium and tungsten ingots instead of making duplicates, if Almost Unified allows *(verify)*.
+
+**Ingredient-only metals** (no gear set): bismuth, manganese, molybdenum, vanadium.
 
 ---
 
-## 4. Ingots
+## 4. Alloys
 
-**Reused (exist already, no new items):** copper, tin, zinc, iron, lead, nickel,
-aluminum, gold, silver, osmium, platinum, iridium, titanium (MI), chromium (MI),
-tungsten (MI), bronze, brass, invar, constantan, electrum, steel, stainless steel (MI).
+| Tier | Alloy | Recipe (ingots) | Output | Forge |
+|---|---|---|---|---|
+| 3 | Pewter 🆕 | 3 tin + 1 lead | 4 | Alloy Forge |
+| 4 | Bronze | 3 copper + 1 tin | 4 | Alloy Forge |
+| 4 | Brass | 3 copper + 1 zinc | 4 | Alloy Forge |
+| 4 | Bismuth bronze 🆕 | 2 copper + 1 tin + 1 bismuth | 4 | Alloy Forge |
+| 4 | Invar | 2 iron + 1 nickel | 3 | Alloy Forge |
+| 4 | Constantan | 1 copper + 1 nickel | 2 | Alloy Forge |
+| 4 | Duralumin 🆕 | 3 aluminum + 1 copper + 1 manganese | 5 | Alloy Forge |
+| 4 *(side)* | Electrum | 1 gold + 1 silver | 2 | Alloy Forge |
+| 4 *(side)* | Rose gold 🆕 | 3 gold + 1 copper | 4 | Alloy Forge |
+| 5 | Steel | 1 iron + 2 coal/coke | 1 | Alloy Forge |
+| 5 | Manganese steel 🆕 | 3 steel + 1 manganese | 4 | Alloy Forge |
+| 5 *(side)* | Alnico 🆕 | 1 aluminum + 1 nickel + 1 cobalt | 3 | Alloy Forge |
+| 6 | Vanadium steel 🆕 | 3 steel + 1 vanadium | 4 | Alloy Forge |
+| 6 *(side)* | White gold 🆕 | 3 gold + 1 platinum | 4 | Alloy Forge |
+| 7 | Stainless steel | 4 steel + 1 chromium + 1 nickel | 6 | Blast Alloy Forge |
+| 7 | Chromoly 🆕 | 4 steel + 1 chromium + 1 molybdenum | 6 | Blast Alloy Forge |
+| 7 | Titanium alloy 🆕 | 4 titanium + 1 aluminum + 1 vanadium | 6 | Blast Alloy Forge |
+| 8 | Tungsten carbide 🆕 | 2 tungsten + 2 coke + 1 cobalt | 2 | Blast Alloy Forge |
+| 8 | High-speed steel 🆕 | 4 steel + 1 tungsten + 1 molybdenum + 1 chromium | 6 | Blast Alloy Forge |
+| 8 | Stellite 🆕 | 2 cobalt + 1 chromium + 1 tungsten | 4 | Blast Alloy Forge |
+| 8 | Inconel 🆕 | 3 nickel + 1 chromium + 1 iron | 5 | Blast Alloy Forge |
+| 8 | Osmiridium 🆕 | 1 osmium + 1 iridium | 2 | Blast Alloy Forge |
+| 8 | PCD 🆕 | 4 diamond grit + 1 cobalt | 1 | Blast Alloy Forge |
+| — | Nichrome 🆕 | 4 nickel + 1 chromium | 5 | Alloy Forge → crafting part for the Blast Alloy Forge |
 
-**New 🆕:** cobalt, pewter, rose gold, cobalt bronze, tungsten steel, osmiridium.
-Plus nuggets, plates and storage blocks for each where missing.
+Other mods' alloy recipes (Create, Mekanism, MI, IE) stay as the automated routes.
+
+### Forges 🆕
+
+| Block | Made from | Makes | Notes |
+|---|---|---|---|
+| **Alloy Forge** | Bricks + any tier-3 metal | Tier 3–6 alloys | 2–3 inputs + fuel, burns furnace fuel |
+| **Blast Alloy Forge** | Upgrade the Alloy Forge: nichrome coils + any 4 tier-6 ingots + blaze rods | Everything, plus tier 7–8 alloys and smelting titanium/chromium/tungsten | Faster |
 
 ---
 
-## 5. Alloys (Alloy Forge recipes)
+## 5. Gems
 
-| Alloy | Recipe (ingots) | Output | Tier | Forge needed |
-|---|---|---|---|---|
-| Pewter 🆕 | 3 tin + 1 lead | 4 | 3 | Alloy Forge |
-| Bronze | 3 copper + 1 tin | 4 | 4 | Alloy Forge |
-| Brass | 3 copper + 1 zinc | 4 | 4 | Alloy Forge |
-| Invar | 2 iron + 1 nickel | 3 | 4 | Alloy Forge |
-| Constantan | 1 copper + 1 nickel | 2 | 4 | Alloy Forge |
-| Electrum | 1 gold + 1 silver | 2 | 4 (side) | Alloy Forge |
-| Rose gold 🆕 | 3 gold + 1 copper | 4 | 4 (side) | Alloy Forge |
-| Steel | 1 iron + 2 coal/coke | 1 | 5 | Alloy Forge |
-| Cobalt bronze 🆕 | 2 cobalt + 1 bronze | 3 | 5 | Alloy Forge |
-| Stainless steel | 4 steel + 1 chromium + 1 nickel | 6 | 7 | **Blast Alloy Forge** |
-| Tungsten steel 🆕 | 1 tungsten + 2 steel | 2 | 8 | **Blast Alloy Forge** |
-| Osmiridium 🆕 | 1 osmium + 1 iridium | 2 | 8 | **Blast Alloy Forge** |
+### Gem roster and tiers (by real hardness, Mohs scale)
 
-Other mods' alloy recipes (Create brass, Mekanism, Modern Industrialization,
-Immersive Engineering) **stay**. They become the automated way to get the same alloys later.
+| Gem | Hardness | Ore mining tier | Role |
+|---|---|---|---|
+| Pearl, ammolite, turquoise, opal, moldavite, lapis, fluorite | 2.5–6 | 3 | Inlay only |
+| Kyanite | 4.5 / 7 | 3 | Inlay only |
+| **Amethyst** (+ citrine, rose quartz, carnelian count as quartz family) | 7 | 3 | **Tier-4 gear** (amethyst) |
+| **Jade** | 6–7, very tough | 4 | **Tier-5 gear** |
+| **Garnet**, **peridot** | 6.5–7.5 | 4 | **Tier-5 gear** |
+| Iolite, tanzanite | 6.5–7.5 | 4 | Inlay only |
+| **Emerald** (+ aquamarine, heliodor = beryl family) | 7.5–8 | 4–5 | **Tier-6 gear** (emerald). Aquamarine/heliodor are inlays |
+| **Topaz** | 8 | 5 | **Tier-6 gear** |
+| **Diamond** (+ white diamond) | 10 | 5 | **Tier-6 gear**. Stays at 6 because ~100 other mods' tools are tied to diamond. Hardest to cut |
+| **Alexandrite** | 8.5 | 6 | **Tier-7 gear** |
+| **Ruby**, **sapphire** | 9 | 6 | **Tier-7 gear** |
+| **Black diamond** (carbonado) | 10, tougher than diamond | 7 | **Tier-8 gear** |
 
-**Possible extras (not in the plan unless you want them):** nichrome (nickel +
-chromium), titanium-aluminide (titanium + aluminum), black bronze, white gold.
-Each extra alloy is one more set to balance, so I'd hold these back for later.
+11 gem gear sets. Tech gems (certus quartz, fluix, black quartz, xychorium) and
+dimension gems stay as they are.
 
-### The two forges 🆕
+### Gem cutting
 
-| Block | Made from | Can make |
-|---|---|---|
-| **Alloy Forge** | Bricks + any tier-3 metal | Tier 3–5 alloys. 2–3 input slots + fuel slot, burns furnace fuel |
-| **Blast Alloy Forge** | Upgrade the Alloy Forge with any 4 tier-6 ingots + blaze items | Everything above, plus the hot alloys (tier 7–8). Faster |
+1. Gem ores drop **rough gems**. Fortune gives more rough gems.
+2. **Lapidary Bench** 🆕: rough gem + **cutting wheel** → cut gem:
+
+   | Wheel | Cuts up to hardness |
+   |---|---|
+   | Sandstone wheel | 6 |
+   | Emery wheel (corundum abrasive) | 8 |
+   | Diamond-grit wheel | 10 |
+
+3. Every cut rolls a result: **Shattered** (→ gem dust), **Clean** (→ the normal gem item
+   every mod uses), or **Flawless** (rare). Odds improve the harder the wheel is than the gem.
+   Wheels have durability.
+4. **Inlays:** at a smithing table, put one flawless gem into any tool or armor for a bonus
+   by gem: ruby +damage, sapphire +armor, opal +enchant power, pearl water breathing,
+   turquoise luck, etc. One inlay per item.
+5. **Automatic Lapidary** 🆕 (tier 7): a machine that cuts gems automatically.
+6. **Heat treatment:** amethyst in a furnace → citrine.
+7. **Synthetic gems** (Blast Alloy Forge): gem dust + aluminum + trace metal → rough gem.
+   Ruby = + chromium, sapphire = + iron and titanium, emerald = beryl dust + chromium or vanadium.
+8. **Diamond grit:** from shattered diamonds. Used for diamond-grit wheels and PCD.
+
+New items per gem: rough gem, flawless gem (and gem dust where missing).
 
 ---
 
 ## 6. Reinforced gear
 
-**Change from plan v1 (my recommendation):** instead of a separate "Reinforced
-Bronze Pickaxe" item for every material (that would double the item count to
-~350), reinforcing is an **upgrade applied to the item you already have**:
-
-- 4 plates of the item's tier (any material in that tier's tag) → 1 **reinforced plate**
-- **Smithing table:** your tool or armor + reinforced plate → the same item, now marked
-  **"Reinforced"**: +1 armor per piece, +1 attack damage, +25% durability
-- Works on **any** tool or armor, including other mods' gear, as long as its tier is known
-- Stats only: it does **not** raise the mining tier
-
-Fewer textures, works on everything, and the item keeps its enchantments.
+- 4 plates of a tier (any material in that tier's tag) → 1 reinforced plate
+- Smithing table: tool/armor + reinforced plate → same item, marked **Reinforced**:
+  +1 armor per piece, +1 attack damage, +25% durability. Keeps enchantments
+- Works on any gear, including other mods'. Stats only
 
 ---
 
 ## 7. Closing loopholes
 
-**Nerfs**
-- **Diamond:** ore needs tier 5, gear stats lowered to tier 6, less diamond in chest loot
-- **Osmium:** rarer ore, no raw osmium blocks in veins, Mekanism osmium tool stats lowered (Mekanism Tools config)
-- **Iron:** armor 15 → 13 (tier 3 baseline)
-- **Netherite:** the netherite upgrade also needs a tier-8 alloy ingot
+**Nerfs:**
+- **Diamond:** ore needs tier 5, drops rough diamonds that must be cut, gear stats lowered to tier 6, less in chests
+- **Osmium:** rarer, no raw osmium blocks in veins, Mekanism osmium tool stats lowered (Mekanism Tools config)
+- **Iron:** armor 15 → 13
+- **Netherite:** upgrade also needs a tier-8 alloy ingot
 
-**Tier-less mining:** these get their recipes gated to a sensible tier. All
-recipes use the tier tags, so any material of that tier works:
+**Tier-less mining:** recipes gated using the tier tags:
 
 | Tier needed | Machines / tools |
 |---|---|
 | 4 | Create Mechanical Drill, PneumaticCraft jackhammer, Actually Additions AIOTs |
-| 5 | Mining Gadgets (tier 1), IE drill, MI steam mining drill, Actually Additions drill, Oritech hand drill |
+| 5 | Mining Gadgets (tier 1), IE drill, MI steam mining drill, Actually Additions drill, Oritech hand drill, ATM mining dimension portal |
 | 6 | IE excavator, MI quarries, Steve's Carts drills, QuarryPlus / Additional Enchanted Miner, Building Gadgets destruction |
 | 7 | Mekanism Atomic Disassembler + Digital Miner, RFTools Builder quarry, Oritech deep drill, MI electric drill |
 | 8 | Meka-Tool, IF laser drill, Extended Industrialization laser drill, Draconic tools |
 
-**Recommendation: don't** try to gate every "ore from nothing" system
-(Mystical Agriculture seeds, ore bees, Hostile Neural Networks, Occultism miners).
-They're already late-game in ATM10 and gating them all is a lot of work for
-little gain. Raise the cheap early ones (first MA ore seeds, first ore bees) to
-tier 5–6 only if they turn out to skip the ladder in practice.
-
-**The ATM mining dimension:** its portal recipe gets gated to tier 5.
-
-**Quests:** ATM10's quest book will mention items in the old order. Ignore for now.
+"Ore from nothing" systems (Mystical Agriculture, ore bees, Hostile Neural Networks,
+Occultism miners) are **not** gated unless they turn out to skip the ladder in play.
+Quests are ignored for now.
 
 ---
 
-## 8. Mob difficulty
+## 8. Mobs
 
-- **Base buff** for all hostile mobs: +50% health, +30% damage, +2 armor (config file)
-- **Per Apotheosis world tier** (Haven → Frontier → Ascent → Summit → Pinnacle *(verify names)*):
-  health ×1 / ×1.5 / ×2.25 / ×3.5 / ×5, damage ×1 / ×1.3 / ×1.7 / ×2.2 / ×3
-- If reading the Apotheosis tier from code turns out hard, the fallback is to scale
-  by the **best gear tier the player has reached** (we already track that through
-  the tier tags)
-- **Elites (later):** tougher variants of existing mobs (vanilla models with new
-  colors, glow, size and gear) at Ascent and above
+### World tiers (Apotheosis)
+
+Haven → Frontier → Ascent → Summit → Pinnacle. Unlocks are changed to need our gear tiers:
+
+| World tier | Unlock needs |
+|---|---|
+| Frontier | Tier 4 gear |
+| Ascent | Tier 6 gear |
+| Summit | Tier 7 gear |
+| Pinnacle | Tier 8 gear |
+
+You can still pick a lower tier any time.
+
+### Base scaling
+
+Difficulty mostly comes from **health and damage**. Assumes **Hard** difficulty.
+
+| World tier | Health | Damage | Mobs with some armor |
+|---|---|---|---|
+| Haven | ×1.5 | ×1.3 | 0% |
+| Frontier | ×2 | ×1.5 | 10% |
+| Ascent | ×3 | ×1.8 | 20% |
+| Summit | ×4.5 | ×2.2 | 25% |
+| Pinnacle | ×6 | ×2.8 | 33% |
+
+Armor comes from the tier ladder that fits the world tier. Small drop chance.
+
+### Danger by place (stacks with world tier)
+
+| Where | Health / damage | Extra elite chance |
+|---|---|---|
+| Surface | — | — |
+| Deepslate layer (below y=0) | +25% | +15% |
+| Deep (below y=−32) | +50% | +20% |
+| Nether | +40% | +20% |
+| End and late dimensions | +75% | +25% |
+
+Also: bigger groups underground at higher tiers (3–5 instead of 1), better skeleton aim at higher tiers.
+
+### Elite spawn chance
+
+| World tier | Base elite chance | New types unlocked |
+|---|---|---|
+| Haven | 5% | Runner, Brute |
+| Frontier | 12% | — |
+| Ascent | 20% | Armored, Molten, Frost, Venomous |
+| Summit | 27% | — |
+| Pinnacle | 35% | Dread |
+
+Place bonuses are added on top, **capped at 50%**, so normal mobs are always the majority.
+Normal mobs also get reskins: **Hardened** (Ascent+, darker, more health) and **Ancient**
+(Pinnacle, pale/cracked, even more health).
+
+### Elite types
+
+| Elite | Look | Stats |
+|---|---|---|
+| Runner | Slimmer, lighter | Faster than normal, slower than a baby zombie. −25% damage, a bit less health |
+| Brute | 25% bigger, darker | ×2 health, +50% damage, slower, knockback resistant |
+| Armored | Grey | Always wears tier gear, high armor |
+| Molten | Orange glow (Nether) | Sets you on fire |
+| Frost | Icy blue (cold biomes) | Slows you |
+| Venomous | Green (jungle/swamp) | Poisons |
+| Dread | Glowing eyes, dark aura | ×4 health, ×2 damage, speeds up nearby mobs. Best drops |
+
+**Which mobs:**
+- **Full elite mobs (own mob types):** zombie (+ husk, drowned), skeleton (+ stray), spider (+ cave spider), wither skeleton, piglin, witch ("Coven": stronger potions)
+- **Upgraded in place** (to keep Creeper Overhaul / Enderman Overhaul skins): creeper (Runner = short fuse, Brute = bigger blast, Dread = charged), enderman (stats only). Shown with a glow/particles
+- **Illagers:** see below
+
+### Illagers *(new)*
+
+Pillagers, vindicators, evokers and ravagers come from outposts, patrols, raids,
+mansions and structure mods (Illager Warship, When Dungeons Arise). Instead of
+changing how they spawn, every illager gets **checked when it enters the world**,
+whatever brought it in, and may be upgraded:
+
+| Elite | Base | What it does |
+|---|---|---|
+| Marksman | Pillager | Faster reload, piercing bolts, longer range |
+| Berserker | Vindicator | Brute stats, speeds up at low health |
+| Archmage | Evoker | More vexes, faster fang attacks |
+| Juggernaut | Ravager | Armored, knockback resistant |
+| Captain upgrade | Patrol/raid captain | Leads with a Dread aura |
+
+Raids scale with world tier: elite share rises, and an extra wave from Summit up. Raid
+members are **upgraded in place** (not replaced) so raids keep working.
+
+### Extras
+
+- **Spider webs:** Venomous/Brute spiders (Ascent+) shoot a web projectile (flat sprite) that slows you or leaves a temporary cobweb
+- **Blood moon** (Ascent+): rare night, chat warning, more and stronger spawns, no sleeping, red sky (fallback: red fog + red moon if shaders interfere)
+- **Apotheosis invaders** get scaled by our system. No new bosses
+- Torchmaster mega torches still stop spawns, so bases stay safe
 
 ---
 
-## 9. Build order
+## 9. Loot (Lootr-compatible)
+
+Lootr gives each player a personal copy of a chest, rolled from the normal loot tables on
+first open. Our mod **adds loot into chest loot tables** (vanilla + structure mods), based on
+the world tier when the chest is first opened:
+
+| World tier | Chest extras |
+|---|---|
+| Haven | Tier 1–3 ingots, raw ores, rough soft gems, sandstone wheels |
+| Frontier | Tier 3–5 materials, rough gems, emery wheels, reinforced plates |
+| Ascent | Tier 5–7 materials, rare flawless gems, the occasional tier-6 gear piece |
+| Summit | Tier 6–8 materials, diamond-grit wheels, more flawless gems |
+| Pinnacle | Tier 7–8 materials, black diamonds, the best flawless gems |
+
+- Harder structures and dimensions give a bonus
+- Diamonds and high-tier items reduced in early chests
+- Apotheosis rolls affixes on our gear automatically
+- Reading the world tier in code is *(verify)*. Fallback: track tier progress ourselves
+
+---
+
+## 10. Build order
 
 | Phase | Work | Test in game |
 |---|---|---|
 | 0 ✅ | Setup, backup, pack scan | — |
-| 1 | Mod skeleton + **tier system** (tags, tier tags) + **one new material end to end (tin)** + re-tier copper and iron | Tin gear works, iron needs a copper/tin pickaxe |
-| 2 | All new gear sets (~20 materials × 9 items), traits | All gear craftable, stats feel right |
-| 3 | New ores (cobalt, titanium, chromite) + all ore gating + diamond/osmium/iron nerfs | Can't skip tiers, new ores spawn |
-| 4 | Alloy Forge + Blast Alloy Forge + new alloys | Alloying loop is fun |
-| 5 | Reinforcement upgrade + machine/tool recipe gating | Can't skip with drills/quarries |
-| 6 | Mob scaling | Fights get harder per world tier |
-| 7 | Elite mobs, Silent Gear materials, other-dimension gear fixes, polish | — |
+| 1 | Mod skeleton, tier system + tier tags, **tin** end to end, re-tier copper and iron | Tin gear works, iron needs a tier-2 pickaxe |
+| 2 | All metal gear sets + traits | Gear craftable, stats feel right |
+| 3 | New ores + worldgen, all ore gating, diamond/osmium/iron nerfs | Can't skip tiers, new ores spawn |
+| 4 | Alloy Forge, Blast Alloy Forge, all alloys | Alloying loop works |
+| 5 | Gems: rough drops, Lapidary Bench, wheels, gem gear, heat treatment | Cutting feels fun, not tedious |
+| 6 | Reinforcement, inlays, machine/tool recipe gating | Can't skip with drills/quarries |
+| 7 | Mob scaling: world tier + place, armor, Hardened/Ancient reskins | Fights get harder per tier and depth |
+| 8 | Elite mobs, illager elites, creeper/enderman upgrades | Elites feel distinct |
+| 9 | Loot injection, world tier unlocks tied to gear | Chests feel rewarding per tier |
+| 10 | Blood moon, web-shooting spiders, synthetic gems, Automatic Lapidary, polish | — |
 
 ## How it's built
 
-| Part | Where | Why |
-|---|---|---|
-| New items, blocks, ores, forges, traits, mob scaling | **Our mod (`.jar`)**, Java | Only code can add items and blocks |
-| Tier tags, ore gating, new recipes, loot changes | **Inside our mod** as data | Version-controlled, one file to install |
-| Changing/removing other mods' recipes | **KubeJS scripts** in `kubejs/server_scripts/zz_progression/` (copies kept in this repo) | ATM10 already uses KubeJS for this |
-| Mekanism tool stats, ore rarity, Apotheosis | **Config file edits** in the `Claude` profile (copies + notes kept in this repo) | That's where those settings live |
+| Part | Where |
+|---|---|
+| Items, blocks, ores, forges, lapidary, mobs, traits, scaling, blood moon | Our mod (`.jar`), Java |
+| Tier tags, ore gating, recipes, worldgen, loot | Data inside our mod |
+| Changing/removing other mods' recipes | KubeJS: `kubejs/server_scripts/zz_progression/` (copies in this repo) |
+| Mekanism tool stats, ore rarity, Apotheosis settings | Config edits in the `Claude` profile (copies + notes in this repo) |
+
+## Live workflow
+
+1. Claude builds the mod and installs it into the `Claude` profile, backing up first.
+2. The player plays, then asks for changes in plain words.
+3. Recipe, loot and tag tweaks done through KubeJS/datapacks can often be reloaded in game
+   (`/reload`). Code changes (new items, mobs) need a game restart.
+4. New ores only appear in **chunks that haven't been generated yet**. Explore new areas, or use a new world.
+5. **Removing** an item later deletes it from existing worlds, so removals are announced first.
 
 ## Known limits
 
-- **Textures:** made by recoloring template sprites per material. Consistent but simple. Can be replaced with hand-drawn ones any time
-- **~20 new gear sets** is a lot of balancing. Built in batches and tuned from playtesting
-- **Claude can't see the game.** Testing relies on you describing what happened, screenshots, and log/crash files
-- Some mods' tools may still behave oddly with the new tiers. We fix them as we find them
+- Textures are generated recolors. Simple but consistent
+- ~36 gear sets and many mobs: built in batches, balanced by playtesting
+- Claude can't see the game. Testing relies on descriptions, screenshots and logs
+- Some other mods' tools or mobs may behave oddly. Fixed as found
