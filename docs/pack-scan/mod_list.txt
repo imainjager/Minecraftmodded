@@ -1,0 +1,495 @@
+﻿Accelerated Decay	accelerated-decay-neoforge-21.0.0.jar
+Actually Additions	actuallyadditions-1.3.26+mc1.21.1.jar
+Ad Astra	adastra-1.21.1-1.16.26-neoforge.jar
+Ad Astra: Giselle Addon	Ad-Astra-Giselle-Addon-neoforge-1.21.1-8.4.jar
+Additional Enchanted Miner	AdditionalEnchantedMiner-1.21.1-neoforge-21.1.164.jar
+Additional Lights	additional_lights-neoforge-1.21-2.1.10.jar
+Advanced Peripherals	AdvancedPeripherals-1.21.1-0.8.1a.jar
+AdvancedAE	AdvancedAE-1.6.12-1.21.1.jar
+AE2 Import Export Card	ae2importexportcard-1.21.1-1.9.0.jar
+AE2 JEI Integration	ae2jeiintegration-1.2.1.jar
+AE2 Network Analyser	AE2NetworkAnalyzer-1.21-2.1.5-neoforge.jar
+AE2: Crafting Tree	ae2ct-1.21.1-1.1.1.jar
+AEInfinityBooster	aeinfinitybooster-neoforge-1.21.1-1.0.0.58.jar
+AI Improvements: Performance Tuning	AI-Improvements-1.21-0.5.3.jar
+Akashic Tome	AkashicTome-1.8-30.jar
+All The Arcanist Gear	allthearcanistgear-1.21.1-21.3.2.jar
+All The Tweaks	allthetweaks-1.21.1-2.10.0.jar
+All the Wizard Gear	allthewizardgear-1.21.1-1.2.0.jar
+AllTheCompressed	allthecompressed-1.21.1-4.4.0.jar
+AllTheLeaks (Memory Leak Fix)	alltheleaks-1.1.13+1.21.1-neoforge.jar
+Allthemodium	allthemodium-3.0.1_mc_1.21.1.jar
+Almost Unified	almostunified-neoforge-1.21.1-1.4.2.jar
+Amendments	amendments-1.21-2.1.10-neoforge.jar
+Apotheosis	Apotheosis-1.21.1-8.8.0.jar
+Apothic Attributes	ApothicAttributes-1.21.1-2.10.1.jar
+Apothic Enchanting	ApothicEnchanting-1.21.1-1.6.2.jar
+Apothic Spawners	ApothicSpawners-1.21.1-1.4.0.jar
+AppleSkin	appleskin-neoforge-mc1.21-3.0.9.jar
+Applied Energistics 2 Wireless Terminals	ae2wtlib-19.5.1.jar
+Applied Energistics 2	appliedenergistics2-19.2.17.jar
+Applied Flux	AppliedFlux-1.21-2.1.5-neoforge.jar
+Applied Mekanistics	Applied-Mekanistics-1.6.3.jar
+Aquaculture 2	Aquaculture-1.21.1-2.7.21.jar
+Architectury API	architectury-13.0.11-neoforge.jar
+Ars Ã‰nergistique	arseng-2.1.1-beta.jar
+Ars Additions	ars_additions-1.21.1-21.3.0.jar
+Ars Controle	ars_controle-1.21.1-1.6.16.jar
+Ars Creo	ars_creo-1.21.1-5.4.0.jar
+Ars Elemancy	ars_elemancy-1.21.1-1.18.3.jar
+Ars Elemental	ars_elemental-1.21.1-0.7.10.1.jar
+Ars Nouveau	ars_nouveau-1.21.1-5.13.1.jar
+Ars Ocultas	ars_ocultas-1.21.1-2.6.1.jar
+Ars Polymorphia	ars_polymorphia-1.0.3.jar
+Ars Technica	ars_technica-1.21.1-2.7.6.jar
+Ars Unification	ars_unification-1.2.21.jar
+Artifacts	artifacts-neoforge-13.2.3.jar
+Athena	athena-neoforge-1.21.1-4.0.6.jar
+Atlas API	atlas_api-1.21.1-1.2.0.jar
+ATO - All the Ores	alltheores-3.2.0_neoforge_1.21.1.jar
+AttributeFix	attributefix-neoforge-1.21.1-21.1.3.jar
+Auroral	auroral-1.21.1-1.1.2.jar
+Auroras	Auroras-1.21-1.6.2.jar
+Bad Wither No Cookie - Reloaded	bwncr-neoforge-1.21.1-3.20.4.jar
+Balm	balm-neoforge-1.21.1-21.0.65.jar
+Baubley Heart Canisters	baubley-heart-canisters-1.21.1-1.4.2.jar
+Better Advanced Tooltips	better-advanced-tooltips-2101.1.0-build.5.jar
+Better Advancements	BetterAdvancements-NeoForge-1.21.1-0.4.3.21.jar
+Better Compatibility Checker	better-compatability-checker-neoforge-21.1.8.jar
+Bibliobiomes Legacy	bibliobiomes-1.21.1-1.6.1.jar
+Bibliocraft Legacy	bibliocraft-1.21.1-1.6.5.jar
+Bibliowoods Legacy	bibliowoods-1.21.1-1.6.2.jar
+BlockUI	blockui-1.0.212-1.21.1-snapshot.jar
+Blue Flame Burning	blueflame-1.21.1-1.1.1.jar
+Bookshelf	bookshelf-neoforge-1.21.1-21.1.81.jar
+Borderless Window	borderless-neoforge-1.21.1-1.7.5_1-all.jar
+Botany Pots - Mystical Agriculture Compat	botanypotsmystical-neoforge-1.21.1-21.1.12.jar
+Botany Pots	botanypots-neoforge-1.21.1-21.1.44.jar
+Botany Trees	botanytrees-neoforge-1.21.1-21.1.7.jar
+Brandon's Core	BrandonsCore-1.21.1-3.2.1.309.jar
+Bridging Mod	BridgingMod-2.6.2+1.21.1.neoforge-release.jar
+BSL Shaders	BSL_v10.1.1.zip
+Building Gadgets	buildinggadgets2-1.3.9.jar
+Byzantine Styles Pack for Minecolonies	Byzantine-1.21.1-51.jar
+Cable Tiers	cabletiers-neoforge-1.21.1-0.6.14.jar
+Caelus API	caelus-neoforge-7.0.1+1.21.1.jar
+Camol	camol-1.21.1-0.3.1.jar
+Cat Jammies	catjammies-1.21-1.7.1.jar
+CC Tweaked Compat	cc-tweaked-1.21.1-forge-1.120.2.jar
+CC: Tweaked	cc-tweaked-1.21.1-forge-1.113.1.jar
+Charging Gadgets	charginggadgets-1.14.1.jar
+Chipped	chipped-neoforge-1.21.1-4.0.2.jar
+Chisel Reborn [Forge/Fabric/NeoForge]	chisel-neoforge-2.0.1+mc1.21.1.jar
+ChoiceTheorem's Overhauled Village	[Neoforge]ctov-3.6.3.jar
+Chroma Carvings	chromacarvings-1.21.1-0.2.0.jar
+Clean Swing Through Grass	cleanswing-1.10-1.21.jar
+Cloth Config API (Fabric/Forge/NeoForge)	cloth-config-15.0.140-neoforge.jar
+Cloud Glass	CloudGlass-1.21.1-1.0.2.jar
+Clumps	Clumps-neoforge-1.21.1-19.0.0.1.jar
+Cobblegen Galore	cobblegengalore-1.21.1-0.2.9.jar
+Cobweb	cobweb-neoforge-1.21-1.4.0.jar
+CodeChicken Lib 1.8.+	CodeChickenLib-1.21.1-4.6.1.529.jar
+Colorful Hearts	colorfulhearts-neoforge-1.21.1-10.5.9.jar
+Colorwheel Patcher	colorwheel_patcher-neoforge-1.0.5+mc1.21.1.jar
+Colorwheel	colorwheel-neoforge-1.3.0-beta3+mc1.21.1.jar
+Comforts	comforts-neoforge-9.0.5+1.21.1.jar
+Common Capabilities	commoncapabilities-1.21.1-neoforge-2.11.6.jar
+Common Storage Lib	common-storage-lib-neoforge-1.21.1-0.0.10.jar
+Compact Machines	compactmachines-neoforge-7.0.81.jar
+Complementary Shaders - Reimagined	ComplementaryReimagined_r5.9.3.zip
+Complementary Shaders - Unbound	ComplementaryUnbound_r5.9.3.zip
+Connected Glass	connectedglass-1.1.14-neoforge-mc1.21.jar
+ConnectedTexturesMod	CTM-1.21-1.2.1+3.jar
+Connectivity	connectivity-1.21.1-7.6.jar
+Construction Sticks	ConstructionSticks-1.21.1-1.5.0.jar
+Controlling	Controlling-neoforge-1.21.1-19.0.5.jar
+Cooking for Blockheads	cookingforblockheads-neoforge-1.21.1-21.1.24.jar
+Corail Tombstone	tombstone-neoforge-1.21.1-9.5.6.jar
+CorgiLib	Corgilib-NeoForge-1.21.1-5.0.0.9.jar
+Cosmetic Armor Reworked	cosmeticarmorreworked-1.21.1-v1-neoforge.jar
+Crafting on a stick	crafting_on_a_stick-1.21.0.6.jar
+Crafting Tweaks	craftingtweaks-neoforge-1.21.1-21.1.11.jar
+Crash Assistant	CrashAssistant-neoforge-1.20.6-1.21.4-1.11.12.jar
+Crash Utilities	crashutilities-9.0.4.jar
+Create Crafts & Additions	createaddition-1.7.1.jar
+Create	create-1.21.1-6.0.10.jar
+Create: Aquatic Ambitions	create_aquatic_ambitions-1.21.1-2.0.4.jar
+Create: Bells & Whistles	bellsandwhistles-0.4.7-1.21.1.jar
+Create: Copycats+	copycats-3.0.9+mc.1.21.1-neoforge.jar
+Create: Dragons Plus	CreateDragonsPlus-1.11.9.jar
+Create: Enchantment Industry	create-enchantment-industry-2.5.4.jar
+Create: Hypertubes	create_hypertube-0.6.0-NEOFORGE.jar
+Creeper Overhaul	CreeperOverhaul-neoforge-1.21.1-4.0.6.jar
+CreeperHost Presents Steve's Carts	stevescarts-1.21-1.2.18-neoforge.jar
+Cristel Lib	cristellib-neoforge-1.21.1-3.1.7.jar
+Cryonic Config	cryonicconfig-neoforge-1.0.0+mc1.21.11.jar
+Crystalix	crystalix-3.0.1.jar
+Cucumber Library	Cucumber-1.21.1-8.0.16.jar
+Cupboard	cupboard-1.21.1-4.2.jar
+Curios API	curios-neoforge-9.5.1+1.21.1.jar
+Cyclops Core	cyclopscore-1.21.1-neoforge-1.30.0.jar
+Dark Mode Everywhere	darkmodeeverywhere-neoforge-1.21.1-1.4.0.jar
+Deeper and Darker	deeperdarker-neoforge-1.21.1-1.4.1.jar
+Deimos Lib	deimos-1.21.1-neoforge-2.7.jar
+DimStorage	DimStorage-1.21.1-9.1.1.jar
+Dis-Enchanting Table	disenchanting_table-merged-1.21.1-5.0.2.jar
+Domum Ornamentum	domum-ornamentum-1.0.236-snapshot-main.jar
+Draconic Evolution	Draconic-Evolution-1.21.1-3.1.4.633.jar
+Drippy Loading Screen	drippyloadingscreen_neoforge_3.1.5_MC_1.21.1.jar
+Dungeon Crawl	DungeonCrawl-NeoForge-1.21-2.3.17.jar
+Dyenamics and Friends	dyenamicsandfriends-1.21.1-2.2.2.jar
+Dyenamics	dyenamics-1.21.1-3.4.2.jar
+Dyson Cube Project	dysoncubeproject-1.0.5.jar
+Easy Villagers	easy-villagers-neoforge-1.21.1-1.1.42.jar
+EdivadLib	EdivadLib-1.21-3.0.0.jar
+Enchantment Descriptions	enchdesc-neoforge-1.21.1-21.1.11.jar
+Ender IO	enderio-8.2.12-beta.jar
+Ender Storage 1.8.+	EnderStorage-1.21.1-2.13.0.191.jar
+EnderDrives	enderdrives-neoforge-1.21.1-1.5.23.jar
+Enderman Overhaul	endermanoverhaul-neoforge-1.21.1-2.0.3.jar
+Energy Meter	energymeter-neoforge-1.21.1-0.5.2.jar
+Entangled	entangled-1.3.21-neoforge-mc1.21.jar
+Eternal Starlight	eternalstarlight-0.9.1+1.21.1+neoforge.jar
+Euphoria Patches	EuphoriaPatcher-1.10.5-r5.9.3-neoforge.jar
+Everything is Copper	everythingcopper-1.21.1-2.4.5.jar
+EvilCraft	evilcraft-1.21.1-neoforge-1.2.96-1106.jar
+Expanded AE	expandedae-2.1.3.jar
+ExperienceLib	experiencelib-1.21.1-1.2.1.jar
+Explorer's Compass	ExplorersCompass-1.21.1-3.4.0-neoforge.jar
+Explorify â€“ Dungeons & Structures	Explorify v1.6.5.mod.jar
+Extended Industrialization	extended-industrialization-1.16.2-1.21.1.jar
+ExtendedAE	ExtendedAE-1.21-2.2.38-neoforge.jar
+Extra Disks	ExtraDisks-1.21.1-4.0.15.jar
+ExtraStorage	ExtraStorage-1.21.1-5.0.10.jar
+Extreme Reactors	ExtremeReactors2-1.21.1-2.4.28.jar
+Extreme sound muffler - (Neo)Forge	ExtremeSoundMuffler-3.56_NeoForge-1.21.jar
+Factory Blocks [Forge/Fabric/NeoForge]	factory_blocks-neoforge-1.4.0+mc1.21.1.jar
+FancyMenu	fancymenu_neoforge_3.9.12_MC_1.21.1.jar
+Farmer's Delight	FarmersDelight-1.21.1-1.3.4.jar
+Farming for Blockheads	farmingforblockheads-neoforge-1.21.1-21.1.13.jar
+FastFurnace	FastFurnace-1.21.1-9.0.1.jar
+FastSuite	FastSuite-1.21.1-6.0.7.jar
+FastWorkbench	FastWorkbench-1.21.1-9.1.3.jar
+FerriteCore ((Neo)Forge)	ferritecore-7.0.3-neoforge.jar
+Fireproof Boats	fireproofboats-1.21.1-1.0.4.jar
+FlickerFix	flickerfix-1.21.1-6.1.0.jar
+Flux Networks	FluxNetworks-1.21.1-8.0.0.jar
+Forbidden and Arcanus	forbidden_arcanus-2.6.1.jar
+Formations (Structure Library)	formations-1.0.4-neoforge-mc1.21.jar
+Formations Nether	formationsnether-1.0.5b-mc1.21+.jar
+Formations Overworld	formationsoverworld-1.0.5c-mc1.21+.jar
+FramedBlocks	FramedBlocks-10.6.2.jar
+Framework	framework-neoforge-1.21.1-0.13.11.jar
+FTB Chunks (NeoForge)	ftb-chunks-neoforge-2101.1.22.jar
+FTB Essentials (Forge & Fabric)	ftb-essentials-neoforge-2101.1.10.jar
+FTB Filter System	ftb-filter-system-neoforge-21.1.4.jar
+FTB JEI Extras	ftb-jei-extras-21.1.7.jar
+FTB Library (NeoForge)	ftb-library-neoforge-2101.1.36.jar
+FTB Quests (NeoForge)	ftb-quests-neoforge-2101.1.36.jar
+FTB Ranks (NeoForge)	ftb-ranks-neoforge-2101.1.5.jar
+FTB Teams (NeoForge)	ftb-teams-neoforge-2101.1.11.jar
+FTB Ultimine (NeoForge)	ftb-ultimine-neoforge-2101.1.15.jar
+FTB XMod Compat	ftb-xmod-compat-neoforge-21.1.12.jar
+Fuel Goes Here	fuelgoeshere-1.21.1-1.2.0.jar
+Functional Storage	functionalstorage-1.21.1-1.5.8.jar
+Fusion (Connected Textures)	fusion-1.3.15b-neoforge-mc1.21.1.jar
+Fzzy Config	fzzy_config-0.7.7+1.21+neoforge.jar
+Gateways to Eternity	GatewaysToEternity-1.21.1-5.1.0.jar
+GeckoLib	geckolib-neoforge-1.21.1-4.9.3.jar
+Generator Galore	generatorgalore-1.21.1-1.7.0.jar
+Get It Together, Drops!	getittogetherdrops-neoforge-1.21.5-1.4.jar
+Glassential Renewed	Glassential-renewed-1.21.1-3.4.7.jar
+Glodium	Glodium-1.21-2.2-neoforge.jar
+Gravitational Modulating Additional Unit	GravitationalModulatingAdditionalUnit-1.21.1-6.4.jar
+GuideME	guideme-21.1.19.jar
+Handcrafted	handcrafted-neoforge-1.21.1-4.0.3.jar
+Hardened Armadillos	hardenedarmadillos-1.21.1-0.2.0.jar
+Hey Berry! SHUT UP	heyberryshutup-1.21.0-2.0.4.jar
+Hostile Neural Networks	HostileNeuralNetworks-1.21.1-6.5.1.jar
+IceAndFire Community Edition	iceandfire-2.0-beta.17.jar
+Iceberg [Neo/Forge]	Iceberg-1.21.1-neoforge-1.3.2.jar
+Illager Warship	illagerwarship-1.0.1-neoforge-1.21.1.jar
+I'm Fast	imfast-NEOFORGE-1.21.1-1.0.3.jar
+ImmediatelyFast	ImmediatelyFast-NeoForge-1.6.14+1.21.1.jar
+Immersive Energistics	Immersive-Energistics-1.1.0-beta.jar
+Immersive Engineering	ImmersiveEngineering-1.21.1-12.4.2-194.jar
+In Control!	incontrol-1.21-10.3.0.jar
+Industrial Foregoing Souls	industrial-foregoing-souls-1.21.1-1.10.7.jar
+Industrial Foregoing	industrialforegoing-1.21-3.6.39.jar
+Industrialization Overdrive	industrialization_overdrive-1.14.0+1.21.1.jar
+Integrated Crafting	integratedcrafting-1.21.1-neoforge-1.7.2.jar
+Integrated Dynamics	integrateddynamics-1.21.1-neoforge-1.37.1-2160.jar
+Integrated Scripting	integratedscripting-1.21.1-neoforge-1.0.27.jar
+Integrated Terminals	integratedterminals-1.21.1-neoforge-1.10.0.jar
+Integrated Tunnels	integratedtunnels-1.21.1-neoforge-1.12.0-792.jar
+Interdimensional Wireless Transmitter	interdimensionalwirelesstransmitter-neoforge-1.21.1-0.1.5.jar
+Invasive Optimizations	invasiveopts-1.0.24.jar
+Inventory Tweaks - ReFoxed	invtweaks-1.21.1-1.3.2.jar
+Iris & Oculus Search	IrisSearch-1.8.1-neoforge.jar
+Iris Shaders	iris-neoforge-1.8.14-beta.1+mc1.21.1.jar
+Iron Furnaces	ironfurnaces-neoforge-1.21.1-4.3.2.jar
+Iron Jetpacks	IronJetpacks-1.21.1-8.0.11.jar
+Iron's Gems 'n Jewelry	irons_jewelry-1.21.1-2.0.2.jar
+Iron's Lib	irons_lib-1.21.1-2.1.1.jar
+Iron's Spells 'n Spellbooks	irons_spellbooks-1.21.1-3.16.3.jar
+Item Collectors	itemcollectors-1.1.10-neoforge-mc1.21.jar
+Jade ðŸ”	Jade-1.21.1-NeoForge-15.10.6.jar
+JEI Stuff	jeistuff-1.21.1-1.2.1.jar
+Jonn's Trophies	trophymanager-1.21.1-3.0.0.jar
+JourneyMap	journeymap-neoforge-1.21.1-6.0.9.jar
+Jumpy Boats	jumpboat-1.21.0-1.0.5.jar
+Jupiter	jupiter-2.3.7-1.21.1-neoforge.jar
+Just Dire Things	justdirethings-1.5.7.jar
+Just Enough Archaeology	jearchaeology-1.21.1-1.2.0.jar
+Just Enough Breeding (JEBr)	justenoughbreeding-neoforge-1.21.1-3.2.1.jar
+Just Enough Items (JEI)	jei-1.21.1-neoforge-19.57.0.446.jar
+Just Enough Mekanism Multiblocks	JustEnoughMekanismMultiblocks-1.21.1-7.21.jar
+Just Enough Professions (JEP)	JustEnoughProfessions-neoforge-1.21.1-4.0.5.jar
+Just Zoom	justzoom_neoforge_2.1.0_MC_1.21.1.jar
+KeyBind Bundles	keybindbundles-1.4.0.jar
+KeybindsPurger	KeybindsPurger-1.4.0-neoforge-1.21.1.jar
+Konkrete	konkrete_neoforge_1.9.9_MC_1.21.jar
+Kotlin for Forge	kotlinforforge-5.12.0-all.jar
+KubeJS Tweaks	kubejstweaks-1.0.6.jar
+KubeJS	kubejs-neoforge-2101.7.2-build.374.jar
+L_Ender 's Cataclysm	L_Ender's Cataclysm 1.21.1-3.33.jar
+Laser Bridges & Doors [Fabric/Forge/NeoForge]	laserbridges-1.21.1-neoforge-6.jar
+LaserIO	laserio-1.9.11.jar
+Lionfish API	lionfishapi-3.1.jar
+Lithostitched	lithostitched-1.8.0-neoforge-21.1.jar
+Little Big Redstone	little-big-redstone-1.9.11-1.21.1.jar
+LivingThings	livingthings-neoforge-1.21.1-2.3.2.jar
+Load My F***ing Tags	lmft-1.1.1+1.21.9-neoforge.jar
+Logistics Network	logisticsnetworks-1.21.1-1.16.3.jar
+Lootr (Forge & NeoForge)	lootr-neoforge-1.21.1-1.11.38.126.jar
+Luminax	luminax-1.3.1_neoforge_1.21.1.jar
+Macaw's Bridges	mcw-bridges-3.1.2-mc1.21.1neoforge.jar
+Macaw's Doors	mcw-doors-1.1.5-mc1.21.1neoforge.jar
+Macaw's Fences and Walls	mcw-mcwfences-1.2.1-mc1.21.1neoforge.jar
+Macaw's Furniture	mcw-furniture-3.4.1-mc1.21.1neoforge.jar
+Macaw's Holidays	mcw-holidays-1.1.2-mc1.21.1neoforge.jar
+Macaw's Lights and Lamps	mcw-lights-1.1.5-mc1.21.1neoforge.jar
+Macaw's Paths and Pavings	mcw-mcwpaths-1.1.1-mc1.21.1neoforge.jar
+Macaw's Roofs	mcw-roofs-2.3.2-mc1.21.1neoforge.jar
+Macaw's Stairs	mcw-mcwstairs-1.0.2-mc1.21.1neoforge.jar
+Macaw's Trapdoors	mcw-trapdoors-1.1.5-mc1.21.1neoforge.jar
+Macaw's Windows	mcw-mcwwindows-2.4.2-mc1.21.1neoforge.jar
+Mahou Tsukai	mahoutsukai-1.21.1-v1.36.28.jar
+MakeUp - Ultra Fast | Shaders	MakeUp-UltraFast-9.5e.zip
+Mama's Herbs and Harvest	herbsandharvest-1.21.1-21.jar
+Mama's Merrymaking - A Minecraft Christmas and Winter Holiday Mod	merrymaking-1.21.1-16.jar
+McJtyLib	mcjtylib-1.21-9.0.21.jar
+ME Requester	merequester-neoforge-1.21.1-1.5.0.jar
+Measurements	Measurements-neoforge-1.21.1-3.0.3.jar
+MEGA Cells	megacells-4.11.0.jar
+Mekanism Covers	mekanismcovers-1.3-BETA+1.21.jar
+Mekanism Generators	MekanismGenerators-1.21.1-10.7.19.85.jar
+Mekanism Tools	MekanismTools-1.21.1-10.7.19.85.jar
+Mekanism	Mekanism-1.21.1-10.7.19.85.jar
+Mekanism:More Machine	mekmm-1.21.1-1.4.1.jar
+Mekanistic Routers	mekanisticrouters-1.2.0.jar
+Melody	melody_neoforge_1.0.10_MC_1.21.jar
+Memory Settings	memorysettings-1.21-6.0.jar
+MES - Moog's End Structures	MoogsEndStructures-universal-1.21-2.1.1.jar
+MezzConfig	mezz_config-1.21.1-neoforge-0.6.3.jar
+MineColonies	minecolonies-1.1.1396-1.21.1-snapshot.jar
+Mining Gadgets	mininggadgets-1.18.8.jar
+MmmMmmMmmMmm (Target Dummy)	dummmmmmy-1.21-2.1.2-neoforge.jar
+MNS - Moog's Nether Structures	MoogsNetherStructures-universal-1.21-3.1.1.jar
+Mo' Structures (NeoForge/Fabric)	mostructures-neoforge-1.6.0+1.21.1.jar
+Mob Grinding Utils	mob_grinding_utils-1.1.10+mc1.21.1.jar
+Model Gap Fix	modelfix-1.21-1.10.jar
+Modern Dynamics	Modern-Dynamics-0.9.6.jar
+Modern Industrialization	Modern-Industrialization-2.5.8.jar
+ModernFix	modernfix-neoforge-5.27.24+mc1.21.1.jar
+Modonomicon	modonomicon-1.21.1-neoforge-1.120.4.jar
+Modular Bees	ModularBees-1.21.1-3.4-neoforge.jar
+Modular Force Field Systems (MFFS)	mffs-5.4.44.jar
+Modular Routers	modular-routers-13.2.7+mc1.21.1.jar
+MonoLib	monolib-neoforge-1.21.1-4.1.0.jar
+Moog's Structure Lib (moogs_structures)	MoogsStructureLib-neoforge-1.21.1-3.3.1.jar
+Moonlight Lib	moonlight-1.21.1-3.6.8-neoforge.jar
+More Dragon Eggs	moredragoneggs-5.0.jar
+More Industrial Foregoing Addons (MIFA)	mifa-neoforge-1.21.x-2.1.0.jar
+More Overlays Updated	moreoverlays-1.24.2-mc1.21.1-neoforge.jar
+More Red x CC:Tweaked Compat	MoreRed-CCT-Compat-1.21.1-1.3.0.jar
+More Red	morered-1.21.1-6.0.0.3.jar
+Mouse Tweaks	MouseTweaks-neoforge-mc1.21-2.26.1.jar
+MrCrayfish's Furniture Mod: Refurbished	refurbished_furniture-neoforge-1.21.1-1.0.22.jar
+MSS - Moog's Soaring Structures	MoogsSoaringStructures-universal-1.21-2.2.0.jar
+Multi-Piston	multipiston-1.2.58-1.21.1.jar
+MVS - Moog's Voyager Structures	MoogsVoyagerStructures-universal-1.21-5.1.2.jar
+Mystical Agradditions	MysticalAgradditions-1.21.1-8.0.14.jar
+Mystical Agriculture	MysticalAgriculture-1.21.1-8.0.28.jar
+Mystical Customization	MysticalCustomization-1.21.1-6.0.2.jar
+Nature's Aura	NaturesAura-41.10.jar
+Nature's Compass	NaturesCompass-1.21.1-3.4.0-neoforge.jar
+Neo Vitae	neovitae-1.21.1-1.1.26.jar
+NeoAuth	NeoAuth-1.21.1-1.0.1.jar
+Nether Trials & Chambers	HellishTrials-neoforge-1.0.5.jar
+NetherPortalFix	netherportalfix-neoforge-1.21.1-21.1.1.jar
+No Chat Reports	NoChatReports-NEOFORGE-1.21.1-v2.9.1.jar
+No Villager Death Messages	novillagerdm-1.21.1-6.0.0.jar
+Not Enough Animations	notenoughanimations-neoforge-1.12.6-mc1.21.1.jar
+Not Enough Glyphs	not_enough_glyphs-1.21.1-4.6.2.jar
+Nullscape	Nullscape_1.21.x_v1.2.14.jar
+Observable	observable-5.4.4.jar
+Occultism KubeJS	occultism_kubejs-1.21.1-neoforge-1.11.0.jar
+Occultism	occultism-1.21.1-neoforge-1.224.4.jar
+Oh The Biomes We've Gone	Oh-The-Biomes-Weve-Gone-NeoForge-2.6.0.jar
+Oh The Trees You'll Grow	Oh-The-Trees-Youll-Grow-neoforge-1.21.1-5.3.2.jar
+oÏ‰o (owo-lib)	owo-lib-neoforge-0.12.15.5-beta.1+1.21.jar
+Omega Config	omegaconfig-neoforge-1.5.1.jar
+Open Loader	OpenLoader-neoforge-1.21.1-21.1.5.jar
+OpenBlocks Elevator	elevatorid-neoforge-1.21.1-1.11.4.jar
+Oracle Index	oracle_index-neoforge-1.4.0.jar
+Oritech	oritech-neoforge-1.21.1-1.2.12.jar
+Overloaded Armor Bar	overloadedarmorbar-neoforge-1.21-2.jar
+Pam's HarvestCraft 2 - Crops	pamhc2crops-NEOFORGE-1.21.1-1.0.9.jar
+Pam's HarvestCraft 2 - Food Core	pamhc2foodcore-NEOFORGE-1.21.1-1.0.4.jar
+Pam's HarvestCraft 2 - Food Extended	pamhc2foodextended-NEOFORGE-1.21.1-1.0.0.jar
+Pam's HarvestCraft 2 - Trees	pamhc2trees-NEOFORGE-1.21.1-1.0.9.jar
+Patchouli	Patchouli-1.21.1-93-NEOFORGE.jar
+Pipez	pipez-neoforge-1.21.1-1.2.31.jar
+Placebo	Placebo-1.21.1-9.9.2.jar
+playerAnimator	player-animation-lib-forge-2.0.4+1.21.1.jar
+PneumaticCraft: Repressurized	pneumaticcraft-repressurized-8.2.23+mc1.21.1.jar
+Pocket Storage	pocketstorage-1.2.5+1.21.1-b3.jar
+PolyLib	polylib-2100.1.0-build.183-neoforge.jar
+Polymorph	polymorph-neoforge-1.2.0+1.21.1.jar
+Polymorphic Energistics	polyeng-0.4.1.jar
+Ponder for KubeJS	ponderjs-neoforge-1.21.1-2.4.0.jar
+Potions Master	potionsmaster-21.1.113-1.0.1.jar
+Powah! (Rearchitected)	Powah-6.2.10.jar
+Prickle	prickle-neoforge-1.21.1-21.1.11.jar
+Prism [Neo/Forge]	Prism-1.21.1-neoforge-1.0.11.jar
+Productive Bees	productivebees-1.21.1-13.13.5.jar
+Productive Metalworks	productivemetalworks-1.21.1-1.15.1.jar
+Productive Trees	productivetrees-1.21.1-1.1.1.jar
+Pylons	pylons-1.21.1-5.4.2.jar
+Quests Lang Splitter	ftbquestslangsplitter-1.0.7.jar
+Railcraft Reborn	railcraft-reborn-1.21.1-1.2.10.jar
+Rainbows!	Rainbows-1.21-1.5.jar
+Ranged Pumps	rangedpumps-1.3.0.jar
+Rebind Narrator	rebind_narrator-1.21.1-neoforge-2026.08.31.jar
+Rechiseled	rechiseled-1.2.6-neoforge-mc1.21.jar
+Rechiseled: Chipped	rechiseled_chipped-2.0-1.21.1.jar
+Rechiseled: Create	rechiseledcreate-1.1.1-neoforge-mc1.21.jar
+Redstone Pen	redstonepen-1.21-neoforge-1.11.42.jar
+Refined Storage - Curios Integration	refinedstorage-curios-integration-1.0.0.jar
+Refined Storage - JEI Integration	refinedstorage-jei-integration-neoforge-1.0.0.jar
+Refined Storage - Mekanism Integration	refinedstorage-mekanism-integration-1.1.1.jar
+Refined Storage - Quartz Arsenal	refinedstorage-quartz-arsenal-neoforge-1.0.8.jar
+Refined Storage	refinedstorage-neoforge-2.0.9.jar
+Refined Types	refined-types-1.21.1-0.3.2.jar
+Regions Unexplored	regions_unexplored-neoforge-1.21.1-0.5.9.jar
+Relics	relics-1.21.1-0.12.8.jar
+Reliquary Reincarnations	reliquary-1.21.1-2.0.80.1570.jar
+Reliquified Artifacts	reliquified_artifacts-1.21.1-1.0.8.jar
+Repeatable Trial Vaults	repeatable_trial_vaults-neoforge-1.21-1.0.3.jar
+Repurposed Structures (Neoforge/Forge)	repurposed_structures-7.5.22+1.21.1-neoforge.jar
+Resourceful Config	resourcefulconfig-neoforge-1.21-3.0.11.jar
+Resourceful Lib	resourcefullib-neoforge-1.21-3.0.12.jar
+Restrictions	restrictions-1.21-7.0.3.jar
+RFTools Base	rftoolsbase-1.21-6.0.11.jar
+RFTools Builder	rftoolsbuilder-1.21-7.0.6.jar
+RFTools Power	rftoolspower-1.21-7.0.6.jar
+RFTools Storage	rftoolsstorage-1.21-6.0.5.jar
+RFTools Utility	rftoolsutility-1.21-7.0.12.jar
+Rhino	rhino-2101.2.8-build.91.jar
+Roots Classic	RootsClassic-1.21.1-1.5.10.jar
+Sawmill	sawmill-1.21-1.8.1-neoforge.jar
+Scalable Cat's Force	ScalableCatsForce-NeoForge-3.7.1-build-11-with-library.jar
+Searchables	Searchables-neoforge-1.21.1-1.0.2.jar
+Security Craft	[1.21.1] SecurityCraft v1.10.2.1.jar
+ShatterLib | OctoLib	OctoLib-NEOFORGE-0.6.2+1.21.jar
+Shiny! Mobs	shiny-1.21.1-1.3.0.jar
+Shrink.	shrink-2.0.1.47-neoforge.jar
+Silent Gear Metalworks	sgearmetalworks-1.21.1-1.5.0.jar
+Silent Gear	silent-gear-1.21.1-neoforge-4.2.1.1.jar
+Silent Lib (silentlib)	silent-lib-1.21.1-neoforge-10.6.0.jar
+Silent's Gems	silentgems-1.21.1-neoforge-5.1.3.jar
+Simple Backups	SimpleBackups-1.21-4.0.30.jar
+Simple Magnets	simplemagnets-1.1.12c-neoforge-mc1.21.jar
+Simple Weather	simple_weather-1.0.13-hotfix.jar
+Simply Light	simplylight-1.5.3+1.21.1-b4.jar
+SmartBrainLib (Forge/Fabric/Quilt)	SmartBrainLib-neoforge-1.21.1-1.16.11.jar
+Smithing Template Viewer for JEI/EMI	smithingtemplateviewer-1.0.4.jar
+Sodium Extra	sodium-extra-neoforge-0.9.4+mc1.21.1.jar
+Sodium	sodium-neoforge-0.8.13+mc1.21.1.jar
+Sophisticated Backpacks Create Integration	sophisticatedbackpackscreateintegration-1.21.1-0.2.0.168.jar
+Sophisticated Backpacks	sophisticatedbackpacks-1.21.1-3.26.3.2158.jar
+Sophisticated Core	sophisticatedcore-1.21.1-1.5.1.2341.jar
+Sophisticated Storage Create Integration	sophisticatedstoragecreateintegration-1.21.1-0.1.21.209.jar
+Sophisticated Storage in Motion	sophisticatedstorageinmotion-1.21.1-0.10.34.358.jar
+Sophisticated Storage	sophisticatedstorage-1.21.1-1.5.91.2127.jar
+Soulplied Energistics	soulplied_energistics-1.0.3.jar
+spark	spark-1.10.124-neoforge.jar
+Spice of Life: Carrot Edition	solcarrot-1.21.1-1.16.6.jar
+StarbuncleMania	starbunclemania-1.21.1-1.5.8.jar
+Step Crafter	stepcrafter-neoforge-1.21.1-0.1.9.jar
+Storage Delight (Forge & Neoforge)	storagedelight-26.09.17-1.21-neoforge.jar
+Structory	Structory_26.2_v1.3.7.jar
+Structory: Towers	Structory_Towers_26.1_v1.0.16.jar
+StructureOverlapless	overlapless-1.21.1-1.2.0.jar
+Structurize	structurize-1.0.833-1.21.1-snapshot.jar
+Stylecolonies	stylecolonies-1.15.59-1.21.1.jar
+Super Factory Manager ( SFM )	Super Factory Manager (SFM)-MC1.21.1-4.34.0.jar
+SuperMartijn642's Config Lib	supermartijn642configlib-1.1.8-neoforge-mc1.21.jar
+SuperMartijn642's Core Lib	supermartijn642corelib-1.1.24a-neoforge-mc1.21.jar
+Supplementaries	supplementaries-1.21.1-3.9.9-neoforge.jar
+Sushi Go Crafting	sushigocrafting-1.21-0.6.6.jar
+Sussy Sniffers	sussysniffers-1.21.1-0.1.3.jar
+Tempad	tempad-1.21.1-3.0.4-all.jar
+TerraBlender (NeoForge)	TerraBlender-neoforge-1.21.1-4.1.0.8.jar
+Tesseract API (NeoForge)	tesseract-api-neoforge-1.12.16-1.21.1.jar
+The Aether	aether-1.21.1-1.5.10-neoforge.jar
+The Bumblezone (NeoForge/Forge)	the_bumblezone-7.16.1+1.21.1-neoforge.jar
+The Twilight Forest	twilightforest-1.21.1-4.8.3345-universal.jar
+The Undergarden	The_Undergarden-1.21.1-0.9.6.jar
+Theurgy KubeJS	theurgy_kubejs-1.21.1-neoforge-1.6.0.jar
+Theurgy	theurgy-1.21.1-neoforge-1.76.1.jar
+Time in a Bottle	tiab-neoforge-6.5.4.jar
+Titanium	titanium-1.21-4.0.50.jar
+Toast Control	ToastControl-1.21.1-9.0.1.jar
+Tool Belt	ToolBelt-1.21.1-2.2.10.jar
+Torchmaster	torchmaster-neoforge-1.21.1-21.1.12.jar
+Towns and Towers	t_and_t-fabric-neoforge-1.13.11.jar
+TownTalk	towntalk-1.2.0.jar
+Transfer Labels	transfer_labels-0.1.9.jar
+Trash Cans	trashcans-1.1.0-neoforge-mc1.21.jar
+TrashSlot	trashslot-neoforge-1.21.1-21.1.11.jar
+Tree Tap	treetap-1.21.1-0.4.6.jar
+Underground Villages	UndergroundVillages-neoforge-1.21.1-4.0.3.jar
+Universal Grid	universalgrid-neoforge-1.21.1-0.3.2.jar
+Uranus	uranus-2.4.1-bugfix-1.21.1-neoforge.jar
+Utilitarian	utilitarian-1.21.1-0.19.2.jar
+Utility Vest	utilityvest-1.3.0.jar
+Valhelsia Core	valhelsia_core-neoforge-1.21.1-1.1.5.jar
+Variants&Ventures	variantsandventures-neoforge-1.0.26+mc1.21.1.jar
+Villages&Pillages	villagesandpillages-neoforge-mc1.21.1-1.0.3.jar
+Waystones	waystones-neoforge-1.21.1-21.1.45.jar
+When Dungeons Arise - Forge!	DungeonsArise-1.21.1-2.1.68-release.jar
+Wireless Chargers	wirelesschargers-1.0.9a-neoforge-mc1.21.jar
+Wither Skeleton Tweaks	WitherSkeletonTweaks-1.21.1-10.1.1.jar
+WITS (What Is This Structure?)	wits-neoforge-1.3.1.jar
+XNet	xnet-1.21-7.0.7.jar
+Xtones Reworked	xtonesreworked-1.1.1-1.21.1.jar
+XyCraft	xycraft_core-0.7.53-all.jar
+XyCraft: Machines	xycraft_machines-0.7.53.jar
+XyCraft: Override	xycraft_override-0.7.53.jar
+XyCraft: World	xycraft_world-0.7.53.jar
+Yeetus Experimentus	yeetusexperimentus-neoforge-87.0.0.jar
+YetAnotherConfigLib	yet_another_config_lib_v3-3.8.2+1.21.1-neoforge.jar
+YUNG's API (NeoForge) [1.20.4-1.21.1 ONLY]	YungsApi-1.21.1-NeoForge-5.1.9.jar
+YUNG's Better Desert Temples (NeoForge) [1.20.4 - 1.21.1 ONLY]	YungsBetterDesertTemples-1.21.1-NeoForge-4.1.5.jar
+YUNG's Better Dungeons (NeoForge) [1.20.4 - 1.21.1 ONLY]	YungsBetterDungeons-1.21.1-NeoForge-5.1.4.jar
+YUNG's Better End Island (NeoForge) [1.20.4 - 1.21.1 ONLY]	YungsBetterEndIsland-1.21.1-NeoForge-3.1.2.jar
+YUNG's Better Jungle Temples (NeoForge) [1.20.4 - 1.21.1 ONLY]	YungsBetterJungleTemples-1.21.1-NeoForge-3.1.2.jar
+YUNG's Better Mineshafts (NeoForge) [1.20.4 - 1.21.1 ONLY]	YungsBetterMineshafts-1.21.1-NeoForge-5.1.1.jar
+YUNG's Better Nether Fortresses (NeoForge) [1.20.4 - 1.21.1 ONLY]	YungsBetterNetherFortresses-1.21.1-NeoForge-3.1.5.jar
+YUNG's Better Ocean Monuments (NeoForge) [1.20.4 - 1.21.1 ONLY]	YungsBetterOceanMonuments-1.21.1-NeoForge-4.1.2.jar
+YUNG's Better Strongholds (NeoForge) [1.20.4 - 1.21.1 ONLY]	YungsBetterStrongholds-1.21.1-NeoForge-5.1.3.jar
+YUNG's Better Witch Huts (NeoForge) [1.20.4 - 1.21.1 ONLY]	YungsBetterWitchHuts-1.21.1-NeoForge-4.1.1.jar
+YUNG's Extras (NeoForge) [1.20.4 - 1.21.1 ONLY]	YungsExtras-1.21.1-NeoForge-5.1.1.jar
+ZeroCore 2	ZeroCore2-1.21.1-2.4.21.jar
