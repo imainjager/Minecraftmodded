@@ -52,8 +52,15 @@ Status: **final draft, waiting for go-ahead.** Built from the Phase 0 scan
 - **Silent Gear Smithing chapter** inside the Forged Ascent quest tab (blueprints, parts, handles, tips, which anvil per tier)
 - **Anvil repair with ingots:** gear + ingots of its material repairs it at a Smithy Anvil
 
-**Update 6 candidates:** Silent Gear legendary items in Treasure Bags (only if Silent Gear can build full tools in loot tables;
-verify on the test server first), armor trims from our metals, Elite Hunter quest chain, gate maps, ruined forges.
+- **Silent Gear loot (conditional):** legendary Silent Gear items in Treasure Bags (rare, named, strong trait, e.g. "Hydra's
+  Fang": cobalt katana, ruby tip, chitin binding) **and** Silent Gear weapons in chests (Lootr), materials scaling with world
+  tier. **Verify on the test server that generated tools have real parts and stats; if not, drop both.**
+- **Salvaging:** Silent Gear Salvager recipes for our gear, scavenged armors and vanilla tier gear (recycle loot into materials)
+- **Smith's journal quests:** "craft a tool from 3 different materials", "make a gem-tipped weapon", "reinforce a Silent Gear tool"
+
+**Update 6 candidates:** blueprints as treasure (fancy weapon types found in loot), whetstones/gem oils, weapon types gated by
+anvil tier, elite part drops, armor trims from our metals, Elite Hunter quest chain, gate maps, ruined forges.
+Later (needs research): flawless gems auto-graded S in Silent Gear's grader, Bounty Board hooks.
 Rejected: Prospector's Pick.
 
 ## Update 4 design (agreed 2026-10-03, overrides older sections where they differ)
