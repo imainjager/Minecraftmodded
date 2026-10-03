@@ -1,7 +1,20 @@
 # Project Plan: Custom ATM10 Progression Overhaul
 
-Status: **planning**. Nothing here is final. Details marked *(verify)* need to be
-checked against the real ATM10 install before we build them.
+Status: **planning**. Details marked *(verify)* need to be checked against the
+real ATM10 install before we build them.
+
+## Decisions so far
+
+| Question | Answer |
+|---|---|
+| Modpack | All the Mods 10, version **10.8.2** (released 2026-09-22) |
+| Minecraft / loader | **1.21.1**, **NeoForge** |
+| Single player or server | **Single player only** |
+| Computer | **Windows 11** |
+| Reinforced gear | **Stats only** (does not raise mining tier) |
+| Pack updates | Never: the copy is frozen, so existing mods can be changed freely |
+| Uranium | Leave alone |
+| Where work happens | Claude Code running **on the Windows PC** (so it can reach the CurseForge instance folder). This GitHub repo stores the mod's code as a backup and history |
 
 ## Goal
 
@@ -59,8 +72,8 @@ Side materials that don't sit on the main ladder but get gear with special trait
 - 4 plates → 1 **reinforced plate**
 - Reinforced plates craft **Reinforced [Material]** tools and armor:
   **+1 armor per piece, +1 attack damage, more durability**
-- Open question: does reinforcing also raise the *mining* tier, or only stats?
-  (Recommendation: stats only, so the ore gates still mean something.)
+- **Decided:** reinforcing boosts stats only. It does **not** raise the mining
+  tier, so the ore gates still matter.
 
 ## 3. Alloying
 
