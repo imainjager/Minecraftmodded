@@ -384,13 +384,13 @@
       "tool": {
         "uses": 150,
         "speed": 5.5,
-        "attack": 1.0,
+        "attack": 1.8,
         "enchant": 14
       },
       "armor": {
         "durability": 9,
         "helmet": 1,
-        "chestplate": 4,
+        "chestplate": 3,
         "leggings": 3,
         "boots": 1,
         "toughness": 0.0,
@@ -410,15 +410,15 @@
       "tool": {
         "uses": 220,
         "speed": 4.5,
-        "attack": 1.5,
+        "attack": 2.2,
         "enchant": 8
       },
       "armor": {
         "durability": 13,
         "helmet": 2,
-        "chestplate": 4,
-        "leggings": 4,
-        "boots": 1,
+        "chestplate": 5,
+        "leggings": 3,
+        "boots": 2,
         "toughness": 0.0,
         "knockback": 0.0,
         "enchant": 8
@@ -435,15 +435,15 @@
       "tool": {
         "uses": 230,
         "speed": 5.0,
-        "attack": 2.5,
+        "attack": 3.6,
         "enchant": 6
       },
       "armor": {
         "durability": 14,
-        "helmet": 2,
-        "chestplate": 6,
-        "leggings": 5,
-        "boots": 2,
+        "helmet": 3,
+        "chestplate": 7,
+        "leggings": 4,
+        "boots": 3,
         "toughness": 0.0,
         "knockback": 0.05,
         "enchant": 6,
@@ -461,13 +461,13 @@
       "tool": {
         "uses": 290,
         "speed": 6.0,
-        "attack": 2.0,
+        "attack": 3.1,
         "enchant": 10
       },
       "armor": {
         "durability": 16,
         "helmet": 2,
-        "chestplate": 5,
+        "chestplate": 6,
         "leggings": 4,
         "boots": 2,
         "toughness": 0.0,
@@ -486,7 +486,7 @@
       "tool": {
         "uses": 210,
         "speed": 6.5,
-        "attack": 1.5,
+        "attack": 2.6,
         "enchant": 12
       },
       "armor": {
@@ -512,7 +512,7 @@
       "tool": {
         "uses": 200,
         "speed": 6.0,
-        "attack": 1.5,
+        "attack": 2.6,
         "enchant": 22
       },
       "armor": {
@@ -520,7 +520,7 @@
         "helmet": 2,
         "chestplate": 5,
         "leggings": 4,
-        "boots": 1,
+        "boots": 2,
         "toughness": 0.0,
         "knockback": 0.0,
         "enchant": 22
@@ -537,15 +537,15 @@
       "tool": {
         "uses": 330,
         "speed": 7.5,
-        "attack": 2.5,
+        "attack": 5.2,
         "enchant": 14
       },
       "armor": {
         "durability": 17,
-        "helmet": 2,
-        "chestplate": 6,
-        "leggings": 5,
-        "boots": 2,
+        "helmet": 3,
+        "chestplate": 8,
+        "leggings": 6,
+        "boots": 3,
         "toughness": 0.0,
         "knockback": 0.0,
         "enchant": 14
@@ -562,15 +562,15 @@
       "tool": {
         "uses": 520,
         "speed": 5.5,
-        "attack": 2.5,
+        "attack": 5.2,
         "enchant": 10
       },
       "armor": {
         "durability": 24,
-        "helmet": 2,
-        "chestplate": 6,
-        "leggings": 5,
-        "boots": 2,
+        "helmet": 3,
+        "chestplate": 8,
+        "leggings": 6,
+        "boots": 3,
         "toughness": 0.0,
         "knockback": 0.0,
         "enchant": 10
@@ -587,15 +587,15 @@
       "tool": {
         "uses": 400,
         "speed": 6.5,
-        "attack": 2.5,
+        "attack": 5.2,
         "enchant": 12
       },
       "armor": {
         "durability": 20,
-        "helmet": 2,
-        "chestplate": 6,
-        "leggings": 5,
-        "boots": 2,
+        "helmet": 3,
+        "chestplate": 8,
+        "leggings": 6,
+        "boots": 3,
         "toughness": 0.0,
         "knockback": 0.0,
         "enchant": 12,
@@ -613,15 +613,15 @@
       "tool": {
         "uses": 450,
         "speed": 6.5,
-        "attack": 2.5,
+        "attack": 5.2,
         "enchant": 12
       },
       "armor": {
         "durability": 20,
-        "helmet": 2,
-        "chestplate": 6,
-        "leggings": 5,
-        "boots": 2,
+        "helmet": 3,
+        "chestplate": 8,
+        "leggings": 6,
+        "boots": 3,
         "toughness": 0.5,
         "knockback": 0.0,
         "enchant": 12
@@ -638,14 +638,14 @@
       "tool": {
         "uses": 350,
         "speed": 7.0,
-        "attack": 2.0,
+        "attack": 4.7,
         "enchant": 12
       },
       "armor": {
         "durability": 17,
         "helmet": 2,
-        "chestplate": 5,
-        "leggings": 4,
+        "chestplate": 6,
+        "leggings": 6,
         "boots": 2,
         "toughness": 0.0,
         "knockback": 0.0,
@@ -664,15 +664,15 @@
       "tool": {
         "uses": 180,
         "speed": 9.0,
-        "attack": 2.0,
+        "attack": 4.7,
         "enchant": 25
       },
       "armor": {
         "durability": 9,
         "helmet": 2,
-        "chestplate": 5,
-        "leggings": 4,
-        "boots": 1,
+        "chestplate": 6,
+        "leggings": 5,
+        "boots": 2,
         "toughness": 0.0,
         "knockback": 0.0,
         "enchant": 25
@@ -689,15 +689,15 @@
       "tool": {
         "uses": 220,
         "speed": 8.0,
-        "attack": 2.0,
+        "attack": 4.7,
         "enchant": 20
       },
       "armor": {
         "durability": 11,
         "helmet": 2,
-        "chestplate": 5,
-        "leggings": 4,
-        "boots": 1,
+        "chestplate": 6,
+        "leggings": 5,
+        "boots": 2,
         "toughness": 0.0,
         "knockback": 0.0,
         "enchant": 20,
@@ -715,15 +715,15 @@
       "tool": {
         "uses": 600,
         "speed": 8.5,
-        "attack": 3.0,
+        "attack": 6.5,
         "enchant": 12
       },
       "armor": {
         "durability": 25,
         "helmet": 3,
-        "chestplate": 6,
-        "leggings": 5,
-        "boots": 2,
+        "chestplate": 9,
+        "leggings": 8,
+        "boots": 3,
         "toughness": 0.5,
         "knockback": 0.0,
         "enchant": 12
@@ -740,15 +740,15 @@
       "tool": {
         "uses": 900,
         "speed": 6.5,
-        "attack": 3.0,
+        "attack": 6.5,
         "enchant": 8
       },
       "armor": {
         "durability": 35,
         "helmet": 3,
-        "chestplate": 6,
-        "leggings": 5,
-        "boots": 2,
+        "chestplate": 9,
+        "leggings": 8,
+        "boots": 3,
         "toughness": 0.5,
         "knockback": 0.05,
         "enchant": 8
@@ -765,15 +765,15 @@
       "tool": {
         "uses": 500,
         "speed": 7.0,
-        "attack": 2.5,
+        "attack": 6.0,
         "enchant": 12
       },
       "armor": {
         "durability": 22,
-        "helmet": 2,
-        "chestplate": 6,
-        "leggings": 5,
-        "boots": 2,
+        "helmet": 3,
+        "chestplate": 9,
+        "leggings": 7,
+        "boots": 3,
         "toughness": 0.0,
         "knockback": 0.0,
         "enchant": 12
@@ -790,15 +790,15 @@
       "tool": {
         "uses": 850,
         "speed": 8.0,
-        "attack": 3.0,
+        "attack": 8.9,
         "enchant": 22
       },
       "armor": {
         "durability": 30,
-        "helmet": 3,
-        "chestplate": 7,
-        "leggings": 5,
-        "boots": 3,
+        "helmet": 4,
+        "chestplate": 12,
+        "leggings": 10,
+        "boots": 4,
         "toughness": 1.0,
         "knockback": 0.0,
         "enchant": 22
@@ -815,15 +815,15 @@
       "tool": {
         "uses": 1050,
         "speed": 8.0,
-        "attack": 3.5,
+        "attack": 9.4,
         "enchant": 12
       },
       "armor": {
         "durability": 34,
-        "helmet": 3,
-        "chestplate": 7,
-        "leggings": 6,
-        "boots": 2,
+        "helmet": 4,
+        "chestplate": 12,
+        "leggings": 10,
+        "boots": 4,
         "toughness": 1.0,
         "knockback": 0.0,
         "enchant": 12
@@ -840,15 +840,15 @@
       "tool": {
         "uses": 500,
         "speed": 10.0,
-        "attack": 3.0,
+        "attack": 8.9,
         "enchant": 30
       },
       "armor": {
         "durability": 18,
-        "helmet": 3,
-        "chestplate": 6,
-        "leggings": 5,
-        "boots": 2,
+        "helmet": 4,
+        "chestplate": 11,
+        "leggings": 8,
+        "boots": 4,
         "toughness": 0.5,
         "knockback": 0.0,
         "enchant": 30
@@ -865,15 +865,15 @@
       "tool": {
         "uses": 1300,
         "speed": 8.5,
-        "attack": 3.5,
+        "attack": 13.9,
         "enchant": 14
       },
       "armor": {
         "durability": 36,
-        "helmet": 3,
-        "chestplate": 7,
-        "leggings": 6,
-        "boots": 3,
+        "helmet": 5,
+        "chestplate": 14,
+        "leggings": 12,
+        "boots": 5,
         "toughness": 1.5,
         "knockback": 0.0,
         "enchant": 14,
@@ -891,15 +891,15 @@
       "tool": {
         "uses": 1350,
         "speed": 8.5,
-        "attack": 3.5,
+        "attack": 13.9,
         "enchant": 10
       },
       "armor": {
         "durability": 36,
-        "helmet": 3,
-        "chestplate": 7,
-        "leggings": 6,
-        "boots": 3,
+        "helmet": 5,
+        "chestplate": 14,
+        "leggings": 12,
+        "boots": 5,
         "toughness": 2.5,
         "knockback": 0.0,
         "enchant": 10
@@ -916,15 +916,15 @@
       "tool": {
         "uses": 1900,
         "speed": 8.0,
-        "attack": 3.5,
+        "attack": 13.9,
         "enchant": 12
       },
       "armor": {
         "durability": 45,
-        "helmet": 3,
-        "chestplate": 7,
-        "leggings": 6,
-        "boots": 3,
+        "helmet": 5,
+        "chestplate": 14,
+        "leggings": 12,
+        "boots": 5,
         "toughness": 1.5,
         "knockback": 0.0,
         "enchant": 12
@@ -941,15 +941,15 @@
       "tool": {
         "uses": 1400,
         "speed": 9.0,
-        "attack": 3.5,
+        "attack": 13.9,
         "enchant": 12
       },
       "armor": {
         "durability": 38,
-        "helmet": 3,
-        "chestplate": 7,
-        "leggings": 6,
-        "boots": 3,
+        "helmet": 5,
+        "chestplate": 14,
+        "leggings": 12,
+        "boots": 5,
         "toughness": 1.5,
         "knockback": 0.0,
         "enchant": 12,
@@ -967,15 +967,15 @@
       "tool": {
         "uses": 1500,
         "speed": 9.0,
-        "attack": 3.5,
+        "attack": 13.9,
         "enchant": 14
       },
       "armor": {
         "durability": 40,
-        "helmet": 3,
-        "chestplate": 7,
-        "leggings": 6,
-        "boots": 3,
+        "helmet": 5,
+        "chestplate": 14,
+        "leggings": 12,
+        "boots": 5,
         "toughness": 2.0,
         "knockback": 0.0,
         "enchant": 14,
@@ -993,15 +993,15 @@
       "tool": {
         "uses": 1700,
         "speed": 7.5,
-        "attack": 5.0,
+        "attack": 20.9,
         "enchant": 8
       },
       "armor": {
         "durability": 42,
-        "helmet": 3,
-        "chestplate": 8,
-        "leggings": 6,
-        "boots": 3,
+        "helmet": 7,
+        "chestplate": 18,
+        "leggings": 13,
+        "boots": 7,
         "toughness": 2.5,
         "knockback": 0.075,
         "enchant": 8,
@@ -1019,15 +1019,15 @@
       "tool": {
         "uses": 2000,
         "speed": 10.0,
-        "attack": 4.0,
+        "attack": 19.9,
         "enchant": 10
       },
       "armor": {
         "durability": 40,
-        "helmet": 3,
-        "chestplate": 8,
-        "leggings": 6,
-        "boots": 3,
+        "helmet": 7,
+        "chestplate": 18,
+        "leggings": 13,
+        "boots": 7,
         "toughness": 2.0,
         "knockback": 0.0,
         "enchant": 10
@@ -1044,15 +1044,15 @@
       "tool": {
         "uses": 1600,
         "speed": 11.0,
-        "attack": 4.0,
+        "attack": 19.9,
         "enchant": 12
       },
       "armor": {
         "durability": 38,
-        "helmet": 3,
-        "chestplate": 7,
-        "leggings": 6,
-        "boots": 3,
+        "helmet": 7,
+        "chestplate": 18,
+        "leggings": 12,
+        "boots": 7,
         "toughness": 2.0,
         "knockback": 0.0,
         "enchant": 12
@@ -1069,15 +1069,15 @@
       "tool": {
         "uses": 3000,
         "speed": 8.5,
-        "attack": 4.0,
+        "attack": 19.9,
         "enchant": 10
       },
       "armor": {
         "durability": 60,
-        "helmet": 3,
-        "chestplate": 8,
-        "leggings": 6,
-        "boots": 3,
+        "helmet": 7,
+        "chestplate": 18,
+        "leggings": 13,
+        "boots": 7,
         "toughness": 2.0,
         "knockback": 0.0,
         "enchant": 10
@@ -1094,15 +1094,15 @@
       "tool": {
         "uses": 1800,
         "speed": 9.0,
-        "attack": 4.0,
+        "attack": 19.9,
         "enchant": 12
       },
       "armor": {
         "durability": 42,
-        "helmet": 3,
-        "chestplate": 8,
-        "leggings": 6,
-        "boots": 3,
+        "helmet": 7,
+        "chestplate": 18,
+        "leggings": 13,
+        "boots": 7,
         "toughness": 2.25,
         "knockback": 0.0,
         "enchant": 12,
@@ -1120,15 +1120,15 @@
       "tool": {
         "uses": 2200,
         "speed": 8.5,
-        "attack": 4.0,
+        "attack": 19.9,
         "enchant": 14
       },
       "armor": {
         "durability": 50,
-        "helmet": 4,
-        "chestplate": 8,
-        "leggings": 6,
-        "boots": 3,
+        "helmet": 7,
+        "chestplate": 18,
+        "leggings": 14,
+        "boots": 7,
         "toughness": 3.0,
         "knockback": 0.0,
         "enchant": 14
@@ -1145,15 +1145,15 @@
       "tool": {
         "uses": 2400,
         "speed": 10.0,
-        "attack": 4.0,
+        "attack": 19.9,
         "enchant": 14
       },
       "armor": {
         "durability": 48,
-        "helmet": 3,
-        "chestplate": 8,
-        "leggings": 6,
-        "boots": 3,
+        "helmet": 7,
+        "chestplate": 18,
+        "leggings": 13,
+        "boots": 7,
         "toughness": 2.5,
         "knockback": 0.0,
         "enchant": 14
@@ -1170,15 +1170,15 @@
       "tool": {
         "uses": 300,
         "speed": 7.0,
-        "attack": 2.5,
+        "attack": 5.2,
         "enchant": 20
       },
       "armor": {
         "durability": 15,
-        "helmet": 2,
-        "chestplate": 6,
-        "leggings": 5,
-        "boots": 2,
+        "helmet": 3,
+        "chestplate": 8,
+        "leggings": 6,
+        "boots": 3,
         "toughness": 0.0,
         "knockback": 0.0,
         "enchant": 20
@@ -1195,15 +1195,15 @@
       "tool": {
         "uses": 600,
         "speed": 7.0,
-        "attack": 3.5,
+        "attack": 7.0,
         "enchant": 12
       },
       "armor": {
         "durability": 24,
         "helmet": 3,
-        "chestplate": 6,
-        "leggings": 5,
-        "boots": 2,
+        "chestplate": 9,
+        "leggings": 8,
+        "boots": 3,
         "toughness": 0.5,
         "knockback": 0.0,
         "enchant": 12
@@ -1220,15 +1220,15 @@
       "tool": {
         "uses": 800,
         "speed": 7.0,
-        "attack": 3.0,
+        "attack": 6.5,
         "enchant": 12
       },
       "armor": {
         "durability": 30,
         "helmet": 3,
-        "chestplate": 6,
-        "leggings": 5,
-        "boots": 2,
+        "chestplate": 9,
+        "leggings": 8,
+        "boots": 3,
         "toughness": 0.5,
         "knockback": 0.0,
         "enchant": 12
@@ -1245,15 +1245,15 @@
       "tool": {
         "uses": 1000,
         "speed": 8.0,
-        "attack": 3.0,
+        "attack": 8.9,
         "enchant": 25
       },
       "armor": {
         "durability": 32,
-        "helmet": 3,
-        "chestplate": 7,
-        "leggings": 5,
-        "boots": 3,
+        "helmet": 4,
+        "chestplate": 12,
+        "leggings": 10,
+        "boots": 4,
         "toughness": 1.0,
         "knockback": 0.0,
         "enchant": 25,
@@ -1271,15 +1271,15 @@
       "tool": {
         "uses": 950,
         "speed": 9.5,
-        "attack": 3.0,
+        "attack": 8.9,
         "enchant": 14
       },
       "armor": {
         "durability": 32,
-        "helmet": 3,
-        "chestplate": 7,
-        "leggings": 5,
-        "boots": 3,
+        "helmet": 4,
+        "chestplate": 12,
+        "leggings": 10,
+        "boots": 4,
         "toughness": 1.0,
         "knockback": 0.0,
         "enchant": 14
@@ -1296,15 +1296,15 @@
       "tool": {
         "uses": 1400,
         "speed": 9.0,
-        "attack": 3.5,
+        "attack": 13.9,
         "enchant": 16
       },
       "armor": {
         "durability": 38,
-        "helmet": 3,
-        "chestplate": 7,
-        "leggings": 6,
-        "boots": 3,
+        "helmet": 5,
+        "chestplate": 14,
+        "leggings": 12,
+        "boots": 5,
         "toughness": 1.5,
         "knockback": 0.0,
         "enchant": 16
@@ -1321,15 +1321,15 @@
       "tool": {
         "uses": 1350,
         "speed": 8.5,
-        "attack": 4.5,
+        "attack": 14.9,
         "enchant": 14
       },
       "armor": {
         "durability": 36,
-        "helmet": 3,
-        "chestplate": 7,
-        "leggings": 6,
-        "boots": 3,
+        "helmet": 5,
+        "chestplate": 14,
+        "leggings": 12,
+        "boots": 5,
         "toughness": 1.5,
         "knockback": 0.0,
         "enchant": 14
@@ -1346,15 +1346,15 @@
       "tool": {
         "uses": 1450,
         "speed": 8.5,
-        "attack": 3.5,
+        "attack": 13.9,
         "enchant": 14
       },
       "armor": {
         "durability": 40,
-        "helmet": 3,
-        "chestplate": 8,
-        "leggings": 6,
-        "boots": 3,
+        "helmet": 6,
+        "chestplate": 15,
+        "leggings": 10,
+        "boots": 6,
         "toughness": 2.0,
         "knockback": 0.0,
         "enchant": 14
@@ -1371,15 +1371,15 @@
       "tool": {
         "uses": 2600,
         "speed": 9.5,
-        "attack": 4.0,
+        "attack": 19.9,
         "enchant": 12
       },
       "armor": {
         "durability": 55,
-        "helmet": 3,
-        "chestplate": 8,
-        "leggings": 6,
-        "boots": 3,
+        "helmet": 7,
+        "chestplate": 18,
+        "leggings": 13,
+        "boots": 7,
         "toughness": 3.0,
         "knockback": 0.0,
         "enchant": 12

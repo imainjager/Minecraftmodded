@@ -638,6 +638,8 @@ def gen_elites():
                     px[x, y] = (*(round(o + (n - o) * strength) for o, n in zip((r, g, b), tinted)), a)
             save_png(f"assets/{NS}/textures/entity/elite/{eid}.png", img)
             LANG[f"entity.{NS}.{eid}"] = f"{name} {base_name}"
+            LANG[f"item.{NS}.{eid}_spawn_egg"] = f"{name} {base_name} Spawn Egg"
+            write_json(f"assets/{NS}/models/item/{eid}_spawn_egg.json", {"parent": "minecraft:item/template_spawn_egg"})
             write_json(f"data/{NS}/loot_table/entities/{eid}.json", {
                 "type": "minecraft:entity",
                 "pools": [

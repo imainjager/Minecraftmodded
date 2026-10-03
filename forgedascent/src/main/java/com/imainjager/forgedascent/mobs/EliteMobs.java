@@ -1,6 +1,9 @@
 package com.imainjager.forgedascent.mobs;
 
 import com.imainjager.forgedascent.ForgedAscent;
+import com.imainjager.forgedascent.ModRegistries;
+import net.minecraft.world.item.Item;
+import net.neoforged.neoforge.common.DeferredSpawnEggItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
@@ -31,21 +34,23 @@ public final class EliteMobs {
 
     /** Vanilla mob families that get elite versions, and the vanilla types that convert into them. */
     public enum Base {
-        ZOMBIE("zombie", EntityType.ZOMBIE, List.of(EntityType.ZOMBIE, EntityType.HUSK)),
-        SKELETON("skeleton", EntityType.SKELETON, List.of(EntityType.SKELETON, EntityType.STRAY)),
-        SPIDER("spider", EntityType.SPIDER, List.of(EntityType.SPIDER, EntityType.CAVE_SPIDER)),
-        WITHER_SKELETON("wither_skeleton", EntityType.WITHER_SKELETON, List.of(EntityType.WITHER_SKELETON)),
-        PIGLIN("piglin", EntityType.PIGLIN, List.of(EntityType.PIGLIN)),
-        WITCH("witch", EntityType.WITCH, List.of(EntityType.WITCH));
+        ZOMBIE("zombie", EntityType.ZOMBIE, List.of(EntityType.ZOMBIE, EntityType.HUSK), 0x00AFAF),
+        SKELETON("skeleton", EntityType.SKELETON, List.of(EntityType.SKELETON, EntityType.STRAY), 0xC1C1C1),
+        SPIDER("spider", EntityType.SPIDER, List.of(EntityType.SPIDER, EntityType.CAVE_SPIDER), 0x342D27),
+        WITHER_SKELETON("wither_skeleton", EntityType.WITHER_SKELETON, List.of(EntityType.WITHER_SKELETON), 0x141414),
+        PIGLIN("piglin", EntityType.PIGLIN, List.of(EntityType.PIGLIN), 0x995F40),
+        WITCH("witch", EntityType.WITCH, List.of(EntityType.WITCH), 0x340000);
 
         public final String id;
         public final EntityType<?> vanilla;
         public final List<EntityType<?>> convertsFrom;
+        public final int eggColor;
 
-        Base(String id, EntityType<?> vanilla, List<EntityType<?>> convertsFrom) {
+        Base(String id, EntityType<?> vanilla, List<EntityType<?>> convertsFrom, int eggColor) {
             this.id = id;
             this.vanilla = vanilla;
             this.convertsFrom = convertsFrom;
+            this.eggColor = eggColor;
         }
     }
 
@@ -61,7 +66,10 @@ public final class EliteMobs {
             Map<EliteType, DeferredHolder<EntityType<?>, ? extends EntityType<? extends Mob>>> byElite = new EnumMap<>(EliteType.class);
             for (EliteType elite : EliteType.values()) {
                 String name = elite.id() + "_" + base.id;
-                byElite.put(elite, ENTITY_TYPES.register(name, () -> build(base, name)));
+                var holder = ENTITY_TYPES.register(name, () -> build(base, name));
+                byElite.put(elite, holder);
+                ModRegistries.addToTab(ModRegistries.ITEMS.register(name + "_spawn_egg", () -> new DeferredSpawnEggItem(
+                        holder, base.eggColor, elite.tint, new Item.Properties())));
             }
             TYPES.put(base, byElite);
         }

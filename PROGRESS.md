@@ -2,7 +2,25 @@
 
 Read [`PLAN.md`](PLAN.md) first. This file says where the build stopped and how to continue.
 
-## Current state (2026-10-03)
+## Current state (2026-10-03, update 4 in progress)
+
+**Update 4 design is in [`PLAN.md`](PLAN.md) under "Update 4 design" (player-approved).** Built so far (mod 0.4.0, installed):
+
+| Done | Detail |
+|---|---|
+| Gear curve (ours) | `materials.json` armor/attack rescaled to the curve, keeping per-material offsets |
+| Vanilla gear | Iron 14 armor / sword 7, diamond 29 / 13, netherite 52 / 26 (`VanillaNerfs.java`) |
+| Mob trim | Health ×4 Summit, ×5 Pinnacle (default + patched in the profile's `config/forgedascent-common.toml`) |
+| Spawn eggs | `forgedascent:<elite>_<base>_spawn_egg` for all 42 elites |
+
+**Still to build for update 4 (in this order):**
+1. Other mods' gear boosted by tier (tools: tier from the blocks they can't mine; armor: Mekanism/IE/Everything is Copper/Ice and Fire explicit, others heuristic) + Mekanism Tools config to the curve
+2. Plates for our ingots (hand hammer + Create press / IE metal press / MI compressor recipes) and tiered reinforced plates
+3. Anvils: 6 blocks (Bronze → Netherite) with a crafting screen and `forgedascent:anvil_*` recipe types; move our tier 4+ gear, vanilla diamond/netherite gear and Mekanism/IE tier 4+ gear onto anvils (remove their crafting/smithing recipes via KubeJS); reinforcing at anvils
+4. Boss Sigils (Gate I–VI) + Treasure Bags dropped by the gate bosses (LivingDropsEvent), bag loot = Sigil + tier materials + rough gems + an Artifacts/Relics accessory
+5. Blood moon (permanent damage default, never breaks block entities) with digging zombies/husks/Brutes/Dread
+6. Quest book: new FTB Quests chapter group + 7 chapters (check ATM10's `config/ftbquests/quests` format and split lang files first; back up)
+7. Apotheosis world tier unlocks switched from gear tiers to gates
 
 **Phases 3–5 (gems, mobs, loot): built and installed in the `Claude` profile (mod version 0.3.0). Waiting for the player's in-game test** ([`docs/PHASE3-5_TEST.md`](docs/PHASE3-5_TEST.md)). Phase 2 was installed but not yet tested in game when 3–5 were built.
 Phase 1 was tested in game by the player: worked; only complaint was texture quality (fixed in Phase 2, see "Texture rule").

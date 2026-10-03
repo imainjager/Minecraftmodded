@@ -46,6 +46,11 @@ public final class ModRegistries {
 
     private ModRegistries() {}
 
+    /** Adds an item registered elsewhere (e.g. spawn eggs) to the creative tab. */
+    public static void addToTab(DeferredItem<? extends Item> item) {
+        TAB_ITEMS.add(item);
+    }
+
     public static void register(IEventBus modBus) {
         for (Materials.Ingot ingot : Materials.INGOTS) {
             TAB_ITEMS.add(ITEMS.registerSimpleItem(ingot.id() + "_ingot"));

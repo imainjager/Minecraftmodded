@@ -21,6 +21,75 @@ Status: **final draft, waiting for go-ahead.** Built from the Phase 0 scan
 | Elite Essence | **No** |
 | Way of working | **Live:** player plays the `Claude` profile, asks for changes, Claude rebuilds and updates it |
 
+## Update 4 design (agreed 2026-10-03, overrides older sections where they differ)
+
+Player's yes/no list:
+
+| Yes | No |
+|---|---|
+| Gear curve (ours + vanilla iron/diamond/netherite) + mob trim (Summit health ×4, Pinnacle ×5) | Foundry / molten metals |
+| Other mods' gear boosted to the curve by tier | Tier tooltips / colored names |
+| Spawn eggs for the 42 elites | Elite abilities |
+| Plates (made with other mods' hammers/presses) → reinforced gear (stats only) | Heart Canister integration, smithing ranks |
+| Tiered anvils, each crafted with a boss Sigil | Locked dimensions, NPCs/traders, boss summons, Hardmode flag, boss-only bars, re-fighting bosses |
+| Boss Sigils + Treasure Bags with Artifacts/Relics accessories | Machine yield bonuses, Tier Trials, Elite Trophies, side-material jobs, web spiders |
+| **Quest book** ("Forged Ascent" chapters, the player's main progression guide) | |
+| Blood moon with digging mobs | |
+| Later: flawless gems + inlays | |
+
+### Gear curve (full set armor / sword damage; Apothic Attributes armor: damage taken = 10/(10+armor))
+
+| Tier | 2 | 3 (iron) | 4 | 5 | 6 (diamond) | 7 | 8 | 9 (netherite) |
+|---|---|---|---|---|---|---|---|---|
+| Armor | 10 | 14 | 18 | 23 | 29 | 36 | 45 | 52 |
+| Sword damage | 6 | 7 | 9 | 10.5 | 13 | 18 | 24 | 26 |
+
+Materials keep their personality as offsets around the curve. Other mods' gear: tools get the tier's damage (tier from the blocks
+the tool can't mine), armor scaled to the tier's total (explicit tiers for Mekanism/IE/Everything is Copper/Ice and Fire, heuristic for the rest).
+
+### Anvils (Terraria-style gates). Tier 1–3 gear stays in the crafting table.
+
+| Anvil | Crafted from | Crafts gear tier ≤ |
+|---|---|---|
+| Bronze | Gate I Sigil + tier-4 plates | 4 |
+| Steel | Bronze Anvil + Gate II Sigil + tier-5 plates | 5 |
+| Gemstone | Steel Anvil + Gate III Sigil + tier-6 plates/gems | 6 |
+| Titanium | Gemstone Anvil + Gate IV Sigil + tier-7 plates | 7 |
+| Tungsten | Titanium Anvil + Gate V Sigil + tier-8 plates | 8 |
+| Netherite | Tungsten Anvil + Gate VI Sigil + netherite | 9 |
+
+Anvils open a 3x3 crafting screen with their own recipe type (tier field). Anvils drop themselves. Our tier 4+ gear,
+vanilla diamond/netherite gear (netherite upgrade moves here) and major mods' tier 4+ gear (Mekanism Tools, IE steel) move onto anvils.
+Reinforcing happens at an anvil: gear + reinforced plate (tier ≥ gear tier) → same gear, +1 armor per piece or +1 damage, +25% durability.
+
+### Boss gates (bosses are NOT scaled by world tier). Any one boss of a gate drops that gate's Treasure Bag (Sigil + tier materials + rough gems + accessory).
+
+| Gate | Unlocks anvil | Bosses |
+|---|---|---|
+| I | Bronze (t4) | Naga, Slider, Elder Guardian |
+| II | Steel (t5) | Lich, Valkyrie Queen, Forgotten Guardian, Dead King |
+| III | Gemstone (t6) | Minoshroom, Hydra, Netherite Monstrosity, Starlight Golem |
+| IV | Titanium (t7) | Wither, Knight Phantoms, Ender Guardian, Sun Spirit |
+| V | Tungsten (t8) | Ender Dragon, Ignis, Ur-Ghast, Leviathan, Warden |
+| VI | Netherite (t9) | Snow Queen, Harbinger, Ancient Remnant, Maledictus |
+| Final | — | Scylla, Lunar Monstrosity, Tyros (fire boss) |
+
+Apotheosis world tiers follow gates: Frontier after II, Ascent after III, Summit after V, Pinnacle after VI.
+
+### Blood moon
+- Starts after Gate I is cleared; 1 in 8 nights; warning at dusk; red fog (red sky if possible); no sleeping
+- 2× monster spawns (skipped when many monsters are already near the player, for lag), +15% elite chance, better drops
+- **Digging:** zombies, husks, Brutes (any base) and Dread elites that can't reach their target break blocks toward it, with crack animation.
+  They can break **everything except obsidian-tier blocks** (hardness ≥ 50, unbreakable, siege-proof tag) and **never** blocks with
+  block entities (chests, machines, storage). Max ~6 diggers at once, ~150 blocks per night
+- **Damage is permanent** (player's final choice): broken blocks drop as items. Config switch to restore them at dawn instead.
+  Blocks with block entities (machines, chests, storage) are still never broken
+
+### Quest book
+New FTB Quests chapter group "Forged Ascent", one chapter per age (Stone, Bronze, Steel, Gem, Titanium, Tungsten, Netherite),
+each: mine new ores → craft gear/plates → prepare (reinforce, cut gems, reforge) → boss gate (kill task per boss option, with how-to-find notes)
+→ Sigil → next anvil. New files only; ATM's chapters are not edited (backup first). ATM10 uses split lang files under `quests/lang/en_us/`.
+
 ## Scope changes (agreed 2026-10-03, override the sections below)
 
 | Topic | Change |
