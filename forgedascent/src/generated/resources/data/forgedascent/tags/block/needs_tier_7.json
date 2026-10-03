@@ -7,6 +7,10 @@
     {
       "id": "#c:ores/iridium",
       "required": false
+    },
+    {
+      "id": "#c:ores/black_diamond",
+      "required": false
     }
   ]
 }

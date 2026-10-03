@@ -31,3 +31,6 @@ desktop.ini
 # Secrets
 .env
 *.env
+
+# Copied from the Apotheosis jar by forgedascent/tools/gen_assets.py
+profile/kubejs/data/apotheosis/

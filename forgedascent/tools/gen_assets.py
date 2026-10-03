@@ -337,8 +337,41 @@ ORE_TIERS = {
 }
 MAX_TIER = 9
 
-# "Any material of this tier" item tags (PLAN.md section 1). Gear materials are added from the table.
-TIER_MATERIALS = {2: ["copper"], 3: ["iron"], 4: ["bronze", "silver"], 5: ["steel", "osmium"]}
+# "Any material of this tier" item tags (PLAN.md section 1), as ingot/gem tags. Gear materials are added from the table.
+TIER_MATERIALS = {2: ["c:ingots/copper"], 3: ["c:ingots/iron"], 4: ["c:ingots/bronze", "c:ingots/silver"],
+                  5: ["c:ingots/steel", "c:ingots/osmium"], 6: ["c:gems/diamond"]}
+
+# Gear counted as "tier N or better" for Apotheosis world tier unlocks (besides our own gear).
+EXTRA_GEAR = {
+    4: ["mekanismtools:bronze_pickaxe", "mekanismtools:bronze_sword"],
+    5: ["mekanismtools:steel_pickaxe", "mekanismtools:steel_sword", "mekanismtools:osmium_pickaxe",
+        "mekanismtools:osmium_sword", "immersiveengineering:pickaxe_steel", "immersiveengineering:sword_steel"],
+    6: ["minecraft:diamond_pickaxe", "minecraft:diamond_sword", "minecraft:diamond_chestplate"],
+    8: ["minecraft:netherite_pickaxe", "minecraft:netherite_sword", "minecraft:netherite_chestplate"],
+}
+# Apotheosis world tier -> gear tier needed to unlock it (PLAN.md section 8).
+WORLD_TIER_GEAR = {"frontier": 4, "ascent": 6, "summit": 7, "pinnacle": 8}
+APOTHEOSIS_JAR_GLOB = "Apotheosis-*.jar"
+
+# Elite mobs (must match mobs/EliteType.java and mobs/EliteMobs.java).
+ELITE_TYPES = {  # id: (tint, strength, loot tier, display name)
+    "runner": ("#DCEBFF", 0.50, 3, "Runner"),
+    "brute": ("#6B5A48", 0.60, 3, "Brute"),
+    "armored": ("#9AA0A6", 0.70, 5, "Armored"),
+    "molten": ("#FF8A2A", 0.70, 5, "Molten"),
+    "frost": ("#8FD6FF", 0.70, 5, "Frost"),
+    "venomous": ("#6FD94A", 0.70, 5, "Venomous"),
+    "dread": ("#4A2060", 0.80, 7, "Dread"),
+}
+ELITE_BASES = {  # id: (vanilla texture, display name, vanilla loot table)
+    "zombie": ("minecraft:entity/zombie/zombie", "Zombie", "minecraft:entities/zombie"),
+    "skeleton": ("minecraft:entity/skeleton/skeleton", "Skeleton", "minecraft:entities/skeleton"),
+    "spider": ("minecraft:entity/spider/spider", "Spider", "minecraft:entities/spider"),
+    "wither_skeleton": ("minecraft:entity/skeleton/wither_skeleton", "Wither Skeleton",
+                        "minecraft:entities/wither_skeleton"),
+    "piglin": ("minecraft:entity/piglin/piglin", "Piglin", "minecraft:entities/piglin"),
+    "witch": ("minecraft:entity/witch", "Witch", "minecraft:entities/witch"),
+}
 
 # Temporary crafting-table alloys (PLAN.md scope changes): (name, [(metal, count)], result, count, needs mod)
 ALLOYS = [
@@ -494,7 +527,11 @@ def gen_ores():
 def gen_gear():
     for m in TABLE["gear"]:
         mid, name, color, tier = m["id"], m["name"], m["color"], m["tier"]
-        TIER_MATERIALS.setdefault(tier, []).append(mid)
+        TIER_MATERIALS.setdefault(tier, []).append(m["repair"])
+        for unlock in WORLD_TIER_GEAR.values():
+            if tier >= unlock:
+                for kind in ("pickaxe", "sword", "chestplate"):
+                    tag("item", f"{NS}:gear/tier_{unlock}", f"{NS}:{mid}_{kind}")
         key_tool = {"X": {"tag": m["repair"]}, "#": {"tag": "c:rods/wooden"}}
         tns, tprefix = m["tools_from"].split(":")
         for kind in TOOL_KINDS:
@@ -519,6 +556,7 @@ def gen_gear():
             tag("item", "minecraft:trimmable_armor", f"{NS}:{item}")
             LANG[f"item.{NS}.{item}"] = f"{name} {kind.capitalize()}"
         lns, lname = ARMOR_LAYERS.get(m["armor_from"], m["armor_from"]).split(":")
+        lname = lname.split("/")[-1]  # icons may live in a subfolder (gear/, armor/); layers don't
         for layer in (1, 2):
             save_png(f"assets/{NS}/textures/models/armor/{mid}_layer_{layer}.png",
                      source_or_fallback(f"{lns}:models/armor/{lname}_layer_{layer}", color,
@@ -544,7 +582,76 @@ def gen_tiers():
     for vanilla, t in (("wooden", 0), ("gold", 0), ("stone", 1), ("iron", 3), ("diamond", 6)):
         tag("block", f"minecraft:incorrect_for_{vanilla}_tool", f"#{NS}:incorrect_for_tier_{t}")
     for tier, mats in TIER_MATERIALS.items():
-        tag("item", f"{NS}:tier_materials/{tier}", *[opt(f"#c:ingots/{x}") for x in dict.fromkeys(mats)])
+        tag("item", f"{NS}:tier_materials/{tier}", *[opt(f"#{x}") for x in dict.fromkeys(mats)])
+    for unlock in sorted(set(WORLD_TIER_GEAR.values())):
+        extra = [i for t, items in EXTRA_GEAR.items() if t >= unlock for i in items]
+        tag("item", f"{NS}:gear/tier_{unlock}", *[opt(i) for i in extra])
+
+
+def gen_gems():
+    for gem in TABLE["gems"]:
+        gid, color = gem["id"], gem["color"]
+        ORE_TIERS.setdefault(gem["tier"], []).append(f"c:ores/{gid}")
+        rough = f"rough_{gid}"
+        save_png(f"assets/{NS}/textures/item/{rough}.png",
+                 source_or_fallback("alltheores:item/raw_silver", color, "minecraft:item/raw_iron"))
+        item_model(rough, "minecraft:item/generated", rough)
+        LANG[f"item.{NS}.{rough}"] = f"Rough {gem['name']}"
+        tag("item", f"{NS}:rough_gems", f"{NS}:{rough}")
+        wheels = f"{NS}:cutting_wheels/{8 if gem['hardness'] <= 8 else 10}"
+        shapeless(f"cutting/{gid}", [{"item": f"{NS}:{rough}"}, {"tag": wheels}], gem["item"], 1,
+                  gem["item"].split(":")[0] if not gem["item"].startswith("minecraft:") else None)
+    tag("item", f"{NS}:cutting_wheels/8", f"{NS}:emery_wheel", f"{NS}:diamond_grit_wheel")
+    tag("item", f"{NS}:cutting_wheels/10", f"{NS}:diamond_grit_wheel")
+    save_png(f"assets/{NS}/textures/item/diamond_grit.png",
+             source_or_fallback("minecraft:item/sugar", "#7FE8E4", "minecraft:item/gunpowder"))
+    save_png(f"assets/{NS}/textures/item/emery_wheel.png",
+             source_or_fallback("create:item/sand_paper", "#8A5A4A", "minecraft:item/flint"))
+    save_png(f"assets/{NS}/textures/item/diamond_grit_wheel.png",
+             source_or_fallback("create:item/sand_paper", "#6FD8D4", "minecraft:item/flint"))
+    for item, name in (("diamond_grit", "Diamond Grit"), ("emery_wheel", "Emery Cutting Wheel"),
+                       ("diamond_grit_wheel", "Diamond-Grit Cutting Wheel")):
+        item_model(item, "minecraft:item/generated", item)
+        LANG[f"item.{NS}.{item}"] = name
+    shapeless("diamond_grit", [{"item": f"{NS}:rough_diamond"}], f"{NS}:diamond_grit", 2)
+    shaped("emery_wheel", f"{NS}:emery_wheel", ["FFF", "FIF", "FFF"],
+           {"F": {"item": "minecraft:flint"}, "I": {"tag": f"{NS}:tier_materials/4"}}, "misc")
+    shaped("diamond_grit_wheel", f"{NS}:diamond_grit_wheel", ["GGG", "GIG", "GGG"],
+           {"G": {"item": f"{NS}:diamond_grit"}, "I": {"tag": f"{NS}:tier_materials/6"}}, "misc")
+
+
+def gen_elites():
+    for base, (texture, base_name, loot) in ELITE_BASES.items():
+        src = SRC.get(texture)
+        for elite, (tint, strength, loot_tier, name) in ELITE_TYPES.items():
+            eid = f"{elite}_{base}"
+            img = src.copy()
+            px = img.load()
+            t = hex_rgb(tint)
+            for y in range(img.size[1]):
+                for x in range(img.size[0]):
+                    r, g, b, a = px[x, y]
+                    if a == 0:
+                        continue
+                    l = lum((r, g, b))
+                    tinted = tuple(min(255, round(l * c * 1.35)) for c in t)
+                    px[x, y] = (*(round(o + (n - o) * strength) for o, n in zip((r, g, b), tinted)), a)
+            save_png(f"assets/{NS}/textures/entity/elite/{eid}.png", img)
+            LANG[f"entity.{NS}.{eid}"] = f"{name} {base_name}"
+            write_json(f"data/{NS}/loot_table/entities/{eid}.json", {
+                "type": "minecraft:entity",
+                "pools": [
+                    {"rolls": 1, "entries": [{"type": "minecraft:loot_table", "value": loot}]},
+                    {"rolls": 1, "conditions": [{"condition": "minecraft:random_chance", "chance": 0.35}],
+                     "entries": [{"type": "minecraft:tag", "name": f"{NS}:tier_materials/{loot_tier}",
+                                  "expand": True}]}]})
+
+
+def gen_loot_modifiers():
+    write_json(f"data/{NS}/loot_modifiers/tiered_chest_loot.json",
+               {"type": f"{NS}:tiered_chest_loot", "conditions": []})
+    write_json("data/neoforge/loot_modifiers/global_loot_modifiers.json",
+               {"replace": False, "entries": [f"{NS}:tiered_chest_loot"]})
 
 
 def gen_alloys():
@@ -571,6 +678,40 @@ def gen_profile():
                     "type": "minecraft:trapezoid",
                     "min_inclusive": {"absolute": lo}, "max_inclusive": {"absolute": hi}}},
                 {"type": "minecraft:biome"}]}, base=PROFILE_OUT)
+    # Gem ores drop rough gems (PLAN.md section 5). KubeJS data beats each mod's own loot table.
+    silk = {"condition": "minecraft:match_tool", "predicate": {"predicates": {"minecraft:enchantments": [
+        {"enchantments": "minecraft:silk_touch", "levels": {"min": 1}}]}}}
+    for gem in TABLE["gems"]:
+        for ore in gem["ores"]:
+            ns, path = ore.split(":")
+            write_json(f"kubejs/data/{ns}/loot_table/blocks/{path}.json", {
+                "type": "minecraft:block",
+                "pools": [{"rolls": 1, "bonus_rolls": 0, "entries": [{"type": "minecraft:alternatives", "children": [
+                    {"type": "minecraft:item", "name": ore, "conditions": [silk]},
+                    {"type": "minecraft:item", "name": f"{NS}:rough_{gem['id']}", "functions": [
+                        {"function": "minecraft:apply_bonus", "enchantment": "minecraft:fortune",
+                         "formula": "minecraft:ore_drops"},
+                        {"function": "minecraft:explosion_decay"}]}]}]}]}, base=PROFILE_OUT)
+
+    # Apotheosis world tiers also need Forged Ascent gear (PLAN.md section 8). Copied from the
+    # Apotheosis jar with one extra criterion, so these files are git-ignored.
+    apoth = next(PACK_MODS.glob(APOTHEOSIS_JAR_GLOB), None)
+    if apoth:
+        with zipfile.ZipFile(apoth) as z:
+            for world_tier, gear_tier in WORLD_TIER_GEAR.items():
+                adv = json.loads(z.read(f"data/apotheosis/advancement/progression/{world_tier}.json"))
+                adv["criteria"]["forgedascent_gear"] = {
+                    "trigger": "minecraft:inventory_changed",
+                    "conditions": {"items": [{"items": f"#{NS}:gear/tier_{gear_tier}"}]}}
+                adv["requirements"].append(["forgedascent_gear"])
+                adv["display"]["description"] = {"translate": f"advancements.{NS}.{world_tier}.desc"}
+                LANG[f"advancements.{NS}.{world_tier}.desc"] = (
+                    f"Equip affixed gear in every slot and own tier-{gear_tier} gear from Forged Ascent "
+                    f"(or something as strong)")
+                write_json(f"kubejs/data/apotheosis/advancement/progression/{world_tier}.json", adv, base=PROFILE_OUT)
+    else:
+        print("WARNING: Apotheosis jar not found; world tier unlocks not generated")
+
     lines = ["// Generated by forgedascent/tools/gen_assets.py. Gates tier-less mining tools behind",
              "// Forged Ascent tiers: the listed ingredient becomes 'any ingot of tier N'.",
              "ServerEvents.recipes(event => {"]
@@ -599,14 +740,17 @@ LANG = {"itemGroup.forgedascent": "Forged Ascent"}
 
 def main():
     global SRC
-    for sub in (f"assets/{NS}", f"data/{NS}", "data/c", "data/minecraft"):
+    for sub in (f"assets/{NS}", f"data/{NS}", "data/c", "data/minecraft", "data/neoforge"):
         shutil.rmtree(OUT / sub, ignore_errors=True)
     SRC = Sources()
     gen_ingots()
     gen_ores()
+    gen_gems()
     gen_gear()
     gen_tiers()
     gen_alloys()
+    gen_elites()
+    gen_loot_modifiers()
     gen_profile()
     write_tags()
     write_json(f"assets/{NS}/lang/en_us.json", dict(sorted(LANG.items())))

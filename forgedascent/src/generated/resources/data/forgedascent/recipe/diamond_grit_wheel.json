@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "forgedascent:diamond_grit"
+    },
+    "I": {
+      "tag": "forgedascent:tier_materials/6"
+    }
+  },
+  "pattern": [
+    "GGG",
+    "GIG",
+    "GGG"
+  ],
+  "result": {
+    "count": 1,
+    "id": "forgedascent:diamond_grit_wheel"
+  }
+}

@@ -27,6 +27,10 @@
     {
       "id": "#c:ingots/osmiridium",
       "required": false
+    },
+    {
+      "id": "#c:gems/black_diamond",
+      "required": false
     }
   ]
 }

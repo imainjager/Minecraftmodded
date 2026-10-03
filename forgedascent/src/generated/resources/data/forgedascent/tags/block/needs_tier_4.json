@@ -23,6 +23,10 @@
     {
       "id": "#c:ores/molybdenum",
       "required": false
+    },
+    {
+      "id": "#c:ores/garnet",
+      "required": false
     }
   ]
 }

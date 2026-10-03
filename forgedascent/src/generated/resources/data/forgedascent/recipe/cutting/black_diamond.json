@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "forgedascent:rough_black_diamond"
+    },
+    {
+      "tag": "forgedascent:cutting_wheels/10"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "silentgems:black_diamond"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "silentgems"
+    }
+  ]
+}

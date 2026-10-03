@@ -56,6 +56,12 @@ public final class ModRegistries {
         for (Materials.Ore ore : Materials.ORES) {
             registerOre(ore);
         }
+        for (Materials.Gem gem : Materials.GEMS) {
+            TAB_ITEMS.add(ITEMS.registerSimpleItem("rough_" + gem.id()));
+        }
+        TAB_ITEMS.add(ITEMS.registerSimpleItem("diamond_grit"));
+        TAB_ITEMS.add(ITEMS.registerItem("emery_wheel", CuttingWheelItem::new, new Item.Properties().durability(32)));
+        TAB_ITEMS.add(ITEMS.registerItem("diamond_grit_wheel", CuttingWheelItem::new, new Item.Properties().durability(64)));
         for (Materials.Gear gear : Materials.GEAR) {
             registerGear(gear);
         }

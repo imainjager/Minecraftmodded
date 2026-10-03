@@ -30,6 +30,15 @@
     "forgedascent:stellite_chestplate",
     "forgedascent:inconel_chestplate",
     "forgedascent:iridium_chestplate",
-    "forgedascent:osmiridium_chestplate"
+    "forgedascent:osmiridium_chestplate",
+    "forgedascent:amethyst_chestplate",
+    "forgedascent:garnet_chestplate",
+    "forgedascent:peridot_chestplate",
+    "forgedascent:emerald_chestplate",
+    "forgedascent:topaz_chestplate",
+    "forgedascent:alexandrite_chestplate",
+    "forgedascent:ruby_chestplate",
+    "forgedascent:sapphire_chestplate",
+    "forgedascent:black_diamond_chestplate"
   ]
 }

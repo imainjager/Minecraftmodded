@@ -1,0 +1,91 @@
+{
+  "values": [
+    "forgedascent:platinum_pickaxe",
+    "forgedascent:platinum_sword",
+    "forgedascent:platinum_chestplate",
+    "forgedascent:vanadium_steel_pickaxe",
+    "forgedascent:vanadium_steel_sword",
+    "forgedascent:vanadium_steel_chestplate",
+    "forgedascent:white_gold_pickaxe",
+    "forgedascent:white_gold_sword",
+    "forgedascent:white_gold_chestplate",
+    "forgedascent:titanium_pickaxe",
+    "forgedascent:titanium_sword",
+    "forgedascent:titanium_chestplate",
+    "forgedascent:chromium_pickaxe",
+    "forgedascent:chromium_sword",
+    "forgedascent:chromium_chestplate",
+    "forgedascent:stainless_steel_pickaxe",
+    "forgedascent:stainless_steel_sword",
+    "forgedascent:stainless_steel_chestplate",
+    "forgedascent:chromoly_pickaxe",
+    "forgedascent:chromoly_sword",
+    "forgedascent:chromoly_chestplate",
+    "forgedascent:titanium_alloy_pickaxe",
+    "forgedascent:titanium_alloy_sword",
+    "forgedascent:titanium_alloy_chestplate",
+    "forgedascent:tungsten_pickaxe",
+    "forgedascent:tungsten_sword",
+    "forgedascent:tungsten_chestplate",
+    "forgedascent:tungsten_carbide_pickaxe",
+    "forgedascent:tungsten_carbide_sword",
+    "forgedascent:tungsten_carbide_chestplate",
+    "forgedascent:high_speed_steel_pickaxe",
+    "forgedascent:high_speed_steel_sword",
+    "forgedascent:high_speed_steel_chestplate",
+    "forgedascent:stellite_pickaxe",
+    "forgedascent:stellite_sword",
+    "forgedascent:stellite_chestplate",
+    "forgedascent:inconel_pickaxe",
+    "forgedascent:inconel_sword",
+    "forgedascent:inconel_chestplate",
+    "forgedascent:iridium_pickaxe",
+    "forgedascent:iridium_sword",
+    "forgedascent:iridium_chestplate",
+    "forgedascent:osmiridium_pickaxe",
+    "forgedascent:osmiridium_sword",
+    "forgedascent:osmiridium_chestplate",
+    "forgedascent:emerald_pickaxe",
+    "forgedascent:emerald_sword",
+    "forgedascent:emerald_chestplate",
+    "forgedascent:topaz_pickaxe",
+    "forgedascent:topaz_sword",
+    "forgedascent:topaz_chestplate",
+    "forgedascent:alexandrite_pickaxe",
+    "forgedascent:alexandrite_sword",
+    "forgedascent:alexandrite_chestplate",
+    "forgedascent:ruby_pickaxe",
+    "forgedascent:ruby_sword",
+    "forgedascent:ruby_chestplate",
+    "forgedascent:sapphire_pickaxe",
+    "forgedascent:sapphire_sword",
+    "forgedascent:sapphire_chestplate",
+    "forgedascent:black_diamond_pickaxe",
+    "forgedascent:black_diamond_sword",
+    "forgedascent:black_diamond_chestplate",
+    {
+      "id": "minecraft:diamond_pickaxe",
+      "required": false
+    },
+    {
+      "id": "minecraft:diamond_sword",
+      "required": false
+    },
+    {
+      "id": "minecraft:diamond_chestplate",
+      "required": false
+    },
+    {
+      "id": "minecraft:netherite_pickaxe",
+      "required": false
+    },
+    {
+      "id": "minecraft:netherite_sword",
+      "required": false
+    },
+    {
+      "id": "minecraft:netherite_chestplate",
+      "required": false
+    }
+  ]
+}

@@ -15,6 +15,10 @@
     {
       "id": "#c:ores/vanadium",
       "required": false
+    },
+    {
+      "id": "#c:ores/topaz",
+      "required": false
     }
   ]
 }

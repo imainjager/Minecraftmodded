@@ -4,8 +4,26 @@ Read [`PLAN.md`](PLAN.md) first. This file says where the build stopped and how 
 
 ## Current state (2026-10-03)
 
-**Phase 2: built and installed in the `Claude` profile (mod version 0.2.0). Waiting for the player's in-game test.**
+**Phases 3–5 (gems, mobs, loot): built and installed in the `Claude` profile (mod version 0.3.0). Waiting for the player's in-game test** ([`docs/PHASE3-5_TEST.md`](docs/PHASE3-5_TEST.md)). Phase 2 was installed but not yet tested in game when 3–5 were built.
 Phase 1 was tested in game by the player: worked; only complaint was texture quality (fixed in Phase 2, see "Texture rule").
+
+### Phases 3–5 (0.3.0)
+
+| Done | Detail |
+|---|---|
+| Rough gems | Diamond, emerald, peridot, garnet, topaz, ruby, sapphire, alexandrite, black diamond ores drop `rough_<gem>` (KubeJS loot tables in `profile/`, from `gems` in `materials.json`) |
+| Cutting (basic) | Crafting: rough gem + cutting wheel → gem. Emery wheel (32 uses, cuts hardness ≤ 8), diamond-grit wheel (64 uses, ≤ 10). Rough diamond → 2 diamond grit |
+| Gem gear (9 sets) | Amethyst (t4), garnet, peridot (t5), emerald, topaz (t6), alexandrite, ruby, sapphire (t7), black diamond (t8). **Jade dropped: not in the pack** |
+| Mob scaling | All hostile mobs (incl. modded, not bosses): health/damage × world tier × place (deepslate, deep, Nether, other dims). Projectile damage scaled too. Numbers in `config/forgedascent-common.toml` |
+| Armor on mobs | Zombies/skeletons/piglins, chance per world tier, gear from the matching tier band, 5% drop |
+| Elites | 42 mob types `forgedascent:<runner|brute|armored|molten|frost|venomous|dread>_<zombie|skeleton|spider|wither_skeleton|piglin|witch>`, swapped in at spawn. Recolored vanilla skins, size via scale attribute, on-hit fire/slow/poison, Dread speed aura, bonus loot |
+| In-place elites | Creepers (short fuse / big blast / charged), endermen (stats), pillagers (Quick Charge + Piercing crossbow), vindicators/evokers/ravagers (stats). Patrol captains get the aura from Ascent up |
+| Hardened/Ancient | Stat-only (+25% / +50% health) for 30% of normal mobs from Ascent / Pinnacle. **No reskin yet** |
+| Chest loot | Global loot modifier on every `chests/*` table: tier-band ingots, rough gems, wheels, occasional gear piece. Fewer diamonds in Haven/Frontier chests |
+| World tier unlocks | Apotheosis Frontier/Ascent/Summit/Pinnacle also need tier 4/6/7/8 gear (`forgedascent:gear/tier_N`). Advancement files copied from the Apotheosis jar (git-ignored) |
+| Testing | `tools/smoke_test.py "command" ...` runs server commands over RCON and prints replies |
+
+Not done from the plan (deferred): flawless gems, inlays, heat treatment, synthetic gems, Automatic Lapidary, raid extra wave, bigger underground groups, better skeleton aim, Hardened/Ancient reskins, blood moon, web-shooting spiders.
 
 | Done | Detail |
 |---|---|
@@ -45,8 +63,8 @@ Phase 1 was tested in game by the player: worked; only complaint was texture qua
 
 ## Next
 
-1. Player tests Phase 2 in game ([`docs/PHASE2_TEST.md`](docs/PHASE2_TEST.md)) and reports problems/feel.
-2. Phase 3 (gems: rough drops, very basic cutting, 11 gem gear sets) per PLAN.md.
+1. Player tests Phases 2–5 in game ([`docs/PHASE2_TEST.md`](docs/PHASE2_TEST.md), [`docs/PHASE3-5_TEST.md`](docs/PHASE3-5_TEST.md)) and reports problems/feel.
+2. Tune numbers from feedback, then pick from the deferred list above.
 
 ## Known gaps / to verify in game
 

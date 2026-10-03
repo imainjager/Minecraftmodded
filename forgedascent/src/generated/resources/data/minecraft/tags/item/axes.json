@@ -30,6 +30,15 @@
     "forgedascent:stellite_axe",
     "forgedascent:inconel_axe",
     "forgedascent:iridium_axe",
-    "forgedascent:osmiridium_axe"
+    "forgedascent:osmiridium_axe",
+    "forgedascent:amethyst_axe",
+    "forgedascent:garnet_axe",
+    "forgedascent:peridot_axe",
+    "forgedascent:emerald_axe",
+    "forgedascent:topaz_axe",
+    "forgedascent:alexandrite_axe",
+    "forgedascent:ruby_axe",
+    "forgedascent:sapphire_axe",
+    "forgedascent:black_diamond_axe"
   ]
 }

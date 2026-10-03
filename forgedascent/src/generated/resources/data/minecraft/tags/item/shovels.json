@@ -30,6 +30,15 @@
     "forgedascent:stellite_shovel",
     "forgedascent:inconel_shovel",
     "forgedascent:iridium_shovel",
-    "forgedascent:osmiridium_shovel"
+    "forgedascent:osmiridium_shovel",
+    "forgedascent:amethyst_shovel",
+    "forgedascent:garnet_shovel",
+    "forgedascent:peridot_shovel",
+    "forgedascent:emerald_shovel",
+    "forgedascent:topaz_shovel",
+    "forgedascent:alexandrite_shovel",
+    "forgedascent:ruby_shovel",
+    "forgedascent:sapphire_shovel",
+    "forgedascent:black_diamond_shovel"
   ]
 }

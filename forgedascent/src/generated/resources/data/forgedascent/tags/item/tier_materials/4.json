@@ -35,6 +35,10 @@
     {
       "id": "#c:ingots/rose_gold",
       "required": false
+    },
+    {
+      "id": "#c:gems/amethyst",
+      "required": false
     }
   ]
 }

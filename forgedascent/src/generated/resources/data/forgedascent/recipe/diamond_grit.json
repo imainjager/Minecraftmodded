@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "forgedascent:rough_diamond"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "id": "forgedascent:diamond_grit"
+  }
+}

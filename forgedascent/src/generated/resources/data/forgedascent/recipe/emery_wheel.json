@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "F": {
+      "item": "minecraft:flint"
+    },
+    "I": {
+      "tag": "forgedascent:tier_materials/4"
+    }
+  },
+  "pattern": [
+    "FFF",
+    "FIF",
+    "FFF"
+  ],
+  "result": {
+    "count": 1,
+    "id": "forgedascent:emery_wheel"
+  }
+}

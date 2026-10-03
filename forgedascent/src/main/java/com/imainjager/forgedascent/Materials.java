@@ -17,6 +17,9 @@ public final class Materials {
     /** A new ore: ore blocks per stone variant ("stone", "deepslate", "nether"), raw item and raw block. */
     public record Ore(String id, String name, List<String> variants) {}
 
+    /** A gem whose ores drop rough_&lt;id&gt; (PLAN.md section 5). */
+    public record Gem(String id, String name, int tier) {}
+
     public record ToolStats(int uses, float speed, float attack, int enchant) {}
 
     public record ArmorStats(int durability, int helmet, int chestplate, int leggings, int boots,
@@ -27,6 +30,7 @@ public final class Materials {
 
     public static final List<Ingot> INGOTS = new ArrayList<>();
     public static final List<Ore> ORES = new ArrayList<>();
+    public static final List<Gem> GEMS = new ArrayList<>();
     public static final List<Gear> GEAR = new ArrayList<>();
 
     private Materials() {}
@@ -48,6 +52,11 @@ public final class Materials {
                 ORES.add(new Ore(o.get("id").getAsString(), o.get("name").getAsString(), variants));
             }
 
+            for (JsonElement e : root.getAsJsonArray("gems")) {
+                JsonObject o = e.getAsJsonObject();
+                GEMS.add(new Gem(o.get("id").getAsString(), o.get("name").getAsString(), o.get("tier").getAsInt()));
+            }
+
             for (JsonElement e : root.getAsJsonArray("gear")) {
                 JsonObject o = e.getAsJsonObject();
                 JsonObject t = o.getAsJsonObject("tool");
@@ -67,8 +76,8 @@ public final class Materials {
         } catch (Exception ex) {
             throw new RuntimeException("Forged Ascent could not read materials.json", ex);
         }
-        ForgedAscent.LOGGER.info("Forged Ascent loaded {} ingots, {} ores and {} gear materials",
-                INGOTS.size(), ORES.size(), GEAR.size());
+        ForgedAscent.LOGGER.info("Forged Ascent loaded {} ingots, {} ores, {} gems and {} gear materials",
+                INGOTS.size(), ORES.size(), GEMS.size(), GEAR.size());
     }
 
     private static double optional(JsonObject o, String key) {

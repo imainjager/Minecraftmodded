@@ -1,6 +1,10 @@
 {
   "values": [
     {
+      "id": "#c:gems/diamond",
+      "required": false
+    },
+    {
       "id": "#c:ingots/platinum",
       "required": false
     },
@@ -10,6 +14,14 @@
     },
     {
       "id": "#c:ingots/white_gold",
+      "required": false
+    },
+    {
+      "id": "#c:gems/emerald",
+      "required": false
+    },
+    {
+      "id": "#c:gems/topaz",
       "required": false
     }
   ]

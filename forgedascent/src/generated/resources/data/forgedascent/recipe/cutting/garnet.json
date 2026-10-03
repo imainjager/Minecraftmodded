@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "forgedascent:rough_garnet"
+    },
+    {
+      "tag": "forgedascent:cutting_wheels/8"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "silentgems:garnet"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "silentgems"
+    }
+  ]
+}

@@ -19,6 +19,14 @@
     {
       "id": "#c:ingots/alnico",
       "required": false
+    },
+    {
+      "id": "#c:gems/garnet",
+      "required": false
+    },
+    {
+      "id": "#c:gems/peridot",
+      "required": false
     }
   ]
 }

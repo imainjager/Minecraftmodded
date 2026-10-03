@@ -1,0 +1,40 @@
+{
+  "values": [
+    "forgedascent:tungsten_pickaxe",
+    "forgedascent:tungsten_sword",
+    "forgedascent:tungsten_chestplate",
+    "forgedascent:tungsten_carbide_pickaxe",
+    "forgedascent:tungsten_carbide_sword",
+    "forgedascent:tungsten_carbide_chestplate",
+    "forgedascent:high_speed_steel_pickaxe",
+    "forgedascent:high_speed_steel_sword",
+    "forgedascent:high_speed_steel_chestplate",
+    "forgedascent:stellite_pickaxe",
+    "forgedascent:stellite_sword",
+    "forgedascent:stellite_chestplate",
+    "forgedascent:inconel_pickaxe",
+    "forgedascent:inconel_sword",
+    "forgedascent:inconel_chestplate",
+    "forgedascent:iridium_pickaxe",
+    "forgedascent:iridium_sword",
+    "forgedascent:iridium_chestplate",
+    "forgedascent:osmiridium_pickaxe",
+    "forgedascent:osmiridium_sword",
+    "forgedascent:osmiridium_chestplate",
+    "forgedascent:black_diamond_pickaxe",
+    "forgedascent:black_diamond_sword",
+    "forgedascent:black_diamond_chestplate",
+    {
+      "id": "minecraft:netherite_pickaxe",
+      "required": false
+    },
+    {
+      "id": "minecraft:netherite_sword",
+      "required": false
+    },
+    {
+      "id": "minecraft:netherite_chestplate",
+      "required": false
+    }
+  ]
+}

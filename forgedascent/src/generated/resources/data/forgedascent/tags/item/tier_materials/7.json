@@ -19,6 +19,18 @@
     {
       "id": "#c:ingots/titanium_alloy",
       "required": false
+    },
+    {
+      "id": "#c:gems/alexandrite",
+      "required": false
+    },
+    {
+      "id": "#c:gems/ruby",
+      "required": false
+    },
+    {
+      "id": "#c:gems/sapphire",
+      "required": false
     }
   ]
 }

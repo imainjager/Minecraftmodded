@@ -30,6 +30,15 @@
     "forgedascent:stellite_helmet",
     "forgedascent:inconel_helmet",
     "forgedascent:iridium_helmet",
-    "forgedascent:osmiridium_helmet"
+    "forgedascent:osmiridium_helmet",
+    "forgedascent:amethyst_helmet",
+    "forgedascent:garnet_helmet",
+    "forgedascent:peridot_helmet",
+    "forgedascent:emerald_helmet",
+    "forgedascent:topaz_helmet",
+    "forgedascent:alexandrite_helmet",
+    "forgedascent:ruby_helmet",
+    "forgedascent:sapphire_helmet",
+    "forgedascent:black_diamond_helmet"
   ]
 }
