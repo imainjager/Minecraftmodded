@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:ingots/aluminum"
+    },
+    {
+      "tag": "c:ingots/aluminum"
+    },
+    {
+      "tag": "c:ingots/aluminum"
+    },
+    {
+      "tag": "c:ingots/copper"
+    },
+    {
+      "tag": "c:ingots/manganese"
+    }
+  ],
+  "result": {
+    "count": 5,
+    "id": "forgedascent:duralumin_ingot"
+  }
+}

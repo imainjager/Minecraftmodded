@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:ingots/steel"
+    },
+    {
+      "tag": "c:ingots/steel"
+    },
+    {
+      "tag": "c:ingots/steel"
+    },
+    {
+      "tag": "c:ingots/steel"
+    },
+    {
+      "tag": "c:ingots/tungsten"
+    },
+    {
+      "tag": "c:ingots/molybdenum"
+    },
+    {
+      "tag": "c:ingots/chromium"
+    }
+  ],
+  "result": {
+    "count": 6,
+    "id": "forgedascent:high_speed_steel_ingot"
+  }
+}

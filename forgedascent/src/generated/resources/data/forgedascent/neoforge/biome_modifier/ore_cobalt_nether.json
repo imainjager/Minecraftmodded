@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_nether",
+  "features": "forgedascent:ore_cobalt_nether",
+  "step": "underground_ores"
+}

@@ -53,6 +53,9 @@ public final class ModRegistries {
                     BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK));
             TAB_ITEMS.add(ITEMS.registerSimpleBlockItem(block));
         }
+        for (Materials.Ore ore : Materials.ORES) {
+            registerOre(ore);
+        }
         for (Materials.Gear gear : Materials.GEAR) {
             registerGear(gear);
         }
@@ -67,6 +70,28 @@ public final class ModRegistries {
         BLOCKS.register(modBus);
         ARMOR_MATERIALS.register(modBus);
         TABS.register(modBus);
+    }
+
+    private static void registerOre(Materials.Ore ore) {
+        for (String variant : ore.variants()) {
+            String name = switch (variant) {
+                case "stone" -> ore.id() + "_ore";
+                case "deepslate" -> "deepslate_" + ore.id() + "_ore";
+                case "nether" -> "nether_" + ore.id() + "_ore";
+                default -> throw new IllegalArgumentException("Unknown ore variant " + variant + " for " + ore.id());
+            };
+            Block copyOf = switch (variant) {
+                case "stone" -> Blocks.IRON_ORE;
+                case "deepslate" -> Blocks.DEEPSLATE_IRON_ORE;
+                default -> Blocks.NETHER_GOLD_ORE;
+            };
+            DeferredBlock<Block> block = BLOCKS.registerSimpleBlock(name, BlockBehaviour.Properties.ofFullCopy(copyOf));
+            TAB_ITEMS.add(ITEMS.registerSimpleBlockItem(block));
+        }
+        TAB_ITEMS.add(ITEMS.registerSimpleItem("raw_" + ore.id()));
+        DeferredBlock<Block> rawBlock = BLOCKS.registerSimpleBlock("raw_" + ore.id() + "_block",
+                BlockBehaviour.Properties.ofFullCopy(Blocks.RAW_IRON_BLOCK));
+        TAB_ITEMS.add(ITEMS.registerSimpleBlockItem(rawBlock));
     }
 
     private static void registerGear(Materials.Gear gear) {

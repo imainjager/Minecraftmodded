@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:ingots/titanium"
+    },
+    {
+      "tag": "c:ingots/titanium"
+    },
+    {
+      "tag": "c:ingots/titanium"
+    },
+    {
+      "tag": "c:ingots/titanium"
+    },
+    {
+      "tag": "c:ingots/aluminum"
+    },
+    {
+      "tag": "c:ingots/vanadium"
+    }
+  ],
+  "result": {
+    "count": 6,
+    "id": "forgedascent:titanium_alloy_ingot"
+  }
+}

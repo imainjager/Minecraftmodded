@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.7,
+  "ingredient": {
+    "item": "forgedascent:deepslate_vanadium_ore"
+  },
+  "result": {
+    "count": 1,
+    "id": "forgedascent:vanadium_ingot"
+  }
+}

@@ -1,53 +1,171 @@
 {
-  "_comment": "Single source of truth for Forged Ascent gear. Read by the Java mod (registration) and tools/gen_assets.py (textures, models, recipes, tags, names). Armor defense is per piece. move_speed and burning_time are per-piece multipliers.",
+  "_comment": "Single source of truth for Forged Ascent. Read by the Java mod (registration) and tools/gen_assets.py (textures, models, recipes, tags, worldgen, names). 'style' names the All the Ores metal whose ingot/raw/ore/block textures are recolored. 'tools_from'/'armor_from' name the pack textures recolored for gear (the sword is our own sprite). Armor defense is per piece; move_speed, burning_time and luck are per piece.",
   "ingots": [
-    { "id": "pewter", "name": "Pewter", "color": "#8E979C" }
+    { "id": "pewter", "name": "Pewter", "color": "#8E979C", "style": "tin" },
+    { "id": "bismuth", "name": "Bismuth", "color": "#C9A9C6", "style": "zinc" },
+    { "id": "manganese", "name": "Manganese", "color": "#9C8C88", "style": "lead" },
+    { "id": "cobalt", "name": "Cobalt", "color": "#3F6FD8", "style": "nickel" },
+    { "id": "molybdenum", "name": "Molybdenum", "color": "#7F95A3", "style": "aluminum" },
+    { "id": "vanadium", "name": "Vanadium", "color": "#B5495B", "style": "silver" },
+    { "id": "titanium", "name": "Titanium", "color": "#B7B4C7", "style": "platinum" },
+    { "id": "chromium", "name": "Chromium", "color": "#D9E4EC", "style": "osmium" },
+    { "id": "rose_gold", "name": "Rose Gold", "color": "#E8A08E", "style": "electrum" },
+    { "id": "bismuth_bronze", "name": "Bismuth Bronze", "color": "#C08A5C", "style": "bronze" },
+    { "id": "duralumin", "name": "Duralumin", "color": "#AEB9C2", "style": "aluminum" },
+    { "id": "manganese_steel", "name": "Manganese Steel", "color": "#6E6A6B", "style": "steel" },
+    { "id": "alnico", "name": "Alnico", "color": "#8A7FA8", "style": "invar" },
+    { "id": "vanadium_steel", "name": "Vanadium Steel", "color": "#7A5A66", "style": "steel" },
+    { "id": "white_gold", "name": "White Gold", "color": "#EDE6C8", "style": "electrum" },
+    { "id": "chromoly", "name": "Chromoly", "color": "#8FA0B8", "style": "steel" },
+    { "id": "titanium_alloy", "name": "Titanium Alloy", "color": "#9E9AB8", "style": "invar" },
+    { "id": "tungsten_carbide", "name": "Tungsten Carbide", "color": "#3D4048", "style": "steel" },
+    { "id": "high_speed_steel", "name": "High-Speed Steel", "color": "#5D7A8F", "style": "steel" },
+    { "id": "stellite", "name": "Stellite", "color": "#5E8FA8", "style": "constantan" },
+    { "id": "inconel", "name": "Inconel", "color": "#B88B5A", "style": "constantan" },
+    { "id": "osmiridium", "name": "Osmiridium", "color": "#6C88A8", "style": "osmium" },
+    { "id": "nichrome", "name": "Nichrome", "color": "#B5A28F", "style": "invar" }
+  ],
+  "ores": [
+    {
+      "id": "bismuth", "name": "Bismuth", "color": "#C9A9C6", "tier": 1, "style": "tin", "variants": ["stone", "deepslate"],
+      "worldgen": [
+        { "name": "bismuth", "biomes": "#minecraft:is_overworld", "variants": ["stone", "deepslate"], "shape": "trapezoid", "min": 0, "max": 128, "count": 6, "size": 8 }
+      ]
+    },
+    {
+      "id": "manganese", "name": "Manganese", "color": "#9C8C88", "tier": 3, "style": "lead", "variants": ["stone", "deepslate"],
+      "worldgen": [
+        { "name": "manganese", "biomes": "#minecraft:is_overworld", "variants": ["stone", "deepslate"], "shape": "uniform", "min": -24, "max": 72, "count": 5, "size": 8 }
+      ]
+    },
+    {
+      "id": "cobalt", "name": "Cobalt", "color": "#3F6FD8", "tier": 4, "style": "nickel", "variants": ["deepslate", "nether"],
+      "worldgen": [
+        { "name": "cobalt_nether", "biomes": "#minecraft:is_nether", "variants": ["nether"], "shape": "uniform", "min": 8, "max": 120, "count": 8, "size": 6 },
+        { "name": "cobalt_deep", "biomes": "#minecraft:is_overworld", "variants": ["deepslate"], "shape": "uniform", "min": -64, "max": -20, "count": 2, "size": 4 }
+      ]
+    },
+    {
+      "id": "molybdenum", "name": "Molybdenum", "color": "#7F95A3", "tier": 4, "style": "zinc", "variants": ["stone", "deepslate"],
+      "worldgen": [
+        { "name": "molybdenum", "biomes": "#minecraft:is_mountain", "variants": ["stone", "deepslate"], "shape": "uniform", "min": 0, "max": 160, "count": 8, "size": 7 }
+      ]
+    },
+    {
+      "id": "vanadium", "name": "Vanadium", "color": "#B5495B", "tier": 5, "style": "silver", "variants": ["stone", "deepslate"],
+      "worldgen": [
+        { "name": "vanadium_badlands", "biomes": "#minecraft:is_badlands", "variants": ["stone", "deepslate"], "shape": "uniform", "min": -16, "max": 96, "count": 7, "size": 6 },
+        { "name": "vanadium_desert", "biomes": "minecraft:desert", "variants": ["stone", "deepslate"], "shape": "uniform", "min": -16, "max": 96, "count": 7, "size": 6 }
+      ]
+    },
+    {
+      "id": "titanium", "name": "Titanium", "color": "#B7B4C7", "tier": 6, "style": "platinum", "variants": ["stone", "deepslate"],
+      "worldgen": [
+        { "name": "titanium", "biomes": "#minecraft:is_overworld", "variants": ["stone", "deepslate"], "shape": "trapezoid", "min": -64, "max": -8, "count": 3, "size": 5 },
+        { "name": "titanium_mountain", "biomes": "#minecraft:is_mountain", "variants": ["stone", "deepslate"], "shape": "uniform", "min": -32, "max": 64, "count": 2, "size": 4 }
+      ]
+    },
+    {
+      "id": "chromium", "name": "Chromium", "color": "#D9E4EC", "tier": 6, "style": "osmium", "variants": ["deepslate", "nether"],
+      "worldgen": [
+        { "name": "chromium", "biomes": "#minecraft:is_overworld", "variants": ["deepslate"], "shape": "trapezoid", "min": -64, "max": -24, "count": 3, "size": 5 },
+        { "name": "chromium_deltas", "biomes": "minecraft:basalt_deltas", "variants": ["nether"], "shape": "uniform", "min": 8, "max": 120, "count": 8, "size": 6 }
+      ]
+    }
   ],
   "gear": [
-    {
-      "id": "tin", "name": "Tin", "tier": 2, "color": "#C7CFD4", "repair": "c:ingots/tin",
+    { "id": "tin", "name": "Tin", "tier": 2, "color": "#C7CFD4", "repair": "c:ingots/tin", "tools_from": "minecraft:iron", "armor_from": "minecraft:iron",
       "tool": { "uses": 150, "speed": 5.5, "attack": 1.0, "enchant": 14 },
-      "armor": { "durability": 9, "helmet": 1, "chestplate": 4, "leggings": 3, "boots": 1, "toughness": 0.0, "knockback": 0.0, "enchant": 14, "move_speed": 0.01, "burning_time": 0.0 }
-    },
-    {
-      "id": "zinc", "name": "Zinc", "tier": 2, "color": "#A9BDB7", "repair": "c:ingots/zinc",
+      "armor": { "durability": 9, "helmet": 1, "chestplate": 4, "leggings": 3, "boots": 1, "toughness": 0.0, "knockback": 0.0, "enchant": 14, "move_speed": 0.01 } },
+    { "id": "zinc", "name": "Zinc", "tier": 2, "color": "#A9BDB7", "repair": "c:ingots/zinc", "tools_from": "everythingcopper:copper", "armor_from": "railcraft:steel",
       "tool": { "uses": 220, "speed": 4.5, "attack": 1.5, "enchant": 8 },
-      "armor": { "durability": 13, "helmet": 2, "chestplate": 4, "leggings": 4, "boots": 1, "toughness": 0.0, "knockback": 0.0, "enchant": 8, "move_speed": 0.0, "burning_time": 0.0 }
-    },
-    {
-      "id": "lead", "name": "Lead", "tier": 3, "color": "#6B6F8E", "repair": "c:ingots/lead",
+      "armor": { "durability": 13, "helmet": 2, "chestplate": 4, "leggings": 4, "boots": 1, "toughness": 0.0, "knockback": 0.0, "enchant": 8 } },
+    { "id": "lead", "name": "Lead", "tier": 3, "color": "#6B6F8E", "repair": "c:ingots/lead", "tools_from": "undergarden:cloggrum", "armor_from": "undergarden:cloggrum",
       "tool": { "uses": 230, "speed": 5.0, "attack": 2.5, "enchant": 6 },
-      "armor": { "durability": 14, "helmet": 2, "chestplate": 6, "leggings": 5, "boots": 2, "toughness": 0.0, "knockback": 0.05, "enchant": 6, "move_speed": -0.03, "burning_time": 0.0 }
-    },
-    {
-      "id": "nickel", "name": "Nickel", "tier": 3, "color": "#D2CDA8", "repair": "c:ingots/nickel",
+      "armor": { "durability": 14, "helmet": 2, "chestplate": 6, "leggings": 5, "boots": 2, "toughness": 0.0, "knockback": 0.05, "enchant": 6, "move_speed": -0.03 } },
+    { "id": "nickel", "name": "Nickel", "tier": 3, "color": "#D2CDA8", "repair": "c:ingots/nickel", "tools_from": "railcraft:steel", "armor_from": "immersiveengineering:armor_steel",
       "tool": { "uses": 290, "speed": 6.0, "attack": 2.0, "enchant": 10 },
-      "armor": { "durability": 16, "helmet": 2, "chestplate": 5, "leggings": 4, "boots": 2, "toughness": 0.0, "knockback": 0.0, "enchant": 10, "move_speed": 0.0, "burning_time": 0.0 }
-    },
-    {
-      "id": "aluminum", "name": "Aluminum", "tier": 3, "color": "#E2E6EA", "repair": "c:ingots/aluminum",
+      "armor": { "durability": 16, "helmet": 2, "chestplate": 5, "leggings": 4, "boots": 2, "toughness": 0.0, "knockback": 0.0, "enchant": 10 } },
+    { "id": "aluminum", "name": "Aluminum", "tier": 3, "color": "#E2E6EA", "repair": "c:ingots/aluminum", "tools_from": "ae2:certus_quartz", "armor_from": "railcraft:steel",
       "tool": { "uses": 210, "speed": 6.5, "attack": 1.5, "enchant": 12 },
-      "armor": { "durability": 13, "helmet": 2, "chestplate": 4, "leggings": 3, "boots": 2, "toughness": 0.0, "knockback": 0.0, "enchant": 12, "move_speed": 0.025, "burning_time": 0.0 }
-    },
-    {
-      "id": "pewter", "name": "Pewter", "tier": 3, "color": "#8E979C", "repair": "c:ingots/pewter",
+      "armor": { "durability": 13, "helmet": 2, "chestplate": 4, "leggings": 3, "boots": 2, "toughness": 0.0, "knockback": 0.0, "enchant": 12, "move_speed": 0.025 } },
+    { "id": "pewter", "name": "Pewter", "tier": 3, "color": "#8E979C", "repair": "c:ingots/pewter", "tools_from": "twilightforest:ironwood", "armor_from": "twilightforest:ironwood",
       "tool": { "uses": 200, "speed": 6.0, "attack": 1.5, "enchant": 22 },
-      "armor": { "durability": 12, "helmet": 2, "chestplate": 5, "leggings": 4, "boots": 1, "toughness": 0.0, "knockback": 0.0, "enchant": 22, "move_speed": 0.0, "burning_time": 0.0 }
-    },
-    {
-      "id": "brass", "name": "Brass", "tier": 4, "color": "#D8B24C", "repair": "c:ingots/brass",
+      "armor": { "durability": 12, "helmet": 2, "chestplate": 5, "leggings": 4, "boots": 1, "toughness": 0.0, "knockback": 0.0, "enchant": 22 } },
+    { "id": "brass", "name": "Brass", "tier": 4, "color": "#D8B24C", "repair": "c:ingots/brass", "tools_from": "minecraft:golden", "armor_from": "twilightforest:ironwood",
       "tool": { "uses": 330, "speed": 7.5, "attack": 2.5, "enchant": 14 },
-      "armor": { "durability": 17, "helmet": 2, "chestplate": 6, "leggings": 5, "boots": 2, "toughness": 0.0, "knockback": 0.0, "enchant": 14, "move_speed": 0.0, "burning_time": 0.0 }
-    },
-    {
-      "id": "invar", "name": "Invar", "tier": 4, "color": "#B9BDAA", "repair": "c:ingots/invar",
+      "armor": { "durability": 17, "helmet": 2, "chestplate": 6, "leggings": 5, "boots": 2, "toughness": 0.0, "knockback": 0.0, "enchant": 14 } },
+    { "id": "invar", "name": "Invar", "tier": 4, "color": "#B9BDAA", "repair": "c:ingots/invar", "tools_from": "naturesaura:infused_iron", "armor_from": "naturesaura:infused_iron",
       "tool": { "uses": 520, "speed": 5.5, "attack": 2.5, "enchant": 10 },
-      "armor": { "durability": 24, "helmet": 2, "chestplate": 6, "leggings": 5, "boots": 2, "toughness": 0.0, "knockback": 0.0, "enchant": 10, "move_speed": 0.0, "burning_time": 0.0 }
-    },
-    {
-      "id": "constantan", "name": "Constantan", "tier": 4, "color": "#C8865A", "repair": "c:ingots/constantan",
+      "armor": { "durability": 24, "helmet": 2, "chestplate": 6, "leggings": 5, "boots": 2, "toughness": 0.0, "knockback": 0.0, "enchant": 10 } },
+    { "id": "constantan", "name": "Constantan", "tier": 4, "color": "#C8865A", "repair": "c:ingots/constantan", "tools_from": "undergarden:forgotten", "armor_from": "everythingcopper:copper",
       "tool": { "uses": 400, "speed": 6.5, "attack": 2.5, "enchant": 12 },
-      "armor": { "durability": 20, "helmet": 2, "chestplate": 6, "leggings": 5, "boots": 2, "toughness": 0.0, "knockback": 0.0, "enchant": 12, "move_speed": 0.0, "burning_time": -0.15 }
-    }
+      "armor": { "durability": 20, "helmet": 2, "chestplate": 6, "leggings": 5, "boots": 2, "toughness": 0.0, "knockback": 0.0, "enchant": 12, "burning_time": -0.15 } },
+    { "id": "bismuth_bronze", "name": "Bismuth Bronze", "tier": 4, "color": "#C08A5C", "repair": "c:ingots/bismuth_bronze", "tools_from": "eternal_starlight:deepsilver", "armor_from": "undergarden:cloggrum",
+      "tool": { "uses": 450, "speed": 6.5, "attack": 2.5, "enchant": 12 },
+      "armor": { "durability": 20, "helmet": 2, "chestplate": 6, "leggings": 5, "boots": 2, "toughness": 0.5, "knockback": 0.0, "enchant": 12 } },
+    { "id": "duralumin", "name": "Duralumin", "tier": 4, "color": "#AEB9C2", "repair": "c:ingots/duralumin", "tools_from": "ae2:nether_quartz", "armor_from": "minecraft:chainmail",
+      "tool": { "uses": 350, "speed": 7.0, "attack": 2.0, "enchant": 12 },
+      "armor": { "durability": 17, "helmet": 2, "chestplate": 5, "leggings": 4, "boots": 2, "toughness": 0.0, "knockback": 0.0, "enchant": 12, "move_speed": 0.025 } },
+    { "id": "electrum", "name": "Electrum", "tier": 4, "color": "#E3CF6E", "repair": "c:ingots/electrum", "tools_from": "auroral:shimmersteel", "armor_from": "minecraft:golden",
+      "tool": { "uses": 180, "speed": 9.0, "attack": 2.0, "enchant": 25 },
+      "armor": { "durability": 9, "helmet": 2, "chestplate": 5, "leggings": 4, "boots": 1, "toughness": 0.0, "knockback": 0.0, "enchant": 25 } },
+    { "id": "rose_gold", "name": "Rose Gold", "tier": 4, "color": "#E8A08E", "repair": "c:ingots/rose_gold", "tools_from": "minecraft:golden", "armor_from": "naturesaura:sky",
+      "tool": { "uses": 220, "speed": 8.0, "attack": 2.0, "enchant": 20 },
+      "armor": { "durability": 11, "helmet": 2, "chestplate": 5, "leggings": 4, "boots": 1, "toughness": 0.0, "knockback": 0.0, "enchant": 20, "luck": 0.5 } },
+    { "id": "cobalt", "name": "Cobalt", "tier": 5, "color": "#3F6FD8", "repair": "c:ingots/cobalt", "tools_from": "undergarden:froststeel", "armor_from": "undergarden:froststeel",
+      "tool": { "uses": 600, "speed": 8.5, "attack": 3.0, "enchant": 12 },
+      "armor": { "durability": 25, "helmet": 3, "chestplate": 6, "leggings": 5, "boots": 2, "toughness": 0.5, "knockback": 0.0, "enchant": 12 } },
+    { "id": "manganese_steel", "name": "Manganese Steel", "tier": 5, "color": "#6E6A6B", "repair": "c:ingots/manganese_steel", "tools_from": "cataclysm:black_steel", "armor_from": "twilightforest:knightmetal",
+      "tool": { "uses": 900, "speed": 6.5, "attack": 3.0, "enchant": 8 },
+      "armor": { "durability": 35, "helmet": 3, "chestplate": 6, "leggings": 5, "boots": 2, "toughness": 0.5, "knockback": 0.05, "enchant": 8 } },
+    { "id": "alnico", "name": "Alnico", "tier": 5, "color": "#8A7FA8", "repair": "c:ingots/alnico", "tools_from": "minecraft:diamond", "armor_from": "minecraft:diamond",
+      "tool": { "uses": 500, "speed": 7.0, "attack": 2.5, "enchant": 12 },
+      "armor": { "durability": 22, "helmet": 2, "chestplate": 6, "leggings": 5, "boots": 2, "toughness": 0.0, "knockback": 0.0, "enchant": 12 } },
+    { "id": "platinum", "name": "Platinum", "tier": 6, "color": "#C9D4DE", "repair": "c:ingots/platinum", "tools_from": "eternal_starlight:glacite", "armor_from": "eternal_starlight:glacite",
+      "tool": { "uses": 850, "speed": 8.0, "attack": 3.0, "enchant": 22 },
+      "armor": { "durability": 30, "helmet": 3, "chestplate": 7, "leggings": 5, "boots": 3, "toughness": 1.0, "knockback": 0.0, "enchant": 22 } },
+    { "id": "vanadium_steel", "name": "Vanadium Steel", "tier": 6, "color": "#7A5A66", "repair": "c:ingots/vanadium_steel", "tools_from": "undergarden:utherium", "armor_from": "undergarden:utherium",
+      "tool": { "uses": 1050, "speed": 8.0, "attack": 3.5, "enchant": 12 },
+      "armor": { "durability": 34, "helmet": 3, "chestplate": 7, "leggings": 6, "boots": 2, "toughness": 1.0, "knockback": 0.0, "enchant": 12 } },
+    { "id": "white_gold", "name": "White Gold", "tier": 6, "color": "#EDE6C8", "repair": "c:ingots/white_gold", "tools_from": "eternal_starlight:starlit_diamond", "armor_from": "minecraft:golden",
+      "tool": { "uses": 500, "speed": 10.0, "attack": 3.0, "enchant": 30 },
+      "armor": { "durability": 18, "helmet": 3, "chestplate": 6, "leggings": 5, "boots": 2, "toughness": 0.5, "knockback": 0.0, "enchant": 30 } },
+    { "id": "titanium", "name": "Titanium", "tier": 7, "color": "#B7B4C7", "repair": "c:ingots/titanium", "tools_from": "deeperdarker:resonarium", "armor_from": "deeperdarker:resonarium",
+      "tool": { "uses": 1300, "speed": 8.5, "attack": 3.5, "enchant": 14 },
+      "armor": { "durability": 36, "helmet": 3, "chestplate": 7, "leggings": 6, "boots": 3, "toughness": 1.5, "knockback": 0.0, "enchant": 14, "move_speed": 0.01 } },
+    { "id": "chromium", "name": "Chromium", "tier": 7, "color": "#D9E4EC", "repair": "c:ingots/chromium", "tools_from": "minecraft:netherite", "armor_from": "minecraft:netherite",
+      "tool": { "uses": 1350, "speed": 8.5, "attack": 3.5, "enchant": 10 },
+      "armor": { "durability": 36, "helmet": 3, "chestplate": 7, "leggings": 6, "boots": 3, "toughness": 2.5, "knockback": 0.0, "enchant": 10 } },
+    { "id": "stainless_steel", "name": "Stainless Steel", "tier": 7, "color": "#A7B3BA", "repair": "c:ingots/stainless_steel", "tools_from": "eternal_starlight:malarite", "armor_from": "minecraft:iron",
+      "tool": { "uses": 1900, "speed": 8.0, "attack": 3.5, "enchant": 12 },
+      "armor": { "durability": 45, "helmet": 3, "chestplate": 7, "leggings": 6, "boots": 3, "toughness": 1.5, "knockback": 0.0, "enchant": 12 } },
+    { "id": "chromoly", "name": "Chromoly", "tier": 7, "color": "#8FA0B8", "repair": "c:ingots/chromoly", "tools_from": "eternal_starlight:flowglaze", "armor_from": "railcraft:steel",
+      "tool": { "uses": 1400, "speed": 9.0, "attack": 3.5, "enchant": 12 },
+      "armor": { "durability": 38, "helmet": 3, "chestplate": 7, "leggings": 6, "boots": 3, "toughness": 1.5, "knockback": 0.0, "enchant": 12, "move_speed": 0.01 } },
+    { "id": "titanium_alloy", "name": "Titanium Alloy", "tier": 7, "color": "#9E9AB8", "repair": "c:ingots/titanium_alloy", "tools_from": "naturesaura:sky", "armor_from": "eternal_starlight:glacite",
+      "tool": { "uses": 1500, "speed": 9.0, "attack": 3.5, "enchant": 14 },
+      "armor": { "durability": 40, "helmet": 3, "chestplate": 7, "leggings": 6, "boots": 3, "toughness": 2.0, "knockback": 0.0, "enchant": 14, "move_speed": 0.02 } },
+    { "id": "tungsten", "name": "Tungsten", "tier": 8, "color": "#5C5F66", "repair": "c:ingots/tungsten", "tools_from": "deeperdarker:warden", "armor_from": "deeperdarker:warden",
+      "tool": { "uses": 1700, "speed": 7.5, "attack": 5.0, "enchant": 8 },
+      "armor": { "durability": 42, "helmet": 3, "chestplate": 8, "leggings": 6, "boots": 3, "toughness": 2.5, "knockback": 0.075, "enchant": 8, "move_speed": -0.02 } },
+    { "id": "tungsten_carbide", "name": "Tungsten Carbide", "tier": 8, "color": "#3D4048", "repair": "c:ingots/tungsten_carbide", "tools_from": "allthemodium:allthemodium", "armor_from": "allthemodium:allthemodium",
+      "tool": { "uses": 2000, "speed": 10.0, "attack": 4.0, "enchant": 10 },
+      "armor": { "durability": 40, "helmet": 3, "chestplate": 8, "leggings": 6, "boots": 3, "toughness": 2.0, "knockback": 0.0, "enchant": 10 } },
+    { "id": "high_speed_steel", "name": "High-Speed Steel", "tier": 8, "color": "#5D7A8F", "repair": "c:ingots/high_speed_steel", "tools_from": "allthemodium:vibranium", "armor_from": "allthemodium:vibranium",
+      "tool": { "uses": 1600, "speed": 11.0, "attack": 4.0, "enchant": 12 },
+      "armor": { "durability": 38, "helmet": 3, "chestplate": 7, "leggings": 6, "boots": 3, "toughness": 2.0, "knockback": 0.0, "enchant": 12 } },
+    { "id": "stellite", "name": "Stellite", "tier": 8, "color": "#5E8FA8", "repair": "c:ingots/stellite", "tools_from": "allthemodium:unobtainium", "armor_from": "allthemodium:unobtainium",
+      "tool": { "uses": 3000, "speed": 8.5, "attack": 4.0, "enchant": 10 },
+      "armor": { "durability": 60, "helmet": 3, "chestplate": 8, "leggings": 6, "boots": 3, "toughness": 2.0, "knockback": 0.0, "enchant": 10 } },
+    { "id": "inconel", "name": "Inconel", "tier": 8, "color": "#B88B5A", "repair": "c:ingots/inconel", "tools_from": "eternal_starlight:thermal_springstone", "armor_from": "minecraft:netherite",
+      "tool": { "uses": 1800, "speed": 9.0, "attack": 4.0, "enchant": 12 },
+      "armor": { "durability": 42, "helmet": 3, "chestplate": 8, "leggings": 6, "boots": 3, "toughness": 2.25, "knockback": 0.0, "enchant": 12, "burning_time": -0.25 } },
+    { "id": "iridium", "name": "Iridium", "tier": 8, "color": "#D6D9E8", "repair": "c:ingots/iridium", "tools_from": "naturesaura:depth", "armor_from": "naturesaura:depth",
+      "tool": { "uses": 2200, "speed": 8.5, "attack": 4.0, "enchant": 14 },
+      "armor": { "durability": 50, "helmet": 4, "chestplate": 8, "leggings": 6, "boots": 3, "toughness": 3.0, "knockback": 0.0, "enchant": 14 } },
+    { "id": "osmiridium", "name": "Osmiridium", "tier": 8, "color": "#6C88A8", "repair": "c:ingots/osmiridium", "tools_from": "eternal_starlight:amaramber", "armor_from": "twilightforest:knightmetal",
+      "tool": { "uses": 2400, "speed": 10.0, "attack": 4.0, "enchant": 14 },
+      "armor": { "durability": 48, "helmet": 3, "chestplate": 8, "leggings": 6, "boots": 3, "toughness": 2.5, "knockback": 0.0, "enchant": 14 } }
   ]
 }

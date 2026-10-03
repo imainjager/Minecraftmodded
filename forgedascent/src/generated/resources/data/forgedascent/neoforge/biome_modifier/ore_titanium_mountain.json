@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_mountain",
+  "features": "forgedascent:ore_titanium_mountain",
+  "step": "underground_ores"
+}

@@ -39,3 +39,6 @@ run/
 repo/
 !**/src/**/repo/
 runs/
+
+# Textures are recolored from the local pack's jars by tools/gen_assets.py; never commit them
+src/generated/resources/assets/forgedascent/textures/

@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "#c:ingots/titanium",
+      "required": false
+    },
+    {
+      "id": "#c:ingots/chromium",
+      "required": false
+    },
+    {
+      "id": "#c:ingots/stainless_steel",
+      "required": false
+    },
+    {
+      "id": "#c:ingots/chromoly",
+      "required": false
+    },
+    {
+      "id": "#c:ingots/titanium_alloy",
+      "required": false
+    }
+  ]
+}

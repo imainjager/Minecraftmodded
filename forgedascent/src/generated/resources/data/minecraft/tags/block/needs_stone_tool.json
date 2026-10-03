@@ -1,5 +1,27 @@
 {
   "values": [
-    "forgedascent:pewter_block"
+    "forgedascent:pewter_block",
+    "forgedascent:bismuth_block",
+    "forgedascent:manganese_block",
+    "forgedascent:cobalt_block",
+    "forgedascent:molybdenum_block",
+    "forgedascent:vanadium_block",
+    "forgedascent:titanium_block",
+    "forgedascent:chromium_block",
+    "forgedascent:rose_gold_block",
+    "forgedascent:bismuth_bronze_block",
+    "forgedascent:duralumin_block",
+    "forgedascent:manganese_steel_block",
+    "forgedascent:alnico_block",
+    "forgedascent:vanadium_steel_block",
+    "forgedascent:white_gold_block",
+    "forgedascent:chromoly_block",
+    "forgedascent:titanium_alloy_block",
+    "forgedascent:tungsten_carbide_block",
+    "forgedascent:high_speed_steel_block",
+    "forgedascent:stellite_block",
+    "forgedascent:inconel_block",
+    "forgedascent:osmiridium_block",
+    "forgedascent:nichrome_block"
   ]
 }

@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_badlands",
+  "features": "forgedascent:ore_vanadium_badlands",
+  "step": "underground_ores"
+}

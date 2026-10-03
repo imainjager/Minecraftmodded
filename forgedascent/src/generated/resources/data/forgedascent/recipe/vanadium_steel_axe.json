@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "X": {
+      "tag": "c:ingots/vanadium_steel"
+    },
+    "#": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    "XX",
+    "X#",
+    " #"
+  ],
+  "result": {
+    "count": 1,
+    "id": "forgedascent:vanadium_steel_axe"
+  }
+}

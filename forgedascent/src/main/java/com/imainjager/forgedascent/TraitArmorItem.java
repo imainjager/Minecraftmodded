@@ -11,7 +11,7 @@ import net.minecraft.world.item.component.ItemAttributeModifiers;
 
 import java.util.function.Supplier;
 
-/** Armor piece that adds the material's stat traits (movement speed, burning time) on top of normal armor stats. */
+/** Armor piece that adds the material's stat traits (movement speed, burning time, luck) on top of normal armor stats. */
 public class TraitArmorItem extends ArmorItem {
     private final Supplier<ItemAttributeModifiers> modifiers;
 
@@ -29,6 +29,11 @@ public class TraitArmorItem extends ArmorItem {
                 mods = mods.withModifierAdded(Attributes.BURNING_TIME,
                         new AttributeModifier(ForgedAscent.id("armor_burning." + type.getName()), stats.burningTime(),
                                 AttributeModifier.Operation.ADD_MULTIPLIED_BASE), slot);
+            }
+            if (stats.luck() != 0) {
+                mods = mods.withModifierAdded(Attributes.LUCK,
+                        new AttributeModifier(ForgedAscent.id("armor_luck." + type.getName()), stats.luck(),
+                                AttributeModifier.Operation.ADD_VALUE), slot);
             }
             return mods;
         });

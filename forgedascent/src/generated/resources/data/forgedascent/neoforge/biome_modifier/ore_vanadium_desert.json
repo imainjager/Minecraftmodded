@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "minecraft:desert",
+  "features": "forgedascent:ore_vanadium_desert",
+  "step": "underground_ores"
+}

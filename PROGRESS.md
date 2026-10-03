@@ -4,28 +4,40 @@ Read [`PLAN.md`](PLAN.md) first. This file says where the build stopped and how 
 
 ## Current state (2026-10-03)
 
-**Phase 1: built and installed in the `Claude` profile. Waiting for the player's in-game test.**
+**Phase 2: built and installed in the `Claude` profile (mod version 0.2.0). Waiting for the player's in-game test.**
+Phase 1 was tested in game by the player: worked; only complaint was texture quality (fixed in Phase 2, see "Texture rule").
 
 | Done | Detail |
 |---|---|
-| Mod project | `forgedascent/` (NeoForge 21.1.251, MC 1.21.1, mod version 0.1.0) |
+| Mod project | `forgedascent/` (NeoForge 21.1.251, MC 1.21.1) |
 | Tier system | Block tags `forgedascent:needs_tier_1..8`, `forgedascent:incorrect_for_tier_0..9`. Vanilla wood/gold → 0, stone → 1, iron → 3, diamond → 6 |
-| Ore gating | Existing ores tiered via `c:ores/*` tags (`tools/gen_assets.py`, `ORE_TIERS`) |
-| Gear sets | Tin, zinc, lead, nickel, aluminum, pewter, brass, invar, constantan (sword, pickaxe, axe, shovel, hoe, 4 armor). Stat traits: lead/aluminum/tin move speed, lead knockback, constantan burning time |
-| New items | Pewter ingot + block |
-| Alloys | Shapeless crafting: pewter, bronze, brass, invar, constantan, electrum, steel (outputs All the Ores ingots) |
-| Tier item tags | `forgedascent:tier_materials/2..5` (unused until later phases) |
-| Vanilla nerfs | Iron armor 15 → 13; diamond armor 20 → 18, toughness 8 → 4; diamond tools 1000 durability |
-| Existing gear re-tiered | Everything is Copper → 2, Mekanism bronze → 4, Mekanism/IE steel → 5, Mekanism osmium → 5 (KubeJS tag overrides in `profile/`) |
-| Mekanism stats | Bronze/steel/osmium tool + armor stats lowered (`tools/install.py`, `MEKANISM_TOOLS`) |
-| Osmium | Veins 16 → 9 blocks, no raw osmium blocks (new chunks only) |
+| Ore gating | All ores tiered via `c:ores/*` tags (`ORE_TIERS` in `tools/gen_assets.py` + `tier` of each new ore) |
+| Gear sets (31) | Tier 2: tin, zinc · 3: lead, nickel, aluminum, pewter · 4: brass, invar, constantan, bismuth bronze, duralumin, electrum, rose gold · 5: cobalt, manganese steel, alnico · 6: platinum, vanadium steel, white gold · 7: titanium, chromium, stainless steel, chromoly, titanium alloy · 8: tungsten, tungsten carbide, high-speed steel, stellite, inconel, iridium, osmiridium |
+| Stat traits | Move speed (tin, aluminum, duralumin, titanium, chromoly, titanium alloy +; lead, tungsten −), knockback (lead, manganese steel, tungsten), burning time (constantan, inconel), luck (rose gold) |
+| New ores (7) | Bismuth (t1, shallow), manganese (t3), cobalt (t4, Nether + deep), molybdenum (t4, mountains), vanadium (t5, desert/badlands), titanium (t6, deep + mountains), chromium (t6, deep + basalt deltas). Ore, raw, raw block, ingot, block, smelting/blasting |
+| New ingots | 23 (ore metals + alloys + nichrome) with storage blocks |
+| Alloys | Shapeless crafting (see `ALLOYS` in `tools/gen_assets.py`) |
+| Ore depths | All the Ores tin/zinc shallow, lead/nickel/aluminum mid, osmium/platinum/iridium deep (`ATO_DEPTHS`, KubeJS data in `profile/`) |
+| Tool gating | Create drill, IE iron drill head, Steve's Carts iron drill → tier 4; destruction gadget → 5; Atomic Disassembler → 7; IF laser drill → 8 (`GATING`, KubeJS script in `profile/`). Most other drills/quarries need diamonds, which need tier 5 |
+| Vanilla/Mekanism nerfs | Iron/diamond armor, diamond tools, Mekanism bronze/steel/osmium, osmium veins (from Phase 1) |
+
+## Texture rule (player's request, 2026-10-03)
+
+- **Tools and armor are recolored from existing pack textures**, not drawn from scratch. Each material picks a
+  source set (`tools_from`, `armor_from` in `materials.json`), using **different sources per material** so sets look distinct.
+- **The sword is our own sprite** (player liked it).
+- **Never use Silent Gear / Silent's Gems textures.**
+- Ingots, ores, raw items and blocks are recolored from All the Ores (`style` in `materials.json`).
+- Recolored textures come from other mods, so they are **generated locally and git-ignored**. `tools/gen_assets.py`
+  needs the `Claude` profile's mods and the vanilla 1.21.1 jar on this PC.
+- Check results with a preview sheet before installing. Swap sources that look busy or blown out.
 
 ## How to work on it
 
 | Task | Command (from repo root unless noted) |
 |---|---|
-| Change gear stats/colors, add a gear material | Edit `forgedascent/src/main/resources/forgedascent/materials.json` |
-| Regenerate textures, models, recipes, tags, names | `cd forgedascent` then `python tools/gen_assets.py` |
+| Change stats/colors/texture sources, add a material or ore | Edit `forgedascent/src/main/resources/forgedascent/materials.json` |
+| Regenerate textures, models, recipes, tags, worldgen, names, `profile/` files | `cd forgedascent` then `python tools/gen_assets.py` |
 | Build the jar | `cd forgedascent` then `gradlew.bat build` (JAVA_HOME = the JDK 21 in `C:\Program Files\Microsoft`) |
 | Quick crash check (only our mod) | `cd forgedascent` then `python tools/smoke_test.py` |
 | Install into the `Claude` profile | `python tools/install.py` (Minecraft must be closed; backs up anything it replaces) |
@@ -33,12 +45,13 @@ Read [`PLAN.md`](PLAN.md) first. This file says where the build stopped and how 
 
 ## Next
 
-1. Player tests Phase 1 in game (checklist in [`docs/PHASE1_TEST.md`](docs/PHASE1_TEST.md)) and reports problems/feel.
-2. Fix anything found, then Phase 2 (rest of the metal gear sets, 7 new ores, machine/tool gating).
+1. Player tests Phase 2 in game ([`docs/PHASE2_TEST.md`](docs/PHASE2_TEST.md)) and reports problems/feel.
+2. Phase 3 (gems: rough drops, very basic cutting, 11 gem gear sets) per PLAN.md.
 
 ## Known gaps / to verify in game
 
-- Whether our tag overrides beat each mod's own tags (KubeJS data should win)
+- New ores and changed ore depths only appear in **new chunks**
+- Almost Unified may swap our titanium/chromium ingots for Modern Industrialization's in recipe outputs (fine, same tag)
 - Silent Gear, Ice and Fire copper/silver gear and other dimensions' gear are not re-tiered yet
-- Diamond ore currently needs a tier-5 pickaxe (steel/osmium), but no tier-5 gear set of ours exists yet. Mekanism steel/osmium or IE steel tools are the route for now
-- Several silvery materials (tin, aluminum, nickel, invar) look alike
+- Tool gating via KubeJS `replaceInput` is unverified in game (check JEI recipes)
+- ATM mining dimension is not gated yet

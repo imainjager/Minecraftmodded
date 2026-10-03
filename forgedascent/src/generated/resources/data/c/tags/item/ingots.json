@@ -1,5 +1,27 @@
 {
   "values": [
-    "#c:ingots/pewter"
+    "#c:ingots/pewter",
+    "#c:ingots/bismuth",
+    "#c:ingots/manganese",
+    "#c:ingots/cobalt",
+    "#c:ingots/molybdenum",
+    "#c:ingots/vanadium",
+    "#c:ingots/titanium",
+    "#c:ingots/chromium",
+    "#c:ingots/rose_gold",
+    "#c:ingots/bismuth_bronze",
+    "#c:ingots/duralumin",
+    "#c:ingots/manganese_steel",
+    "#c:ingots/alnico",
+    "#c:ingots/vanadium_steel",
+    "#c:ingots/white_gold",
+    "#c:ingots/chromoly",
+    "#c:ingots/titanium_alloy",
+    "#c:ingots/tungsten_carbide",
+    "#c:ingots/high_speed_steel",
+    "#c:ingots/stellite",
+    "#c:ingots/inconel",
+    "#c:ingots/osmiridium",
+    "#c:ingots/nichrome"
   ]
 }

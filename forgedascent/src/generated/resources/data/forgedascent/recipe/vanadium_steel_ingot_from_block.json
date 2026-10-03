@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:storage_blocks/vanadium_steel"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "forgedascent:vanadium_steel_ingot"
+  }
+}

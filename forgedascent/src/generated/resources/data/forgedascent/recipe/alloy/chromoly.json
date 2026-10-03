@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:ingots/steel"
+    },
+    {
+      "tag": "c:ingots/steel"
+    },
+    {
+      "tag": "c:ingots/steel"
+    },
+    {
+      "tag": "c:ingots/steel"
+    },
+    {
+      "tag": "c:ingots/chromium"
+    },
+    {
+      "tag": "c:ingots/molybdenum"
+    }
+  ],
+  "result": {
+    "count": 6,
+    "id": "forgedascent:chromoly_ingot"
+  }
+}

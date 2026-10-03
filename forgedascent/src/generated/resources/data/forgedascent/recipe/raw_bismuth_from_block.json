@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "forgedascent:raw_bismuth_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "forgedascent:raw_bismuth"
+  }
+}

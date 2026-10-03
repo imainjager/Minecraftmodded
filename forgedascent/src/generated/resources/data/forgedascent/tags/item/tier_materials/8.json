@@ -1,0 +1,32 @@
+{
+  "values": [
+    {
+      "id": "#c:ingots/tungsten",
+      "required": false
+    },
+    {
+      "id": "#c:ingots/tungsten_carbide",
+      "required": false
+    },
+    {
+      "id": "#c:ingots/high_speed_steel",
+      "required": false
+    },
+    {
+      "id": "#c:ingots/stellite",
+      "required": false
+    },
+    {
+      "id": "#c:ingots/inconel",
+      "required": false
+    },
+    {
+      "id": "#c:ingots/iridium",
+      "required": false
+    },
+    {
+      "id": "#c:ingots/osmiridium",
+      "required": false
+    }
+  ]
+}

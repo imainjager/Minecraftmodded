@@ -7,6 +7,18 @@
     {
       "id": "#c:ingots/osmium",
       "required": false
+    },
+    {
+      "id": "#c:ingots/cobalt",
+      "required": false
+    },
+    {
+      "id": "#c:ingots/manganese_steel",
+      "required": false
+    },
+    {
+      "id": "#c:ingots/alnico",
+      "required": false
     }
   ]
 }

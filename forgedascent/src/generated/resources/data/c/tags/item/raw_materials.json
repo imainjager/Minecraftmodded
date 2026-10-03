@@ -1,0 +1,11 @@
+{
+  "values": [
+    "#c:raw_materials/bismuth",
+    "#c:raw_materials/manganese",
+    "#c:raw_materials/cobalt",
+    "#c:raw_materials/molybdenum",
+    "#c:raw_materials/vanadium",
+    "#c:raw_materials/titanium",
+    "#c:raw_materials/chromium"
+  ]
+}

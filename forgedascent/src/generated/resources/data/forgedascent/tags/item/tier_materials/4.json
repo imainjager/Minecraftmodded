@@ -5,6 +5,10 @@
       "required": false
     },
     {
+      "id": "#c:ingots/silver",
+      "required": false
+    },
+    {
       "id": "#c:ingots/brass",
       "required": false
     },
@@ -17,11 +21,19 @@
       "required": false
     },
     {
-      "id": "#c:ingots/silver",
+      "id": "#c:ingots/bismuth_bronze",
+      "required": false
+    },
+    {
+      "id": "#c:ingots/duralumin",
       "required": false
     },
     {
       "id": "#c:ingots/electrum",
+      "required": false
+    },
+    {
+      "id": "#c:ingots/rose_gold",
       "required": false
     }
   ]

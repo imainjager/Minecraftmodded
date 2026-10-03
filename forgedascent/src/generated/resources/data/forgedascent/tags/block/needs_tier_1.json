@@ -11,6 +11,10 @@
     {
       "id": "#c:ores/zinc",
       "required": false
+    },
+    {
+      "id": "#c:ores/bismuth",
+      "required": false
     }
   ]
 }

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "forgedascent:item/titanium_alloy_boots"
+  }
+}

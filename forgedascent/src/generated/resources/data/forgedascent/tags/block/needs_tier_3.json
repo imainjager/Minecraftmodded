@@ -23,6 +23,10 @@
     {
       "id": "#c:ores/cinnabar",
       "required": false
+    },
+    {
+      "id": "#c:ores/manganese",
+      "required": false
     }
   ]
 }

@@ -11,6 +11,10 @@
     {
       "id": "#c:ores/monazite",
       "required": false
+    },
+    {
+      "id": "#c:ores/vanadium",
+      "required": false
     }
   ]
 }

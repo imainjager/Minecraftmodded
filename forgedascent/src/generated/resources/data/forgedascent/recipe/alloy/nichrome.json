@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:ingots/nickel"
+    },
+    {
+      "tag": "c:ingots/nickel"
+    },
+    {
+      "tag": "c:ingots/nickel"
+    },
+    {
+      "tag": "c:ingots/nickel"
+    },
+    {
+      "tag": "c:ingots/chromium"
+    }
+  ],
+  "result": {
+    "count": 5,
+    "id": "forgedascent:nichrome_ingot"
+  }
+}

@@ -15,6 +15,14 @@
     {
       "id": "#c:ores/peridot",
       "required": false
+    },
+    {
+      "id": "#c:ores/cobalt",
+      "required": false
+    },
+    {
+      "id": "#c:ores/molybdenum",
+      "required": false
     }
   ]
 }

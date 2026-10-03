@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "#c:ingots/platinum",
+      "required": false
+    },
+    {
+      "id": "#c:ingots/vanadium_steel",
+      "required": false
+    },
+    {
+      "id": "#c:ingots/white_gold",
+      "required": false
+    }
+  ]
+}
