@@ -21,6 +21,30 @@ Status: **final draft, waiting for go-ahead.** Built from the Phase 0 scan
 | Elite Essence | **No** |
 | Way of working | **Live:** player plays the `Claude` profile, asks for changes, Claude rebuilds and updates it |
 
+## Update 5 plan (agreed 2026-10-03, in progress: player still reviewing)
+
+| Yes | No |
+|---|---|
+| **Quest fixes:** gear quests accept any item of the tier ("any tier-5 sword") via FTB Filter System smart filters on item tags like `forgedascent:tier_gear/5/swords`; check the "Forged Ascent" group shows as its own category | Prospector's Pick |
+| **Scavenged early armors** (weaker than copper, some about equal; one perk each, doubled with a full set): Leaf (camouflage), Bark (knockback resist, fire weakness), Flint (thorns-like), Bone (skeletons notice later, bonus vs undead), Chitin (cobweb immunity, climbing, poison resist), Feather (no fall damage to 8 blocks), Shell (breath + swim speed), Slime (less fall damage, higher jump), Rotten (zombies ignore you until hit, costs hunger) | |
+| **Distinct perk for every metal/gem set**, small like the current traits (e.g. aluminum +2.5% speed per piece). Every set gets its own unique thing; nothing overpowered | |
+
+**Silent Gear integration (agreed):**
+- Cause of the foundry requirement: the add-on **Silent Gear Metalworks** tags metals as "casting" and overrides Silent Gear's 68
+  part recipes (`data/silentgear/recipe/gear/*`) with `"not_categories": ["casting"]`, so metal heads must be cast in the
+  Productive Metalworks foundry. Fix pack-side (KubeJS data overrides): allow metals again. Foundry stays as an optional route.
+- **Blueprint + ingots works without the foundry.** Tier 1–3 materials: crafting table *and* anvils. Tier 4+ materials: only at a
+  Smithy Anvil of at least that tier (anvil checks the material's tier on the crafted part). Idea for the crafting-table limit:
+  give each material a tier category and make the table recipes require low-tier categories.
+- **New Stone Anvil (tier 3)**, no boss needed, craftable early (also reinforces early gear).
+- **Rebalance all ~60 Silent Gear materials** (incl. Silent's Gems ones) onto our curve: attack = tier sword bonus, armor =
+  tier set totals, durability like our gear, `harvest_tier` → `forgedascent:incorrect_for_tier_N`. Silent Gear's diamond is still
+  vanilla (+3 attack, 20 armor, 1561 durability). Unique SG materials (crimson steel, azure electrum, tyrian steel, blaze gold...) get a tier.
+- **Add all our metals, alloys and gems as Silent Gear materials** (stats from `materials.json`, fitting SG traits, SG tints its own textures).
+- Gear assembly (head + rod) stays a normal crafting-table step.
+
+Still open from the idea list: armor trims from our metals, weapon types, shields, anvil repair with plates, gate maps, ruined forges, flawless gems + inlays.
+
 ## Update 4 design (agreed 2026-10-03, overrides older sections where they differ)
 
 Player's yes/no list:
