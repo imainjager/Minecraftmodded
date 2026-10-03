@@ -42,8 +42,19 @@ Status: **final draft, waiting for go-ahead.** Built from the Phase 0 scan
   vanilla (+3 attack, 20 armor, 1561 durability). Unique SG materials (crimson steel, azure electrum, tyrian steel, blaze gold...) get a tier.
 - **Add all our metals, alloys and gems as Silent Gear materials** (stats from `materials.json`, fitting SG traits, SG tints its own textures).
 - Gear assembly (head + rod) stays a normal crafting-table step.
+- **Silent Gear parts per material:** heads = all metals/alloys/cut gems; rods = light/strong metals (aluminum, duralumin,
+  titanium, chromoly, titanium alloy, steel...); tips = gems (ruby +damage, sapphire +durability, topaz +speed, black diamond);
+  bindings/grips = scavenged materials (chitin, bone, bark...); coatings = late alloys (stellite, inconel, osmiridium).
+  Silent Gear's own weapon types and shields then cover weapon variety.
 
-Still open from the idea list: armor trims from our metals, weapon types, shields, anvil repair with plates, gate maps, ruined forges, flawless gems + inlays.
+**Also in update 5 (agreed):**
+- **Flawless gems:** gem cutting has a rare Flawless result; flawless gems are stronger Silent Gear tips/coatings (this replaces "inlays")
+- **Silent Gear Smithing chapter** inside the Forged Ascent quest tab (blueprints, parts, handles, tips, which anvil per tier)
+- **Anvil repair with ingots:** gear + ingots of its material repairs it at a Smithy Anvil
+
+**Update 6 candidates:** Silent Gear legendary items in Treasure Bags (only if Silent Gear can build full tools in loot tables;
+verify on the test server first), armor trims from our metals, Elite Hunter quest chain, gate maps, ruined forges.
+Rejected: Prospector's Pick.
 
 ## Update 4 design (agreed 2026-10-03, overrides older sections where they differ)
 
