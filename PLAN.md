@@ -14,12 +14,30 @@ Status: **final draft, waiting for go-ahead.** Built from the Phase 0 scan
 | Profile Claude edits | **`Claude`** (copy). The main ATM10 profile is never touched |
 | Pack updates | Never. Existing mods can be changed freely |
 | Uranium | Leave alone |
-| Mod name | **TBD** (placeholder id `forgedascent`) |
+| Mod name | **Forged Ascent** (id `forgedascent`) |
 | Models | Flat item icons, simple block models, mobs reuse vanilla bodies (recolored/scaled). No new 3D mob models |
 | Reinforced gear | **Smithing upgrade on the existing item**, stats only, never raises mining tier |
 | Gems | **In**, with hardness-based tiers and a Lapidary Bench cutting system |
 | Elite Essence | **No** |
 | Way of working | **Live:** player plays the `Claude` profile, asks for changes, Claude rebuilds and updates it |
+
+## Scope changes (agreed 2026-10-03, override the sections below)
+
+| Topic | Change |
+|---|---|
+| Alloys | **Temporary: shapeless crafting-table recipes** (same ratios as section 4). No Alloy Forge / Blast Alloy Forge for now. "Blast-only" smelting of titanium/chromium/tungsten is dropped until a real alloying system is chosen |
+| Gem cutting | **Very basic system**, no GUI and no Automatic Lapidary. Gems are **not in Phase 1** |
+| Elites | **Stay as distinct mob types** (own names, recolored/scaled vanilla bodies) |
+| New ores | **Plain veins first** (ordinary ore blobs in rock, with biome/dimension/depth rules). Ocean nodules and beach black sand come later |
+| Deferred | Blood moon, web-shooting spiders, inlays, synthetic gems, PCD, special (non-stat) traits |
+| Mod name | **Forged Ascent** (id `forgedascent`) |
+
+### Phase 1 contents
+
+Mod setup + gear-set generator, tier system + tier tags, ore gating for existing ores,
+iron/diamond/osmium nerfs, gear sets for **tin, zinc, lead, nickel, aluminum, pewter,
+brass, invar, constantan** (stat traits only), crafting-table alloy recipes, re-tier
+copper (Everything is Copper) and Mekanism bronze/steel/osmium. Test in game before Phase 2.
 
 ---
 
