@@ -1,0 +1,75 @@
+{
+  "type": "silentgear:simple",
+  "parent": "silentgear:empty",
+  "crafting": {
+    "can_salvage": true,
+    "categories": [
+      "metal",
+      "forgedascent_tier_6"
+    ],
+    "gear_type_blacklist": [],
+    "ingredient": {
+      "tag": "c:ingots/rose_mokume"
+    },
+    "part_substitutes": {}
+  },
+  "display": {
+    "color": "#FFE08C78",
+    "main_texture_type": "HIGH_CONTRAST",
+    "name": {
+      "translate": "material.forgedascent.rose_mokume"
+    },
+    "name_prefix": ""
+  },
+  "properties": {
+    "silentgear:main": {
+      "armor": 29.0,
+      "armor/helmet": 4.0,
+      "armor/chestplate": 12.0,
+      "armor/leggings": 9.0,
+      "armor/boots": 4.0,
+      "armor_durability": 33.0,
+      "armor_toughness": 4.800000000000001,
+      "attack_damage": 9.72,
+      "attack_speed": 0.0,
+      "charging_value": 1.0,
+      "draw_speed": 0.0,
+      "durability": 1650.0,
+      "enchantment_value": 16.0,
+      "harvest_speed": 8.6,
+      "harvest_tier": {
+        "incorrect_blocks_for_tool": "forgedascent:incorrect_for_tier_6",
+        "level_hint": "6",
+        "name": "rose_mokume"
+      },
+      "magic_armor": 11.6,
+      "magic_damage": 1.0,
+      "ranged_damage": 4.86,
+      "rarity": 60.0,
+      "repair_value": 0.15,
+      "traits": [
+        {
+          "conditions": [],
+          "level": 2,
+          "trait": "silentgear:sharp"
+        }
+      ]
+    },
+    "silentgear:rod": {
+      "attack_damage": {
+        "operation": "MULTIPLY_TOTAL",
+        "value": 0.03
+      },
+      "durability": {
+        "operation": "MULTIPLY_TOTAL",
+        "value": 0.05
+      }
+    }
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "silentgear"
+    }
+  ]
+}

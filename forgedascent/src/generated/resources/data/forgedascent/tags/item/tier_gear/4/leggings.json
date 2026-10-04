@@ -1,0 +1,16 @@
+{
+  "values": [
+    "forgedascent:brass_leggings",
+    "forgedascent:invar_leggings",
+    "forgedascent:constantan_leggings",
+    "forgedascent:bismuth_bronze_leggings",
+    "forgedascent:duralumin_leggings",
+    "forgedascent:electrum_leggings",
+    "forgedascent:rose_gold_leggings",
+    "forgedascent:amethyst_leggings",
+    {
+      "id": "mekanismtools:bronze_leggings",
+      "required": false
+    }
+  ]
+}

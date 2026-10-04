@@ -1,0 +1,17 @@
+{
+  "values": [
+    "forgedascent:cobalt_leggings",
+    "forgedascent:manganese_steel_leggings",
+    "forgedascent:alnico_leggings",
+    "forgedascent:garnet_leggings",
+    "forgedascent:peridot_leggings",
+    {
+      "id": "mekanismtools:steel_leggings",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:osmium_leggings",
+      "required": false
+    }
+  ]
+}

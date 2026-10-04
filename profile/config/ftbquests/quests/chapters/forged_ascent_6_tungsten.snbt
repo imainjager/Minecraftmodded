@@ -15,32 +15,31 @@
 	title: "Tungsten Age"
 	quests: [
 		{
-			id: "2F9893E3A2D9032B"
+			id: "536B80AA38EFDD12"
 			title: "Forge the Tungsten Anvil"
 			x: 0.0d
 			y: 0.0d
 			subtitle: "Unlocks tier-8 gear"
 			description: [
-				"Craft the &bTungsten Anvil&r from the previous anvil, the Sigil you won and tier-8 plates."
-				"It crafts every gear recipe up to &etier 8&r (JEI: the 'Smithy Anvil' tab)."
-				"Anvils also &breinforce&r gear: put gear + a reinforced plate of the same tier or higher in the grid."
+				"Craft the &bTungsten Anvil&r: the previous anvil, your Sigil and tier-8 plates."
+				"It forges every recipe up to &etier 8&r (JEI: 'Smithy Anvil' tab), folds pattern-welded metals, reinforces and repairs gear."
 			]
 			shape: "gear"
 			size: 1.5d
 			tasks: [
 				{
-					id: "23483AE050525B4B"
+					id: "493EEDD301F0E786"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
 						id: "forgedascent:tungsten_anvil"
 					}
-					count: 1
 				}
 			]
 			rewards: [
 				{
-					id: "37A446237F6B26E3"
+					id: "2E32CE0B5F67C30A"
 					type: "item"
 					item: {
 						count: 1
@@ -49,65 +48,68 @@
 					count: 1
 				}
 				{
-					id: "63E1AD5BB62BBDE7"
+					id: "5A3C1C85F1BD6F34"
 					type: "xp"
-					xp: 100
+					xp: 150
 				}
 			]
 		}
 		{
-			id: "1B915EB7619058FD"
-			title: "Find Ancient Debris"
-			x: 2.0d
+			id: "18CD738761B27DD1"
+			title: "Mine Ancient Debris"
+			x: 1.25d
 			y: -1.0d
+			subtitle: "Needs a tier-8 pickaxe"
 			description: [
-				"Needs a tier-7 pickaxe or better."
+				"Low in the Nether."
 			]
 			dependencies: [
-				"2F9893E3A2D9032B"
+				"536B80AA38EFDD12"
 			]
 			tasks: [
 				{
-					id: "2064A6DDA30BE28F"
+					id: "48CB161E4EE0DB51"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
 						id: "minecraft:ancient_debris"
 					}
-					count: 1
 				}
 			]
 		}
 		{
 			id: "2B100DEFBB276134"
-			title: "Alloy: Tungsten Carbide Ingot"
-			x: 3.0d
-			y: 0.0d
+			title: "Alloy: High Speed Steel"
+			x: 2.5d
+			y: -1.0d
+			subtitle: "4 steel + 1 tungsten + 1 molybdenum + 1 chromium -> 6"
 			description: [
-				"Alloys are mixed in a crafting table for now (check JEI for the real-world ratios)."
+				"Alloys are mixed in a crafting table. The ratio is the real-world one."
 			]
 			dependencies: [
-				"1B915EB7619058FD"
+				"18CD738761B27DD1"
 			]
 			tasks: [
 				{
 					id: "43BF6B4334F4D201"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
-						id: "forgedascent:tungsten_carbide_ingot"
+						id: "forgedascent:high_speed_steel_ingot"
 					}
-					count: 1
 				}
 			]
 		}
 		{
 			id: "7B42910756DEA7F0"
-			title: "Alloy: High Speed Steel Ingot"
-			x: 4.0d
-			y: 0.0d
+			title: "Alloy: Stellite"
+			x: 3.75d
+			y: 1.0d
+			subtitle: "2 cobalt + 1 chromium + 1 tungsten -> 4"
 			description: [
-				"Alloys are mixed in a crafting table for now (check JEI for the real-world ratios)."
+				"Alloys are mixed in a crafting table. The ratio is the real-world one."
 			]
 			dependencies: [
 				"2B100DEFBB276134"
@@ -116,21 +118,22 @@
 				{
 					id: "41D91209A939239E"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
-						id: "forgedascent:high_speed_steel_ingot"
+						id: "forgedascent:stellite_ingot"
 					}
-					count: 1
 				}
 			]
 		}
 		{
 			id: "7E66E99F9639B9CD"
-			title: "Alloy: Stellite Ingot"
+			title: "Alloy: Inconel"
 			x: 5.0d
-			y: 0.0d
+			y: -1.0d
+			subtitle: "3 nickel + 1 chromium + 1 iron -> 5"
 			description: [
-				"Alloys are mixed in a crafting table for now (check JEI for the real-world ratios)."
+				"Alloys are mixed in a crafting table. The ratio is the real-world one."
 			]
 			dependencies: [
 				"7B42910756DEA7F0"
@@ -139,21 +142,22 @@
 				{
 					id: "7933C63EA159E740"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
-						id: "forgedascent:stellite_ingot"
+						id: "forgedascent:inconel_ingot"
 					}
-					count: 1
 				}
 			]
 		}
 		{
 			id: "6FB114F98F6DD12D"
-			title: "Alloy: Inconel Ingot"
-			x: 6.0d
-			y: 0.0d
+			title: "Alloy: Osmiridium"
+			x: 6.25d
+			y: 1.0d
+			subtitle: "1 osmium + 1 iridium -> 2"
 			description: [
-				"Alloys are mixed in a crafting table for now (check JEI for the real-world ratios)."
+				"Alloys are mixed in a crafting table. The ratio is the real-world one."
 			]
 			dependencies: [
 				"7E66E99F9639B9CD"
@@ -162,21 +166,22 @@
 				{
 					id: "201805322ABF0684"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
-						id: "forgedascent:inconel_ingot"
+						id: "forgedascent:osmiridium_ingot"
 					}
-					count: 1
 				}
 			]
 		}
 		{
 			id: "4B92C5534367D5D4"
-			title: "Alloy: Osmiridium Ingot"
-			x: 7.0d
-			y: 0.0d
+			title: "Alloy: Tungsten Carbide"
+			x: 7.5d
+			y: -1.0d
+			subtitle: "2 tungsten + 2 coal + 1 cobalt -> 2"
 			description: [
-				"Alloys are mixed in a crafting table for now (check JEI for the real-world ratios)."
+				"Alloys are mixed in a crafting table. The ratio is the real-world one."
 			]
 			dependencies: [
 				"6FB114F98F6DD12D"
@@ -185,164 +190,381 @@
 				{
 					id: "50C98167D197873C"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
-						id: "forgedascent:osmiridium_ingot"
+						id: "forgedascent:tungsten_carbide_ingot"
 					}
+				}
+			]
+		}
+		{
+			id: "3CAF2FE85EF588E4"
+			title: "Fold Tungsten Damascus"
+			x: 8.75d
+			y: -1.0d
+			subtitle: "tungsten + high speed steel"
+			description: [
+				"At your anvil, lay 5 and 4 ingots in a checker pattern to fold a &dpattern-welded&r metal. It's a slightly stronger Silent Gear material with a wavy look."
+			]
+			dependencies: [
+				"4B92C5534367D5D4"
+			]
+			shape: "diamond"
+			tasks: [
+				{
+					id: "678A8352AA1A82FD"
+					type: "item"
 					count: 1
+					item: {
+						count: 1
+						id: "forgedascent:tungsten_damascus_ingot"
+					}
 				}
 			]
 		}
 		{
 			id: "1700CB16CAF784D7"
-			title: "Hammer some plates"
-			x: 8.0d
-			y: -1.0d
+			title: "Hammer plates"
+			x: 10.0d
+			y: 0.0d
 			description: [
-				"4 plates of this tier make the reinforced plate. Reinforce your best gear at your anvil!"
+				"Plates: All the Ores hammer + 2 ingots, the IE Metal Press, Create's press or the MI compressor."
 			]
 			dependencies: [
-				"4B92C5534367D5D4"
+				"3CAF2FE85EF588E4"
 			]
 			tasks: [
 				{
 					id: "02D99840BC9C98B3"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
-						id: "forgedascent:reinforced_plate_8"
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							"ftbfiltersystem:filter": "item_tag(c:plates)"
+						}
 					}
-					count: 1
 				}
 			]
 		}
 		{
-			id: "4CACE00BD5DE10CB"
-			title: "Gear up: any tier-8 pickaxe"
-			x: 9.0d
+			id: "05E0DF8D94C80E29"
+			title: "Tier-8 reinforced plate"
+			x: 11.25d
 			y: 0.0d
 			description: [
-				"Any tier-8 pickaxe counts: pick the material whose perk you like best."
-				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
+				"4 plates of a tier (2x2) make that tier's reinforced plate."
 			]
-			icon: {
-				id: "forgedascent:tungsten_carbide_pickaxe"
-			}
 			dependencies: [
 				"1700CB16CAF784D7"
 			]
 			tasks: [
 				{
-					id: "75892E049450DA25"
+					id: "556A6EABBF2DB7D2"
 					type: "item"
 					count: 1
 					item: {
 						count: 1
-						id: "ftbfiltersystem:smart_filter"
-						components: {
-							ftbfiltersystem:filter: "item_tag(forgedascent:tier_gear/8/pickaxe)"
-						}
+						id: "forgedascent:reinforced_plate_8"
 					}
-				}
-			]
-			rewards: [
-				{
-					id: "4C5900B16E4E3DD7"
-					type: "item"
-					item: {
-						count: 1
-						id: "minecraft:experience_bottle"
-					}
-					count: 4
 				}
 			]
 		}
 		{
-			id: "5ED1E400009E8DB2"
-			title: "Gear up: any tier-8 chestplate"
-			x: 10.0d
+			id: "08F996A8DF8692BE"
+			title: "Reinforce your gear"
+			x: 12.5d
 			y: 0.0d
 			description: [
-				"Any tier-8 chestplate counts: pick the material whose perk you like best."
-				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
+				"At an anvil: gear + reinforced plate -> &bReinforced I&r (+1 armor or damage, +25% durability)."
+				"You can go to &bII&r and &bIII&r: each needs a plate one grade higher than the last."
 			]
 			icon: {
-				id: "forgedascent:iridium_chestplate"
+				id: "forgedascent:reinforced_plate_8"
 			}
 			dependencies: [
-				"4CACE00BD5DE10CB"
+				"05E0DF8D94C80E29"
 			]
 			tasks: [
 				{
-					id: "1D1166D1E33710BB"
-					type: "item"
-					count: 1
-					item: {
-						count: 1
-						id: "ftbfiltersystem:smart_filter"
-						components: {
-							ftbfiltersystem:filter: "item_tag(forgedascent:tier_gear/8/chestplate)"
-						}
-					}
-				}
-			]
-			rewards: [
-				{
-					id: "404224F8811C58EA"
-					type: "item"
-					item: {
-						count: 1
-						id: "minecraft:experience_bottle"
-					}
-					count: 4
+					id: "57F38707E33A8332"
+					type: "checkmark"
 				}
 			]
 		}
 		{
-			id: "57ED6E62052DEB81"
-			title: "Gear up: any tier-8 sword"
-			x: 11.0d
-			y: 0.0d
+			id: "0DF96B7CB49BBAA7"
+			title: "Any tier-8 pickaxe"
+			x: 13.75d
+			y: -1.0d
 			description: [
-				"Any tier-8 sword counts: pick the material whose perk you like best."
-				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
+				"Any tier-8 pickaxe counts. Each material has its own small perk: check the tooltips."
 			]
-			icon: {
-				id: "forgedascent:black_diamond_sword"
-			}
 			dependencies: [
-				"5ED1E400009E8DB2"
+				"08F996A8DF8692BE"
 			]
 			tasks: [
 				{
-					id: "011F0EF0CEEBB378"
+					id: "2AE171ECBBBFACD8"
 					type: "item"
 					count: 1
 					item: {
 						count: 1
 						id: "ftbfiltersystem:smart_filter"
 						components: {
-							ftbfiltersystem:filter: "item_tag(forgedascent:tier_gear/8/sword)"
+							"ftbfiltersystem:filter": "item_tag(forgedascent:tier_gear/8/pickaxe)"
 						}
 					}
 				}
 			]
 			rewards: [
 				{
-					id: "7BB181DF027680F8"
+					id: "1091B78FFB71C9A3"
 					type: "item"
 					item: {
 						count: 1
 						id: "minecraft:experience_bottle"
 					}
-					count: 4
+					count: 2
+				}
+			]
+		}
+		{
+			id: "7147556211933FB4"
+			title: "Any tier-8 chestplate"
+			x: 15.0d
+			y: 1.0d
+			description: [
+				"Any tier-8 chestplate counts. Each material has its own small perk: check the tooltips."
+			]
+			dependencies: [
+				"0DF96B7CB49BBAA7"
+			]
+			tasks: [
+				{
+					id: "79FDDBA3A72FE77B"
+					type: "item"
+					count: 1
+					item: {
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							"ftbfiltersystem:filter": "item_tag(forgedascent:tier_gear/8/chestplate)"
+						}
+					}
+				}
+			]
+			rewards: [
+				{
+					id: "748F12E00518F9A0"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:experience_bottle"
+					}
+					count: 2
+				}
+			]
+		}
+		{
+			id: "27104887F3E9AE2D"
+			title: "Any tier-8 helmet"
+			x: 16.25d
+			y: -1.0d
+			description: [
+				"Any tier-8 helmet counts. Each material has its own small perk: check the tooltips."
+			]
+			dependencies: [
+				"7147556211933FB4"
+			]
+			tasks: [
+				{
+					id: "0CC158F52F0AC7A0"
+					type: "item"
+					count: 1
+					item: {
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							"ftbfiltersystem:filter": "item_tag(forgedascent:tier_gear/8/helmet)"
+						}
+					}
+				}
+			]
+			rewards: [
+				{
+					id: "13D2ACFA22DE2E33"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:experience_bottle"
+					}
+					count: 2
+				}
+			]
+		}
+		{
+			id: "683BE5B9CB134E86"
+			title: "Any tier-8 leggings"
+			x: 17.5d
+			y: 1.0d
+			description: [
+				"Any tier-8 leggings counts. Each material has its own small perk: check the tooltips."
+			]
+			dependencies: [
+				"27104887F3E9AE2D"
+			]
+			tasks: [
+				{
+					id: "29CFD67BF209E670"
+					type: "item"
+					count: 1
+					item: {
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							"ftbfiltersystem:filter": "item_tag(forgedascent:tier_gear/8/leggings)"
+						}
+					}
+				}
+			]
+			rewards: [
+				{
+					id: "19E1338F27478EA6"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:experience_bottle"
+					}
+					count: 2
+				}
+			]
+		}
+		{
+			id: "3C614480F02C1CA8"
+			title: "Any tier-8 boots"
+			x: 18.75d
+			y: -1.0d
+			description: [
+				"Any tier-8 boots counts. Each material has its own small perk: check the tooltips."
+			]
+			dependencies: [
+				"683BE5B9CB134E86"
+			]
+			tasks: [
+				{
+					id: "25BFA06B4D7011C6"
+					type: "item"
+					count: 1
+					item: {
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							"ftbfiltersystem:filter": "item_tag(forgedascent:tier_gear/8/boots)"
+						}
+					}
+				}
+			]
+			rewards: [
+				{
+					id: "3E81008FE80FB0CC"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:experience_bottle"
+					}
+					count: 2
+				}
+			]
+		}
+		{
+			id: "6AA8323320B18C0B"
+			title: "Any tier-8 sword"
+			x: 20.0d
+			y: 1.0d
+			description: [
+				"Any tier-8 sword counts. Each material has its own small perk: check the tooltips."
+			]
+			dependencies: [
+				"3C614480F02C1CA8"
+			]
+			tasks: [
+				{
+					id: "59BF9BBC6B7CCC4C"
+					type: "item"
+					count: 1
+					item: {
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							"ftbfiltersystem:filter": "item_tag(forgedascent:tier_gear/8/sword)"
+						}
+					}
+				}
+			]
+			rewards: [
+				{
+					id: "4CD4AE5D178F95EF"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:experience_bottle"
+					}
+					count: 2
+				}
+			]
+		}
+		{
+			id: "79BDAAA6C7E62D96"
+			title: "Silent Gear at tier 8"
+			x: 21.25d
+			y: 2.5d
+			description: [
+				"Tier-8 materials make Silent Gear parts at your anvil (blueprint + materials). See the Silent Gear Smithing chapter."
+			]
+			icon: {
+				id: "silentgear:pickaxe"
+			}
+			dependencies: [
+				"6AA8323320B18C0B"
+			]
+			optional: true
+			tasks: [
+				{
+					id: "26E7BDFACD57D6D9"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			id: "7ED3F3022452F413"
+			title: "Prepare for Gate VI"
+			x: 21.25d
+			y: 0.0d
+			description: [
+				"Before a gate boss: wear a full set of this tier, reinforce it, bring food and healing."
+				"Gate bosses aren't scaled by world tier, but the mobs around them are."
+			]
+			icon: {
+				id: "minecraft:shield"
+			}
+			dependencies: [
+				"6AA8323320B18C0B"
+			]
+			shape: "square"
+			tasks: [
+				{
+					id: "69176D6B3E221D51"
+					type: "checkmark"
 				}
 			]
 		}
 		{
 			id: "732426904F861B38"
 			title: "Defeat: Snow Queen"
-			x: 13.0d
+			x: 22.5d
 			y: -2.0d
 			subtitle: "Gate VI boss"
 			description: [
@@ -350,7 +572,7 @@
 				"Any one boss of this gate is enough."
 			]
 			dependencies: [
-				"57ED6E62052DEB81"
+				"7ED3F3022452F413"
 			]
 			shape: "hexagon"
 			optional: true
@@ -366,7 +588,7 @@
 		{
 			id: "36D9681277D3179A"
 			title: "Defeat: Harbinger"
-			x: 13.0d
+			x: 22.5d
 			y: -0.7d
 			subtitle: "Gate VI boss"
 			description: [
@@ -374,7 +596,7 @@
 				"Any one boss of this gate is enough."
 			]
 			dependencies: [
-				"57ED6E62052DEB81"
+				"7ED3F3022452F413"
 			]
 			shape: "hexagon"
 			optional: true
@@ -390,7 +612,7 @@
 		{
 			id: "6892E016D70738C9"
 			title: "Defeat: Ancient Remnant"
-			x: 13.0d
+			x: 22.5d
 			y: 0.6000000000000001d
 			subtitle: "Gate VI boss"
 			description: [
@@ -398,7 +620,7 @@
 				"Any one boss of this gate is enough."
 			]
 			dependencies: [
-				"57ED6E62052DEB81"
+				"7ED3F3022452F413"
 			]
 			shape: "hexagon"
 			optional: true
@@ -414,7 +636,7 @@
 		{
 			id: "43ABDC84B95698FF"
 			title: "Defeat: Maledictus"
-			x: 13.0d
+			x: 22.5d
 			y: 1.9000000000000004d
 			subtitle: "Gate VI boss"
 			description: [
@@ -422,7 +644,7 @@
 				"Any one boss of this gate is enough."
 			]
 			dependencies: [
-				"57ED6E62052DEB81"
+				"7ED3F3022452F413"
 			]
 			shape: "hexagon"
 			optional: true
@@ -438,35 +660,35 @@
 		{
 			id: "000109E0FF7D5596"
 			title: "Gate VI Sigil"
-			x: 15.0d
+			x: 24.25d
 			y: 0.0d
-			subtitle: "Beat any boss above"
+			subtitle: "Beat any boss of the gate"
 			description: [
-				"Every Gate VI boss drops a &dTreasure Bag&r with this Sigil, tier materials, rough gems and an accessory."
+				"Every Gate VI boss drops a &dTreasure Bag&r: this Sigil, tier materials, rough gems, a reinforced plate and an accessory."
 				"Use the Sigil to forge the next Smithy Anvil."
 				"It also unlocks the Apotheosis world tier &ePinnacle&r."
 			]
 			dependencies: [
-				"57ED6E62052DEB81"
+				"7ED3F3022452F413"
 			]
 			shape: "gear"
-			size: 1.5d
+			size: 1.75d
 			tasks: [
 				{
 					id: "3E57A63816F7241B"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
 						id: "forgedascent:sigil_6"
 					}
-					count: 1
 				}
 			]
 			rewards: [
 				{
 					id: "73F8E45A2C6FA64C"
 					type: "xp"
-					xp: 250
+					xp: 300
 				}
 			]
 		}

@@ -5,6 +5,9 @@
     "forgedascent:white_gold_pickaxe",
     "forgedascent:emerald_pickaxe",
     "forgedascent:topaz_pickaxe",
-    "minecraft:diamond_pickaxe"
+    {
+      "id": "minecraft:diamond_pickaxe",
+      "required": false
+    }
   ]
 }

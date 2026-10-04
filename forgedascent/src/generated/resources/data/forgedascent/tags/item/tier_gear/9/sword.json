@@ -1,5 +1,8 @@
 {
   "values": [
-    "minecraft:netherite_sword"
+    {
+      "id": "minecraft:netherite_sword",
+      "required": false
+    }
   ]
 }

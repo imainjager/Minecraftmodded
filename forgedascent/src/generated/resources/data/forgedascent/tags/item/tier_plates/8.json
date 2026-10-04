@@ -1,6 +1,10 @@
 {
   "values": [
     {
+      "id": "#c:plates/tungsten_damascus",
+      "required": false
+    },
+    {
       "id": "#c:plates/tungsten",
       "required": false
     },

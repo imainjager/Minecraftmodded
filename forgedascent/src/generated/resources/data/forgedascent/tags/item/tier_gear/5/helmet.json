@@ -1,0 +1,17 @@
+{
+  "values": [
+    "forgedascent:cobalt_helmet",
+    "forgedascent:manganese_steel_helmet",
+    "forgedascent:alnico_helmet",
+    "forgedascent:garnet_helmet",
+    "forgedascent:peridot_helmet",
+    {
+      "id": "mekanismtools:steel_helmet",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:osmium_helmet",
+      "required": false
+    }
+  ]
+}

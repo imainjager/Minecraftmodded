@@ -10,37 +10,36 @@
 	order_index: 6
 	quest_links: [ ]
 	subtitle: [
-		"Tier 9: netherite and the final bosses"
+		"Tier 9: netherite"
 	]
 	title: "Netherite Age"
 	quests: [
 		{
-			id: "56988A837570F3E4"
+			id: "20E0B24E1DB1F41C"
 			title: "Forge the Netherite Anvil"
 			x: 0.0d
 			y: 0.0d
 			subtitle: "Unlocks tier-9 gear"
 			description: [
-				"Craft the &bNetherite Anvil&r from the previous anvil, the Sigil you won and tier-8 plates."
-				"It crafts every gear recipe up to &etier 9&r (JEI: the 'Smithy Anvil' tab)."
-				"Anvils also &breinforce&r gear: put gear + a reinforced plate of the same tier or higher in the grid."
+				"Craft the &bNetherite Anvil&r: the previous anvil, your Sigil and tier-8 plates."
+				"It forges every recipe up to &etier 9&r (JEI: 'Smithy Anvil' tab), folds pattern-welded metals, reinforces and repairs gear."
 			]
 			shape: "gear"
 			size: 1.5d
 			tasks: [
 				{
-					id: "533D39D0C72DD775"
+					id: "13BBB02ED77F2950"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
 						id: "forgedascent:netherite_anvil"
 					}
-					count: 1
 				}
 			]
 			rewards: [
 				{
-					id: "182A611B1232B60A"
+					id: "301C0B7F9C71824F"
 					type: "item"
 					item: {
 						count: 1
@@ -49,144 +48,354 @@
 					count: 1
 				}
 				{
-					id: "3920142FA9B90FED"
+					id: "365F8A2FDF741FE8"
 					type: "xp"
-					xp: 100
-				}
-			]
-		}
-		{
-			id: "555357FE92A38F58"
-			title: "Find Netherite Ingot"
-			x: 2.0d
-			y: -1.0d
-			description: [
-				"Needs a tier-8 pickaxe or better."
-			]
-			dependencies: [
-				"56988A837570F3E4"
-			]
-			tasks: [
-				{
-					id: "3AA8363AD3DC3980"
-					type: "item"
-					item: {
-						count: 1
-						id: "minecraft:netherite_ingot"
-					}
-					count: 1
+					xp: 150
 				}
 			]
 		}
 		{
 			id: "7454FAF694612E69"
-			title: "Hammer some plates"
-			x: 3.0d
-			y: -1.0d
+			title: "Hammer plates"
+			x: 1.25d
+			y: 0.0d
 			description: [
-				"4 plates of this tier make the reinforced plate. Reinforce your best gear at your anvil!"
+				"Plates: All the Ores hammer + 2 ingots, the IE Metal Press, Create's press or the MI compressor."
 			]
 			dependencies: [
-				"555357FE92A38F58"
+				"20E0B24E1DB1F41C"
 			]
 			tasks: [
 				{
 					id: "5954BFF49E1CBC15"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
-						id: "forgedascent:reinforced_plate_9"
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							"ftbfiltersystem:filter": "item_tag(c:plates)"
+						}
 					}
-					count: 1
 				}
 			]
 		}
 		{
-			id: "0CD8C1056438DB64"
-			title: "Gear up: any tier-9 pickaxe"
-			x: 4.0d
+			id: "4E18A26E7D7F50D6"
+			title: "Tier-9 reinforced plate"
+			x: 2.5d
 			y: 0.0d
 			description: [
-				"Any tier-9 pickaxe counts: pick the material whose perk you like best."
-				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
+				"4 plates of a tier (2x2) make that tier's reinforced plate."
 			]
-			icon: {
-				id: "minecraft:netherite_pickaxe"
-			}
 			dependencies: [
 				"7454FAF694612E69"
 			]
 			tasks: [
 				{
-					id: "019CE0F9152A4093"
+					id: "38392D70C7204188"
 					type: "item"
 					count: 1
 					item: {
 						count: 1
-						id: "ftbfiltersystem:smart_filter"
-						components: {
-							ftbfiltersystem:filter: "item_tag(forgedascent:tier_gear/9/pickaxe)"
-						}
+						id: "forgedascent:reinforced_plate_9"
 					}
-				}
-			]
-			rewards: [
-				{
-					id: "39EA6ACD7BA43448"
-					type: "item"
-					item: {
-						count: 1
-						id: "minecraft:experience_bottle"
-					}
-					count: 4
 				}
 			]
 		}
 		{
-			id: "362F47231FE2B5E5"
-			title: "Gear up: any tier-9 chestplate"
-			x: 5.0d
+			id: "6394C7DC5B17AEFC"
+			title: "Reinforce your gear"
+			x: 3.75d
 			y: 0.0d
 			description: [
-				"Any tier-9 chestplate counts: pick the material whose perk you like best."
-				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
+				"At an anvil: gear + reinforced plate -> &bReinforced I&r (+1 armor or damage, +25% durability)."
+				"You can go to &bII&r and &bIII&r: each needs a plate one grade higher than the last."
 			]
 			icon: {
-				id: "minecraft:netherite_chestplate"
+				id: "forgedascent:reinforced_plate_9"
 			}
 			dependencies: [
-				"0CD8C1056438DB64"
+				"4E18A26E7D7F50D6"
 			]
 			tasks: [
 				{
-					id: "29158A184C8EBEDD"
+					id: "6637CAAA3601B89D"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			id: "5CFC9F52B38D24F7"
+			title: "Any tier-9 pickaxe"
+			x: 5.0d
+			y: -1.0d
+			description: [
+				"Any tier-9 pickaxe counts. Each material has its own small perk: check the tooltips."
+			]
+			dependencies: [
+				"6394C7DC5B17AEFC"
+			]
+			tasks: [
+				{
+					id: "6141F216C430A18A"
 					type: "item"
 					count: 1
 					item: {
 						count: 1
 						id: "ftbfiltersystem:smart_filter"
 						components: {
-							ftbfiltersystem:filter: "item_tag(forgedascent:tier_gear/9/chestplate)"
+							"ftbfiltersystem:filter": "item_tag(forgedascent:tier_gear/9/pickaxe)"
 						}
 					}
 				}
 			]
 			rewards: [
 				{
-					id: "39392E6A80E3A627"
+					id: "3F7573DE86159FB3"
 					type: "item"
 					item: {
 						count: 1
 						id: "minecraft:experience_bottle"
 					}
-					count: 4
+					count: 2
+				}
+			]
+		}
+		{
+			id: "36E854528293FC9F"
+			title: "Any tier-9 chestplate"
+			x: 6.25d
+			y: 1.0d
+			description: [
+				"Any tier-9 chestplate counts. Each material has its own small perk: check the tooltips."
+			]
+			dependencies: [
+				"5CFC9F52B38D24F7"
+			]
+			tasks: [
+				{
+					id: "6185322871D25881"
+					type: "item"
+					count: 1
+					item: {
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							"ftbfiltersystem:filter": "item_tag(forgedascent:tier_gear/9/chestplate)"
+						}
+					}
+				}
+			]
+			rewards: [
+				{
+					id: "38E33155008B236C"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:experience_bottle"
+					}
+					count: 2
+				}
+			]
+		}
+		{
+			id: "3000CC436E906766"
+			title: "Any tier-9 helmet"
+			x: 7.5d
+			y: -1.0d
+			description: [
+				"Any tier-9 helmet counts. Each material has its own small perk: check the tooltips."
+			]
+			dependencies: [
+				"36E854528293FC9F"
+			]
+			tasks: [
+				{
+					id: "1D4B78FF9FC2406A"
+					type: "item"
+					count: 1
+					item: {
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							"ftbfiltersystem:filter": "item_tag(forgedascent:tier_gear/9/helmet)"
+						}
+					}
+				}
+			]
+			rewards: [
+				{
+					id: "08C832E8FEFC5DBF"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:experience_bottle"
+					}
+					count: 2
+				}
+			]
+		}
+		{
+			id: "01FBEEEC86A00F53"
+			title: "Any tier-9 leggings"
+			x: 8.75d
+			y: 1.0d
+			description: [
+				"Any tier-9 leggings counts. Each material has its own small perk: check the tooltips."
+			]
+			dependencies: [
+				"3000CC436E906766"
+			]
+			tasks: [
+				{
+					id: "6B6B1A199E0CD004"
+					type: "item"
+					count: 1
+					item: {
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							"ftbfiltersystem:filter": "item_tag(forgedascent:tier_gear/9/leggings)"
+						}
+					}
+				}
+			]
+			rewards: [
+				{
+					id: "7D73EF89C38D71B4"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:experience_bottle"
+					}
+					count: 2
+				}
+			]
+		}
+		{
+			id: "28D4545FDD84D8CF"
+			title: "Any tier-9 boots"
+			x: 10.0d
+			y: -1.0d
+			description: [
+				"Any tier-9 boots counts. Each material has its own small perk: check the tooltips."
+			]
+			dependencies: [
+				"01FBEEEC86A00F53"
+			]
+			tasks: [
+				{
+					id: "5CB3B51554F4E854"
+					type: "item"
+					count: 1
+					item: {
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							"ftbfiltersystem:filter": "item_tag(forgedascent:tier_gear/9/boots)"
+						}
+					}
+				}
+			]
+			rewards: [
+				{
+					id: "3641EC6EA94AB265"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:experience_bottle"
+					}
+					count: 2
+				}
+			]
+		}
+		{
+			id: "2E190EBB369318FC"
+			title: "Any tier-9 sword"
+			x: 11.25d
+			y: 1.0d
+			description: [
+				"Any tier-9 sword counts. Each material has its own small perk: check the tooltips."
+			]
+			dependencies: [
+				"28D4545FDD84D8CF"
+			]
+			tasks: [
+				{
+					id: "1CD4D8B04B01FD23"
+					type: "item"
+					count: 1
+					item: {
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							"ftbfiltersystem:filter": "item_tag(forgedascent:tier_gear/9/sword)"
+						}
+					}
+				}
+			]
+			rewards: [
+				{
+					id: "2A2D4956FC13E9E2"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:experience_bottle"
+					}
+					count: 2
+				}
+			]
+		}
+		{
+			id: "69ADFE455989105D"
+			title: "Silent Gear at tier 9"
+			x: 12.5d
+			y: 2.5d
+			description: [
+				"Tier-9 materials make Silent Gear parts at your anvil (blueprint + materials). See the Silent Gear Smithing chapter."
+			]
+			icon: {
+				id: "silentgear:pickaxe"
+			}
+			dependencies: [
+				"2E190EBB369318FC"
+			]
+			optional: true
+			tasks: [
+				{
+					id: "3034D37FA7E40C30"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			id: "385C79D46CDE2B9B"
+			title: "Prepare for Final Gate"
+			x: 12.5d
+			y: 0.0d
+			description: [
+				"Before a gate boss: wear a full set of this tier, reinforce it, bring food and healing."
+				"Gate bosses aren't scaled by world tier, but the mobs around them are."
+			]
+			icon: {
+				id: "minecraft:shield"
+			}
+			dependencies: [
+				"2E190EBB369318FC"
+			]
+			shape: "square"
+			tasks: [
+				{
+					id: "287ECD6448B6B4E0"
+					type: "checkmark"
 				}
 			]
 		}
 		{
 			id: "515285699DC89E6B"
 			title: "Defeat: Scylla"
-			x: 7.0d
+			x: 13.75d
 			y: -2.0d
 			subtitle: "Final Gate boss"
 			description: [
@@ -194,7 +403,7 @@
 				"Any one boss of this gate is enough."
 			]
 			dependencies: [
-				"362F47231FE2B5E5"
+				"385C79D46CDE2B9B"
 			]
 			shape: "hexagon"
 			optional: true
@@ -210,7 +419,7 @@
 		{
 			id: "48AF4FF2DB6E6FBE"
 			title: "Defeat: Lunar Monstrosity"
-			x: 7.0d
+			x: 13.75d
 			y: -0.7d
 			subtitle: "Final Gate boss"
 			description: [
@@ -218,7 +427,7 @@
 				"Any one boss of this gate is enough."
 			]
 			dependencies: [
-				"362F47231FE2B5E5"
+				"385C79D46CDE2B9B"
 			]
 			shape: "hexagon"
 			optional: true
@@ -234,7 +443,7 @@
 		{
 			id: "7417058CFC9FDB83"
 			title: "Defeat: Tyros"
-			x: 7.0d
+			x: 13.75d
 			y: 0.6000000000000001d
 			subtitle: "Final Gate boss"
 			description: [
@@ -242,7 +451,7 @@
 				"Any one boss of this gate is enough."
 			]
 			dependencies: [
-				"362F47231FE2B5E5"
+				"385C79D46CDE2B9B"
 			]
 			shape: "hexagon"
 			optional: true
@@ -258,16 +467,16 @@
 		{
 			id: "5686C62FD8FA9CAF"
 			title: "Conquer the Final Gate"
-			x: 9.0d
+			x: 15.5d
 			y: 0.0d
 			description: [
 				"Beat any final boss above for the Final Treasure Bag. Beyond this lies ATM's own Allthemodium ladder."
 			]
 			dependencies: [
-				"362F47231FE2B5E5"
+				"385C79D46CDE2B9B"
 			]
 			shape: "gear"
-			size: 1.5d
+			size: 1.75d
 			tasks: [
 				{
 					id: "0D456DFFED270971"
@@ -278,7 +487,7 @@
 				{
 					id: "0FC15203931B0629"
 					type: "xp"
-					xp: 500
+					xp: 600
 				}
 			]
 		}

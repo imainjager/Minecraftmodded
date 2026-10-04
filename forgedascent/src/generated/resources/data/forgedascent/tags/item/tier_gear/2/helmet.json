@@ -1,0 +1,12 @@
+{
+  "values": [
+    "forgedascent:tin_helmet",
+    "forgedascent:zinc_helmet",
+    "forgedascent:bone_helmet",
+    "forgedascent:chitin_helmet",
+    {
+      "id": "everythingcopper:copper_helmet",
+      "required": false
+    }
+  ]
+}

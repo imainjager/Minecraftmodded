@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:storage_blocks/cobalt_damascus"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "forgedascent:cobalt_damascus_ingot"
+  }
+}

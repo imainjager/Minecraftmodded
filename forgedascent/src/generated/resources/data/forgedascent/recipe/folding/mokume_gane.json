@@ -1,0 +1,21 @@
+{
+  "type": "forgedascent:anvil_shaped",
+  "tier": 4,
+  "key": {
+    "A": {
+      "tag": "c:ingots/copper"
+    },
+    "B": {
+      "tag": "c:ingots/silver"
+    }
+  },
+  "pattern": [
+    "ABA",
+    "BAB",
+    "ABA"
+  ],
+  "result": {
+    "count": 6,
+    "id": "forgedascent:mokume_gane_ingot"
+  }
+}

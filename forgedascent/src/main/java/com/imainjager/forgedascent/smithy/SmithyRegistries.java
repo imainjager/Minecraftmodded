@@ -64,9 +64,20 @@ public final class SmithyRegistries {
     public static final DeferredHolder<MenuType<?>, MenuType<SmithyMenu>> SMITHY_MENU = MENUS.register("smithy_anvil",
             () -> IMenuTypeExtension.create((id, inventory, buf) -> new SmithyMenu(id, inventory, buf.readVarInt())));
 
+    /** Reinforcement from 0.5.x: counts as level I. */
     public static final DeferredHolder<DataComponentType<?>, DataComponentType<Unit>> REINFORCED =
             COMPONENTS.registerComponentType("reinforced", b -> b.persistent(Unit.CODEC)
                     .networkSynchronized(StreamCodec.unit(Unit.INSTANCE)));
+    /** Reinforcement level I-III. */
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<Integer>> REINFORCEMENT =
+            COMPONENTS.registerComponentType("reinforcement", b -> b.persistent(com.mojang.serialization.Codec.intRange(1, 3))
+                    .networkSynchronized(net.minecraft.network.codec.ByteBufCodecs.VAR_INT));
+
+    public static int reinforcement(net.minecraft.world.item.ItemStack stack) {
+        Integer level = stack.get(REINFORCEMENT.get());
+        if (level != null) return level;
+        return stack.has(REINFORCED.get()) ? 1 : 0;
+    }
 
     /** Anvil names by tier; anvil N crafts anvil recipes of tier ≤ N. */
     public static final String[] ANVIL_NAMES = {"stone", "bronze", "steel", "gemstone", "titanium", "tungsten", "netherite"};

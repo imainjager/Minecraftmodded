@@ -21,8 +21,8 @@
 			y: 0.0d
 			description: [
 				"Silent Gear builds tools from parts: a &ehead&r, a &erod&r (handle), and optional &etip&r, &ebinding&r, &egrip&r and &ecoating&r."
-				"No foundry needed: put a blueprint and materials in a grid. Tier 1-3 materials work in a crafting table; &btier 4+ materials need a Smithy Anvil of that tier&r."
-				"Every Forged Ascent metal, alloy and gem is a Silent Gear material, on the same tier ladder."
+				"No foundry: blueprint + materials in a grid. Tier 1-3 materials work in a crafting table; &btier 4+ materials need a Smithy Anvil of that tier&r. Blueprints are kept."
+				"Every Forged Ascent metal, alloy, pattern-welded metal and gem is a Silent Gear material."
 			]
 			icon: {
 				id: "silentgear:pickaxe_blueprint"
@@ -46,10 +46,10 @@
 		{
 			id: "592EE83D0ABD2C1F"
 			title: "Draw a blueprint"
-			x: 2.0d
-			y: -1.0d
+			x: 1.25d
+			y: 0.0d
 			description: [
-				"Blueprints are crafted, and rarer ones (katana, mace, spear...) also turn up in chests."
+				"Blueprints are crafted; rarer ones (katana, mace, spear...) also turn up in chests."
 			]
 			dependencies: [
 				"7887E3470C38B25A"
@@ -58,19 +58,19 @@
 				{
 					id: "7348D1DC98B18B03"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
 						id: "silentgear:pickaxe_blueprint"
 					}
-					count: 1
 				}
 			]
 		}
 		{
 			id: "5EE9362CF0D1662D"
 			title: "Forge a head"
-			x: 3.0d
-			y: -1.0d
+			x: 2.5d
+			y: 0.0d
 			description: [
 				"Blueprint + 3 materials. Mixing materials mixes their stats and traits."
 			]
@@ -81,70 +81,119 @@
 				{
 					id: "40FF14D63C813AA0"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
 						id: "silentgear:pickaxe_head"
 					}
-					count: 1
 				}
 			]
 		}
 		{
-			id: "78D5630338506A54"
-			title: "Assemble a tool"
-			x: 4.0d
-			y: -1.0d
+			id: "505F127CECB462DE"
+			title: "Make a handle"
+			x: 3.75d
+			y: 0.0d
 			description: [
-				"Head + rod in a crafting table. Light metals (aluminum, titanium, chromoly...) make fast handles."
+				"Every Forged Ascent metal makes rods. Light metals swing faster, heavy ones hit harder, tough ones last longer, gem rods mine faster."
 			]
 			dependencies: [
 				"5EE9362CF0D1662D"
 			]
 			tasks: [
 				{
+					id: "4A3540B36EAF777E"
+					type: "item"
+					count: 1
+					item: {
+						count: 1
+						id: "silentgear:rod"
+					}
+				}
+			]
+		}
+		{
+			id: "78D5630338506A54"
+			title: "Assemble a tool"
+			x: 5.0d
+			y: 0.0d
+			description: [
+				"Head + rod in a crafting table."
+			]
+			dependencies: [
+				"505F127CECB462DE"
+			]
+			tasks: [
+				{
 					id: "2A88AE71114CFC7C"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
 						id: "silentgear:pickaxe"
 					}
-					count: 1
 				}
 			]
 		}
 		{
 			id: "15B50348FC660AB6"
 			title: "Tip it with a gem"
-			x: 3.0d
-			y: 1.0d
+			x: 6.25d
+			y: -1.0d
 			description: [
 				"Gem tips add damage and durability: ruby, sapphire, topaz, black diamond..."
 			]
 			dependencies: [
-				"592EE83D0ABD2C1F"
+				"78D5630338506A54"
 			]
 			tasks: [
 				{
 					id: "4C3772FDE0018585"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
 						id: "silentgear:tip"
 					}
+				}
+			]
+		}
+		{
+			id: "5A1439E79BCBC8D5"
+			title: "Pattern-welded parts"
+			x: 7.5d
+			y: 1.0d
+			description: [
+				"Folded metals (Damascus Steel, Mokume-gane, Timascus...) are extra-sharp Silent Gear materials."
+			]
+			dependencies: [
+				"15B50348FC660AB6"
+			]
+			tasks: [
+				{
+					id: "543EDFEF17DF42EC"
+					type: "item"
 					count: 1
+					item: {
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							"ftbfiltersystem:filter": "item_tag(forgedascent:pattern_welded)"
+						}
+					}
 				}
 			]
 		}
 		{
 			id: "2898E10AD39C0822"
-			title: "A flawless cut"
-			x: 4.0d
-			y: 1.0d
+			title: "Flawless tips"
+			x: 8.75d
+			y: 0.0d
 			description: [
-				"Cutting a rough gem has a small chance to also give a &bFlawless&r gem. Flawless gems make the strongest tips and coatings."
+				"6% of gem cuts also give a &bFlawless&r gem: the strongest tips and coatings."
 			]
 			dependencies: [
-				"15B50348FC660AB6"
+				"5A1439E79BCBC8D5"
 			]
 			tasks: [
 				{
@@ -155,7 +204,7 @@
 						count: 1
 						id: "ftbfiltersystem:smart_filter"
 						components: {
-							ftbfiltersystem:filter: "item_tag(forgedascent:flawless_gems)"
+							"ftbfiltersystem:filter": "item_tag(forgedascent:flawless_gems)"
 						}
 					}
 				}
@@ -175,10 +224,10 @@
 		{
 			id: "53E81A5FDD5841CC"
 			title: "Coat it in superalloy"
-			x: 5.0d
-			y: 1.0d
+			x: 10.0d
+			y: 0.0d
 			description: [
-				"Late alloys (stellite, inconel, osmiridium, tungsten carbide) make coatings that boost any tool."
+				"Stellite, inconel, osmiridium, tungsten carbide and high-speed steel make coatings."
 			]
 			dependencies: [
 				"2898E10AD39C0822"
@@ -187,34 +236,34 @@
 				{
 					id: "4F793AF16695B9D2"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
 						id: "silentgear:coating"
 					}
-					count: 1
 				}
 			]
 		}
 		{
 			id: "701CDBA275B1C286"
 			title: "Recycle loot"
-			x: 6.0d
+			x: 11.25d
 			y: 0.0d
 			description: [
 				"The Salvager breaks gear (including Forged Ascent gear) back into materials."
 			]
 			dependencies: [
-				"78D5630338506A54"
+				"53E81A5FDD5841CC"
 			]
 			tasks: [
 				{
 					id: "418D6BF122B235C6"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
 						id: "silentgear:salvager"
 					}
-					count: 1
 				}
 			]
 		}

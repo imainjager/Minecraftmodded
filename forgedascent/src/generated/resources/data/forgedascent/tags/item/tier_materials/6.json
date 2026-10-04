@@ -5,6 +5,10 @@
       "required": false
     },
     {
+      "id": "#c:ingots/rose_mokume",
+      "required": false
+    },
+    {
       "id": "#c:ingots/platinum",
       "required": false
     },

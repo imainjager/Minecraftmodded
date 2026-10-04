@@ -1,0 +1,13 @@
+{
+  "values": [
+    "forgedascent:platinum_helmet",
+    "forgedascent:vanadium_steel_helmet",
+    "forgedascent:white_gold_helmet",
+    "forgedascent:emerald_helmet",
+    "forgedascent:topaz_helmet",
+    {
+      "id": "minecraft:diamond_helmet",
+      "required": false
+    }
+  ]
+}

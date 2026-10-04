@@ -138,8 +138,8 @@ public final class GearTiers {
         if (item instanceof ArmorItem armor) {
             EquipmentSlotGroup slot = EquipmentSlotGroup.bySlot(armor.getEquipmentSlot());
             if (boost) boostArmor(event, armor, slot);
-            if (stack.has(SmithyRegistries.REINFORCED.get())) {
-                event.addModifier(Attributes.ARMOR, new AttributeModifier(REINFORCED_ID, 1.0,
+            if (SmithyRegistries.reinforcement(stack) > 0) {
+                event.addModifier(Attributes.ARMOR, new AttributeModifier(REINFORCED_ID, SmithyRegistries.reinforcement(stack),
                         AttributeModifier.Operation.ADD_VALUE), slot);
             }
         } else if (item instanceof TieredItem tool) {
@@ -152,12 +152,12 @@ public final class GearTiers {
                             AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND);
                 }
             }
-            if (stack.has(SmithyRegistries.REINFORCED.get())) {
-                event.addModifier(Attributes.ATTACK_DAMAGE, new AttributeModifier(REINFORCED_ID, 1.0,
+            if (SmithyRegistries.reinforcement(stack) > 0) {
+                event.addModifier(Attributes.ATTACK_DAMAGE, new AttributeModifier(REINFORCED_ID, SmithyRegistries.reinforcement(stack),
                         AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND);
             }
-        } else if (stack.has(SmithyRegistries.REINFORCED.get()) && stack.isDamageableItem()) {
-            event.addModifier(Attributes.ATTACK_DAMAGE, new AttributeModifier(REINFORCED_ID, 1.0,
+        } else if (SmithyRegistries.reinforcement(stack) > 0 && stack.isDamageableItem()) {
+            event.addModifier(Attributes.ATTACK_DAMAGE, new AttributeModifier(REINFORCED_ID, SmithyRegistries.reinforcement(stack),
                     AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND);
         }
     }
@@ -183,8 +183,10 @@ public final class GearTiers {
     }
 
     private static void onTooltip(ItemTooltipEvent event) {
-        if (event.getItemStack().has(SmithyRegistries.REINFORCED.get())) {
-            event.getToolTip().add(1, Component.translatable("tooltip.forgedascent.reinforced").withStyle(ChatFormatting.AQUA));
+        int level = SmithyRegistries.reinforcement(event.getItemStack());
+        if (level > 0) {
+            event.getToolTip().add(1, Component.translatable("tooltip.forgedascent.reinforced",
+                    Component.translatable("enchantment.level." + level)).withStyle(ChatFormatting.AQUA));
         }
     }
 }

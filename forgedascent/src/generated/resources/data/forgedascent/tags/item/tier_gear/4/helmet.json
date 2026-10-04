@@ -1,0 +1,16 @@
+{
+  "values": [
+    "forgedascent:brass_helmet",
+    "forgedascent:invar_helmet",
+    "forgedascent:constantan_helmet",
+    "forgedascent:bismuth_bronze_helmet",
+    "forgedascent:duralumin_helmet",
+    "forgedascent:electrum_helmet",
+    "forgedascent:rose_gold_helmet",
+    "forgedascent:amethyst_helmet",
+    {
+      "id": "mekanismtools:bronze_helmet",
+      "required": false
+    }
+  ]
+}

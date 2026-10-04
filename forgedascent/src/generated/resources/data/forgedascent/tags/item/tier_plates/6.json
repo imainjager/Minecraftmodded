@@ -1,6 +1,10 @@
 {
   "values": [
     {
+      "id": "#c:plates/rose_mokume",
+      "required": false
+    },
+    {
       "id": "#c:plates/platinum",
       "required": false
     },

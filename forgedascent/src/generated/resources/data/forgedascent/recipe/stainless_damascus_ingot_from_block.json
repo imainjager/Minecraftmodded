@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:storage_blocks/stainless_damascus"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "forgedascent:stainless_damascus_ingot"
+  }
+}

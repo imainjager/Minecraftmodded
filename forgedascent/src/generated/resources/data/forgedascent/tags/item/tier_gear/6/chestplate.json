@@ -5,6 +5,9 @@
     "forgedascent:white_gold_chestplate",
     "forgedascent:emerald_chestplate",
     "forgedascent:topaz_chestplate",
-    "minecraft:diamond_chestplate"
+    {
+      "id": "minecraft:diamond_chestplate",
+      "required": false
+    }
   ]
 }

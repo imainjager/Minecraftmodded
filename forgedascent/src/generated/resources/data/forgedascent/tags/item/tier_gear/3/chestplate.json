@@ -4,6 +4,9 @@
     "forgedascent:nickel_chestplate",
     "forgedascent:aluminum_chestplate",
     "forgedascent:pewter_chestplate",
-    "minecraft:iron_chestplate"
+    {
+      "id": "minecraft:iron_chestplate",
+      "required": false
+    }
   ]
 }

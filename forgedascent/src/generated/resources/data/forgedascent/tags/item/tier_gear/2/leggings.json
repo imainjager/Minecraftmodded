@@ -1,0 +1,12 @@
+{
+  "values": [
+    "forgedascent:tin_leggings",
+    "forgedascent:zinc_leggings",
+    "forgedascent:bone_leggings",
+    "forgedascent:chitin_leggings",
+    {
+      "id": "everythingcopper:copper_leggings",
+      "required": false
+    }
+  ]
+}

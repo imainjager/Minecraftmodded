@@ -1,0 +1,21 @@
+{
+  "type": "forgedascent:anvil_shaped",
+  "tier": 6,
+  "key": {
+    "A": {
+      "tag": "c:ingots/rose_gold"
+    },
+    "B": {
+      "tag": "c:ingots/white_gold"
+    }
+  },
+  "pattern": [
+    "ABA",
+    "BAB",
+    "ABA"
+  ],
+  "result": {
+    "count": 6,
+    "id": "forgedascent:rose_mokume_ingot"
+  }
+}

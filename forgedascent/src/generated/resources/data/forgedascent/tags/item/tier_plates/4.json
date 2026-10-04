@@ -9,6 +9,14 @@
       "required": false
     },
     {
+      "id": "#c:plates/ladder_damascus",
+      "required": false
+    },
+    {
+      "id": "#c:plates/mokume_gane",
+      "required": false
+    },
+    {
       "id": "#c:plates/brass",
       "required": false
     },

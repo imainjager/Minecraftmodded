@@ -1,0 +1,21 @@
+{
+  "type": "forgedascent:anvil_shaped",
+  "tier": 5,
+  "key": {
+    "A": {
+      "tag": "c:ingots/steel"
+    },
+    "B": {
+      "tag": "c:ingots/nickel"
+    }
+  },
+  "pattern": [
+    "ABA",
+    "BAB",
+    "ABA"
+  ],
+  "result": {
+    "count": 6,
+    "id": "forgedascent:damascus_steel_ingot"
+  }
+}

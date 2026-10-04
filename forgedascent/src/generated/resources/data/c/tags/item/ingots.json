@@ -22,6 +22,14 @@
     "#c:ingots/stellite",
     "#c:ingots/inconel",
     "#c:ingots/osmiridium",
-    "#c:ingots/nichrome"
+    "#c:ingots/nichrome",
+    "#c:ingots/ladder_damascus",
+    "#c:ingots/mokume_gane",
+    "#c:ingots/damascus_steel",
+    "#c:ingots/cobalt_damascus",
+    "#c:ingots/rose_mokume",
+    "#c:ingots/timascus",
+    "#c:ingots/stainless_damascus",
+    "#c:ingots/tungsten_damascus"
   ]
 }

@@ -1,0 +1,13 @@
+{
+  "values": [
+    "forgedascent:platinum_leggings",
+    "forgedascent:vanadium_steel_leggings",
+    "forgedascent:white_gold_leggings",
+    "forgedascent:emerald_leggings",
+    "forgedascent:topaz_leggings",
+    {
+      "id": "minecraft:diamond_leggings",
+      "required": false
+    }
+  ]
+}

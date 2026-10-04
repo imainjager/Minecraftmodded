@@ -3,6 +3,10 @@
     "forgedascent:tin_chestplate",
     "forgedascent:zinc_chestplate",
     "forgedascent:bone_chestplate",
-    "forgedascent:chitin_chestplate"
+    "forgedascent:chitin_chestplate",
+    {
+      "id": "everythingcopper:copper_chestplate",
+      "required": false
+    }
   ]
 }

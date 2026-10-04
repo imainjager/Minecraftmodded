@@ -1,0 +1,21 @@
+{
+  "type": "forgedascent:anvil_shaped",
+  "tier": 8,
+  "key": {
+    "A": {
+      "tag": "c:ingots/tungsten"
+    },
+    "B": {
+      "tag": "c:ingots/high_speed_steel"
+    }
+  },
+  "pattern": [
+    "ABA",
+    "BAB",
+    "ABA"
+  ],
+  "result": {
+    "count": 6,
+    "id": "forgedascent:tungsten_damascus_ingot"
+  }
+}

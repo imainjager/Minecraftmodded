@@ -1,0 +1,13 @@
+{
+  "values": [
+    "forgedascent:platinum_boots",
+    "forgedascent:vanadium_steel_boots",
+    "forgedascent:white_gold_boots",
+    "forgedascent:emerald_boots",
+    "forgedascent:topaz_boots",
+    {
+      "id": "minecraft:diamond_boots",
+      "required": false
+    }
+  ]
+}

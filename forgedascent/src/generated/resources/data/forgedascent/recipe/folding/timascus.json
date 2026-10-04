@@ -1,0 +1,21 @@
+{
+  "type": "forgedascent:anvil_shaped",
+  "tier": 7,
+  "key": {
+    "A": {
+      "tag": "c:ingots/titanium"
+    },
+    "B": {
+      "tag": "c:ingots/titanium_alloy"
+    }
+  },
+  "pattern": [
+    "ABA",
+    "BAB",
+    "ABA"
+  ],
+  "result": {
+    "count": 6,
+    "id": "forgedascent:timascus_ingot"
+  }
+}

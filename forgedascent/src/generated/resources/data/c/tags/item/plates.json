@@ -22,6 +22,14 @@
     "#c:plates/stellite",
     "#c:plates/inconel",
     "#c:plates/osmiridium",
-    "#c:plates/nichrome"
+    "#c:plates/nichrome",
+    "#c:plates/ladder_damascus",
+    "#c:plates/mokume_gane",
+    "#c:plates/damascus_steel",
+    "#c:plates/cobalt_damascus",
+    "#c:plates/rose_mokume",
+    "#c:plates/timascus",
+    "#c:plates/stainless_damascus",
+    "#c:plates/tungsten_damascus"
   ]
 }

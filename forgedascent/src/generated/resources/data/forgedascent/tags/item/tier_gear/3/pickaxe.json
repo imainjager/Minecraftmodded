@@ -4,6 +4,9 @@
     "forgedascent:nickel_pickaxe",
     "forgedascent:aluminum_pickaxe",
     "forgedascent:pewter_pickaxe",
-    "minecraft:iron_pickaxe"
+    {
+      "id": "minecraft:iron_pickaxe",
+      "required": false
+    }
   ]
 }

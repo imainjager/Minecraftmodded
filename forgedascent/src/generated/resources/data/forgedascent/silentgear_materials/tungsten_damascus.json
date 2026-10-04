@@ -1,0 +1,75 @@
+{
+  "type": "silentgear:simple",
+  "parent": "silentgear:empty",
+  "crafting": {
+    "can_salvage": true,
+    "categories": [
+      "metal",
+      "forgedascent_tier_8"
+    ],
+    "gear_type_blacklist": [],
+    "ingredient": {
+      "tag": "c:ingots/tungsten_damascus"
+    },
+    "part_substitutes": {}
+  },
+  "display": {
+    "color": "#FF4A4D54",
+    "main_texture_type": "HIGH_CONTRAST",
+    "name": {
+      "translate": "material.forgedascent.tungsten_damascus"
+    },
+    "name_prefix": ""
+  },
+  "properties": {
+    "silentgear:main": {
+      "armor": 45.0,
+      "armor/helmet": 7.0,
+      "armor/chestplate": 18.0,
+      "armor/leggings": 13.0,
+      "armor/boots": 7.0,
+      "armor_durability": 44.0,
+      "armor_toughness": 6.4,
+      "attack_damage": 21.6,
+      "attack_speed": 0.0,
+      "charging_value": 1.0,
+      "draw_speed": 0.0,
+      "durability": 2200.0,
+      "enchantment_value": 16.0,
+      "harvest_speed": 9.8,
+      "harvest_tier": {
+        "incorrect_blocks_for_tool": "forgedascent:incorrect_for_tier_8",
+        "level_hint": "8",
+        "name": "tungsten_damascus"
+      },
+      "magic_armor": 18.0,
+      "magic_damage": 1.0,
+      "ranged_damage": 10.8,
+      "rarity": 80.0,
+      "repair_value": 0.15,
+      "traits": [
+        {
+          "conditions": [],
+          "level": 2,
+          "trait": "silentgear:sharp"
+        }
+      ]
+    },
+    "silentgear:rod": {
+      "attack_damage": {
+        "operation": "MULTIPLY_TOTAL",
+        "value": 0.03
+      },
+      "durability": {
+        "operation": "MULTIPLY_TOTAL",
+        "value": 0.05
+      }
+    }
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "silentgear"
+    }
+  ]
+}

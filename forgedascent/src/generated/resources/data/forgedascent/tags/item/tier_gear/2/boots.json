@@ -1,0 +1,12 @@
+{
+  "values": [
+    "forgedascent:tin_boots",
+    "forgedascent:zinc_boots",
+    "forgedascent:bone_boots",
+    "forgedascent:chitin_boots",
+    {
+      "id": "everythingcopper:copper_boots",
+      "required": false
+    }
+  ]
+}

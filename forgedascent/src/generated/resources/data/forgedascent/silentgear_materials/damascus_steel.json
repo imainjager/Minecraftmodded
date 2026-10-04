@@ -1,0 +1,75 @@
+{
+  "type": "silentgear:simple",
+  "parent": "silentgear:empty",
+  "crafting": {
+    "can_salvage": true,
+    "categories": [
+      "metal",
+      "forgedascent_tier_5"
+    ],
+    "gear_type_blacklist": [],
+    "ingredient": {
+      "tag": "c:ingots/damascus_steel"
+    },
+    "part_substitutes": {}
+  },
+  "display": {
+    "color": "#FF7E8890",
+    "main_texture_type": "HIGH_CONTRAST",
+    "name": {
+      "translate": "material.forgedascent.damascus_steel"
+    },
+    "name_prefix": ""
+  },
+  "properties": {
+    "silentgear:main": {
+      "armor": 23.0,
+      "armor/helmet": 3.0,
+      "armor/chestplate": 9.0,
+      "armor/leggings": 8.0,
+      "armor/boots": 3.0,
+      "armor_durability": 27.0,
+      "armor_toughness": 4.0,
+      "attack_damage": 7.02,
+      "attack_speed": 0.0,
+      "charging_value": 1.0,
+      "draw_speed": 0.0,
+      "durability": 1375.0,
+      "enchantment_value": 16.0,
+      "harvest_speed": 8.0,
+      "harvest_tier": {
+        "incorrect_blocks_for_tool": "forgedascent:incorrect_for_tier_5",
+        "level_hint": "5",
+        "name": "damascus_steel"
+      },
+      "magic_armor": 9.2,
+      "magic_damage": 1.0,
+      "ranged_damage": 3.51,
+      "rarity": 50.0,
+      "repair_value": 0.15,
+      "traits": [
+        {
+          "conditions": [],
+          "level": 2,
+          "trait": "silentgear:sharp"
+        }
+      ]
+    },
+    "silentgear:rod": {
+      "attack_damage": {
+        "operation": "MULTIPLY_TOTAL",
+        "value": 0.03
+      },
+      "durability": {
+        "operation": "MULTIPLY_TOTAL",
+        "value": 0.05
+      }
+    }
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "silentgear"
+    }
+  ]
+}

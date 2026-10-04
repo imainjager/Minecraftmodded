@@ -4,6 +4,9 @@
     "forgedascent:nickel_sword",
     "forgedascent:aluminum_sword",
     "forgedascent:pewter_sword",
-    "minecraft:iron_sword"
+    {
+      "id": "minecraft:iron_sword",
+      "required": false
+    }
   ]
 }

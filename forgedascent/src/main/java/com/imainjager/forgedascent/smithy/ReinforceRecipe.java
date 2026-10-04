@@ -5,7 +5,6 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
-import net.minecraft.util.Unit;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.CraftingInput;
 import net.minecraft.world.item.crafting.RecipeSerializer;
@@ -13,8 +12,8 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 
 /**
- * Smithy Anvil: any damageable gear + a reinforced plate of at least the gear's tier → the same gear, marked
- * Reinforced (+1 armor or +1 attack damage, +25% durability). PLAN.md section 6.
+ * Smithy Anvil: any damageable gear + a reinforced plate → the same gear, one Reinforcement level higher (max III).
+ * Each level: +1 armor or +1 attack damage, +25% durability. Level N+1 needs a plate of tier (gear tier + N).
  */
 public final class ReinforceRecipe implements AnvilRecipe {
     public static final ReinforceRecipe INSTANCE = new ReinforceRecipe();
@@ -44,10 +43,12 @@ public final class ReinforceRecipe implements AnvilRecipe {
                 gear = stack;
             }
         }
-        if (gear.isEmpty() || plate.isEmpty() || !gear.isDamageableItem() || gear.has(SmithyRegistries.REINFORCED.get())) {
-            return null;
-        }
-        if (((ReinforcedPlateItem) plate.getItem()).tier() < GearTiers.of(gear)) return null;
+        if (gear.isEmpty() || plate.isEmpty() || !gear.isDamageableItem()) return null;
+        int level = SmithyRegistries.reinforcement(gear);
+        if (level >= 3) return null;
+        // Level I needs a plate of the gear's tier, II one grade higher, III two grades higher (capped at tier 9).
+        int needed = Math.min(9, GearTiers.of(gear) + level);
+        if (((ReinforcedPlateItem) plate.getItem()).tier() < needed) return null;
         return new Parts(gear, plate);
     }
 
@@ -61,7 +62,8 @@ public final class ReinforceRecipe implements AnvilRecipe {
         Parts parts = find(input);
         if (parts == null) return ItemStack.EMPTY;
         ItemStack result = parts.gear().copyWithCount(1);
-        result.set(SmithyRegistries.REINFORCED.get(), Unit.INSTANCE);
+        result.set(SmithyRegistries.REINFORCEMENT.get(), SmithyRegistries.reinforcement(result) + 1);
+        result.remove(SmithyRegistries.REINFORCED.get());
         result.set(DataComponents.MAX_DAMAGE, Math.round(result.getMaxDamage() * 1.25F));
         return result;
     }

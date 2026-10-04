@@ -1,5 +1,8 @@
 {
   "values": [
-    "minecraft:netherite_chestplate"
+    {
+      "id": "minecraft:netherite_chestplate",
+      "required": false
+    }
   ]
 }

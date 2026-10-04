@@ -1,6 +1,10 @@
 {
   "values": [
     {
+      "id": "#c:ingots/tungsten_damascus",
+      "required": false
+    },
+    {
       "id": "#c:ingots/tungsten",
       "required": false
     },

@@ -1,0 +1,16 @@
+{
+  "values": [
+    "forgedascent:brass_boots",
+    "forgedascent:invar_boots",
+    "forgedascent:constantan_boots",
+    "forgedascent:bismuth_bronze_boots",
+    "forgedascent:duralumin_boots",
+    "forgedascent:electrum_boots",
+    "forgedascent:rose_gold_boots",
+    "forgedascent:amethyst_boots",
+    {
+      "id": "mekanismtools:bronze_boots",
+      "required": false
+    }
+  ]
+}

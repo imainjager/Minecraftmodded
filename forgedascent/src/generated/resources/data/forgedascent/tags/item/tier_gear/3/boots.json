@@ -1,0 +1,12 @@
+{
+  "values": [
+    "forgedascent:lead_boots",
+    "forgedascent:nickel_boots",
+    "forgedascent:aluminum_boots",
+    "forgedascent:pewter_boots",
+    {
+      "id": "minecraft:iron_boots",
+      "required": false
+    }
+  ]
+}

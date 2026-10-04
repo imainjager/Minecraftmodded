@@ -458,13 +458,41 @@ STONE_TAG = {"stone": "c:ores_in_ground/stone", "deepslate": "c:ores_in_ground/d
 # ---------------------------------------------------------------- generation
 
 
+def pattern_weld(img, color_a, color_b):
+    """Two-tone wavy 'Damascus' look: each pixel takes one metal's gradient, chosen by a folded wave pattern."""
+    import math
+    px = img.load()
+    w, h = img.size
+    pts = [(x, y) for y in range(h) for x in range(w) if px[x, y][3] > 0]
+    if not pts:
+        return img
+    ls = sorted(lum(px[x, y]) for x, y in pts)
+    lo, hi = ls[int(len(ls) * 0.05)], ls[min(len(ls) - 1, int(len(ls) * 0.95))]
+    span = max(hi - lo, 0.15)
+    stops_a, stops_b = gradient(color_a), gradient(color_b)
+    s = 16 / w
+    for x, y in pts:
+        wave = math.sin((x * s) * 0.9 + (y * s) * 1.7 + 2.2 * math.sin((x * s) * 0.45))
+        stops = stops_a if wave > 0 else stops_b
+        px[x, y] = (*lookup(stops, (lum(px[x, y]) - lo) / span), px[x, y][3])
+    return img
+
+
 def gen_ingots():
     for ingot in TABLE["ingots"]:
         iid, color, style = ingot["id"], ingot["color"], ingot["style"]
-        save_png(f"assets/{NS}/textures/item/{iid}_ingot.png",
-                 source_or_fallback(f"alltheores:item/{style}_ingot", color, "minecraft:item/iron_ingot"))
-        save_png(f"assets/{NS}/textures/block/{iid}_block.png",
-                 source_or_fallback(f"alltheores:block/{style}_block", color, "minecraft:block/iron_block"))
+        if "pattern" in ingot:
+            a, b = ingot["pattern"]
+            save_png(f"assets/{NS}/textures/item/{iid}_ingot.png",
+                     pattern_weld(SRC.get(f"alltheores:item/{style}_ingot"), a, b))
+            save_png(f"assets/{NS}/textures/block/{iid}_block.png",
+                     pattern_weld(SRC.get(f"alltheores:block/{style}_block"), a, b))
+            PATTERN_PLATES[iid] = (a, b)
+        else:
+            save_png(f"assets/{NS}/textures/item/{iid}_ingot.png",
+                     source_or_fallback(f"alltheores:item/{style}_ingot", color, "minecraft:item/iron_ingot"))
+            save_png(f"assets/{NS}/textures/block/{iid}_block.png",
+                     source_or_fallback(f"alltheores:block/{style}_block", color, "minecraft:block/iron_block"))
         item_model(f"{iid}_ingot", "minecraft:item/generated", f"{iid}_ingot")
         cube_block(f"{iid}_block")
         self_drop(f"{iid}_block")
@@ -482,11 +510,51 @@ def gen_ingots():
         tag("block", "minecraft:needs_stone_tool", f"{NS}:{iid}_block")
 
 
+PATTERN_PLATES = {}
+
+
+def gen_damascus():
+    """Pattern-welded metals (PLAN.md "Update 6"): folded at a Smithy Anvil, tier materials, Silent Gear materials."""
+    sg_cond = [{"type": "neoforge:mod_loaded", "modid": "silentgear"}]
+    for ingot in TABLE["ingots"]:
+        if "pattern" not in ingot:
+            continue
+        iid, tier, (a, b) = ingot["id"], ingot["tier"], ingot["folded_from"]
+        write_json(f"data/{NS}/recipe/folding/{iid}.json", {
+            "type": f"{NS}:anvil_shaped", "tier": tier, "key": {"A": ing(a), "B": ing(b)},
+            "pattern": ["ABA", "BAB", "ABA"], "result": {"count": 6, "id": f"{NS}:{iid}_ingot"}})
+        TIER_MATERIALS.setdefault(tier, []).append(f"c:ingots/{iid}")
+        TIER_PLATES.setdefault(tier, []).append(f"c:plates/{iid}")
+        tag("item", f"{NS}:pattern_welded", f"{NS}:{iid}_ingot")
+        # Silent Gear: a bit stronger than the tier's normal metals, extra sharp.
+        sword, armor = SWORD_CURVE[tier] - 4, ARMOR_CURVE[tier]
+        pieces = {"helmet": round(armor * 0.15), "chestplate": round(armor * 0.4), "boots": round(armor * 0.15)}
+        pieces["leggings"] = armor - sum(pieces.values())
+        mat = {"id": iid, "color": ingot["color"], "repair": f"c:ingots/{iid}",
+               "tool": {"uses": int(250 * tier * 1.1), "speed": 5.0 + tier * 0.6, "attack": round(sword * 1.08, 2),
+                        "enchant": 16},
+               "armor": {"durability": int(5 * tier * 1.1), **pieces, "toughness": tier * 0.2, "enchant": 16}}
+        data = sg_material(mat, tier, {"tag": f"c:ingots/{iid}"}, ["metal"] + tier_categories(tier),
+                           f"material.{NS}.{iid}")
+        data["properties"]["silentgear:main"]["traits"] = [{"conditions": [], "level": 2, "trait": "silentgear:sharp"}]
+        data["neoforge:conditions"] = sg_cond
+        write_json(f"data/{NS}/silentgear_materials/{iid}.json", data)
+        LANG[f"material.{NS}.{iid}"] = ingot["name"]
+        SG_EXTRA_TIERS[f"{NS}:{iid}"] = tier
+
+
+SG_EXTRA_TIERS = {}
+
+
 def gen_plate(iid, name, color, style):
     """A plate for one of our ingots, made the ways the pack already makes plates (PLAN.md "Update 4 design")."""
     plate = f"{iid}_plate"
-    save_png(f"assets/{NS}/textures/item/{plate}.png",
-             source_or_fallback(f"alltheores:item/{style}_plate", color, "minecraft:item/iron_ingot"))
+    if iid in PATTERN_PLATES:
+        save_png(f"assets/{NS}/textures/item/{plate}.png",
+                 pattern_weld(SRC.get(f"alltheores:item/{style}_plate"), *PATTERN_PLATES[iid]))
+    else:
+        save_png(f"assets/{NS}/textures/item/{plate}.png",
+                 source_or_fallback(f"alltheores:item/{style}_plate", color, "minecraft:item/iron_ingot"))
     item_model(plate, "minecraft:item/generated", plate)
     LANG[f"item.{NS}.{plate}"] = f"{name} Plate"
     tag("item", f"c:plates/{iid}", f"{NS}:{plate}")
@@ -601,8 +669,8 @@ def gen_gear():
             tag("item", m["repair"], *[e if not e.startswith("#") else e for e in TABLE["scavenged"][mid]])
         else:
             TIER_MATERIALS.setdefault(tier, []).append(m["repair"])
-        for kind in ("sword", "pickaxe", "chestplate"):
-            if not (armor_only and kind != "chestplate"):
+        for kind in ("sword", "pickaxe", "helmet", "chestplate", "leggings", "boots"):
+            if not (armor_only and kind in ("sword", "pickaxe")):
                 tag("item", f"{NS}:tier_gear/{tier}/{kind}", f"{NS}:{mid}_{kind}")
         for unlock in WORLD_TIER_GEAR.values():
             if armor_only:
@@ -756,12 +824,15 @@ def gen_smithy():
         LANG[f"item.{NS}.{item}"] = f"Flawless {gem['name']}"
         tag("item", f"{NS}:flawless_gems", f"{NS}:{item}")
     # Quest helper tags: any tier-N gear of a kind (vanilla/other mods added below).
-    for item, t in (("minecraft:iron_sword", 3), ("minecraft:iron_pickaxe", 3), ("minecraft:iron_chestplate", 3),
-                    ("minecraft:diamond_sword", 6), ("minecraft:diamond_pickaxe", 6), ("minecraft:diamond_chestplate", 6),
-                    ("minecraft:netherite_sword", 9), ("minecraft:netherite_pickaxe", 9), ("minecraft:netherite_chestplate", 9)):
-        tag("item", f"{NS}:tier_gear/{t}/{item.split('_')[-1]}", item)
+    kinds = ("sword", "pickaxe", "helmet", "chestplate", "leggings", "boots")
+    for prefix, t in (("minecraft:stone_", 1), ("minecraft:iron_", 3), ("minecraft:diamond_", 6),
+                      ("minecraft:netherite_", 9), ("everythingcopper:copper_", 2)):
+        for kind in kinds:
+            if prefix == "minecraft:stone_" and kind not in ("sword", "pickaxe"):
+                continue
+            tag("item", f"{NS}:tier_gear/{t}/{kind}", opt(prefix + kind))
     for prefix, t in (("mekanismtools:bronze_", 4), ("mekanismtools:steel_", 5), ("mekanismtools:osmium_", 5)):
-        for kind in ("sword", "pickaxe", "chestplate"):
+        for kind in kinds:
             tag("item", f"{NS}:tier_gear/{t}/{kind}", opt(prefix + kind))
 
     # Sigils and Treasure Bags per gate.
@@ -1027,6 +1098,7 @@ def gen_silentgear():
                 for key in [k for k in main if k == "armor" or k.startswith("armor/")]:
                     main[key] = sg_scale(main[key], factor)
         write_json(f"kubejs/data/{ns}/silentgear_materials/{path}.json", data, base=PROFILE_OUT)
+    tiers.update(SG_EXTRA_TIERS)
     write_json(f"{NS}/sg_material_tiers.json", dict(sorted(tiers.items())))
 
     # Part recipes: crafting table for tier 1-3 materials, any Smithy Anvil up to its tier for all materials.
@@ -1176,14 +1248,14 @@ def write_tags():
 
 LANG = {
     "itemGroup.forgedascent": "Forged Ascent",
-    "tooltip.forgedascent.reinforced": "Reinforced",
+    "tooltip.forgedascent.reinforced": "Reinforced %s",
     "tooltip.forgedascent.reinforced_plate": "Reinforces gear up to tier %s at a Smithy Anvil",
     "tooltip.forgedascent.treasure_bag": "Right-click to open",
     "gui.forgedascent.anvil_tier": "Tier %s",
     "jei.forgedascent.anvil": "Smithy Anvil",
     "jei.forgedascent.needs_anvil": "Needs: %s or better",
     "jei.forgedascent.reinforce": "Put this plate and a tool, weapon or armor piece into a Smithy Anvil to reinforce "
-                                  "it: +1 armor or +1 attack damage, +25% durability. Works on gear up to the plate's tier.",
+                                  "it: +1 armor or +1 attack damage, +25% durability per level, up to Reinforced III. Level I needs a plate of the gear's tier, level II one grade higher, level III two grades higher.",
     "message.forgedascent.gate_cleared": "%s cleared %s! A new Smithy Anvil can now be forged.",
     "message.forgedascent.blood_moon_rise": "The moon rises blood red... the dead are restless tonight.",
     "message.forgedascent.blood_moon_set": "The blood moon sets. You survived the night.",
@@ -1196,6 +1268,7 @@ def main():
         shutil.rmtree(OUT / sub, ignore_errors=True)
     SRC = Sources()
     gen_ingots()
+    gen_damascus()
     gen_ores()
     gen_gems()
     gen_gear()

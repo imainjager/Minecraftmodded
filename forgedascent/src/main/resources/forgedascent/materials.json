@@ -138,6 +138,126 @@
       "name": "Nichrome",
       "color": "#B5A28F",
       "style": "invar"
+    },
+    {
+      "id": "ladder_damascus",
+      "name": "Ladder Damascus",
+      "color": "#C9C9C9",
+      "style": "steel",
+      "pattern": [
+        "#C9C9C9",
+        "#8E9180"
+      ],
+      "tier": 4,
+      "folded_from": [
+        "iron",
+        "invar"
+      ]
+    },
+    {
+      "id": "mokume_gane",
+      "name": "Mokume-gane",
+      "color": "#C87C4A",
+      "style": "steel",
+      "pattern": [
+        "#C87C4A",
+        "#DCE0E6"
+      ],
+      "tier": 4,
+      "folded_from": [
+        "copper",
+        "silver"
+      ]
+    },
+    {
+      "id": "damascus_steel",
+      "name": "Damascus Steel",
+      "color": "#7E8890",
+      "style": "steel",
+      "pattern": [
+        "#7E8890",
+        "#D8D2A8"
+      ],
+      "tier": 5,
+      "folded_from": [
+        "steel",
+        "nickel"
+      ]
+    },
+    {
+      "id": "cobalt_damascus",
+      "name": "Cobalt Damascus",
+      "color": "#3F6FD8",
+      "style": "steel",
+      "pattern": [
+        "#3F6FD8",
+        "#9AA3AB"
+      ],
+      "tier": 5,
+      "folded_from": [
+        "cobalt",
+        "steel"
+      ]
+    },
+    {
+      "id": "rose_mokume",
+      "name": "Rose Mokume",
+      "color": "#E08C78",
+      "style": "steel",
+      "pattern": [
+        "#E08C78",
+        "#F0EAD0"
+      ],
+      "tier": 6,
+      "folded_from": [
+        "rose_gold",
+        "white_gold"
+      ]
+    },
+    {
+      "id": "timascus",
+      "name": "Timascus",
+      "color": "#B7B4C7",
+      "style": "steel",
+      "pattern": [
+        "#B7B4C7",
+        "#5E5880"
+      ],
+      "tier": 7,
+      "folded_from": [
+        "titanium",
+        "titanium_alloy"
+      ]
+    },
+    {
+      "id": "stainless_damascus",
+      "name": "Stainless Damascus",
+      "color": "#A0ACB4",
+      "style": "steel",
+      "pattern": [
+        "#A0ACB4",
+        "#E0DAB4"
+      ],
+      "tier": 7,
+      "folded_from": [
+        "stainless_steel",
+        "nickel"
+      ]
+    },
+    {
+      "id": "tungsten_damascus",
+      "name": "Tungsten Damascus",
+      "color": "#4A4D54",
+      "style": "steel",
+      "pattern": [
+        "#4A4D54",
+        "#6F92AA"
+      ],
+      "tier": 8,
+      "folded_from": [
+        "tungsten",
+        "high_speed_steel"
+      ]
     }
   ],
   "ores": [

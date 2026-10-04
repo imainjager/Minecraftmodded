@@ -1,6 +1,10 @@
 {
   "values": [
     "forgedascent:tin_sword",
-    "forgedascent:zinc_sword"
+    "forgedascent:zinc_sword",
+    {
+      "id": "everythingcopper:copper_sword",
+      "required": false
+    }
   ]
 }

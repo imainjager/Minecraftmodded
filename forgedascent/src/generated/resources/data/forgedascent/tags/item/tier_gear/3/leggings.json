@@ -1,0 +1,12 @@
+{
+  "values": [
+    "forgedascent:lead_leggings",
+    "forgedascent:nickel_leggings",
+    "forgedascent:aluminum_leggings",
+    "forgedascent:pewter_leggings",
+    {
+      "id": "minecraft:iron_leggings",
+      "required": false
+    }
+  ]
+}

@@ -9,6 +9,14 @@
       "required": false
     },
     {
+      "id": "#c:ingots/damascus_steel",
+      "required": false
+    },
+    {
+      "id": "#c:ingots/cobalt_damascus",
+      "required": false
+    },
+    {
       "id": "#c:ingots/cobalt",
       "required": false
     },

@@ -1,6 +1,10 @@
 {
   "values": [
     "forgedascent:tin_pickaxe",
-    "forgedascent:zinc_pickaxe"
+    "forgedascent:zinc_pickaxe",
+    {
+      "id": "everythingcopper:copper_pickaxe",
+      "required": false
+    }
   ]
 }

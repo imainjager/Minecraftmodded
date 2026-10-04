@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "forgedascent:block/ladder_damascus_block"
+  }
+}

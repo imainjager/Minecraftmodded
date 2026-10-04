@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:storage_blocks/mokume_gane"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "forgedascent:mokume_gane_ingot"
+  }
+}

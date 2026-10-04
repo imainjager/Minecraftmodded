@@ -5,6 +5,9 @@
     "forgedascent:white_gold_sword",
     "forgedascent:emerald_sword",
     "forgedascent:topaz_sword",
-    "minecraft:diamond_sword"
+    {
+      "id": "minecraft:diamond_sword",
+      "required": false
+    }
   ]
 }

@@ -2,7 +2,21 @@
 
 Read [`PLAN.md`](PLAN.md) first. This file says where the build stopped and how to continue.
 
-## Current state (2026-10-03, mod 0.6.1 installed, waiting for in-game test)
+## Current state (2026-10-04, mod 0.7.0 = update 6, installed; player about to play their old survival world)
+
+| Done in 0.6.2–0.7.0 | Where |
+|---|---|
+| Anvils keep Silent Gear blueprints (leftovers come from the anvil recipe) | `SmithyResultSlot.java`, `AnvilDelegateRecipe.getRemainingItems` |
+| Every Forged Ascent material makes Silent Gear rods (light/heavy/tough/gem/balanced handles) | `sg_rod` in `gen_assets.py` |
+| 8 pattern-welded metals (ingot, plate, block, wavy textures), folded at anvils (5+4 checker → 6), Silent Gear materials (sharp II) | `pattern` entries in `materials.json` `ingots`, `gen_damascus`, `pattern_weld` |
+| Reinforcement levels I–III (new `forgedascent:reinforcement` int component; old `reinforced` = level I) | `ReinforceRecipe`, `SmithyRegistries.reinforcement`, `GearTiers` |
+| Quest rebuild: ~196 quests, linear per age (arrival, every ore + where, alloys + ratios, folds, plates/reinforcing, any-tier gear, branches, prepare, boss gate, Sigil) | `tools/gen_quests.py` (imports `gen_assets` tables) |
+| **Quest fix:** SNBT keys with ':' must be quoted (`"ftbfiltersystem:filter"`); FTB Quests failed to read every chapter in 0.6.x | `snbt_key` in `gen_quests.py` |
+
+Next (update 7 candidates): Silent Gear loot in chests and legendaries in bags (test on the dev server, which now loads Silent Gear),
+elite part drops, armor trims.
+
+## State at 0.6.1
 
 **0.6.1 fixes the "Errors in currently selected datapacks" world-load failure of 0.6.0:** Silent Gear requires
 `"part_substitutes": {}` in every material's `crafting` block; our generated materials lacked it, and one bad Silent Gear

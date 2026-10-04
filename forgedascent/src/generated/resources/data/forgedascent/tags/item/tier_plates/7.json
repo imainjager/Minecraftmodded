@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "#c:plates/timascus",
+      "required": false
+    },
+    {
+      "id": "#c:plates/stainless_damascus",
+      "required": false
+    },
+    {
       "id": "#c:plates/titanium",
       "required": false
     },

@@ -1,0 +1,17 @@
+{
+  "values": [
+    "forgedascent:cobalt_boots",
+    "forgedascent:manganese_steel_boots",
+    "forgedascent:alnico_boots",
+    "forgedascent:garnet_boots",
+    "forgedascent:peridot_boots",
+    {
+      "id": "mekanismtools:steel_boots",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:osmium_boots",
+      "required": false
+    }
+  ]
+}

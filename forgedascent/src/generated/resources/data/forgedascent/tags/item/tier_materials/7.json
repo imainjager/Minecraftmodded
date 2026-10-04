@@ -1,6 +1,14 @@
 {
   "values": [
     {
+      "id": "#c:ingots/timascus",
+      "required": false
+    },
+    {
+      "id": "#c:ingots/stainless_damascus",
+      "required": false
+    },
+    {
       "id": "#c:ingots/titanium",
       "required": false
     },

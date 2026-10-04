@@ -9,6 +9,14 @@
       "required": false
     },
     {
+      "id": "#c:plates/damascus_steel",
+      "required": false
+    },
+    {
+      "id": "#c:plates/cobalt_damascus",
+      "required": false
+    },
+    {
       "id": "#c:plates/cobalt",
       "required": false
     },

@@ -10,37 +10,36 @@
 	order_index: 1
 	quest_links: [ ]
 	subtitle: [
-		"Tier 4: the first alloys, cobalt and gem cutting"
+		"Tier 4: the first alloys"
 	]
 	title: "Bronze Age"
 	quests: [
 		{
-			id: "4817E3ED19ED7CF8"
+			id: "322442845F2D30C3"
 			title: "Forge the Bronze Anvil"
 			x: 0.0d
 			y: 0.0d
 			subtitle: "Unlocks tier-4 gear"
 			description: [
-				"Craft the &bBronze Anvil&r from the previous anvil, the Sigil you won and tier-4 plates."
-				"It crafts every gear recipe up to &etier 4&r (JEI: the 'Smithy Anvil' tab)."
-				"Anvils also &breinforce&r gear: put gear + a reinforced plate of the same tier or higher in the grid."
+				"Craft the &bBronze Anvil&r: the previous anvil, your Sigil and tier-4 plates."
+				"It forges every recipe up to &etier 4&r (JEI: 'Smithy Anvil' tab), folds pattern-welded metals, reinforces and repairs gear."
 			]
 			shape: "gear"
 			size: 1.5d
 			tasks: [
 				{
-					id: "3283A45865FDBFFB"
+					id: "24AE02AD77EACB2B"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
 						id: "forgedascent:bronze_anvil"
 					}
-					count: 1
 				}
 			]
 			rewards: [
 				{
-					id: "358C8F5B2736EE23"
+					id: "03DD832D86E502B4"
 					type: "item"
 					item: {
 						count: 1
@@ -49,180 +48,188 @@
 					count: 1
 				}
 				{
-					id: "40DE118618995696"
+					id: "17C786D218708FCE"
 					type: "xp"
-					xp: 100
+					xp: 150
 				}
 			]
 		}
 		{
-			id: "43E86B9EEB66F2B4"
-			title: "Find Raw Manganese"
-			x: 2.0d
+			id: "1078DAAC36BAF20C"
+			title: "Mine Cobalt"
+			x: 1.25d
 			y: -1.0d
+			subtitle: "Needs a tier-4 pickaxe"
 			description: [
-				"Needs a tier-3 pickaxe or better."
+				"Common in the &cNether&r, rare in deep deepslate."
 			]
 			dependencies: [
-				"4817E3ED19ED7CF8"
+				"322442845F2D30C3"
 			]
 			tasks: [
 				{
-					id: "46218D4E5DDCA5AB"
+					id: "47D429536CEDB47E"
 					type: "item"
-					item: {
-						count: 1
-						id: "forgedascent:raw_manganese"
-					}
 					count: 1
-				}
-			]
-		}
-		{
-			id: "2F3EFB4B48E06233"
-			title: "Find Raw Cobalt"
-			x: 3.0d
-			y: 1.0d
-			description: [
-				"Needs a tier-3 pickaxe or better."
-			]
-			dependencies: [
-				"43E86B9EEB66F2B4"
-			]
-			tasks: [
-				{
-					id: "6034AEAFE364291C"
-					type: "item"
 					item: {
 						count: 1
 						id: "forgedascent:raw_cobalt"
 					}
-					count: 1
 				}
 			]
 		}
 		{
-			id: "15196EE496A0BCFE"
-			title: "Find Raw Molybdenum"
-			x: 4.0d
-			y: -1.0d
-			description: [
-				"Needs a tier-3 pickaxe or better."
-			]
-			dependencies: [
-				"2F3EFB4B48E06233"
-			]
-			tasks: [
-				{
-					id: "2EE3BDF9AA84A95E"
-					type: "item"
-					item: {
-						count: 1
-						id: "forgedascent:raw_molybdenum"
-					}
-					count: 1
-				}
-			]
-		}
-		{
-			id: "102D65BF9FF36C66"
-			title: "Find Raw Osmium"
-			x: 5.0d
+			id: "1ED29E28AB5F3CE0"
+			title: "Mine Osmium"
+			x: 2.5d
 			y: 1.0d
+			subtitle: "Needs a tier-4 pickaxe"
 			description: [
-				"Needs a tier-3 pickaxe or better."
+				"Deep, y -64 to 24 (smaller veins now)."
 			]
 			dependencies: [
-				"15196EE496A0BCFE"
+				"1078DAAC36BAF20C"
 			]
 			tasks: [
 				{
-					id: "41E825B96D02F002"
+					id: "2B5603C3878C871B"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
 						id: "alltheores:raw_osmium"
 					}
-					count: 1
 				}
 			]
 		}
 		{
-			id: "18D8E354172D8C4C"
-			title: "Find Rough Emerald"
-			x: 6.0d
+			id: "33166683120840A2"
+			title: "Mine Molybdenum"
+			x: 3.75d
 			y: -1.0d
+			subtitle: "Needs a tier-4 pickaxe"
 			description: [
-				"Needs a tier-3 pickaxe or better."
+				"Under &amountain&r biomes."
 			]
 			dependencies: [
-				"102D65BF9FF36C66"
+				"1ED29E28AB5F3CE0"
 			]
 			tasks: [
 				{
-					id: "7EF55D79799C7FDC"
+					id: "2208B9736453C06D"
 					type: "item"
+					count: 1
+					item: {
+						count: 1
+						id: "forgedascent:raw_molybdenum"
+					}
+				}
+			]
+		}
+		{
+			id: "7CF8852FFDFEEF17"
+			title: "Mine Emerald"
+			x: 5.0d
+			y: 1.0d
+			subtitle: "Needs a tier-4 pickaxe"
+			description: [
+				"Mountains. Drops rough: cut it with an emery wheel."
+			]
+			dependencies: [
+				"33166683120840A2"
+			]
+			tasks: [
+				{
+					id: "19FF1A99A6E506AB"
+					type: "item"
+					count: 1
 					item: {
 						count: 1
 						id: "forgedascent:rough_emerald"
 					}
-					count: 1
 				}
 			]
 		}
 		{
-			id: "6897C41303A31009"
-			title: "Find Rough Garnet"
-			x: 7.0d
-			y: 1.0d
+			id: "01859180AA907A6A"
+			title: "Mine Garnet"
+			x: 6.25d
+			y: -1.0d
+			subtitle: "Needs a tier-4 pickaxe"
 			description: [
-				"Needs a tier-3 pickaxe or better."
+				"Silent's Gems ore. Drops rough."
 			]
 			dependencies: [
-				"18D8E354172D8C4C"
+				"7CF8852FFDFEEF17"
 			]
 			tasks: [
 				{
-					id: "31CF20C6250F6892"
+					id: "392DDEFA2658CB9E"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
 						id: "forgedascent:rough_garnet"
 					}
+				}
+			]
+		}
+		{
+			id: "6FA00247A0F9DB21"
+			title: "Mine Peridot"
+			x: 7.5d
+			y: 1.0d
+			subtitle: "Needs a tier-4 pickaxe"
+			description: [
+				"Drops rough."
+			]
+			dependencies: [
+				"01859180AA907A6A"
+			]
+			tasks: [
+				{
+					id: "7B4985FBC5DE4FEE"
+					type: "item"
 					count: 1
+					item: {
+						count: 1
+						id: "forgedascent:rough_peridot"
+					}
 				}
 			]
 		}
 		{
 			id: "579236EAD57D31DF"
-			title: "Alloy: Bronze Ingot"
-			x: 8.0d
-			y: 0.0d
+			title: "Alloy: Brass"
+			x: 8.75d
+			y: -1.0d
+			subtitle: "3 copper + 1 zinc -> 4"
 			description: [
-				"Alloys are mixed in a crafting table for now (check JEI for the real-world ratios)."
+				"Alloys are mixed in a crafting table. The ratio is the real-world one."
 			]
 			dependencies: [
-				"6897C41303A31009"
+				"6FA00247A0F9DB21"
 			]
 			tasks: [
 				{
 					id: "71630279EE73CBDA"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
-						id: "alltheores:bronze_ingot"
+						id: "alltheores:brass_ingot"
 					}
-					count: 1
 				}
 			]
 		}
 		{
 			id: "2E5C2D728DB16B91"
-			title: "Alloy: Brass Ingot"
-			x: 9.0d
-			y: 0.0d
+			title: "Alloy: Invar"
+			x: 10.0d
+			y: 1.0d
+			subtitle: "2 iron + 1 nickel -> 3"
 			description: [
-				"Alloys are mixed in a crafting table for now (check JEI for the real-world ratios)."
+				"Alloys are mixed in a crafting table. The ratio is the real-world one."
 			]
 			dependencies: [
 				"579236EAD57D31DF"
@@ -231,21 +238,22 @@
 				{
 					id: "39B0063AF8103906"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
-						id: "alltheores:brass_ingot"
+						id: "alltheores:invar_ingot"
 					}
-					count: 1
 				}
 			]
 		}
 		{
 			id: "0B53690FC222B2AE"
-			title: "Alloy: Duralumin Ingot"
-			x: 10.0d
-			y: 0.0d
+			title: "Alloy: Constantan"
+			x: 11.25d
+			y: -1.0d
+			subtitle: "1 copper + 1 nickel -> 2"
 			description: [
-				"Alloys are mixed in a crafting table for now (check JEI for the real-world ratios)."
+				"Alloys are mixed in a crafting table. The ratio is the real-world one."
 			]
 			dependencies: [
 				"2E5C2D728DB16B91"
@@ -254,196 +262,534 @@
 				{
 					id: "5F3E975477D727F6"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
-						id: "forgedascent:duralumin_ingot"
+						id: "alltheores:constantan_ingot"
 					}
-					count: 1
 				}
 			]
 		}
 		{
-			id: "6A552A814FD171DF"
-			title: "Hammer some plates"
-			x: 11.0d
-			y: -1.0d
+			id: "354EA4B10C7BCED3"
+			title: "Alloy: Electrum"
+			x: 12.5d
+			y: 1.0d
+			subtitle: "1 gold + 1 silver -> 2"
 			description: [
-				"4 plates of this tier make the reinforced plate. Reinforce your best gear at your anvil!"
+				"Alloys are mixed in a crafting table. The ratio is the real-world one."
 			]
 			dependencies: [
 				"0B53690FC222B2AE"
 			]
 			tasks: [
 				{
-					id: "418AED368CDF8D35"
+					id: "623DFB1DB939948C"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
-						id: "forgedascent:reinforced_plate_4"
+						id: "alltheores:electrum_ingot"
 					}
-					count: 1
 				}
 			]
 		}
 		{
-			id: "370EFBDE2A9F6EDF"
-			title: "Gear up: any tier-4 pickaxe"
-			x: 12.0d
+			id: "04FC4DFB537500D2"
+			title: "Alloy: Bismuth Bronze"
+			x: 13.75d
+			y: -1.0d
+			subtitle: "2 copper + 1 tin + 1 bismuth -> 4"
+			description: [
+				"Alloys are mixed in a crafting table. The ratio is the real-world one."
+			]
+			dependencies: [
+				"354EA4B10C7BCED3"
+			]
+			tasks: [
+				{
+					id: "3E13CE94C82A1637"
+					type: "item"
+					count: 1
+					item: {
+						count: 1
+						id: "forgedascent:bismuth_bronze_ingot"
+					}
+				}
+			]
+		}
+		{
+			id: "5827883C662E0B20"
+			title: "Alloy: Duralumin"
+			x: 15.0d
+			y: 1.0d
+			subtitle: "3 aluminum + 1 copper + 1 manganese -> 5"
+			description: [
+				"Alloys are mixed in a crafting table. The ratio is the real-world one."
+			]
+			dependencies: [
+				"04FC4DFB537500D2"
+			]
+			tasks: [
+				{
+					id: "6C092F69CB869441"
+					type: "item"
+					count: 1
+					item: {
+						count: 1
+						id: "forgedascent:duralumin_ingot"
+					}
+				}
+			]
+		}
+		{
+			id: "457EF6F860C24CDC"
+			title: "Alloy: Rose Gold"
+			x: 16.25d
+			y: -1.0d
+			subtitle: "3 gold + 1 copper -> 4"
+			description: [
+				"Alloys are mixed in a crafting table. The ratio is the real-world one."
+			]
+			dependencies: [
+				"5827883C662E0B20"
+			]
+			tasks: [
+				{
+					id: "4640249F5825AB22"
+					type: "item"
+					count: 1
+					item: {
+						count: 1
+						id: "forgedascent:rose_gold_ingot"
+					}
+				}
+			]
+		}
+		{
+			id: "5D93641EBCD5A47F"
+			title: "Fold Ladder Damascus"
+			x: 17.5d
+			y: -1.0d
+			subtitle: "iron + invar"
+			description: [
+				"At your anvil, lay 5 and 4 ingots in a checker pattern to fold a &dpattern-welded&r metal. It's a slightly stronger Silent Gear material with a wavy look."
+			]
+			dependencies: [
+				"457EF6F860C24CDC"
+			]
+			shape: "diamond"
+			tasks: [
+				{
+					id: "4571C27F17984B09"
+					type: "item"
+					count: 1
+					item: {
+						count: 1
+						id: "forgedascent:ladder_damascus_ingot"
+					}
+				}
+			]
+		}
+		{
+			id: "06E48E255AD5870A"
+			title: "Fold Mokume-gane"
+			x: 18.75d
+			y: 1.0d
+			subtitle: "copper + silver"
+			description: [
+				"At your anvil, lay 5 and 4 ingots in a checker pattern to fold a &dpattern-welded&r metal. It's a slightly stronger Silent Gear material with a wavy look."
+			]
+			dependencies: [
+				"5D93641EBCD5A47F"
+			]
+			shape: "diamond"
+			tasks: [
+				{
+					id: "3A171A05A260171B"
+					type: "item"
+					count: 1
+					item: {
+						count: 1
+						id: "forgedascent:mokume_gane_ingot"
+					}
+				}
+			]
+		}
+		{
+			id: "6A552A814FD171DF"
+			title: "Hammer plates"
+			x: 20.0d
 			y: 0.0d
 			description: [
-				"Any tier-4 pickaxe counts: pick the material whose perk you like best."
-				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
+				"Plates: All the Ores hammer + 2 ingots, the IE Metal Press, Create's press or the MI compressor."
 			]
-			icon: {
-				id: "forgedascent:brass_pickaxe"
-			}
+			dependencies: [
+				"06E48E255AD5870A"
+			]
+			tasks: [
+				{
+					id: "418AED368CDF8D35"
+					type: "item"
+					count: 1
+					item: {
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							"ftbfiltersystem:filter": "item_tag(c:plates)"
+						}
+					}
+				}
+			]
+		}
+		{
+			id: "5C4DEA7633A75DCD"
+			title: "Tier-4 reinforced plate"
+			x: 21.25d
+			y: 0.0d
+			description: [
+				"4 plates of a tier (2x2) make that tier's reinforced plate."
+			]
 			dependencies: [
 				"6A552A814FD171DF"
 			]
 			tasks: [
 				{
-					id: "48ECF046E5AA201B"
+					id: "044E10441B00F925"
 					type: "item"
 					count: 1
 					item: {
 						count: 1
-						id: "ftbfiltersystem:smart_filter"
-						components: {
-							ftbfiltersystem:filter: "item_tag(forgedascent:tier_gear/4/pickaxe)"
-						}
+						id: "forgedascent:reinforced_plate_4"
 					}
-				}
-			]
-			rewards: [
-				{
-					id: "730646E8C489A516"
-					type: "item"
-					item: {
-						count: 1
-						id: "minecraft:experience_bottle"
-					}
-					count: 4
 				}
 			]
 		}
 		{
-			id: "22EBAD932DF8617E"
-			title: "Gear up: any tier-4 chestplate"
-			x: 13.0d
+			id: "5B31CE2755F285DC"
+			title: "Reinforce your gear"
+			x: 22.5d
 			y: 0.0d
 			description: [
-				"Any tier-4 chestplate counts: pick the material whose perk you like best."
-				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
+				"At an anvil: gear + reinforced plate -> &bReinforced I&r (+1 armor or damage, +25% durability)."
+				"You can go to &bII&r and &bIII&r: each needs a plate one grade higher than the last."
 			]
 			icon: {
-				id: "forgedascent:invar_chestplate"
+				id: "forgedascent:reinforced_plate_4"
 			}
 			dependencies: [
-				"370EFBDE2A9F6EDF"
+				"5C4DEA7633A75DCD"
 			]
 			tasks: [
 				{
-					id: "73185093CF65C66C"
-					type: "item"
-					count: 1
-					item: {
-						count: 1
-						id: "ftbfiltersystem:smart_filter"
-						components: {
-							ftbfiltersystem:filter: "item_tag(forgedascent:tier_gear/4/chestplate)"
-						}
-					}
-				}
-			]
-			rewards: [
-				{
-					id: "6DB59078D83572BB"
-					type: "item"
-					item: {
-						count: 1
-						id: "minecraft:experience_bottle"
-					}
-					count: 4
+					id: "32FD12C2680015CB"
+					type: "checkmark"
 				}
 			]
 		}
 		{
-			id: "077D9DD315ABC6CD"
-			title: "Gear up: any tier-4 sword"
-			x: 14.0d
-			y: 0.0d
+			id: "630CC1EF4602BF7A"
+			title: "Any tier-4 pickaxe"
+			x: 23.75d
+			y: -1.0d
 			description: [
-				"Any tier-4 sword counts: pick the material whose perk you like best."
-				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
+				"Any tier-4 pickaxe counts. Each material has its own small perk: check the tooltips."
 			]
-			icon: {
-				id: "forgedascent:amethyst_sword"
-			}
 			dependencies: [
-				"22EBAD932DF8617E"
+				"5B31CE2755F285DC"
 			]
 			tasks: [
 				{
-					id: "4F63072D8EE67AFF"
+					id: "6DFCFAD00D6AA2F6"
 					type: "item"
 					count: 1
 					item: {
 						count: 1
 						id: "ftbfiltersystem:smart_filter"
 						components: {
-							ftbfiltersystem:filter: "item_tag(forgedascent:tier_gear/4/sword)"
+							"ftbfiltersystem:filter": "item_tag(forgedascent:tier_gear/4/pickaxe)"
 						}
 					}
 				}
 			]
 			rewards: [
 				{
-					id: "24A304F5F4D0CA45"
+					id: "47C63CE8C963AE3D"
 					type: "item"
 					item: {
 						count: 1
 						id: "minecraft:experience_bottle"
 					}
-					count: 4
+					count: 2
+				}
+			]
+		}
+		{
+			id: "4FB829A87BB6CF33"
+			title: "Any tier-4 chestplate"
+			x: 25.0d
+			y: 1.0d
+			description: [
+				"Any tier-4 chestplate counts. Each material has its own small perk: check the tooltips."
+			]
+			dependencies: [
+				"630CC1EF4602BF7A"
+			]
+			tasks: [
+				{
+					id: "77E129FA201C5B64"
+					type: "item"
+					count: 1
+					item: {
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							"ftbfiltersystem:filter": "item_tag(forgedascent:tier_gear/4/chestplate)"
+						}
+					}
+				}
+			]
+			rewards: [
+				{
+					id: "114678DC64645D2F"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:experience_bottle"
+					}
+					count: 2
+				}
+			]
+		}
+		{
+			id: "12BAF1A3600AB343"
+			title: "Any tier-4 helmet"
+			x: 26.25d
+			y: -1.0d
+			description: [
+				"Any tier-4 helmet counts. Each material has its own small perk: check the tooltips."
+			]
+			dependencies: [
+				"4FB829A87BB6CF33"
+			]
+			tasks: [
+				{
+					id: "5C1D2FCB1B9D77FB"
+					type: "item"
+					count: 1
+					item: {
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							"ftbfiltersystem:filter": "item_tag(forgedascent:tier_gear/4/helmet)"
+						}
+					}
+				}
+			]
+			rewards: [
+				{
+					id: "100CCE10E0D21405"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:experience_bottle"
+					}
+					count: 2
+				}
+			]
+		}
+		{
+			id: "2043F8A3BD81EED7"
+			title: "Any tier-4 leggings"
+			x: 27.5d
+			y: 1.0d
+			description: [
+				"Any tier-4 leggings counts. Each material has its own small perk: check the tooltips."
+			]
+			dependencies: [
+				"12BAF1A3600AB343"
+			]
+			tasks: [
+				{
+					id: "436B97BD64F87339"
+					type: "item"
+					count: 1
+					item: {
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							"ftbfiltersystem:filter": "item_tag(forgedascent:tier_gear/4/leggings)"
+						}
+					}
+				}
+			]
+			rewards: [
+				{
+					id: "4BF0DDD2CE1F61C3"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:experience_bottle"
+					}
+					count: 2
+				}
+			]
+		}
+		{
+			id: "2BC35DC482517F55"
+			title: "Any tier-4 boots"
+			x: 28.75d
+			y: -1.0d
+			description: [
+				"Any tier-4 boots counts. Each material has its own small perk: check the tooltips."
+			]
+			dependencies: [
+				"2043F8A3BD81EED7"
+			]
+			tasks: [
+				{
+					id: "3600BE93CBFC9E45"
+					type: "item"
+					count: 1
+					item: {
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							"ftbfiltersystem:filter": "item_tag(forgedascent:tier_gear/4/boots)"
+						}
+					}
+				}
+			]
+			rewards: [
+				{
+					id: "4255C489AB0BFA5F"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:experience_bottle"
+					}
+					count: 2
+				}
+			]
+		}
+		{
+			id: "3AA5A005E0AB3245"
+			title: "Any tier-4 sword"
+			x: 30.0d
+			y: 1.0d
+			description: [
+				"Any tier-4 sword counts. Each material has its own small perk: check the tooltips."
+			]
+			dependencies: [
+				"2BC35DC482517F55"
+			]
+			tasks: [
+				{
+					id: "6FF6386E1780BA7B"
+					type: "item"
+					count: 1
+					item: {
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							"ftbfiltersystem:filter": "item_tag(forgedascent:tier_gear/4/sword)"
+						}
+					}
+				}
+			]
+			rewards: [
+				{
+					id: "683A1986F2692C58"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:experience_bottle"
+					}
+					count: 2
 				}
 			]
 		}
 		{
 			id: "31D0E8191AA366A9"
-			title: "Cut your first gem"
-			x: 15.0d
-			y: -1.0d
+			title: "Cut gems"
+			x: 31.25d
+			y: -2.5d
 			description: [
-				"Gem ores drop &arough gems&r. Put a rough gem and a cutting wheel in a crafting grid to cut it."
-				"Emery wheels cut gems up to hardness 8; diamond, ruby, sapphire and black diamond need a diamond-grit wheel (crush rough diamonds into grit)."
+				"Rough gem + cutting wheel in a crafting grid. Emery cuts up to hardness 8; diamond grit (crushed rough diamonds) cuts everything. 6% of cuts also give a &bFlawless&r gem."
 			]
 			dependencies: [
-				"077D9DD315ABC6CD"
+				"3AA5A005E0AB3245"
 			]
+			optional: true
 			tasks: [
 				{
 					id: "2D96BD864EF9AC95"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
 						id: "forgedascent:emery_wheel"
 					}
-					count: 1
+				}
+			]
+		}
+		{
+			id: "6A17A44670C8CD53"
+			title: "Silent Gear at tier 4"
+			x: 31.25d
+			y: 2.5d
+			description: [
+				"Tier-4 materials make Silent Gear parts at your anvil (blueprint + materials). See the Silent Gear Smithing chapter."
+			]
+			icon: {
+				id: "silentgear:pickaxe"
+			}
+			dependencies: [
+				"3AA5A005E0AB3245"
+			]
+			optional: true
+			tasks: [
+				{
+					id: "4B1D2695C1FB4F6A"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			id: "55210F468C3A8D23"
+			title: "Prepare for Gate II"
+			x: 31.25d
+			y: 0.0d
+			description: [
+				"Before a gate boss: wear a full set of this tier, reinforce it, bring food and healing."
+				"Gate bosses aren't scaled by world tier, but the mobs around them are."
+			]
+			icon: {
+				id: "minecraft:shield"
+			}
+			dependencies: [
+				"3AA5A005E0AB3245"
+			]
+			shape: "square"
+			tasks: [
+				{
+					id: "6967043AEC1573DB"
+					type: "checkmark"
 				}
 			]
 		}
 		{
 			id: "124B4AB4470C308F"
 			title: "Defeat: Lich"
-			x: 17.0d
+			x: 32.5d
 			y: -2.0d
 			subtitle: "Gate II boss"
 			description: [
-				"Twilight Forest: the Lich Tower (after the Naga)."
+				"Twilight Forest: the Lich Tower."
 				"Any one boss of this gate is enough."
 			]
 			dependencies: [
-				"31D0E8191AA366A9"
+				"55210F468C3A8D23"
 			]
 			shape: "hexagon"
 			optional: true
@@ -459,15 +805,15 @@
 		{
 			id: "442F4A0FB1FC4A49"
 			title: "Defeat: Valkyrie Queen"
-			x: 17.0d
+			x: 32.5d
 			y: -0.7d
 			subtitle: "Gate II boss"
 			description: [
-				"The Aether: the Silver Dungeon."
+				"The Aether: Silver Dungeon."
 				"Any one boss of this gate is enough."
 			]
 			dependencies: [
-				"31D0E8191AA366A9"
+				"55210F468C3A8D23"
 			]
 			shape: "hexagon"
 			optional: true
@@ -483,7 +829,7 @@
 		{
 			id: "6B41246B60B5690F"
 			title: "Defeat: Forgotten Guardian"
-			x: 17.0d
+			x: 32.5d
 			y: 0.6000000000000001d
 			subtitle: "Gate II boss"
 			description: [
@@ -491,7 +837,7 @@
 				"Any one boss of this gate is enough."
 			]
 			dependencies: [
-				"31D0E8191AA366A9"
+				"55210F468C3A8D23"
 			]
 			shape: "hexagon"
 			optional: true
@@ -507,15 +853,15 @@
 		{
 			id: "64C646261C2FF83F"
 			title: "Defeat: Dead King"
-			x: 17.0d
+			x: 32.5d
 			y: 1.9000000000000004d
 			subtitle: "Gate II boss"
 			description: [
-				"Iron's Spells: the Ancient Battleground / Dead King's crypt."
+				"Iron's Spells: the Dead King's crypt."
 				"Any one boss of this gate is enough."
 			]
 			dependencies: [
-				"31D0E8191AA366A9"
+				"55210F468C3A8D23"
 			]
 			shape: "hexagon"
 			optional: true
@@ -531,35 +877,35 @@
 		{
 			id: "5BE562F082613DFC"
 			title: "Gate II Sigil"
-			x: 19.0d
+			x: 34.25d
 			y: 0.0d
-			subtitle: "Beat any boss above"
+			subtitle: "Beat any boss of the gate"
 			description: [
-				"Every Gate II boss drops a &dTreasure Bag&r with this Sigil, tier materials, rough gems and an accessory."
+				"Every Gate II boss drops a &dTreasure Bag&r: this Sigil, tier materials, rough gems, a reinforced plate and an accessory."
 				"Use the Sigil to forge the next Smithy Anvil."
 				"It also unlocks the Apotheosis world tier &eFrontier&r."
 			]
 			dependencies: [
-				"31D0E8191AA366A9"
+				"55210F468C3A8D23"
 			]
 			shape: "gear"
-			size: 1.5d
+			size: 1.75d
 			tasks: [
 				{
 					id: "62108C543355BC91"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
 						id: "forgedascent:sigil_2"
 					}
-					count: 1
 				}
 			]
 			rewards: [
 				{
 					id: "3C69B7EEF110FBEF"
 					type: "xp"
-					xp: 250
+					xp: 300
 				}
 			]
 		}
