@@ -16,7 +16,8 @@
     "gear_type_blacklist": [],
     "ingredient": {
       "item": "forgedascent:flawless_sapphire"
-    }
+    },
+    "part_substitutes": {}
   },
   "display": {
     "color": "#FF2950C8",

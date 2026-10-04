@@ -929,7 +929,7 @@ def sg_material(m, tier, ingredient, categories, name_key, main=True):
         props["silentgear:tip"] = m["gem_tip"]
     return {"type": "silentgear:simple", "parent": "silentgear:empty",
             "crafting": {"can_salvage": True, "categories": categories, "gear_type_blacklist": [],
-                         "ingredient": ingredient},
+                         "ingredient": ingredient, "part_substitutes": {}},
             "display": {"color": "#FF" + m["color"].lstrip("#").upper(), "main_texture_type": "HIGH_CONTRAST",
                         "name": {"translate": name_key}, "name_prefix": ""},
             "properties": props}
@@ -970,7 +970,7 @@ def gen_silentgear():
         write_json(f"data/{NS}/silentgear_materials/flawless_{gid}.json", {
             "neoforge:conditions": sg_cond, "type": "silentgear:simple", "parent": "silentgear:empty",
             "crafting": {"can_salvage": False, "categories": ["gem"] + tier_categories(tier), "gear_type_blacklist": [],
-                         "ingredient": {"item": f"{NS}:flawless_{gid}"}},
+                         "ingredient": {"item": f"{NS}:flawless_{gid}"}, "part_substitutes": {}},
             "display": {"color": "#FF" + gem["color"].lstrip("#").upper(), "main_texture_type": "HIGH_CONTRAST",
                         "name": {"translate": f"material.{NS}.flawless_{gid}"}, "name_prefix": ""},
             "properties": props})

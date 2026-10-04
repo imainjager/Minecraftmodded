@@ -10,7 +10,8 @@
     "gear_type_blacklist": [],
     "ingredient": {
       "tag": "c:ingots/stainless_steel"
-    }
+    },
+    "part_substitutes": {}
   },
   "display": {
     "color": "#FFA7B3BA",

@@ -10,7 +10,8 @@
     "gear_type_blacklist": [],
     "ingredient": {
       "tag": "c:ingots/tungsten_carbide"
-    }
+    },
+    "part_substitutes": {}
   },
   "display": {
     "color": "#FF3D4048",

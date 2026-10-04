@@ -11,7 +11,8 @@
     "gear_type_blacklist": [],
     "ingredient": {
       "tag": "c:ingots/nickel"
-    }
+    },
+    "part_substitutes": {}
   },
   "display": {
     "color": "#FFD2CDA8",

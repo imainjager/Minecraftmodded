@@ -10,7 +10,8 @@
     "gear_type_blacklist": [],
     "ingredient": {
       "tag": "c:ingots/titanium_alloy"
-    }
+    },
+    "part_substitutes": {}
   },
   "display": {
     "color": "#FF9E9AB8",

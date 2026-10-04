@@ -10,7 +10,8 @@
     "gear_type_blacklist": [],
     "ingredient": {
       "tag": "c:ingots/stellite"
-    }
+    },
+    "part_substitutes": {}
   },
   "display": {
     "color": "#FF5E8FA8",

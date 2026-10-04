@@ -11,7 +11,8 @@
     "gear_type_blacklist": [],
     "ingredient": {
       "tag": "c:ingots/pewter"
-    }
+    },
+    "part_substitutes": {}
   },
   "display": {
     "color": "#FF8E979C",

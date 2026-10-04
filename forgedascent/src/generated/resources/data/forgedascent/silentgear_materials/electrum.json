@@ -10,7 +10,8 @@
     "gear_type_blacklist": [],
     "ingredient": {
       "tag": "c:ingots/electrum"
-    }
+    },
+    "part_substitutes": {}
   },
   "display": {
     "color": "#FFE3CF6E",

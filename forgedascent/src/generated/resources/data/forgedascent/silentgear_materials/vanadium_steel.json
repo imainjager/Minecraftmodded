@@ -10,7 +10,8 @@
     "gear_type_blacklist": [],
     "ingredient": {
       "tag": "c:ingots/vanadium_steel"
-    }
+    },
+    "part_substitutes": {}
   },
   "display": {
     "color": "#FF7A5A66",

@@ -10,7 +10,8 @@
     "gear_type_blacklist": [],
     "ingredient": {
       "tag": "c:gems/garnet"
-    }
+    },
+    "part_substitutes": {}
   },
   "display": {
     "color": "#FF8E1F2B",

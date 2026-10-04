@@ -11,7 +11,8 @@
     "gear_type_blacklist": [],
     "ingredient": {
       "tag": "c:ingots/zinc"
-    }
+    },
+    "part_substitutes": {}
   },
   "display": {
     "color": "#FFA9BDB7",

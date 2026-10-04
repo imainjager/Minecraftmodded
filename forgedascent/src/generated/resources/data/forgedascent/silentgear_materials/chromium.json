@@ -10,7 +10,8 @@
     "gear_type_blacklist": [],
     "ingredient": {
       "tag": "c:ingots/chromium"
-    }
+    },
+    "part_substitutes": {}
   },
   "display": {
     "color": "#FFD9E4EC",

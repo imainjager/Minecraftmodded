@@ -118,6 +118,8 @@ configurations {
 dependencies {
     // JEI API for the Smithy Anvil recipe tab, compiled against the JEI jar in the local Claude profile (JEI is optional at runtime).
     compileOnly files("${System.getProperty('user.home')}/curseforge/minecraft/Instances/Claude/mods/jei-1.21.1-neoforge-19.57.0.446.jar")
+    // Silent Gear + Silent Lib from the local Claude profile, loaded only on the dev test server (tools/smoke_test.py).
+    localRuntime files("${System.getProperty('user.home')}/curseforge/minecraft/Instances/Claude/mods/silent-gear-1.21.1-neoforge-4.2.1.1.jar", "${System.getProperty('user.home')}/curseforge/minecraft/Instances/Claude/mods/silent-lib-1.21.1-neoforge-10.6.0.jar")
     // Example optional mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
     // compileOnly "mezz.jei:jei-${mc_version}-common-api:${jei_version}"

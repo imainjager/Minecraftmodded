@@ -10,7 +10,8 @@
     "gear_type_blacklist": [],
     "ingredient": {
       "tag": "c:ingots/brass"
-    }
+    },
+    "part_substitutes": {}
   },
   "display": {
     "color": "#FFD8B24C",

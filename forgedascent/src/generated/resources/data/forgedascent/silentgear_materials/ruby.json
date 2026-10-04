@@ -10,7 +10,8 @@
     "gear_type_blacklist": [],
     "ingredient": {
       "tag": "c:gems/ruby"
-    }
+    },
+    "part_substitutes": {}
   },
   "display": {
     "color": "#FFC8243A",

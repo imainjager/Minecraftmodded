@@ -10,7 +10,8 @@
     "gear_type_blacklist": [],
     "ingredient": {
       "tag": "c:ingots/bismuth_bronze"
-    }
+    },
+    "part_substitutes": {}
   },
   "display": {
     "color": "#FFC08A5C",

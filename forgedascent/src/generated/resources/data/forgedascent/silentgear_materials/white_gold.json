@@ -10,7 +10,8 @@
     "gear_type_blacklist": [],
     "ingredient": {
       "tag": "c:ingots/white_gold"
-    }
+    },
+    "part_substitutes": {}
   },
   "display": {
     "color": "#FFEDE6C8",

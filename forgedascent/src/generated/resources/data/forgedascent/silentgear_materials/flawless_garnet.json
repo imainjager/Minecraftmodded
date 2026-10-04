@@ -16,7 +16,8 @@
     "gear_type_blacklist": [],
     "ingredient": {
       "item": "forgedascent:flawless_garnet"
-    }
+    },
+    "part_substitutes": {}
   },
   "display": {
     "color": "#FF8E1F2B",

@@ -10,7 +10,8 @@
     "gear_type_blacklist": [],
     "ingredient": {
       "tag": "c:gems/black_diamond"
-    }
+    },
+    "part_substitutes": {}
   },
   "display": {
     "color": "#FF2A2A33",

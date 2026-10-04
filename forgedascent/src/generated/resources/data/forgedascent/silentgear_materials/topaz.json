@@ -10,7 +10,8 @@
     "gear_type_blacklist": [],
     "ingredient": {
       "tag": "c:gems/topaz"
-    }
+    },
+    "part_substitutes": {}
   },
   "display": {
     "color": "#FFE89A2C",

@@ -11,7 +11,8 @@
     "gear_type_blacklist": [],
     "ingredient": {
       "tag": "c:ingots/aluminum"
-    }
+    },
+    "part_substitutes": {}
   },
   "display": {
     "color": "#FFE2E6EA",

@@ -10,7 +10,8 @@
     "gear_type_blacklist": [],
     "ingredient": {
       "tag": "c:ingots/alnico"
-    }
+    },
+    "part_substitutes": {}
   },
   "display": {
     "color": "#FF8A7FA8",

@@ -2,7 +2,15 @@
 
 Read [`PLAN.md`](PLAN.md) first. This file says where the build stopped and how to continue.
 
-## Current state (2026-10-03, update 5 built: mod 0.6.0, installed, waiting for in-game test)
+## Current state (2026-10-03, mod 0.6.1 installed, waiting for in-game test)
+
+**0.6.1 fixes the "Errors in currently selected datapacks" world-load failure of 0.6.0:** Silent Gear requires
+`"part_substitutes": {}` in every material's `crafting` block; our generated materials lacked it, and one bad Silent Gear
+material blocks world loading. The dev test server now loads Silent Gear + Silent Lib (`localRuntime` in `build.gradle`,
+from the Claude profile), so `tools/smoke_test.py` catches Silent Gear material/recipe errors. Check its log for
+`MaterialJsonException` and `Decoded N materials`. (Silent Gear's own woodcutting recipe errors in dev are expected.)
+
+## Update 5 (0.6.0)
 
 | Done in 0.6.0 | Where |
 |---|---|

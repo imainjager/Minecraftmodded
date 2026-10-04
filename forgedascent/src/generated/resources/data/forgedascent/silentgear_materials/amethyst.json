@@ -10,7 +10,8 @@
     "gear_type_blacklist": [],
     "ingredient": {
       "tag": "c:gems/amethyst"
-    }
+    },
+    "part_substitutes": {}
   },
   "display": {
     "color": "#FF9A5CC6",

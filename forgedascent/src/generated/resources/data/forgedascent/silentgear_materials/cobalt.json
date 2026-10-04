@@ -10,7 +10,8 @@
     "gear_type_blacklist": [],
     "ingredient": {
       "tag": "c:ingots/cobalt"
-    }
+    },
+    "part_substitutes": {}
   },
   "display": {
     "color": "#FF3F6FD8",

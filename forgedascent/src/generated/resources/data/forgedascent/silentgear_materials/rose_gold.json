@@ -10,7 +10,8 @@
     "gear_type_blacklist": [],
     "ingredient": {
       "tag": "c:ingots/rose_gold"
-    }
+    },
+    "part_substitutes": {}
   },
   "display": {
     "color": "#FFE8A08E",

@@ -10,7 +10,8 @@
     "gear_type_blacklist": [],
     "ingredient": {
       "tag": "c:ingots/chromoly"
-    }
+    },
+    "part_substitutes": {}
   },
   "display": {
     "color": "#FF8FA0B8",

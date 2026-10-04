@@ -10,7 +10,8 @@
     "gear_type_blacklist": [],
     "ingredient": {
       "tag": "c:ingots/constantan"
-    }
+    },
+    "part_substitutes": {}
   },
   "display": {
     "color": "#FFC8865A",

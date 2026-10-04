@@ -10,7 +10,8 @@
     "gear_type_blacklist": [],
     "ingredient": {
       "tag": "c:ingots/duralumin"
-    }
+    },
+    "part_substitutes": {}
   },
   "display": {
     "color": "#FFAEB9C2",

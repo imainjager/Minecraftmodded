@@ -16,7 +16,8 @@
     "gear_type_blacklist": [],
     "ingredient": {
       "item": "forgedascent:flawless_alexandrite"
-    }
+    },
+    "part_substitutes": {}
   },
   "display": {
     "color": "#FF3A8C7A",

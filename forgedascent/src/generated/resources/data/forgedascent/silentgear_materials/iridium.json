@@ -10,7 +10,8 @@
     "gear_type_blacklist": [],
     "ingredient": {
       "tag": "c:ingots/iridium"
-    }
+    },
+    "part_substitutes": {}
   },
   "display": {
     "color": "#FFD6D9E8",

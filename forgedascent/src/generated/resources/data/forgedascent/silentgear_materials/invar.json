@@ -10,7 +10,8 @@
     "gear_type_blacklist": [],
     "ingredient": {
       "tag": "c:ingots/invar"
-    }
+    },
+    "part_substitutes": {}
   },
   "display": {
     "color": "#FFB9BDAA",

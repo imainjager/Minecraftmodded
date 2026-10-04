@@ -10,7 +10,8 @@
     "gear_type_blacklist": [],
     "ingredient": {
       "tag": "c:ingots/manganese_steel"
-    }
+    },
+    "part_substitutes": {}
   },
   "display": {
     "color": "#FF6E6A6B",
