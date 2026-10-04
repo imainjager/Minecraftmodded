@@ -54,6 +54,16 @@
           "trait": "silentgear:lucky"
         }
       ]
+    },
+    "silentgear:rod": {
+      "attack_speed": {
+        "operation": "ADD",
+        "value": 0.15
+      },
+      "durability": {
+        "operation": "MULTIPLY_TOTAL",
+        "value": 0.12
+      }
     }
   },
   "neoforge:conditions": [

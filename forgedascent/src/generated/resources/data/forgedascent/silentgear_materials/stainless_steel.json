@@ -56,13 +56,9 @@
       ]
     },
     "silentgear:rod": {
-      "attack_speed": {
-        "operation": "ADD",
-        "value": 0.1
-      },
       "durability": {
         "operation": "MULTIPLY_TOTAL",
-        "value": 0.35000000000000003
+        "value": 0.24
       }
     }
   },

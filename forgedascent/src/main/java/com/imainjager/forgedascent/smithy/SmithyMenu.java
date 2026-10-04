@@ -34,7 +34,7 @@ public class SmithyMenu extends AbstractContainerMenu {
         this.access = access;
         this.player = inventory.player;
         this.tier = tier;
-        addSlot(new ResultSlot(player, craftSlots, resultSlots, 0, 124, 35));
+        addSlot(new SmithyResultSlot(player, craftSlots, resultSlots, 124, 35));
         for (int row = 0; row < 3; row++) {
             for (int col = 0; col < 3; col++) {
                 addSlot(new Slot(craftSlots, col + row * 3, 30 + col * 18, 17 + row * 18));

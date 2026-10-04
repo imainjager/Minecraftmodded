@@ -886,8 +886,24 @@ SG_TIERS = {
     "alexandrite": 7, "enderium": 8, "refined_obsidian": 8, "black_diamond": 8, "netherite": 9, "tyrian_steel": 9,
     "uru_metal": 9,
 }
-# Silent Gear parts our materials can fill besides the head: (part, property overrides)
-SG_ROD_METALS = {"aluminum", "duralumin", "titanium", "chromoly", "titanium_alloy", "steel", "stainless_steel", "tin"}
+# Every one of our materials makes Silent Gear rods (handles); the handle's bonus follows the material's personality.
+SG_ROD_LIGHT = {"aluminum", "duralumin", "titanium", "chromoly", "titanium_alloy", "tin", "electrum", "rose_gold"}
+SG_ROD_HEAVY = {"lead", "tungsten", "tungsten_carbide", "manganese_steel", "iridium", "osmiridium"}
+SG_ROD_TOUGH = {"zinc", "nickel", "invar", "bismuth_bronze", "vanadium_steel", "stainless_steel", "stellite"}
+
+
+def sg_rod(mid, tier, gem):
+    def mul(stat, value):
+        return {stat: {"operation": "MULTIPLY_TOTAL", "value": round(value, 3)}}
+    if mid in SG_ROD_LIGHT:
+        return {"attack_speed": {"operation": "ADD", "value": 0.15}, **mul("durability", 0.03 * tier)}
+    if mid in SG_ROD_HEAVY:
+        return {"attack_speed": {"operation": "ADD", "value": -0.05}, **mul("attack_damage", 0.04 + 0.01 * tier)}
+    if mid in SG_ROD_TOUGH:
+        return mul("durability", 0.1 + 0.02 * tier)
+    if gem:
+        return {**mul("harvest_speed", 0.03 + 0.01 * tier), **mul("durability", 0.05)}
+    return {**mul("attack_damage", 0.03), **mul("durability", 0.05)}
 SG_COATING_ALLOYS = {"stellite", "inconel", "osmiridium", "tungsten_carbide", "high_speed_steel"}
 SG_TRAITS = {"tin": "malleable", "lead": "heavy", "aluminum": "light", "duralumin": "light", "cobalt": "accelerate",
              "alnico": "magnetic", "titanium": "light", "chromium": "hard", "stainless_steel": "sturdy",
@@ -919,9 +935,7 @@ def sg_material(m, tier, ingredient, categories, name_key, main=True):
             "traits": ([{"conditions": [], "level": 1, "trait": f"silentgear:{SG_TRAITS[m['id']]}"}]
                        if m["id"] in SG_TRAITS else []),
         }
-    if m["id"] in SG_ROD_METALS:
-        props["silentgear:rod"] = {"attack_speed": {"operation": "ADD", "value": 0.1},
-                                   "durability": {"operation": "MULTIPLY_TOTAL", "value": 0.05 * tier}}
+    props["silentgear:rod"] = sg_rod(m["id"], tier, m["repair"].startswith("c:gems/"))
     if m["id"] in SG_COATING_ALLOYS:
         props["silentgear:coating"] = {"durability": {"operation": "MULTIPLY_TOTAL", "value": 0.25},
                                        "attack_damage": {"operation": "MULTIPLY_TOTAL", "value": 0.1}}

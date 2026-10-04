@@ -55,6 +55,12 @@
         }
       ]
     },
+    "silentgear:rod": {
+      "durability": {
+        "operation": "MULTIPLY_TOTAL",
+        "value": 0.26
+      }
+    },
     "silentgear:coating": {
       "durability": {
         "operation": "MULTIPLY_TOTAL",

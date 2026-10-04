@@ -54,6 +54,16 @@
           "trait": "silentgear:accelerate"
         }
       ]
+    },
+    "silentgear:rod": {
+      "attack_damage": {
+        "operation": "MULTIPLY_TOTAL",
+        "value": 0.03
+      },
+      "durability": {
+        "operation": "MULTIPLY_TOTAL",
+        "value": 0.05
+      }
     }
   },
   "neoforge:conditions": [

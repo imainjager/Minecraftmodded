@@ -49,6 +49,16 @@
       "repair_value": 0.15,
       "traits": []
     },
+    "silentgear:rod": {
+      "harvest_speed": {
+        "operation": "MULTIPLY_TOTAL",
+        "value": 0.08
+      },
+      "durability": {
+        "operation": "MULTIPLY_TOTAL",
+        "value": 0.05
+      }
+    },
     "silentgear:tip": {
       "attack_damage": {
         "operation": "ADD",

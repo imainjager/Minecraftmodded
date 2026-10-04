@@ -49,6 +49,12 @@
       "rarity": 20.0,
       "repair_value": 0.15,
       "traits": []
+    },
+    "silentgear:rod": {
+      "durability": {
+        "operation": "MULTIPLY_TOTAL",
+        "value": 0.14
+      }
     }
   },
   "neoforge:conditions": [

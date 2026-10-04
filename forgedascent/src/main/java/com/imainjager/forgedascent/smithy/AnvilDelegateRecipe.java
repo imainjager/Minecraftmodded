@@ -64,6 +64,12 @@ public record AnvilDelegateRecipe(Recipe<?> recipe) implements AnvilRecipe {
         return inner().canCraftInDimensions(width, height);
     }
 
+    /** Leftovers come from the wrapped recipe (Silent Gear keeps its blueprints). */
+    @Override
+    public NonNullList<ItemStack> getRemainingItems(CraftingInput input) {
+        return inner().getRemainingItems(input);
+    }
+
     @Override
     public ItemStack getResultItem(HolderLookup.Provider registries) {
         return inner().getResultItem(registries);
