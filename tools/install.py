@@ -112,18 +112,24 @@ def patch_osmium():
     print(f"  osmium veins: {'patched' if changed else 'already up to date'}")
 
 
-QUEST_GROUP = '{ id: "F0A6ED5A5CE47001", title: "Forged Ascent" }'
+QUEST_GROUP_ID = "70A6ED5A5CE47001"  # must start with 0-7 (FTB Quests ids are positive longs)
+QUEST_GROUP = '{ id: "' + QUEST_GROUP_ID + '", title: "Forged Ascent" }'
 
 
 def patch_quest_group():
     """Adds the Forged Ascent chapter group (chapters come from profile/) at the top of ATM10's quest groups."""
     path = PROFILE / "config/ftbquests/quests/chapter_groups.snbt"
     text = path.read_text(encoding="utf-8")
-    if "F0A6ED5A5CE47001" in text:
+    # Drop the old, invalid group id from 0.5.0/0.6.0 installs.
+    cleaned = re.sub(r'[ \t]*\{ id: "F0A6ED5A5CE47001"[^}]*\}\r?\n', "", text)
+    if QUEST_GROUP_ID in cleaned:
+        if cleaned != text:
+            backup(path)
+            path.write_text(cleaned, encoding="utf-8")
         print("  quest group: already present")
         return
     backup(path)
-    new = re.sub(r"chapter_groups:\s*\[\s*\n", lambda m: m.group(0) + "\t\t" + QUEST_GROUP + "\n", text, count=1)
+    new = re.sub(r"chapter_groups:\s*\[\s*\n", lambda m: m.group(0) + "\t\t" + QUEST_GROUP + "\n", cleaned, count=1)
     path.write_text(new, encoding="utf-8")
     print("  quest group: added")
 

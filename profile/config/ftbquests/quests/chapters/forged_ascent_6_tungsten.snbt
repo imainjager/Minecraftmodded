@@ -2,7 +2,7 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: "circle"
 	filename: "forged_ascent_6_tungsten"
-	group: "F0A6ED5A5CE47001"
+	group: "70A6ED5A5CE47001"
 	icon: {
 		id: "forgedascent:tungsten_carbide_pickaxe"
 	}
@@ -91,7 +91,7 @@
 			]
 			tasks: [
 				{
-					id: "C3BF6B4334F4D201"
+					id: "43BF6B4334F4D201"
 					type: "item"
 					item: {
 						count: 1
@@ -102,7 +102,7 @@
 			]
 		}
 		{
-			id: "FB42910756DEA7F0"
+			id: "7B42910756DEA7F0"
 			title: "Alloy: High Speed Steel Ingot"
 			x: 4.0d
 			y: 0.0d
@@ -125,7 +125,7 @@
 			]
 		}
 		{
-			id: "FE66E99F9639B9CD"
+			id: "7E66E99F9639B9CD"
 			title: "Alloy: Stellite Ingot"
 			x: 5.0d
 			y: 0.0d
@@ -133,11 +133,11 @@
 				"Alloys are mixed in a crafting table for now (check JEI for the real-world ratios)."
 			]
 			dependencies: [
-				"FB42910756DEA7F0"
+				"7B42910756DEA7F0"
 			]
 			tasks: [
 				{
-					id: "F933C63EA159E740"
+					id: "7933C63EA159E740"
 					type: "item"
 					item: {
 						count: 1
@@ -156,11 +156,11 @@
 				"Alloys are mixed in a crafting table for now (check JEI for the real-world ratios)."
 			]
 			dependencies: [
-				"FE66E99F9639B9CD"
+				"7E66E99F9639B9CD"
 			]
 			tasks: [
 				{
-					id: "A01805322ABF0684"
+					id: "201805322ABF0684"
 					type: "item"
 					item: {
 						count: 1
@@ -183,7 +183,7 @@
 			]
 			tasks: [
 				{
-					id: "D0C98167D197873C"
+					id: "50C98167D197873C"
 					type: "item"
 					item: {
 						count: 1
@@ -194,7 +194,7 @@
 			]
 		}
 		{
-			id: "9700CB16CAF784D7"
+			id: "1700CB16CAF784D7"
 			title: "Hammer some plates"
 			x: 8.0d
 			y: -1.0d
@@ -218,24 +218,31 @@
 		}
 		{
 			id: "4CACE00BD5DE10CB"
-			title: "Gear up: Tungsten Carbide Pickaxe"
+			title: "Gear up: any tier-8 pickaxe"
 			x: 9.0d
 			y: 0.0d
 			description: [
+				"Any tier-8 pickaxe counts: pick the material whose perk you like best."
 				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
 			]
+			icon: {
+				id: "forgedascent:tungsten_carbide_pickaxe"
+			}
 			dependencies: [
-				"9700CB16CAF784D7"
+				"1700CB16CAF784D7"
 			]
 			tasks: [
 				{
 					id: "75892E049450DA25"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
-						id: "forgedascent:tungsten_carbide_pickaxe"
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							ftbfiltersystem:filter: "item_tag(forgedascent:tier_gear/8/pickaxe)"
+						}
 					}
-					count: 1
 				}
 			]
 			rewards: [
@@ -252,12 +259,16 @@
 		}
 		{
 			id: "5ED1E400009E8DB2"
-			title: "Gear up: Iridium Chestplate"
+			title: "Gear up: any tier-8 chestplate"
 			x: 10.0d
 			y: 0.0d
 			description: [
+				"Any tier-8 chestplate counts: pick the material whose perk you like best."
 				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
 			]
+			icon: {
+				id: "forgedascent:iridium_chestplate"
+			}
 			dependencies: [
 				"4CACE00BD5DE10CB"
 			]
@@ -265,16 +276,19 @@
 				{
 					id: "1D1166D1E33710BB"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
-						id: "forgedascent:iridium_chestplate"
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							ftbfiltersystem:filter: "item_tag(forgedascent:tier_gear/8/chestplate)"
+						}
 					}
-					count: 1
 				}
 			]
 			rewards: [
 				{
-					id: "C04224F8811C58EA"
+					id: "404224F8811C58EA"
 					type: "item"
 					item: {
 						count: 1
@@ -286,24 +300,31 @@
 		}
 		{
 			id: "57ED6E62052DEB81"
-			title: "Gear up: Black Diamond Sword"
+			title: "Gear up: any tier-8 sword"
 			x: 11.0d
 			y: 0.0d
 			description: [
+				"Any tier-8 sword counts: pick the material whose perk you like best."
 				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
 			]
+			icon: {
+				id: "forgedascent:black_diamond_sword"
+			}
 			dependencies: [
 				"5ED1E400009E8DB2"
 			]
 			tasks: [
 				{
-					id: "811F0EF0CEEBB378"
+					id: "011F0EF0CEEBB378"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
-						id: "forgedascent:black_diamond_sword"
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							ftbfiltersystem:filter: "item_tag(forgedascent:tier_gear/8/sword)"
+						}
 					}
-					count: 1
 				}
 			]
 			rewards: [
@@ -319,7 +340,7 @@
 			]
 		}
 		{
-			id: "F32426904F861B38"
+			id: "732426904F861B38"
 			title: "Defeat: Snow Queen"
 			x: 13.0d
 			y: -2.0d
@@ -343,7 +364,7 @@
 			]
 		}
 		{
-			id: "B6D9681277D3179A"
+			id: "36D9681277D3179A"
 			title: "Defeat: Harbinger"
 			x: 13.0d
 			y: -0.7d
@@ -407,7 +428,7 @@
 			optional: true
 			tasks: [
 				{
-					id: "A0ABCC527A4D7464"
+					id: "20ABCC527A4D7464"
 					type: "kill"
 					entity: "cataclysm:maledictus"
 					value: 1
@@ -415,7 +436,7 @@
 			]
 		}
 		{
-			id: "800109E0FF7D5596"
+			id: "000109E0FF7D5596"
 			title: "Gate VI Sigil"
 			x: 15.0d
 			y: 0.0d
@@ -443,7 +464,7 @@
 			]
 			rewards: [
 				{
-					id: "F3F8E45A2C6FA64C"
+					id: "73F8E45A2C6FA64C"
 					type: "xp"
 					xp: 250
 				}

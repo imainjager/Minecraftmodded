@@ -1,0 +1,58 @@
+{
+  "type": "silentgear:simple",
+  "parent": "silentgear:empty",
+  "crafting": {
+    "can_salvage": true,
+    "categories": [
+      "metal",
+      "forgedascent_tier_6"
+    ],
+    "gear_type_blacklist": [],
+    "ingredient": {
+      "tag": "c:ingots/vanadium_steel"
+    }
+  },
+  "display": {
+    "color": "#FF7A5A66",
+    "main_texture_type": "HIGH_CONTRAST",
+    "name": {
+      "translate": "material.forgedascent.vanadium_steel"
+    },
+    "name_prefix": ""
+  },
+  "properties": {
+    "silentgear:main": {
+      "armor": 30.0,
+      "armor/helmet": 4.0,
+      "armor/chestplate": 12.0,
+      "armor/leggings": 10.0,
+      "armor/boots": 4.0,
+      "armor_durability": 34.0,
+      "armor_toughness": 4.0,
+      "attack_damage": 9.4,
+      "attack_speed": 0.0,
+      "charging_value": 1.0,
+      "draw_speed": 0.0,
+      "durability": 1050.0,
+      "enchantment_value": 12.0,
+      "harvest_speed": 8.0,
+      "harvest_tier": {
+        "incorrect_blocks_for_tool": "forgedascent:incorrect_for_tier_6",
+        "level_hint": "6",
+        "name": "vanadium_steel"
+      },
+      "magic_armor": 12.0,
+      "magic_damage": 1.0,
+      "ranged_damage": 4.7,
+      "rarity": 60.0,
+      "repair_value": 0.15,
+      "traits": []
+    }
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "silentgear"
+    }
+  ]
+}

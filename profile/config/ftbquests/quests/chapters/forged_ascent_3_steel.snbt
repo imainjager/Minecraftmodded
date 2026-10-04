@@ -2,7 +2,7 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: "circle"
 	filename: "forged_ascent_3_steel"
-	group: "F0A6ED5A5CE47001"
+	group: "70A6ED5A5CE47001"
 	icon: {
 		id: "forgedascent:cobalt_pickaxe"
 	}
@@ -49,7 +49,7 @@
 					count: 1
 				}
 				{
-					id: "C3FE668011055A7F"
+					id: "43FE668011055A7F"
 					type: "xp"
 					xp: 100
 				}
@@ -68,7 +68,7 @@
 			]
 			tasks: [
 				{
-					id: "94D2F213FE26A505"
+					id: "14D2F213FE26A505"
 					type: "item"
 					item: {
 						count: 1
@@ -102,7 +102,7 @@
 			]
 		}
 		{
-			id: "911A6D4226B0A077"
+			id: "111A6D4226B0A077"
 			title: "Find Raw Platinum"
 			x: 4.0d
 			y: -1.0d
@@ -114,7 +114,7 @@
 			]
 			tasks: [
 				{
-					id: "841767520A0BC5F4"
+					id: "041767520A0BC5F4"
 					type: "item"
 					item: {
 						count: 1
@@ -133,11 +133,11 @@
 				"Needs a tier-4 pickaxe or better."
 			]
 			dependencies: [
-				"911A6D4226B0A077"
+				"111A6D4226B0A077"
 			]
 			tasks: [
 				{
-					id: "A0D474054C00AC61"
+					id: "20D474054C00AC61"
 					type: "item"
 					item: {
 						count: 1
@@ -148,7 +148,7 @@
 			]
 		}
 		{
-			id: "DAA315E141B8FBFC"
+			id: "5AA315E141B8FBFC"
 			title: "Alloy: Steel Ingot"
 			x: 6.0d
 			y: 0.0d
@@ -171,7 +171,7 @@
 			]
 		}
 		{
-			id: "B70E6247DF606FEF"
+			id: "370E6247DF606FEF"
 			title: "Alloy: Manganese Steel Ingot"
 			x: 7.0d
 			y: 0.0d
@@ -179,11 +179,11 @@
 				"Alloys are mixed in a crafting table for now (check JEI for the real-world ratios)."
 			]
 			dependencies: [
-				"DAA315E141B8FBFC"
+				"5AA315E141B8FBFC"
 			]
 			tasks: [
 				{
-					id: "FB210657BFB7CDFC"
+					id: "7B210657BFB7CDFC"
 					type: "item"
 					item: {
 						count: 1
@@ -194,7 +194,7 @@
 			]
 		}
 		{
-			id: "9104F49EB4527986"
+			id: "1104F49EB4527986"
 			title: "Alloy: Alnico Ingot"
 			x: 8.0d
 			y: 0.0d
@@ -202,11 +202,11 @@
 				"Alloys are mixed in a crafting table for now (check JEI for the real-world ratios)."
 			]
 			dependencies: [
-				"B70E6247DF606FEF"
+				"370E6247DF606FEF"
 			]
 			tasks: [
 				{
-					id: "97F98C8FEBD16C24"
+					id: "17F98C8FEBD16C24"
 					type: "item"
 					item: {
 						count: 1
@@ -225,11 +225,11 @@
 				"4 plates of this tier make the reinforced plate. Reinforce your best gear at your anvil!"
 			]
 			dependencies: [
-				"9104F49EB4527986"
+				"1104F49EB4527986"
 			]
 			tasks: [
 				{
-					id: "F4CE83CFA375C37F"
+					id: "74CE83CFA375C37F"
 					type: "item"
 					item: {
 						count: 1
@@ -240,13 +240,17 @@
 			]
 		}
 		{
-			id: "BB83B7FADD9AB845"
-			title: "Gear up: Cobalt Pickaxe"
+			id: "3B83B7FADD9AB845"
+			title: "Gear up: any tier-5 pickaxe"
 			x: 10.0d
 			y: 0.0d
 			description: [
+				"Any tier-5 pickaxe counts: pick the material whose perk you like best."
 				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
 			]
+			icon: {
+				id: "forgedascent:cobalt_pickaxe"
+			}
 			dependencies: [
 				"4C3C6074F8CFA1F4"
 			]
@@ -254,11 +258,14 @@
 				{
 					id: "712E50147BA04ADE"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
-						id: "forgedascent:cobalt_pickaxe"
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							ftbfiltersystem:filter: "item_tag(forgedascent:tier_gear/5/pickaxe)"
+						}
 					}
-					count: 1
 				}
 			]
 			rewards: [
@@ -274,25 +281,32 @@
 			]
 		}
 		{
-			id: "C734BF5F525BF7C2"
-			title: "Gear up: Manganese Steel Chestplate"
+			id: "4734BF5F525BF7C2"
+			title: "Gear up: any tier-5 chestplate"
 			x: 11.0d
 			y: 0.0d
 			description: [
+				"Any tier-5 chestplate counts: pick the material whose perk you like best."
 				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
 			]
+			icon: {
+				id: "forgedascent:manganese_steel_chestplate"
+			}
 			dependencies: [
-				"BB83B7FADD9AB845"
+				"3B83B7FADD9AB845"
 			]
 			tasks: [
 				{
 					id: "25191E79FAD90C79"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
-						id: "forgedascent:manganese_steel_chestplate"
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							ftbfiltersystem:filter: "item_tag(forgedascent:tier_gear/5/chestplate)"
+						}
 					}
-					count: 1
 				}
 			]
 			rewards: [
@@ -309,29 +323,36 @@
 		}
 		{
 			id: "2AC5278CA4F3DFE2"
-			title: "Gear up: Garnet Sword"
+			title: "Gear up: any tier-5 sword"
 			x: 12.0d
 			y: 0.0d
 			description: [
+				"Any tier-5 sword counts: pick the material whose perk you like best."
 				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
 			]
+			icon: {
+				id: "forgedascent:garnet_sword"
+			}
 			dependencies: [
-				"C734BF5F525BF7C2"
+				"4734BF5F525BF7C2"
 			]
 			tasks: [
 				{
-					id: "D33FE4EE725B55A3"
+					id: "533FE4EE725B55A3"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
-						id: "forgedascent:garnet_sword"
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							ftbfiltersystem:filter: "item_tag(forgedascent:tier_gear/5/sword)"
+						}
 					}
-					count: 1
 				}
 			]
 			rewards: [
 				{
-					id: "8874DD20AE0CB61A"
+					id: "0874DD20AE0CB61A"
 					type: "item"
 					item: {
 						count: 1
@@ -342,7 +363,7 @@
 			]
 		}
 		{
-			id: "A956E18BA09EBEB1"
+			id: "2956E18BA09EBEB1"
 			title: "Defeat: Minoshroom"
 			x: 14.0d
 			y: -2.0d
@@ -366,7 +387,7 @@
 			]
 		}
 		{
-			id: "85C20CB481DBA9EC"
+			id: "05C20CB481DBA9EC"
 			title: "Defeat: Hydra"
 			x: 14.0d
 			y: -0.7d
@@ -382,7 +403,7 @@
 			optional: true
 			tasks: [
 				{
-					id: "F031322B8D20524C"
+					id: "7031322B8D20524C"
 					type: "kill"
 					entity: "twilightforest:hydra"
 					value: 1
@@ -390,7 +411,7 @@
 			]
 		}
 		{
-			id: "A46EBFE3566E6332"
+			id: "246EBFE3566E6332"
 			title: "Defeat: Netherite Monstrosity"
 			x: 14.0d
 			y: 0.6000000000000001d
@@ -406,7 +427,7 @@
 			optional: true
 			tasks: [
 				{
-					id: "CEEC429AB53FFFDD"
+					id: "4EEC429AB53FFFDD"
 					type: "kill"
 					entity: "cataclysm:netherite_monstrosity"
 					value: 1
@@ -414,7 +435,7 @@
 			]
 		}
 		{
-			id: "CB85331B4A5D0A9F"
+			id: "4B85331B4A5D0A9F"
 			title: "Defeat: Starlight Golem"
 			x: 14.0d
 			y: 1.9000000000000004d
@@ -466,7 +487,7 @@
 			]
 			rewards: [
 				{
-					id: "FA60834CF40C3BFD"
+					id: "7A60834CF40C3BFD"
 					type: "xp"
 					xp: 250
 				}

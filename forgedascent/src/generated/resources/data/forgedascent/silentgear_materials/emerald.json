@@ -1,0 +1,74 @@
+{
+  "type": "silentgear:simple",
+  "parent": "silentgear:empty",
+  "crafting": {
+    "can_salvage": true,
+    "categories": [
+      "gem",
+      "forgedascent_tier_6"
+    ],
+    "gear_type_blacklist": [],
+    "ingredient": {
+      "tag": "c:gems/emerald"
+    }
+  },
+  "display": {
+    "color": "#FF2EBF5A",
+    "main_texture_type": "HIGH_CONTRAST",
+    "name": {
+      "translate": "material.forgedascent.emerald"
+    },
+    "name_prefix": ""
+  },
+  "properties": {
+    "silentgear:main": {
+      "armor": 30.0,
+      "armor/helmet": 4.0,
+      "armor/chestplate": 12.0,
+      "armor/leggings": 10.0,
+      "armor/boots": 4.0,
+      "armor_durability": 32.0,
+      "armor_toughness": 4.0,
+      "attack_damage": 8.9,
+      "attack_speed": 0.0,
+      "charging_value": 1.0,
+      "draw_speed": 0.0,
+      "durability": 1000.0,
+      "enchantment_value": 25.0,
+      "harvest_speed": 8.0,
+      "harvest_tier": {
+        "incorrect_blocks_for_tool": "forgedascent:incorrect_for_tier_6",
+        "level_hint": "6",
+        "name": "emerald"
+      },
+      "magic_armor": 12.0,
+      "magic_damage": 1.0,
+      "ranged_damage": 4.45,
+      "rarity": 60.0,
+      "repair_value": 0.15,
+      "traits": [
+        {
+          "conditions": [],
+          "level": 1,
+          "trait": "silentgear:lucky"
+        }
+      ]
+    },
+    "silentgear:tip": {
+      "attack_damage": {
+        "operation": "ADD",
+        "value": 2.0
+      },
+      "durability": {
+        "operation": "ADD",
+        "value": 300
+      }
+    }
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "silentgear"
+    }
+  ]
+}

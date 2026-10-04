@@ -53,7 +53,8 @@ public class ForgedAscentJei implements IModPlugin {
         if (level == null) return;
         List<RecipeHolder<AnvilRecipe>> recipes = level.getRecipeManager()
                 .getAllRecipesFor(SmithyRegistries.ANVIL_TYPE.get()).stream()
-                .filter(h -> !(h.value() instanceof ReinforceRecipe)).toList();
+                .filter(h -> h.value() instanceof com.imainjager.forgedascent.smithy.AnvilShapedRecipe
+                        || h.value() instanceof com.imainjager.forgedascent.smithy.AnvilShapelessRecipe).toList();
         registration.addRecipes(ANVIL, recipes);
         for (var plate : SmithyRegistries.REINFORCED_PLATES) {
             registration.addIngredientInfo(new ItemStack(plate.get()), VanillaTypes.ITEM_STACK,

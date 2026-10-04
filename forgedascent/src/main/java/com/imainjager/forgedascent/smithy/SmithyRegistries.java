@@ -45,6 +45,16 @@ public final class SmithyRegistries {
                 public com.mojang.serialization.MapCodec<AnvilShapelessRecipe> codec() { return AnvilShapelessRecipe.CODEC; }
                 public StreamCodec<net.minecraft.network.RegistryFriendlyByteBuf, AnvilShapelessRecipe> streamCodec() { return AnvilShapelessRecipe.STREAM_CODEC; }
             });
+    public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<AnvilDelegateRecipe>> ANVIL_DELEGATE =
+            RECIPE_SERIALIZERS.register("anvil_delegate", () -> new RecipeSerializer<>() {
+                public com.mojang.serialization.MapCodec<AnvilDelegateRecipe> codec() { return AnvilDelegateRecipe.CODEC; }
+                public StreamCodec<net.minecraft.network.RegistryFriendlyByteBuf, AnvilDelegateRecipe> streamCodec() { return AnvilDelegateRecipe.STREAM_CODEC; }
+            });
+    public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<RepairRecipe>> ANVIL_REPAIR =
+            RECIPE_SERIALIZERS.register("anvil_repair", () -> new RecipeSerializer<>() {
+                public com.mojang.serialization.MapCodec<RepairRecipe> codec() { return RepairRecipe.CODEC; }
+                public StreamCodec<net.minecraft.network.RegistryFriendlyByteBuf, RepairRecipe> streamCodec() { return RepairRecipe.STREAM_CODEC; }
+            });
     public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<ReinforceRecipe>> ANVIL_REINFORCE =
             RECIPE_SERIALIZERS.register("anvil_reinforce", () -> new RecipeSerializer<>() {
                 public com.mojang.serialization.MapCodec<ReinforceRecipe> codec() { return ReinforceRecipe.CODEC; }
@@ -59,8 +69,8 @@ public final class SmithyRegistries {
                     .networkSynchronized(StreamCodec.unit(Unit.INSTANCE)));
 
     /** Anvil names by tier; anvil N crafts anvil recipes of tier ≤ N. */
-    public static final String[] ANVIL_NAMES = {"bronze", "steel", "gemstone", "titanium", "tungsten", "netherite"};
-    public static final int FIRST_ANVIL_TIER = 4;
+    public static final String[] ANVIL_NAMES = {"stone", "bronze", "steel", "gemstone", "titanium", "tungsten", "netherite"};
+    public static final int FIRST_ANVIL_TIER = 3;
     public static final List<DeferredBlock<SmithyAnvilBlock>> ANVILS = new ArrayList<>();
     public static final List<DeferredItem<ReinforcedPlateItem>> REINFORCED_PLATES = new ArrayList<>();
     public static final int GATES = 6;
@@ -81,6 +91,10 @@ public final class SmithyRegistries {
                     () -> new ReinforcedPlateItem(t, new Item.Properties()));
             REINFORCED_PLATES.add(plate);
             ModRegistries.addToTab(plate);
+        }
+        for (var gem : com.imainjager.forgedascent.Materials.GEMS) {
+            ModRegistries.addToTab(ModRegistries.ITEMS.registerSimpleItem("flawless_" + gem.id(),
+                    new Item.Properties().rarity(Rarity.RARE)));
         }
         for (int gate = 1; gate <= GATES; gate++) {
             ModRegistries.addToTab(ModRegistries.ITEMS.registerSimpleItem("sigil_" + gate,

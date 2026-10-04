@@ -2,7 +2,7 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: "circle"
 	filename: "forged_ascent_4_gem"
-	group: "F0A6ED5A5CE47001"
+	group: "70A6ED5A5CE47001"
 	icon: {
 		id: "forgedascent:emerald_pickaxe"
 	}
@@ -49,7 +49,7 @@
 					count: 1
 				}
 				{
-					id: "E8DEA75B17B14B91"
+					id: "68DEA75B17B14B91"
 					type: "xp"
 					xp: 100
 				}
@@ -79,7 +79,7 @@
 			]
 		}
 		{
-			id: "B250FB46BF6566DC"
+			id: "3250FB46BF6566DC"
 			title: "Find Raw Chromium"
 			x: 3.0d
 			y: 1.0d
@@ -91,7 +91,7 @@
 			]
 			tasks: [
 				{
-					id: "937A14B434EE31EC"
+					id: "137A14B434EE31EC"
 					type: "item"
 					item: {
 						count: 1
@@ -102,7 +102,7 @@
 			]
 		}
 		{
-			id: "A43133089D0C0D34"
+			id: "243133089D0C0D34"
 			title: "Find Rough Ruby"
 			x: 4.0d
 			y: -1.0d
@@ -110,7 +110,7 @@
 				"Needs a tier-5 pickaxe or better."
 			]
 			dependencies: [
-				"B250FB46BF6566DC"
+				"3250FB46BF6566DC"
 			]
 			tasks: [
 				{
@@ -133,11 +133,11 @@
 				"Needs a tier-5 pickaxe or better."
 			]
 			dependencies: [
-				"A43133089D0C0D34"
+				"243133089D0C0D34"
 			]
 			tasks: [
 				{
-					id: "AF1028D36F2C1B02"
+					id: "2F1028D36F2C1B02"
 					type: "item"
 					item: {
 						count: 1
@@ -148,7 +148,7 @@
 			]
 		}
 		{
-			id: "B7458A4DE4C516C9"
+			id: "37458A4DE4C516C9"
 			title: "Find Rough Alexandrite"
 			x: 6.0d
 			y: -1.0d
@@ -160,7 +160,7 @@
 			]
 			tasks: [
 				{
-					id: "F8FDA4EE832419CD"
+					id: "78FDA4EE832419CD"
 					type: "item"
 					item: {
 						count: 1
@@ -171,7 +171,7 @@
 			]
 		}
 		{
-			id: "96FEBF7BA25D194C"
+			id: "16FEBF7BA25D194C"
 			title: "Alloy: Vanadium Steel Ingot"
 			x: 7.0d
 			y: 0.0d
@@ -179,7 +179,7 @@
 				"Alloys are mixed in a crafting table for now (check JEI for the real-world ratios)."
 			]
 			dependencies: [
-				"B7458A4DE4C516C9"
+				"37458A4DE4C516C9"
 			]
 			tasks: [
 				{
@@ -194,7 +194,7 @@
 			]
 		}
 		{
-			id: "F0031B5074A5B42E"
+			id: "70031B5074A5B42E"
 			title: "Alloy: White Gold Ingot"
 			x: 8.0d
 			y: 0.0d
@@ -202,7 +202,7 @@
 				"Alloys are mixed in a crafting table for now (check JEI for the real-world ratios)."
 			]
 			dependencies: [
-				"96FEBF7BA25D194C"
+				"16FEBF7BA25D194C"
 			]
 			tasks: [
 				{
@@ -225,7 +225,7 @@
 				"4 plates of this tier make the reinforced plate. Reinforce your best gear at your anvil!"
 			]
 			dependencies: [
-				"F0031B5074A5B42E"
+				"70031B5074A5B42E"
 			]
 			tasks: [
 				{
@@ -241,24 +241,31 @@
 		}
 		{
 			id: "4842F9BE4F7F9E90"
-			title: "Gear up: Platinum Pickaxe"
+			title: "Gear up: any tier-6 pickaxe"
 			x: 10.0d
 			y: 0.0d
 			description: [
+				"Any tier-6 pickaxe counts: pick the material whose perk you like best."
 				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
 			]
+			icon: {
+				id: "forgedascent:platinum_pickaxe"
+			}
 			dependencies: [
 				"2DBB1FB4176F6D2B"
 			]
 			tasks: [
 				{
-					id: "F963FAB62242A204"
+					id: "7963FAB62242A204"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
-						id: "forgedascent:platinum_pickaxe"
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							ftbfiltersystem:filter: "item_tag(forgedascent:tier_gear/6/pickaxe)"
+						}
 					}
-					count: 1
 				}
 			]
 			rewards: [
@@ -274,13 +281,17 @@
 			]
 		}
 		{
-			id: "98FEFEB55546B4D9"
-			title: "Gear up: Diamond Chestplate"
+			id: "18FEFEB55546B4D9"
+			title: "Gear up: any tier-6 chestplate"
 			x: 11.0d
 			y: 0.0d
 			description: [
+				"Any tier-6 chestplate counts: pick the material whose perk you like best."
 				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
 			]
+			icon: {
+				id: "minecraft:diamond_chestplate"
+			}
 			dependencies: [
 				"4842F9BE4F7F9E90"
 			]
@@ -288,11 +299,14 @@
 				{
 					id: "0D701C6B1457AE05"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
-						id: "minecraft:diamond_chestplate"
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							ftbfiltersystem:filter: "item_tag(forgedascent:tier_gear/6/chestplate)"
+						}
 					}
-					count: 1
 				}
 			]
 			rewards: [
@@ -309,24 +323,31 @@
 		}
 		{
 			id: "72DBAF3A005ACA38"
-			title: "Gear up: Topaz Sword"
+			title: "Gear up: any tier-6 sword"
 			x: 12.0d
 			y: 0.0d
 			description: [
+				"Any tier-6 sword counts: pick the material whose perk you like best."
 				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
 			]
+			icon: {
+				id: "forgedascent:topaz_sword"
+			}
 			dependencies: [
-				"98FEFEB55546B4D9"
+				"18FEFEB55546B4D9"
 			]
 			tasks: [
 				{
 					id: "57CA7BE1C17D607D"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
-						id: "forgedascent:topaz_sword"
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							ftbfiltersystem:filter: "item_tag(forgedascent:tier_gear/6/sword)"
+						}
 					}
-					count: 1
 				}
 			]
 			rewards: [
@@ -366,7 +387,7 @@
 			]
 		}
 		{
-			id: "FB5594C975734EF5"
+			id: "7B5594C975734EF5"
 			title: "Defeat: Knight Phantoms"
 			x: 14.0d
 			y: -0.7d
@@ -382,7 +403,7 @@
 			optional: true
 			tasks: [
 				{
-					id: "C93480E3010A0D3B"
+					id: "493480E3010A0D3B"
 					type: "kill"
 					entity: "twilightforest:knight_phantom"
 					value: 1
@@ -390,7 +411,7 @@
 			]
 		}
 		{
-			id: "D58BFFE02F3B9D94"
+			id: "558BFFE02F3B9D94"
 			title: "Defeat: Ender Guardian"
 			x: 14.0d
 			y: 0.6000000000000001d
@@ -406,7 +427,7 @@
 			optional: true
 			tasks: [
 				{
-					id: "A26B5A3F8A6CE407"
+					id: "226B5A3F8A6CE407"
 					type: "kill"
 					entity: "cataclysm:ender_guardian"
 					value: 1
@@ -414,7 +435,7 @@
 			]
 		}
 		{
-			id: "FE38F0B4DDBD1F6B"
+			id: "7E38F0B4DDBD1F6B"
 			title: "Defeat: Sun Spirit"
 			x: 14.0d
 			y: 1.9000000000000004d
@@ -430,7 +451,7 @@
 			optional: true
 			tasks: [
 				{
-					id: "C66FAE6A084D7EFE"
+					id: "466FAE6A084D7EFE"
 					type: "kill"
 					entity: "aether:sun_spirit"
 					value: 1
@@ -438,7 +459,7 @@
 			]
 		}
 		{
-			id: "81B4C36BB8936892"
+			id: "01B4C36BB8936892"
 			title: "Gate IV Sigil"
 			x: 16.0d
 			y: 0.0d
@@ -454,7 +475,7 @@
 			size: 1.5d
 			tasks: [
 				{
-					id: "F477FA5743DFDD2C"
+					id: "7477FA5743DFDD2C"
 					type: "item"
 					item: {
 						count: 1
@@ -465,7 +486,7 @@
 			]
 			rewards: [
 				{
-					id: "8CEF4E9A40FEA62C"
+					id: "0CEF4E9A40FEA62C"
 					type: "xp"
 					xp: 250
 				}

@@ -1,0 +1,58 @@
+{
+  "type": "silentgear:simple",
+  "parent": "silentgear:empty",
+  "crafting": {
+    "can_salvage": true,
+    "categories": [
+      "metal",
+      "forgedascent_tier_8"
+    ],
+    "gear_type_blacklist": [],
+    "ingredient": {
+      "tag": "c:ingots/iridium"
+    }
+  },
+  "display": {
+    "color": "#FFD6D9E8",
+    "main_texture_type": "HIGH_CONTRAST",
+    "name": {
+      "translate": "material.forgedascent.iridium"
+    },
+    "name_prefix": ""
+  },
+  "properties": {
+    "silentgear:main": {
+      "armor": 46.0,
+      "armor/helmet": 7.0,
+      "armor/chestplate": 18.0,
+      "armor/leggings": 14.0,
+      "armor/boots": 7.0,
+      "armor_durability": 50.0,
+      "armor_toughness": 12.0,
+      "attack_damage": 19.9,
+      "attack_speed": 0.0,
+      "charging_value": 1.0,
+      "draw_speed": 0.0,
+      "durability": 2200.0,
+      "enchantment_value": 14.0,
+      "harvest_speed": 8.5,
+      "harvest_tier": {
+        "incorrect_blocks_for_tool": "forgedascent:incorrect_for_tier_8",
+        "level_hint": "8",
+        "name": "iridium"
+      },
+      "magic_armor": 18.4,
+      "magic_damage": 1.0,
+      "ranged_damage": 9.95,
+      "rarity": 80.0,
+      "repair_value": 0.15,
+      "traits": []
+    }
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "silentgear"
+    }
+  ]
+}

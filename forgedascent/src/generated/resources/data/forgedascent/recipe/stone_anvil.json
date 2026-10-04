@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "tag": "c:ingots/iron"
+    },
+    "S": {
+      "item": "minecraft:smooth_stone"
+    }
+  },
+  "pattern": [
+    "III",
+    " S ",
+    "SSS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "forgedascent:stone_anvil"
+  }
+}

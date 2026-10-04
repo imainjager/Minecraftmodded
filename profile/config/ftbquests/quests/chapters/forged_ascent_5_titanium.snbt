@@ -2,11 +2,11 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: "circle"
 	filename: "forged_ascent_5_titanium"
-	group: "F0A6ED5A5CE47001"
+	group: "70A6ED5A5CE47001"
 	icon: {
 		id: "forgedascent:titanium_pickaxe"
 	}
-	id: "BB61109072D0ACF9"
+	id: "3B61109072D0ACF9"
 	order_index: 4
 	quest_links: [ ]
 	subtitle: [
@@ -29,7 +29,7 @@
 			size: 1.5d
 			tasks: [
 				{
-					id: "ADD68B3F69FE8D2D"
+					id: "2DD68B3F69FE8D2D"
 					type: "item"
 					item: {
 						count: 1
@@ -40,7 +40,7 @@
 			]
 			rewards: [
 				{
-					id: "EB7737A81BAA9996"
+					id: "6B7737A81BAA9996"
 					type: "item"
 					item: {
 						count: 1
@@ -56,7 +56,7 @@
 			]
 		}
 		{
-			id: "F130A85A0BFBEE56"
+			id: "7130A85A0BFBEE56"
 			title: "Find Raw Tungsten"
 			x: 2.0d
 			y: -1.0d
@@ -68,7 +68,7 @@
 			]
 			tasks: [
 				{
-					id: "BFEE5DCCD1A9CEC0"
+					id: "3FEE5DCCD1A9CEC0"
 					type: "item"
 					item: {
 						count: 1
@@ -87,11 +87,11 @@
 				"Needs a tier-6 pickaxe or better."
 			]
 			dependencies: [
-				"F130A85A0BFBEE56"
+				"7130A85A0BFBEE56"
 			]
 			tasks: [
 				{
-					id: "FC448D2271D5C360"
+					id: "7C448D2271D5C360"
 					type: "item"
 					item: {
 						count: 1
@@ -114,7 +114,7 @@
 			]
 			tasks: [
 				{
-					id: "B72E7BA5D4E67E5C"
+					id: "372E7BA5D4E67E5C"
 					type: "item"
 					item: {
 						count: 1
@@ -125,7 +125,7 @@
 			]
 		}
 		{
-			id: "97312EBB4A8A7652"
+			id: "17312EBB4A8A7652"
 			title: "Alloy: Chromoly Ingot"
 			x: 5.0d
 			y: 0.0d
@@ -137,7 +137,7 @@
 			]
 			tasks: [
 				{
-					id: "8F3323D287749866"
+					id: "0F3323D287749866"
 					type: "item"
 					item: {
 						count: 1
@@ -156,11 +156,11 @@
 				"Alloys are mixed in a crafting table for now (check JEI for the real-world ratios)."
 			]
 			dependencies: [
-				"97312EBB4A8A7652"
+				"17312EBB4A8A7652"
 			]
 			tasks: [
 				{
-					id: "D54A75F82040D596"
+					id: "554A75F82040D596"
 					type: "item"
 					item: {
 						count: 1
@@ -217,13 +217,17 @@
 			]
 		}
 		{
-			id: "9371F663084053C6"
-			title: "Gear up: Titanium Pickaxe"
+			id: "1371F663084053C6"
+			title: "Gear up: any tier-7 pickaxe"
 			x: 9.0d
 			y: 0.0d
 			description: [
+				"Any tier-7 pickaxe counts: pick the material whose perk you like best."
 				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
 			]
+			icon: {
+				id: "forgedascent:titanium_pickaxe"
+			}
 			dependencies: [
 				"0E735555B3EB187F"
 			]
@@ -231,16 +235,19 @@
 				{
 					id: "6CFFF45B2606DF45"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
-						id: "forgedascent:titanium_pickaxe"
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							ftbfiltersystem:filter: "item_tag(forgedascent:tier_gear/7/pickaxe)"
+						}
 					}
-					count: 1
 				}
 			]
 			rewards: [
 				{
-					id: "D79E2BE4978943BC"
+					id: "579E2BE4978943BC"
 					type: "item"
 					item: {
 						count: 1
@@ -252,24 +259,31 @@
 		}
 		{
 			id: "5F2AA9930F4D3790"
-			title: "Gear up: Titanium Alloy Chestplate"
+			title: "Gear up: any tier-7 chestplate"
 			x: 10.0d
 			y: 0.0d
 			description: [
+				"Any tier-7 chestplate counts: pick the material whose perk you like best."
 				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
 			]
+			icon: {
+				id: "forgedascent:titanium_alloy_chestplate"
+			}
 			dependencies: [
-				"9371F663084053C6"
+				"1371F663084053C6"
 			]
 			tasks: [
 				{
 					id: "168B182F62316980"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
-						id: "forgedascent:titanium_alloy_chestplate"
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							ftbfiltersystem:filter: "item_tag(forgedascent:tier_gear/7/chestplate)"
+						}
 					}
-					count: 1
 				}
 			]
 			rewards: [
@@ -285,25 +299,32 @@
 			]
 		}
 		{
-			id: "FCBE017216A04581"
-			title: "Gear up: Ruby Sword"
+			id: "7CBE017216A04581"
+			title: "Gear up: any tier-7 sword"
 			x: 11.0d
 			y: 0.0d
 			description: [
+				"Any tier-7 sword counts: pick the material whose perk you like best."
 				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
 			]
+			icon: {
+				id: "forgedascent:ruby_sword"
+			}
 			dependencies: [
 				"5F2AA9930F4D3790"
 			]
 			tasks: [
 				{
-					id: "F0A1786B96C6C082"
+					id: "70A1786B96C6C082"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
-						id: "forgedascent:ruby_sword"
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							ftbfiltersystem:filter: "item_tag(forgedascent:tier_gear/7/sword)"
+						}
 					}
-					count: 1
 				}
 			]
 			rewards: [
@@ -329,7 +350,7 @@
 				"Any one boss of this gate is enough."
 			]
 			dependencies: [
-				"FCBE017216A04581"
+				"7CBE017216A04581"
 			]
 			shape: "hexagon"
 			optional: true
@@ -343,7 +364,7 @@
 			]
 		}
 		{
-			id: "FCD6F5B90FE8A863"
+			id: "7CD6F5B90FE8A863"
 			title: "Defeat: Ignis"
 			x: 13.0d
 			y: -0.7d
@@ -353,7 +374,7 @@
 				"Any one boss of this gate is enough."
 			]
 			dependencies: [
-				"FCBE017216A04581"
+				"7CBE017216A04581"
 			]
 			shape: "hexagon"
 			optional: true
@@ -367,7 +388,7 @@
 			]
 		}
 		{
-			id: "DFC3EDE4EED820F5"
+			id: "5FC3EDE4EED820F5"
 			title: "Defeat: Ur-Ghast"
 			x: 13.0d
 			y: 0.6000000000000001d
@@ -377,7 +398,7 @@
 				"Any one boss of this gate is enough."
 			]
 			dependencies: [
-				"FCBE017216A04581"
+				"7CBE017216A04581"
 			]
 			shape: "hexagon"
 			optional: true
@@ -401,13 +422,13 @@
 				"Any one boss of this gate is enough."
 			]
 			dependencies: [
-				"FCBE017216A04581"
+				"7CBE017216A04581"
 			]
 			shape: "hexagon"
 			optional: true
 			tasks: [
 				{
-					id: "AD5EFB57EB576CEC"
+					id: "2D5EFB57EB576CEC"
 					type: "kill"
 					entity: "cataclysm:the_leviathan"
 					value: 1
@@ -425,13 +446,13 @@
 				"Any one boss of this gate is enough."
 			]
 			dependencies: [
-				"FCBE017216A04581"
+				"7CBE017216A04581"
 			]
 			shape: "hexagon"
 			optional: true
 			tasks: [
 				{
-					id: "D23242722A102F74"
+					id: "523242722A102F74"
 					type: "kill"
 					entity: "minecraft:warden"
 					value: 1
@@ -439,7 +460,7 @@
 			]
 		}
 		{
-			id: "F9B99346E4A1ED67"
+			id: "79B99346E4A1ED67"
 			title: "Gate V Sigil"
 			x: 15.0d
 			y: 0.0d
@@ -450,7 +471,7 @@
 				"It also unlocks the Apotheosis world tier &eSummit&r."
 			]
 			dependencies: [
-				"FCBE017216A04581"
+				"7CBE017216A04581"
 			]
 			shape: "gear"
 			size: 1.5d

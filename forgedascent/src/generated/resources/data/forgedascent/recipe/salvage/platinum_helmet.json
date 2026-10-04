@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "alltheores"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "silentgear"
+    }
+  ],
+  "type": "silentgear:salvaging",
+  "ingredient": {
+    "item": "forgedascent:platinum_helmet"
+  },
+  "results": [
+    {
+      "count": 3,
+      "id": "alltheores:platinum_ingot"
+    }
+  ]
+}

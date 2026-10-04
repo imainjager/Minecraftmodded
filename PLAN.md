@@ -56,12 +56,11 @@ Status: **final draft, waiting for go-ahead.** Built from the Phase 0 scan
   Fang": cobalt katana, ruby tip, chitin binding) **and** Silent Gear weapons in chests (Lootr), materials scaling with world
   tier. **Verify on the test server that generated tools have real parts and stats; if not, drop both.**
 - **Salvaging:** Silent Gear Salvager recipes for our gear, scavenged armors and vanilla tier gear (recycle loot into materials)
-- **Smith's journal quests:** "craft a tool from 3 different materials", "make a gem-tipped weapon", "reinforce a Silent Gear tool"
+- **Silent Gear blueprints in chests** (blueprints stay craftable too)
+- **Elite part drops:** elites sometimes drop a Silent Gear part fitting their type (conditional, same check as Silent Gear loot)
 
-**Update 6 candidates:** blueprints as treasure (fancy weapon types found in loot), whetstones/gem oils, weapon types gated by
-anvil tier, elite part drops, armor trims from our metals, Elite Hunter quest chain, gate maps, ruined forges.
-Later (needs research): flawless gems auto-graded S in Silent Gear's grader, Bounty Board hooks.
-Rejected: Prospector's Pick.
+**Update 6 candidates:** armor trims from our metals, Elite Hunter quest chain, gate maps, ruined forges.
+Rejected: Prospector's Pick, whetstones/oils, weapon types gated by anvil, grading, Bounty Board hooks, smith's journal quests.
 
 ## Update 4 design (agreed 2026-10-03, overrides older sections where they differ)
 

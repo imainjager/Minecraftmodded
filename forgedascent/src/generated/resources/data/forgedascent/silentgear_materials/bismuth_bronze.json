@@ -1,0 +1,58 @@
+{
+  "type": "silentgear:simple",
+  "parent": "silentgear:empty",
+  "crafting": {
+    "can_salvage": true,
+    "categories": [
+      "metal",
+      "forgedascent_tier_4"
+    ],
+    "gear_type_blacklist": [],
+    "ingredient": {
+      "tag": "c:ingots/bismuth_bronze"
+    }
+  },
+  "display": {
+    "color": "#FFC08A5C",
+    "main_texture_type": "HIGH_CONTRAST",
+    "name": {
+      "translate": "material.forgedascent.bismuth_bronze"
+    },
+    "name_prefix": ""
+  },
+  "properties": {
+    "silentgear:main": {
+      "armor": 20.0,
+      "armor/helmet": 3.0,
+      "armor/chestplate": 8.0,
+      "armor/leggings": 6.0,
+      "armor/boots": 3.0,
+      "armor_durability": 20.0,
+      "armor_toughness": 2.0,
+      "attack_damage": 5.2,
+      "attack_speed": 0.0,
+      "charging_value": 1.0,
+      "draw_speed": 0.0,
+      "durability": 450.0,
+      "enchantment_value": 12.0,
+      "harvest_speed": 6.5,
+      "harvest_tier": {
+        "incorrect_blocks_for_tool": "forgedascent:incorrect_for_tier_4",
+        "level_hint": "4",
+        "name": "bismuth_bronze"
+      },
+      "magic_armor": 8.0,
+      "magic_damage": 1.0,
+      "ranged_damage": 2.6,
+      "rarity": 40.0,
+      "repair_value": 0.15,
+      "traits": []
+    }
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "silentgear"
+    }
+  ]
+}

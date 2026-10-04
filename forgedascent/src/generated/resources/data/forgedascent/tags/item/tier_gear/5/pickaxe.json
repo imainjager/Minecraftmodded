@@ -1,0 +1,17 @@
+{
+  "values": [
+    "forgedascent:cobalt_pickaxe",
+    "forgedascent:manganese_steel_pickaxe",
+    "forgedascent:alnico_pickaxe",
+    "forgedascent:garnet_pickaxe",
+    "forgedascent:peridot_pickaxe",
+    {
+      "id": "mekanismtools:steel_pickaxe",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:osmium_pickaxe",
+      "required": false
+    }
+  ]
+}

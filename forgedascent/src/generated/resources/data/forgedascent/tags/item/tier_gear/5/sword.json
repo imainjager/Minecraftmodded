@@ -1,0 +1,17 @@
+{
+  "values": [
+    "forgedascent:cobalt_sword",
+    "forgedascent:manganese_steel_sword",
+    "forgedascent:alnico_sword",
+    "forgedascent:garnet_sword",
+    "forgedascent:peridot_sword",
+    {
+      "id": "mekanismtools:steel_sword",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:osmium_sword",
+      "required": false
+    }
+  ]
+}

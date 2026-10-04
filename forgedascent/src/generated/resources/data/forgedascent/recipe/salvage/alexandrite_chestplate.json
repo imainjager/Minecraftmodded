@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "silentgear"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "silentgems"
+    }
+  ],
+  "type": "silentgear:salvaging",
+  "ingredient": {
+    "item": "forgedascent:alexandrite_chestplate"
+  },
+  "results": [
+    {
+      "count": 5,
+      "id": "silentgems:alexandrite"
+    }
+  ]
+}

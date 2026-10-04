@@ -2,7 +2,23 @@
 
 Read [`PLAN.md`](PLAN.md) first. This file says where the build stopped and how to continue.
 
-## Current state (2026-10-03, update 4 built)
+## Current state (2026-10-03, update 5 built: mod 0.6.0, installed, waiting for in-game test)
+
+| Done in 0.6.0 | Where |
+|---|---|
+| 9 scavenged armors (armor-only sets) + custom perks + full-set doubling | `materials.json` (`armor_only`, `scavenged`), `ArmorPerks.java` |
+| Per-set attribute perks for metal/gem sets | `perks` in `materials.json`, `TraitArmorItem.java` |
+| Stone Anvil (tier 3), anvil repair with ingots | `SmithyRegistries`, `RepairRecipe.java` |
+| Flawless gems (6% bonus on a cut) | `GemCutting.java` |
+| Silent Gear: our materials + flawless gem tips/coatings; ~81 SG materials rebalanced (git-ignored overrides); part recipes: table = tier ≤3 (`forgedascent_low` category), anvils = all with tier check | `gen_silentgear` in `gen_assets.py`, `AnvilDelegateRecipe.java`, `sg_material_tiers.json` |
+| Salvaging recipes for our gear; Silent Gear blueprints in chests (6%) | `gen_silentgear`, `TieredChestLoot.java` |
+| Quests: "any tier-N" smart-filter tasks, scavenged + Stone Anvil quests, Silent Gear Smithing chapter; **fixed: quest ids must start 0-7** (the 0.5.0 group was dropped by FTB Quests) | `gen_quests.py`, `install.py` |
+
+**Not done (needs Silent Gear at runtime to verify):** Silent Gear legendaries in bags, Silent Gear weapons in chests, elite part drops.
+`set_parts` loot function exists (`{"function":"silentgear:set_parts","parts":[{"part":..., "item":...}]}`) but part material encoding is unverified.
+**Untested in game:** everything Silent Gear (only loads with Silent Gear present), scavenged perks, quest smart filters.
+
+## Previous state (update 4 built)
 
 **Update 4 is built and installed (mod 0.5.0). Waiting for the player's in-game test: [`docs/UPDATE4_TEST.md`](docs/UPDATE4_TEST.md).**
 Design: [`PLAN.md`](PLAN.md) "Update 4 design". Untested in the full pack: anvil screen, JEI tab, quest book, blood moon digging.

@@ -1,0 +1,68 @@
+{
+  "type": "silentgear:simple",
+  "parent": "silentgear:empty",
+  "crafting": {
+    "can_salvage": true,
+    "categories": [
+      "gem",
+      "forgedascent_tier_8"
+    ],
+    "gear_type_blacklist": [],
+    "ingredient": {
+      "tag": "c:gems/black_diamond"
+    }
+  },
+  "display": {
+    "color": "#FF2A2A33",
+    "main_texture_type": "HIGH_CONTRAST",
+    "name": {
+      "translate": "material.forgedascent.black_diamond"
+    },
+    "name_prefix": ""
+  },
+  "properties": {
+    "silentgear:main": {
+      "armor": 45.0,
+      "armor/helmet": 7.0,
+      "armor/chestplate": 18.0,
+      "armor/leggings": 13.0,
+      "armor/boots": 7.0,
+      "armor_durability": 55.0,
+      "armor_toughness": 12.0,
+      "attack_damage": 19.9,
+      "attack_speed": 0.0,
+      "charging_value": 1.0,
+      "draw_speed": 0.0,
+      "durability": 2600.0,
+      "enchantment_value": 12.0,
+      "harvest_speed": 9.5,
+      "harvest_tier": {
+        "incorrect_blocks_for_tool": "forgedascent:incorrect_for_tier_8",
+        "level_hint": "8",
+        "name": "black_diamond"
+      },
+      "magic_armor": 18.0,
+      "magic_damage": 1.0,
+      "ranged_damage": 9.95,
+      "rarity": 80.0,
+      "repair_value": 0.15,
+      "traits": []
+    },
+    "silentgear:tip": {
+      "attack_damage": {
+        "operation": "ADD",
+        "value": 2.5
+      },
+      "durability": {
+        "operation": "ADD",
+        "value": 400
+      }
+    }
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "silentgear"
+    }
+  ]
+}

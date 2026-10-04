@@ -13,12 +13,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT.parent / "profile/config/ftbquests/quests/chapters"
 NS = "forgedascent"
-GROUP_ID = "F0A6ED5A5CE47001"
+GROUP_ID = "70A6ED5A5CE47001"
 
 
 def qid(*parts):
-    """Stable 16-hex-digit FTB Quests id."""
-    return hashlib.md5("|".join(map(str, parts)).encode()).hexdigest()[:16].upper()
+    """Stable 16-hex-digit FTB Quests id. FTB Quests ids are positive longs, so the first digit must be 0-7."""
+    value = int(hashlib.md5("|".join(map(str, parts)).encode()).hexdigest()[:16], 16) & 0x7FFFFFFFFFFFFFFF
+    return f"{value:016X}"
 
 
 def snbt(value, indent=0):
@@ -68,7 +69,12 @@ class Chapter:
         if optional:
             q["optional"] = True
         tasks = []
-        if item:
+        if item and item.startswith("#"):
+            # Any item from a tag, through FTB Filter System (used by ATM10's own quests).
+            tasks.append({"id": qid(self.key, key, "task"), "type": "item", "count": count, "item": {
+                "count": 1, "id": "ftbfiltersystem:smart_filter",
+                "components": {"ftbfiltersystem:filter": f"item_tag({item[1:]})"}}})
+        elif item:
             tasks.append({"id": qid(self.key, key, "task"), "type": "item", "item": {"count": 1, "id": item}, "count": count})
         if kill:
             tasks.append({"id": qid(self.key, key, "kill"), "type": "kill", "entity": kill, "value": 1})
@@ -216,10 +222,23 @@ def main():
                        "the MI compressor.", "4 plates of a tier make a &breinforced plate&r of that tier."] if order == 0
                  else ["4 plates of this tier make the reinforced plate. Reinforce your best gear at your anvil!"])
         x += 1.0
-        for i, g in enumerate(gear):
-            ch.quest(f"gear_{i}", f"Gear up: {name(g)}", x, 0, item=g,
-                     desc=["Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."],
+        for i, (g, kind) in enumerate(zip(gear, ("pickaxe", "chestplate", "sword"))):
+            ch.quest(f"gear_{i}", f"Gear up: any tier-{tier} {kind}", x, 0, item=f"#{NS}:tier_gear/{tier}/{kind}", icon=g,
+                     desc=[f"Any tier-{tier} {kind} counts: pick the material whose perk you like best.",
+                           "Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."],
                      rewards=[("minecraft:experience_bottle", 4)])
+            x += 1.0
+        if order == 0:
+            ch.quest("scavenged", "Scavenger's armor", x, 1, item=f"#{NS}:tier_gear/1/chestplate",
+                     icon=f"{NS}:leaf_chestplate", optional=True,
+                     desc=["Before metal, scavenge: &aLeaf&r (camouflage), &aBark&r, &aFlint&r (thorns), &aBone&r, "
+                           "&aChitin&r (no poison), &aFeather&r (no fall damage), &aShell&r (breathing), &aSlime&r "
+                           "(bouncy) and &aRotten&r (zombies ignore you).",
+                           "Wear a full set to double its perk."])
+            x += 1.0
+            ch.quest("stone_anvil", "Build a Stone Anvil", x, -1, item=f"{NS}:stone_anvil",
+                     desc=["Smooth stone and iron. It crafts and reinforces tier 1-3 gear and Silent Gear parts, "
+                           "and it's the base of the Bronze Anvil."])
             x += 1.0
         if order == 1:
             ch.quest("cutting", "Cut your first gem", x, -1, item=f"{NS}:emery_wheel",
@@ -260,7 +279,34 @@ def main():
                                          "Beyond this lies ATM's own Allthemodium ladder."], xp=500)
         ch.write()
 
-    print(f"Wrote {len(AGES)} chapters to {OUT}")
+    sg = Chapter("forged_ascent_8_silent_gear", len(AGES), "Silent Gear Smithing", "silentgear:pickaxe",
+                 "Mix and match parts at your anvils")
+    sg.quest("intro", "Silent Gear, the Forged Ascent way", 0, 0, check=True, size=1.5, shape="gear",
+             icon="silentgear:pickaxe_blueprint",
+             desc=["Silent Gear builds tools from parts: a &ehead&r, a &erod&r (handle), and optional &etip&r, "
+                   "&ebinding&r, &egrip&r and &ecoating&r.",
+                   "No foundry needed: put a blueprint and materials in a grid. Tier 1-3 materials work in a "
+                   "crafting table; &btier 4+ materials need a Smithy Anvil of that tier&r.",
+                   "Every Forged Ascent metal, alloy and gem is a Silent Gear material, on the same tier ladder."],
+             deps=[], xp=50)
+    sg.quest("blueprint", "Draw a blueprint", 2, -1, item="silentgear:pickaxe_blueprint",
+             desc=["Blueprints are crafted, and rarer ones (katana, mace, spear...) also turn up in chests."])
+    sg.quest("head", "Forge a head", 3, -1, item="silentgear:pickaxe_head",
+             desc=["Blueprint + 3 materials. Mixing materials mixes their stats and traits."])
+    sg.quest("tool", "Assemble a tool", 4, -1, item="silentgear:pickaxe",
+             desc=["Head + rod in a crafting table. Light metals (aluminum, titanium, chromoly...) make fast handles."])
+    sg.quest("tip", "Tip it with a gem", 3, 1, item="silentgear:tip", deps=["blueprint"],
+             desc=["Gem tips add damage and durability: ruby, sapphire, topaz, black diamond..."])
+    sg.quest("flawless", "A flawless cut", 4, 1, item=f"#{NS}:flawless_gems",
+             desc=["Cutting a rough gem has a small chance to also give a &bFlawless&r gem. Flawless gems make the "
+                   "strongest tips and coatings."], rewards=[(f"{NS}:diamond_grit", 4)])
+    sg.quest("coating", "Coat it in superalloy", 5, 1, item="silentgear:coating",
+             desc=["Late alloys (stellite, inconel, osmiridium, tungsten carbide) make coatings that boost any tool."])
+    sg.quest("salvage", "Recycle loot", 6, 0, item="silentgear:salvager", deps=["tool"],
+             desc=["The Salvager breaks gear (including Forged Ascent gear) back into materials."])
+    sg.write()
+
+    print(f"Wrote {len(AGES) + 1} chapters to {OUT}")
 
 
 if __name__ == "__main__":

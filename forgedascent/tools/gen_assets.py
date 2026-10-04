@@ -10,6 +10,7 @@ profile, so they are generated locally and NOT committed (see .gitignore). Run f
 import colorsys
 import io
 import json
+import re
 import shutil
 import zipfile
 from pathlib import Path
@@ -356,7 +357,7 @@ WORLD_TIER_SIGIL = {"frontier": 2, "ascent": 3, "summit": 5, "pinnacle": 6}
 
 # Smithy anvils (must match smithy/SmithyRegistries.java): (id, tier, color, display name)
 FIRST_ANVIL_TIER = 4
-ANVILS = [("bronze", 4, "#C08A4A", "Bronze"), ("steel", 5, "#8A949C", "Steel"), ("gemstone", 6, "#3FB8B0", "Gemstone"),
+ANVILS = [("stone", 3, "#8A8A8A", "Stone"), ("bronze", 4, "#C08A4A", "Bronze"), ("steel", 5, "#8A949C", "Steel"), ("gemstone", 6, "#3FB8B0", "Gemstone"),
           ("titanium", 7, "#B7B4C7", "Titanium"), ("tungsten", 8, "#5C5F66", "Tungsten"),
           ("netherite", 9, "#4A3C3E", "Netherite")]
 PLATE_GRADES = {2: ("Copper", "#C87C4A"), 3: ("Iron", "#D8D8D8"), 4: ("Bronze", "#C08A4A"), 5: ("Steel", "#8A949C"),
@@ -595,14 +596,23 @@ def gear_recipe(item, pattern, key, tier):
 def gen_gear():
     for m in TABLE["gear"]:
         mid, name, color, tier = m["id"], m["name"], m["color"], m["tier"]
-        TIER_MATERIALS.setdefault(tier, []).append(m["repair"])
+        armor_only = m.get("armor_only", False)
+        if armor_only:
+            tag("item", m["repair"], *[e if not e.startswith("#") else e for e in TABLE["scavenged"][mid]])
+        else:
+            TIER_MATERIALS.setdefault(tier, []).append(m["repair"])
+        for kind in ("sword", "pickaxe", "chestplate"):
+            if not (armor_only and kind != "chestplate"):
+                tag("item", f"{NS}:tier_gear/{tier}/{kind}", f"{NS}:{mid}_{kind}")
         for unlock in WORLD_TIER_GEAR.values():
+            if armor_only:
+                break
             if tier >= unlock:
                 for kind in ("pickaxe", "sword", "chestplate"):
                     tag("item", f"{NS}:gear/tier_{unlock}", f"{NS}:{mid}_{kind}")
         key_tool = {"X": {"tag": m["repair"]}, "#": {"tag": "c:rods/wooden"}}
         tns, tprefix = m["tools_from"].split(":")
-        for kind in TOOL_KINDS:
+        for kind in ([] if armor_only else TOOL_KINDS):
             item = f"{mid}_{kind}"
             if kind == "sword":
                 img = draw_sprite(SHAPES["sword"], color)
@@ -734,6 +744,25 @@ def gen_smithy():
         LANG[f"item.{NS}.{item}"] = f"{grade}-Grade Reinforced Plate"
         shaped(item, f"{NS}:{item}", ["PP", "PP"], {"P": {"tag": f"{NS}:tier_plates/{tier}"}}, "misc")
     write_json(f"data/{NS}/recipe/anvil_reinforce.json", {"type": f"{NS}:anvil_reinforce"})
+    write_json(f"data/{NS}/recipe/anvil_repair.json", {"type": f"{NS}:anvil_repair"})
+    LANG["message.forgedascent.flawless"] = "A flawless cut! You found a %s."
+    for gem in TABLE["gems"]:
+        item = f"flawless_{gem['id']}"
+        img = source_or_fallback(f"{gem['item'].split(':')[0]}:item/{gem['item'].split(':')[1]}", gem["color"],
+                                 "minecraft:item/diamond")
+        save_png(f"assets/{NS}/textures/item/{item}.png", img)
+        write_json(f"assets/{NS}/models/item/{item}.json", {"parent": "minecraft:item/generated",
+                                                             "textures": {"layer0": f"{NS}:item/{item}"}})
+        LANG[f"item.{NS}.{item}"] = f"Flawless {gem['name']}"
+        tag("item", f"{NS}:flawless_gems", f"{NS}:{item}")
+    # Quest helper tags: any tier-N gear of a kind (vanilla/other mods added below).
+    for item, t in (("minecraft:iron_sword", 3), ("minecraft:iron_pickaxe", 3), ("minecraft:iron_chestplate", 3),
+                    ("minecraft:diamond_sword", 6), ("minecraft:diamond_pickaxe", 6), ("minecraft:diamond_chestplate", 6),
+                    ("minecraft:netherite_sword", 9), ("minecraft:netherite_pickaxe", 9), ("minecraft:netherite_chestplate", 9)):
+        tag("item", f"{NS}:tier_gear/{t}/{item.split('_')[-1]}", item)
+    for prefix, t in (("mekanismtools:bronze_", 4), ("mekanismtools:steel_", 5), ("mekanismtools:osmium_", 5)):
+        for kind in ("sword", "pickaxe", "chestplate"):
+            tag("item", f"{NS}:tier_gear/{t}/{kind}", opt(prefix + kind))
 
     # Sigils and Treasure Bags per gate.
     for gate in TABLE["gates"]:
@@ -789,10 +818,13 @@ def gen_smithy():
         tag("block", "minecraft:mineable/pickaxe", f"{NS}:{block}")
         LANG[f"block.{NS}.{block}"] = f"{name} Anvil"
         plates = {"tag": f"{NS}:tier_plates/{min(tier, 8)}"}
-        sigil = {"item": f"{NS}:sigil_{i + 1}"}
+        sigil = {"item": f"{NS}:sigil_{i}"}
         if i == 0:
-            shaped(block, f"{NS}:{block}", ["PPP", " S ", "III"],
-                   {"P": plates, "S": sigil, "I": {"tag": "c:storage_blocks/iron"}}, "misc")
+            shaped(block, f"{NS}:{block}", ["III", " S ", "SSS"],
+                   {"I": {"tag": "c:ingots/iron"}, "S": {"item": "minecraft:smooth_stone"}}, "misc")
+        elif i == 1:
+            shaped(block, f"{NS}:{block}", ["PPP", "PAP", "PSP"],
+                   {"P": plates, "S": sigil, "A": {"item": f"{NS}:stone_anvil"}}, "misc")
         else:
             prev = {"item": f"{NS}:{ANVILS[i - 1][0]}_anvil"}
             top = {"tag": "c:ingots/netherite"} if aid == "netherite" else plates
@@ -832,6 +864,206 @@ def gen_smithy():
 
 
 MOVED = []
+
+# ---------------------------------------------------------------- Silent Gear (PLAN.md "Update 5 plan")
+
+SWORD_CURVE = [4, 5, 6, 7, 9, 10.5, 13, 18, 24, 26]
+ARMOR_CURVE = [5, 7, 10, 14, 18, 23, 29, 36, 45, 52]
+VANILLA_ATTACK = [0, 1, 1.5, 2, 2.5, 3, 3, 3.5, 4, 4]
+VANILLA_ARMOR = [5, 7, 11, 15, 15, 16, 20, 20, 20, 20]
+# Tier of Silent Gear's own materials (Silent Gear, Silent's Gems, Metalworks), by material name.
+SG_TIERS = {
+    "wood": 0, "netherwood": 0, "bamboo": 0, "paper": 0, "leather": 0, "wool": 0, "sinew": 0, "fine_silk": 0,
+    "string": 0, "flax": 0, "fluffy_string": 0, "slime": 0, "meat": 0, "stone": 1, "basalt": 1, "blackstone": 1,
+    "end_stone": 1, "netherrack": 1, "terracotta": 1, "flint": 1, "bone": 1, "glass": 1, "prismarine": 2,
+    "copper": 2, "tin": 2, "zinc": 2, "gold": 2, "iron": 3, "lead": 3, "nickel": 3, "aluminum": 3, "lapis_lazuli": 3,
+    "redstone": 3, "opal": 3, "pearl": 3, "turquoise": 3, "moldavite": 3, "ammolite": 3, "silver": 4, "bronze": 4,
+    "brass": 4, "invar": 4, "electrum": 4, "constantan": 4, "amethyst": 4, "quartz": 4, "glowstone": 4, "kyanite": 4,
+    "citrine": 4, "carnelian": 4, "rose_quartz": 4, "steel": 5, "osmium": 5, "crimson_iron": 5, "azure_silver": 5,
+    "uranium": 5, "garnet": 5, "peridot": 5, "iolite": 5, "tanzanite": 5, "emerald": 6, "diamond": 6, "platinum": 6,
+    "refined_glowstone": 6, "blaze_gold": 6, "obsidian": 6, "topaz": 6, "aquamarine": 6, "heliodor": 6,
+    "white_diamond": 6, "crimson_steel": 7, "azure_electrum": 7, "lumium": 7, "signalum": 7, "ruby": 7, "sapphire": 7,
+    "alexandrite": 7, "enderium": 8, "refined_obsidian": 8, "black_diamond": 8, "netherite": 9, "tyrian_steel": 9,
+    "uru_metal": 9,
+}
+# Silent Gear parts our materials can fill besides the head: (part, property overrides)
+SG_ROD_METALS = {"aluminum", "duralumin", "titanium", "chromoly", "titanium_alloy", "steel", "stainless_steel", "tin"}
+SG_COATING_ALLOYS = {"stellite", "inconel", "osmiridium", "tungsten_carbide", "high_speed_steel"}
+SG_TRAITS = {"tin": "malleable", "lead": "heavy", "aluminum": "light", "duralumin": "light", "cobalt": "accelerate",
+             "alnico": "magnetic", "titanium": "light", "chromium": "hard", "stainless_steel": "sturdy",
+             "tungsten": "heavy", "tungsten_carbide": "hard", "high_speed_steel": "accelerate", "stellite": "sturdy",
+             "inconel": "fireproof", "constantan": "heat_resistant", "rose_gold": "lucky", "white_gold": "lustrous",
+             "ruby": "sharp", "emerald": "lucky", "platinum": "lustrous"}
+
+
+def sg_scale(value, factor):
+    return round(value * factor, 2) if isinstance(value, (int, float)) else value
+
+
+def sg_material(m, tier, ingredient, categories, name_key, main=True):
+    a, t = m["armor"], m["tool"]
+    total = a["helmet"] + a["chestplate"] + a["leggings"] + a["boots"]
+    props = {}
+    if main:
+        props["silentgear:main"] = {
+            "armor": float(total), "armor/helmet": float(a["helmet"]), "armor/chestplate": float(a["chestplate"]),
+            "armor/leggings": float(a["leggings"]), "armor/boots": float(a["boots"]),
+            "armor_durability": float(a["durability"]), "armor_toughness": float(a["toughness"] * 4),
+            "attack_damage": float(t["attack"]), "attack_speed": 0.0, "charging_value": 1.0, "draw_speed": 0.0,
+            "durability": float(t["uses"]), "enchantment_value": float(t["enchant"]),
+            "harvest_speed": float(t["speed"]),
+            "harvest_tier": {"incorrect_blocks_for_tool": f"{NS}:incorrect_for_tier_{tier}",
+                             "level_hint": str(tier), "name": m["id"]},
+            "magic_armor": round(total * 0.4, 1), "magic_damage": 1.0, "ranged_damage": round(t["attack"] * 0.5, 2),
+            "rarity": float(tier * 10), "repair_value": 0.15,
+            "traits": ([{"conditions": [], "level": 1, "trait": f"silentgear:{SG_TRAITS[m['id']]}"}]
+                       if m["id"] in SG_TRAITS else []),
+        }
+    if m["id"] in SG_ROD_METALS:
+        props["silentgear:rod"] = {"attack_speed": {"operation": "ADD", "value": 0.1},
+                                   "durability": {"operation": "MULTIPLY_TOTAL", "value": 0.05 * tier}}
+    if m["id"] in SG_COATING_ALLOYS:
+        props["silentgear:coating"] = {"durability": {"operation": "MULTIPLY_TOTAL", "value": 0.25},
+                                       "attack_damage": {"operation": "MULTIPLY_TOTAL", "value": 0.1}}
+    if m.get("gem_tip"):
+        props["silentgear:tip"] = m["gem_tip"]
+    return {"type": "silentgear:simple", "parent": "silentgear:empty",
+            "crafting": {"can_salvage": True, "categories": categories, "gear_type_blacklist": [],
+                         "ingredient": ingredient},
+            "display": {"color": "#FF" + m["color"].lstrip("#").upper(), "main_texture_type": "HIGH_CONTRAST",
+                        "name": {"translate": name_key}, "name_prefix": ""},
+            "properties": props}
+
+
+def tier_categories(tier):
+    return [f"{NS}_tier_{tier}"] + ([f"{NS}_low"] if tier <= 3 else [])
+
+
+def gen_silentgear():
+    tiers = {}
+    gem_items = {g["id"]: g for g in TABLE["gems"]}
+    sg_cond = [{"type": "neoforge:mod_loaded", "modid": "silentgear"}]
+    # Our materials as Silent Gear materials.
+    for m in TABLE["gear"]:
+        if m.get("armor_only"):
+            continue
+        mid, tier = m["id"], m["tier"]
+        kind = "gem" if m["repair"].startswith("c:gems/") else "metal"
+        gem = gem_items.get(mid)
+        if gem:
+            m = dict(m, gem_tip={"attack_damage": {"operation": "ADD", "value": round(0.5 + tier * 0.25, 2)},
+                                 "durability": {"operation": "ADD", "value": 50 * tier}})
+        data = sg_material(m, tier, {"tag": m["repair"]}, [kind] + tier_categories(tier), f"material.{NS}.{mid}")
+        data["neoforge:conditions"] = sg_cond
+        write_json(f"data/{NS}/silentgear_materials/{mid}.json", data)
+        LANG[f"material.{NS}.{mid}"] = m["name"]
+        tiers[f"{NS}:{mid}"] = tier
+    # Flawless gems: strong tips and coatings only.
+    for gem in TABLE["gems"]:
+        gid, tier = gem["id"], gem["tier"] + 1
+        props = {"silentgear:tip": {"attack_damage": {"operation": "ADD", "value": round(1.5 + tier * 0.5, 2)},
+                                    "durability": {"operation": "ADD", "value": 150 * tier},
+                                    "harvest_speed": {"operation": "ADD", "value": 0.5 * tier}},
+                 "silentgear:coating": {"durability": {"operation": "MULTIPLY_TOTAL", "value": 0.35},
+                                        "attack_damage": {"operation": "MULTIPLY_TOTAL", "value": 0.15},
+                                        "enchantment_value": {"operation": "ADD", "value": 5.0}}}
+        write_json(f"data/{NS}/silentgear_materials/flawless_{gid}.json", {
+            "neoforge:conditions": sg_cond, "type": "silentgear:simple", "parent": "silentgear:empty",
+            "crafting": {"can_salvage": False, "categories": ["gem"] + tier_categories(tier), "gear_type_blacklist": [],
+                         "ingredient": {"item": f"{NS}:flawless_{gid}"}},
+            "display": {"color": "#FF" + gem["color"].lstrip("#").upper(), "main_texture_type": "HIGH_CONTRAST",
+                        "name": {"translate": f"material.{NS}.flawless_{gid}"}, "name_prefix": ""},
+            "properties": props})
+        LANG[f"material.{NS}.flawless_{gid}"] = f"Flawless {gem['name']}"
+        tiers[f"{NS}:flawless_{gid}"] = tier
+
+    # Rebalance Silent Gear's own materials (Metalworks' versions win over the originals). Git-ignored copies.
+    jars = {j.name: j for j in PACK_MODS.glob("*.jar")}
+    sources = [j for n, j in jars.items() if n.startswith(("silent-gear-", "silentgems-"))] + \
+              [j for n, j in jars.items() if n.startswith("sgearmetalworks")]
+    materials = {}
+    for jar in sources:
+        with zipfile.ZipFile(jar) as z:
+            for n in z.namelist():
+                mm = re.match(r"data/([a-z_]+)/silentgear_materials/([a-z0-9_/]+)\.json$", n)
+                if mm:
+                    materials[(mm.group(1), mm.group(2))] = json.loads(z.read(n))
+    shutil.rmtree(PROFILE_OUT / "kubejs/data/silentgear/silentgear_materials", ignore_errors=True)
+    shutil.rmtree(PROFILE_OUT / "kubejs/data/silentgems/silentgear_materials", ignore_errors=True)
+    shutil.rmtree(PROFILE_OUT / "kubejs/data/sgearmetalworks/silentgear_materials", ignore_errors=True)
+    for (ns, path), data in materials.items():
+        tier = SG_TIERS.get(path.split("/")[-1])
+        if tier is None:
+            continue
+        tiers[f"{ns}:{path}"] = tier
+        crafting = data.setdefault("crafting", {})
+        crafting["categories"] = [c for c in crafting.get("categories", []) if not c.startswith(NS)] + tier_categories(tier)
+        main = data.get("properties", {}).get("silentgear:main")
+        if isinstance(main, dict):
+            ht = main.get("harvest_tier")
+            if isinstance(ht, dict):
+                ht["incorrect_blocks_for_tool"] = f"{NS}:incorrect_for_tier_{tier}"
+                ht["level_hint"] = str(tier)
+            if isinstance(main.get("attack_damage"), (int, float)) and main["attack_damage"] > 0:
+                ratio = max(0.75, min(1.25, main["attack_damage"] / max(0.5, VANILLA_ATTACK[tier])))
+                main["attack_damage"] = round((SWORD_CURVE[tier] - 4) * ratio, 2)
+            if isinstance(main.get("armor"), (int, float)) and main["armor"] > 0:
+                ratio = max(0.75, min(1.25, main["armor"] / VANILLA_ARMOR[tier]))
+                factor = ARMOR_CURVE[tier] * ratio / main["armor"]
+                for key in [k for k in main if k == "armor" or k.startswith("armor/")]:
+                    main[key] = sg_scale(main[key], factor)
+        write_json(f"kubejs/data/{ns}/silentgear_materials/{path}.json", data, base=PROFILE_OUT)
+    write_json(f"{NS}/sg_material_tiers.json", dict(sorted(tiers.items())))
+
+    # Part recipes: crafting table for tier 1-3 materials, any Smithy Anvil up to its tier for all materials.
+    shutil.rmtree(PROFILE_OUT / "kubejs/data/silentgear/recipe", ignore_errors=True)
+    mw = next((j for n, j in jars.items() if n.startswith("sgearmetalworks")), None)
+    if mw:
+        with zipfile.ZipFile(mw) as z:
+            for n in z.namelist():
+                mm = re.match(r"data/silentgear/recipe/(gear/[a-z0-9_]+)\.json$", n)
+                if not mm:
+                    continue
+                recipe = json.loads(z.read(n))
+                text = json.dumps(recipe)
+                if "not_categories" not in text:
+                    continue
+                anvil = json.loads(text.replace('"not_categories": ["casting"], ', '').replace('"not_categories": ["casting"]', ''))
+                table = json.loads(text.replace('"not_categories": ["casting"]', f'"categories": ["{NS}_low"]'))
+                write_json(f"kubejs/data/silentgear/recipe/{mm.group(1)}.json", table, base=PROFILE_OUT)
+                anvil.pop("neoforge:conditions", None)
+                write_json(f"data/{NS}/recipe/sg/{mm.group(1).split('/')[-1]}.json",
+                           {"neoforge:conditions": sg_cond, "type": f"{NS}:anvil_delegate", "recipe": anvil})
+
+    # Salvaging our gear back into materials.
+    piece_returns = {"sword": 1, "pickaxe": 2, "axe": 2, "shovel": 1, "hoe": 1,
+                     "helmet": 3, "chestplate": 5, "leggings": 4, "boots": 2}
+    own_ingots = {i["id"] for i in TABLE["ingots"]}
+    for m in TABLE["gear"]:
+        mid = m["id"]
+        if m.get("armor_only"):
+            base = TABLE["scavenged"][mid][0]
+            if base.startswith("#"):
+                continue
+            result = base
+        elif mid in gem_items:
+            result = gem_items[mid]["item"]
+        elif mid in own_ingots:
+            result = f"{NS}:{mid}_ingot"
+        elif mid in ("tungsten", "stainless_steel"):
+            result = f"modern_industrialization:{mid}_ingot"
+        else:
+            result = f"alltheores:{mid}_ingot"
+        if mid == "amethyst":
+            result = "minecraft:amethyst_shard"
+        for kind, count in piece_returns.items():
+            if m.get("armor_only") and kind in TOOL_KINDS:
+                continue
+            mods = sorted({"silentgear", result.split(":")[0]} - {"minecraft", NS})
+            write_json(f"data/{NS}/recipe/salvage/{mid}_{kind}.json", {
+                "neoforge:conditions": [{"type": "neoforge:mod_loaded", "modid": x} for x in mods],
+                "type": "silentgear:salvaging", "ingredient": {"item": f"{NS}:{mid}_{kind}"},
+                "results": [{"count": count, "id": result}]})
 
 
 def gen_loot_modifiers():
@@ -957,6 +1189,7 @@ def main():
     gen_alloys()
     gen_elites()
     gen_smithy()
+    gen_silentgear()
     gen_loot_modifiers()
     gen_profile()
     write_tags()

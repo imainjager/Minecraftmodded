@@ -37,6 +37,8 @@ public class ForgedAscent {
         SmithyRegistries.register(modBus);
         EliteMobs.register(modBus);
         GearTiers.register();
+        ArmorPerks.register();
+        com.imainjager.forgedascent.smithy.GemCutting.register();
         BossGates.register();
         BloodMoon.register();
         modBus.addListener((RegisterPayloadHandlersEvent e) -> e.registrar("1").playToClient(

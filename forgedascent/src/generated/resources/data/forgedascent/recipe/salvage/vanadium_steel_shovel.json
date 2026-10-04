@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "silentgear"
+    }
+  ],
+  "type": "silentgear:salvaging",
+  "ingredient": {
+    "item": "forgedascent:vanadium_steel_shovel"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "forgedascent:vanadium_steel_ingot"
+    }
+  ]
+}

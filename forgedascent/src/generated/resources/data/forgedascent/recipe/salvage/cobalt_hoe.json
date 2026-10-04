@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "silentgear"
+    }
+  ],
+  "type": "silentgear:salvaging",
+  "ingredient": {
+    "item": "forgedascent:cobalt_hoe"
+  },
+  "results": [
+    {
+      "count": 1,
+      "id": "forgedascent:cobalt_ingot"
+    }
+  ]
+}

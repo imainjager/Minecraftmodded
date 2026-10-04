@@ -1,0 +1,68 @@
+{
+  "type": "silentgear:simple",
+  "parent": "silentgear:empty",
+  "crafting": {
+    "can_salvage": true,
+    "categories": [
+      "gem",
+      "forgedascent_tier_7"
+    ],
+    "gear_type_blacklist": [],
+    "ingredient": {
+      "tag": "c:gems/sapphire"
+    }
+  },
+  "display": {
+    "color": "#FF2950C8",
+    "main_texture_type": "HIGH_CONTRAST",
+    "name": {
+      "translate": "material.forgedascent.sapphire"
+    },
+    "name_prefix": ""
+  },
+  "properties": {
+    "silentgear:main": {
+      "armor": 37.0,
+      "armor/helmet": 6.0,
+      "armor/chestplate": 15.0,
+      "armor/leggings": 10.0,
+      "armor/boots": 6.0,
+      "armor_durability": 40.0,
+      "armor_toughness": 8.0,
+      "attack_damage": 13.9,
+      "attack_speed": 0.0,
+      "charging_value": 1.0,
+      "draw_speed": 0.0,
+      "durability": 1450.0,
+      "enchantment_value": 14.0,
+      "harvest_speed": 8.5,
+      "harvest_tier": {
+        "incorrect_blocks_for_tool": "forgedascent:incorrect_for_tier_7",
+        "level_hint": "7",
+        "name": "sapphire"
+      },
+      "magic_armor": 14.8,
+      "magic_damage": 1.0,
+      "ranged_damage": 6.95,
+      "rarity": 70.0,
+      "repair_value": 0.15,
+      "traits": []
+    },
+    "silentgear:tip": {
+      "attack_damage": {
+        "operation": "ADD",
+        "value": 2.25
+      },
+      "durability": {
+        "operation": "ADD",
+        "value": 350
+      }
+    }
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "silentgear"
+    }
+  ]
+}

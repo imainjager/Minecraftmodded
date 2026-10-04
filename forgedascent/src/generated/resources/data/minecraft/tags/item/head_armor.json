@@ -39,6 +39,15 @@
     "forgedascent:alexandrite_helmet",
     "forgedascent:ruby_helmet",
     "forgedascent:sapphire_helmet",
-    "forgedascent:black_diamond_helmet"
+    "forgedascent:black_diamond_helmet",
+    "forgedascent:leaf_helmet",
+    "forgedascent:bark_helmet",
+    "forgedascent:flint_helmet",
+    "forgedascent:bone_helmet",
+    "forgedascent:chitin_helmet",
+    "forgedascent:feather_helmet",
+    "forgedascent:shell_helmet",
+    "forgedascent:slime_helmet",
+    "forgedascent:rotten_helmet"
   ]
 }

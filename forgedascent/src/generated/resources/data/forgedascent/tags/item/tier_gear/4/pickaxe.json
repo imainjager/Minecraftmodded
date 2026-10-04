@@ -1,0 +1,16 @@
+{
+  "values": [
+    "forgedascent:brass_pickaxe",
+    "forgedascent:invar_pickaxe",
+    "forgedascent:constantan_pickaxe",
+    "forgedascent:bismuth_bronze_pickaxe",
+    "forgedascent:duralumin_pickaxe",
+    "forgedascent:electrum_pickaxe",
+    "forgedascent:rose_gold_pickaxe",
+    "forgedascent:amethyst_pickaxe",
+    {
+      "id": "mekanismtools:bronze_pickaxe",
+      "required": false
+    }
+  ]
+}

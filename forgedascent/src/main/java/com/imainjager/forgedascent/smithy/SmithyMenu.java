@@ -67,6 +67,10 @@ public class SmithyMenu extends AbstractContainerMenu {
             if (holder.value().tier() > tier) continue;
             if (resultSlots.setRecipeUsed(level, serverPlayer, holder)) {
                 ItemStack crafted = holder.value().assemble(input, level.registryAccess());
+                if (holder.value() instanceof AnvilDelegateRecipe
+                        && AnvilDelegateRecipe.craftedTier(crafted, level.registryAccess()) > tier) {
+                    continue;
+                }
                 if (!crafted.isEmpty()) {
                     result = crafted;
                     break;

@@ -1,0 +1,17 @@
+{
+  "values": [
+    "forgedascent:cobalt_chestplate",
+    "forgedascent:manganese_steel_chestplate",
+    "forgedascent:alnico_chestplate",
+    "forgedascent:garnet_chestplate",
+    "forgedascent:peridot_chestplate",
+    {
+      "id": "mekanismtools:steel_chestplate",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:osmium_chestplate",
+      "required": false
+    }
+  ]
+}

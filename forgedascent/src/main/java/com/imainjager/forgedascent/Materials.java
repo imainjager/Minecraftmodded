@@ -18,15 +18,18 @@ public final class Materials {
     public record Ore(String id, String name, List<String> variants) {}
 
     /** A gem whose ores drop rough_&lt;id&gt; (PLAN.md section 5). */
-    public record Gem(String id, String name, int tier) {}
+    public record Gem(String id, String name, int tier, String item) {}
 
     public record ToolStats(int uses, float speed, float attack, int enchant) {}
 
+    /** A per-piece attribute bonus ("op" is add_value, add_multiplied_base or add_multiplied_total). */
+    public record Perk(String attribute, double amount, String op) {}
+
     public record ArmorStats(int durability, int helmet, int chestplate, int leggings, int boots,
                              float toughness, float knockback, int enchant,
-                             double moveSpeed, double burningTime, double luck) {}
+                             double moveSpeed, double burningTime, double luck, List<Perk> perks) {}
 
-    public record Gear(String id, String name, int tier, String repair, ToolStats tool, ArmorStats armor) {}
+    public record Gear(String id, String name, int tier, String repair, boolean armorOnly, ToolStats tool, ArmorStats armor) {}
 
     public static final List<Ingot> INGOTS = new ArrayList<>();
     public static final List<Ore> ORES = new ArrayList<>();
@@ -54,24 +57,33 @@ public final class Materials {
 
             for (JsonElement e : root.getAsJsonArray("gems")) {
                 JsonObject o = e.getAsJsonObject();
-                GEMS.add(new Gem(o.get("id").getAsString(), o.get("name").getAsString(), o.get("tier").getAsInt()));
+                GEMS.add(new Gem(o.get("id").getAsString(), o.get("name").getAsString(), o.get("tier").getAsInt(),
+                        o.get("item").getAsString()));
             }
 
             for (JsonElement e : root.getAsJsonArray("gear")) {
                 JsonObject o = e.getAsJsonObject();
                 JsonObject t = o.getAsJsonObject("tool");
                 JsonObject a = o.getAsJsonObject("armor");
+                List<Perk> perks = new ArrayList<>();
+                if (a.has("perks")) {
+                    for (JsonElement p : a.getAsJsonArray("perks")) {
+                        JsonObject po = p.getAsJsonObject();
+                        perks.add(new Perk(po.get("attribute").getAsString(), po.get("amount").getAsDouble(), po.get("op").getAsString()));
+                    }
+                }
                 GEAR.add(new Gear(
                         o.get("id").getAsString(),
                         o.get("name").getAsString(),
                         o.get("tier").getAsInt(),
                         o.get("repair").getAsString(),
+                        o.has("armor_only") && o.get("armor_only").getAsBoolean(),
                         new ToolStats(t.get("uses").getAsInt(), t.get("speed").getAsFloat(),
                                 t.get("attack").getAsFloat(), t.get("enchant").getAsInt()),
                         new ArmorStats(a.get("durability").getAsInt(), a.get("helmet").getAsInt(),
                                 a.get("chestplate").getAsInt(), a.get("leggings").getAsInt(), a.get("boots").getAsInt(),
                                 a.get("toughness").getAsFloat(), a.get("knockback").getAsFloat(), a.get("enchant").getAsInt(),
-                                optional(a, "move_speed"), optional(a, "burning_time"), optional(a, "luck"))));
+                                optional(a, "move_speed"), optional(a, "burning_time"), optional(a, "luck"), perks)));
             }
         } catch (Exception ex) {
             throw new RuntimeException("Forged Ascent could not read materials.json", ex);

@@ -1,0 +1,64 @@
+{
+  "type": "silentgear:simple",
+  "parent": "silentgear:empty",
+  "crafting": {
+    "can_salvage": true,
+    "categories": [
+      "metal",
+      "forgedascent_tier_5"
+    ],
+    "gear_type_blacklist": [],
+    "ingredient": {
+      "tag": "c:ingots/alnico"
+    }
+  },
+  "display": {
+    "color": "#FF8A7FA8",
+    "main_texture_type": "HIGH_CONTRAST",
+    "name": {
+      "translate": "material.forgedascent.alnico"
+    },
+    "name_prefix": ""
+  },
+  "properties": {
+    "silentgear:main": {
+      "armor": 22.0,
+      "armor/helmet": 3.0,
+      "armor/chestplate": 9.0,
+      "armor/leggings": 7.0,
+      "armor/boots": 3.0,
+      "armor_durability": 22.0,
+      "armor_toughness": 0.0,
+      "attack_damage": 6.0,
+      "attack_speed": 0.0,
+      "charging_value": 1.0,
+      "draw_speed": 0.0,
+      "durability": 500.0,
+      "enchantment_value": 12.0,
+      "harvest_speed": 7.0,
+      "harvest_tier": {
+        "incorrect_blocks_for_tool": "forgedascent:incorrect_for_tier_5",
+        "level_hint": "5",
+        "name": "alnico"
+      },
+      "magic_armor": 8.8,
+      "magic_damage": 1.0,
+      "ranged_damage": 3.0,
+      "rarity": 50.0,
+      "repair_value": 0.15,
+      "traits": [
+        {
+          "conditions": [],
+          "level": 1,
+          "trait": "silentgear:magnetic"
+        }
+      ]
+    }
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "silentgear"
+    }
+  ]
+}

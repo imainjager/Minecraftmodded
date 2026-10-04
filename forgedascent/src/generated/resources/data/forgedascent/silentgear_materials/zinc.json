@@ -1,0 +1,59 @@
+{
+  "type": "silentgear:simple",
+  "parent": "silentgear:empty",
+  "crafting": {
+    "can_salvage": true,
+    "categories": [
+      "metal",
+      "forgedascent_tier_2",
+      "forgedascent_low"
+    ],
+    "gear_type_blacklist": [],
+    "ingredient": {
+      "tag": "c:ingots/zinc"
+    }
+  },
+  "display": {
+    "color": "#FFA9BDB7",
+    "main_texture_type": "HIGH_CONTRAST",
+    "name": {
+      "translate": "material.forgedascent.zinc"
+    },
+    "name_prefix": ""
+  },
+  "properties": {
+    "silentgear:main": {
+      "armor": 12.0,
+      "armor/helmet": 2.0,
+      "armor/chestplate": 5.0,
+      "armor/leggings": 3.0,
+      "armor/boots": 2.0,
+      "armor_durability": 13.0,
+      "armor_toughness": 0.0,
+      "attack_damage": 2.2,
+      "attack_speed": 0.0,
+      "charging_value": 1.0,
+      "draw_speed": 0.0,
+      "durability": 220.0,
+      "enchantment_value": 8.0,
+      "harvest_speed": 4.5,
+      "harvest_tier": {
+        "incorrect_blocks_for_tool": "forgedascent:incorrect_for_tier_2",
+        "level_hint": "2",
+        "name": "zinc"
+      },
+      "magic_armor": 4.8,
+      "magic_damage": 1.0,
+      "ranged_damage": 1.1,
+      "rarity": 20.0,
+      "repair_value": 0.15,
+      "traits": []
+    }
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "silentgear"
+    }
+  ]
+}

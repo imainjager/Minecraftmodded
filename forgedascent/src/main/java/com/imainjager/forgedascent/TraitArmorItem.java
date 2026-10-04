@@ -2,6 +2,8 @@ package com.imainjager.forgedascent;
 
 import com.google.common.base.Suppliers;
 import net.minecraft.core.Holder;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -29,6 +31,18 @@ public class TraitArmorItem extends ArmorItem {
                 mods = mods.withModifierAdded(Attributes.BURNING_TIME,
                         new AttributeModifier(ForgedAscent.id("armor_burning." + type.getName()), stats.burningTime(),
                                 AttributeModifier.Operation.ADD_MULTIPLIED_BASE), slot);
+            }
+            for (Materials.Perk perk : stats.perks()) {
+                var attribute = BuiltInRegistries.ATTRIBUTE.getHolder(ResourceLocation.parse(perk.attribute()));
+                if (attribute.isEmpty()) continue;
+                AttributeModifier.Operation op = switch (perk.op()) {
+                    case "add_multiplied_base" -> AttributeModifier.Operation.ADD_MULTIPLIED_BASE;
+                    case "add_multiplied_total" -> AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL;
+                    default -> AttributeModifier.Operation.ADD_VALUE;
+                };
+                String path = ResourceLocation.parse(perk.attribute()).getPath().replace('.', '_');
+                mods = mods.withModifierAdded(attribute.get(), new AttributeModifier(
+                        ForgedAscent.id("perk." + path + "." + type.getName()), perk.amount(), op), slot);
             }
             if (stats.luck() != 0) {
                 mods = mods.withModifierAdded(Attributes.LUCK,

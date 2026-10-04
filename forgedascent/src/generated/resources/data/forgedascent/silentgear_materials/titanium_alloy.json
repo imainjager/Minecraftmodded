@@ -1,0 +1,68 @@
+{
+  "type": "silentgear:simple",
+  "parent": "silentgear:empty",
+  "crafting": {
+    "can_salvage": true,
+    "categories": [
+      "metal",
+      "forgedascent_tier_7"
+    ],
+    "gear_type_blacklist": [],
+    "ingredient": {
+      "tag": "c:ingots/titanium_alloy"
+    }
+  },
+  "display": {
+    "color": "#FF9E9AB8",
+    "main_texture_type": "HIGH_CONTRAST",
+    "name": {
+      "translate": "material.forgedascent.titanium_alloy"
+    },
+    "name_prefix": ""
+  },
+  "properties": {
+    "silentgear:main": {
+      "armor": 36.0,
+      "armor/helmet": 5.0,
+      "armor/chestplate": 14.0,
+      "armor/leggings": 12.0,
+      "armor/boots": 5.0,
+      "armor_durability": 40.0,
+      "armor_toughness": 8.0,
+      "attack_damage": 13.9,
+      "attack_speed": 0.0,
+      "charging_value": 1.0,
+      "draw_speed": 0.0,
+      "durability": 1500.0,
+      "enchantment_value": 14.0,
+      "harvest_speed": 9.0,
+      "harvest_tier": {
+        "incorrect_blocks_for_tool": "forgedascent:incorrect_for_tier_7",
+        "level_hint": "7",
+        "name": "titanium_alloy"
+      },
+      "magic_armor": 14.4,
+      "magic_damage": 1.0,
+      "ranged_damage": 6.95,
+      "rarity": 70.0,
+      "repair_value": 0.15,
+      "traits": []
+    },
+    "silentgear:rod": {
+      "attack_speed": {
+        "operation": "ADD",
+        "value": 0.1
+      },
+      "durability": {
+        "operation": "MULTIPLY_TOTAL",
+        "value": 0.35000000000000003
+      }
+    }
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "silentgear"
+    }
+  ]
+}

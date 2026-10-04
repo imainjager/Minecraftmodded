@@ -1,0 +1,16 @@
+{
+  "values": [
+    "forgedascent:brass_chestplate",
+    "forgedascent:invar_chestplate",
+    "forgedascent:constantan_chestplate",
+    "forgedascent:bismuth_bronze_chestplate",
+    "forgedascent:duralumin_chestplate",
+    "forgedascent:electrum_chestplate",
+    "forgedascent:rose_gold_chestplate",
+    "forgedascent:amethyst_chestplate",
+    {
+      "id": "mekanismtools:bronze_chestplate",
+      "required": false
+    }
+  ]
+}

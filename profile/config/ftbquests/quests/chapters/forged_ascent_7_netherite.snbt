@@ -2,7 +2,7 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: "circle"
 	filename: "forged_ascent_7_netherite"
-	group: "F0A6ED5A5CE47001"
+	group: "70A6ED5A5CE47001"
 	icon: {
 		id: "minecraft:netherite_pickaxe"
 	}
@@ -15,7 +15,7 @@
 	title: "Netherite Age"
 	quests: [
 		{
-			id: "D6988A837570F3E4"
+			id: "56988A837570F3E4"
 			title: "Forge the Netherite Anvil"
 			x: 0.0d
 			y: 0.0d
@@ -40,7 +40,7 @@
 			]
 			rewards: [
 				{
-					id: "982A611B1232B60A"
+					id: "182A611B1232B60A"
 					type: "item"
 					item: {
 						count: 1
@@ -56,7 +56,7 @@
 			]
 		}
 		{
-			id: "D55357FE92A38F58"
+			id: "555357FE92A38F58"
 			title: "Find Netherite Ingot"
 			x: 2.0d
 			y: -1.0d
@@ -64,11 +64,11 @@
 				"Needs a tier-8 pickaxe or better."
 			]
 			dependencies: [
-				"D6988A837570F3E4"
+				"56988A837570F3E4"
 			]
 			tasks: [
 				{
-					id: "BAA8363AD3DC3980"
+					id: "3AA8363AD3DC3980"
 					type: "item"
 					item: {
 						count: 1
@@ -87,7 +87,7 @@
 				"4 plates of this tier make the reinforced plate. Reinforce your best gear at your anvil!"
 			]
 			dependencies: [
-				"D55357FE92A38F58"
+				"555357FE92A38F58"
 			]
 			tasks: [
 				{
@@ -103,12 +103,16 @@
 		}
 		{
 			id: "0CD8C1056438DB64"
-			title: "Gear up: Netherite Pickaxe"
+			title: "Gear up: any tier-9 pickaxe"
 			x: 4.0d
 			y: 0.0d
 			description: [
+				"Any tier-9 pickaxe counts: pick the material whose perk you like best."
 				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
 			]
+			icon: {
+				id: "minecraft:netherite_pickaxe"
+			}
 			dependencies: [
 				"7454FAF694612E69"
 			]
@@ -116,11 +120,14 @@
 				{
 					id: "019CE0F9152A4093"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
-						id: "minecraft:netherite_pickaxe"
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							ftbfiltersystem:filter: "item_tag(forgedascent:tier_gear/9/pickaxe)"
+						}
 					}
-					count: 1
 				}
 			]
 			rewards: [
@@ -137,12 +144,16 @@
 		}
 		{
 			id: "362F47231FE2B5E5"
-			title: "Gear up: Netherite Chestplate"
+			title: "Gear up: any tier-9 chestplate"
 			x: 5.0d
 			y: 0.0d
 			description: [
+				"Any tier-9 chestplate counts: pick the material whose perk you like best."
 				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
 			]
+			icon: {
+				id: "minecraft:netherite_chestplate"
+			}
 			dependencies: [
 				"0CD8C1056438DB64"
 			]
@@ -150,11 +161,14 @@
 				{
 					id: "29158A184C8EBEDD"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
-						id: "minecraft:netherite_chestplate"
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							ftbfiltersystem:filter: "item_tag(forgedascent:tier_gear/9/chestplate)"
+						}
 					}
-					count: 1
 				}
 			]
 			rewards: [
@@ -186,7 +200,7 @@
 			optional: true
 			tasks: [
 				{
-					id: "DD16795030EA730B"
+					id: "5D16795030EA730B"
 					type: "kill"
 					entity: "cataclysm:scylla"
 					value: 1
@@ -234,7 +248,7 @@
 			optional: true
 			tasks: [
 				{
-					id: "B1D5133936844B4C"
+					id: "31D5133936844B4C"
 					type: "kill"
 					entity: "irons_spellbooks:fire_boss"
 					value: 1
@@ -242,7 +256,7 @@
 			]
 		}
 		{
-			id: "D686C62FD8FA9CAF"
+			id: "5686C62FD8FA9CAF"
 			title: "Conquer the Final Gate"
 			x: 9.0d
 			y: 0.0d
@@ -256,13 +270,13 @@
 			size: 1.5d
 			tasks: [
 				{
-					id: "8D456DFFED270971"
+					id: "0D456DFFED270971"
 					type: "checkmark"
 				}
 			]
 			rewards: [
 				{
-					id: "8FC15203931B0629"
+					id: "0FC15203931B0629"
 					type: "xp"
 					xp: 500
 				}

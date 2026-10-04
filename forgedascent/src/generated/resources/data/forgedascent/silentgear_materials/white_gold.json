@@ -1,0 +1,64 @@
+{
+  "type": "silentgear:simple",
+  "parent": "silentgear:empty",
+  "crafting": {
+    "can_salvage": true,
+    "categories": [
+      "metal",
+      "forgedascent_tier_6"
+    ],
+    "gear_type_blacklist": [],
+    "ingredient": {
+      "tag": "c:ingots/white_gold"
+    }
+  },
+  "display": {
+    "color": "#FFEDE6C8",
+    "main_texture_type": "HIGH_CONTRAST",
+    "name": {
+      "translate": "material.forgedascent.white_gold"
+    },
+    "name_prefix": ""
+  },
+  "properties": {
+    "silentgear:main": {
+      "armor": 27.0,
+      "armor/helmet": 4.0,
+      "armor/chestplate": 11.0,
+      "armor/leggings": 8.0,
+      "armor/boots": 4.0,
+      "armor_durability": 18.0,
+      "armor_toughness": 2.0,
+      "attack_damage": 8.9,
+      "attack_speed": 0.0,
+      "charging_value": 1.0,
+      "draw_speed": 0.0,
+      "durability": 500.0,
+      "enchantment_value": 30.0,
+      "harvest_speed": 10.0,
+      "harvest_tier": {
+        "incorrect_blocks_for_tool": "forgedascent:incorrect_for_tier_6",
+        "level_hint": "6",
+        "name": "white_gold"
+      },
+      "magic_armor": 10.8,
+      "magic_damage": 1.0,
+      "ranged_damage": 4.45,
+      "rarity": 60.0,
+      "repair_value": 0.15,
+      "traits": [
+        {
+          "conditions": [],
+          "level": 1,
+          "trait": "silentgear:lustrous"
+        }
+      ]
+    }
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "silentgear"
+    }
+  ]
+}

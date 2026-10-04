@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "silentgear"
+    }
+  ],
+  "type": "silentgear:salvaging",
+  "ingredient": {
+    "item": "forgedascent:chromium_chestplate"
+  },
+  "results": [
+    {
+      "count": 5,
+      "id": "forgedascent:chromium_ingot"
+    }
+  ]
+}

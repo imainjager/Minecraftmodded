@@ -91,8 +91,18 @@ public class TieredChestLoot extends LootModifier {
             }
             if (!stack.isEmpty()) loot.add(stack);
         }
+        if (random.nextFloat() < 0.06F) {
+            String type = BLUEPRINTS[random.nextInt(BLUEPRINTS.length)];
+            BuiltInRegistries.ITEM.getOptional(ResourceLocation.fromNamespaceAndPath("silentgear", type + "_blueprint"))
+                    .ifPresent(item -> loot.add(new ItemStack(item)));
+        }
         return loot;
     }
+
+    /** Silent Gear blueprints that can turn up in chests (they stay craftable too). */
+    private static final String[] BLUEPRINTS = {"katana", "dagger", "knife", "machete", "mace", "spear", "hammer",
+            "excavator", "mattock", "paxel", "saw", "sickle", "prospector_hammer", "shield", "bow", "crossbow",
+            "slingshot", "trident"};
 
     private static ItemStack fromTag(RandomSource random, ResourceLocation tag, int count) {
         return BuiltInRegistries.ITEM.getTag(TagKey.create(Registries.ITEM, tag))

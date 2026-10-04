@@ -2,11 +2,11 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: "circle"
 	filename: "forged_ascent_1_stone"
-	group: "F0A6ED5A5CE47001"
+	group: "70A6ED5A5CE47001"
 	icon: {
 		id: "minecraft:stone_pickaxe"
 	}
-	id: "C4189FDEBE994BAD"
+	id: "44189FDEBE994BAD"
 	order_index: 0
 	quest_links: [ ]
 	subtitle: [
@@ -15,7 +15,7 @@
 	title: "Stone Age"
 	quests: [
 		{
-			id: "CB7A5CD4EFB28513"
+			id: "4B7A5CD4EFB28513"
 			title: "Welcome to Forged Ascent"
 			x: 0.0d
 			y: 0.0d
@@ -39,7 +39,7 @@
 			]
 			rewards: [
 				{
-					id: "C7521ADE466249D2"
+					id: "47521ADE466249D2"
 					type: "item"
 					item: {
 						count: 1
@@ -48,14 +48,14 @@
 					count: 4
 				}
 				{
-					id: "C40A63930DF7360C"
+					id: "440A63930DF7360C"
 					type: "xp"
 					xp: 50
 				}
 			]
 		}
 		{
-			id: "A3F80C96F7E738A4"
+			id: "23F80C96F7E738A4"
 			title: "Find Raw Copper"
 			x: 2.0d
 			y: -1.0d
@@ -63,7 +63,7 @@
 				"Mine it with the right pickaxe tier."
 			]
 			dependencies: [
-				"CB7A5CD4EFB28513"
+				"4B7A5CD4EFB28513"
 			]
 			tasks: [
 				{
@@ -78,7 +78,7 @@
 			]
 		}
 		{
-			id: "C58ED70008C195D9"
+			id: "458ED70008C195D9"
 			title: "Find Raw Tin"
 			x: 3.0d
 			y: 1.0d
@@ -86,11 +86,11 @@
 				"Mine it with the right pickaxe tier."
 			]
 			dependencies: [
-				"A3F80C96F7E738A4"
+				"23F80C96F7E738A4"
 			]
 			tasks: [
 				{
-					id: "950438E78039D221"
+					id: "150438E78039D221"
 					type: "item"
 					item: {
 						count: 1
@@ -101,7 +101,7 @@
 			]
 		}
 		{
-			id: "D7BF859E609C01D5"
+			id: "57BF859E609C01D5"
 			title: "Find Raw Zinc"
 			x: 4.0d
 			y: -1.0d
@@ -109,7 +109,7 @@
 				"Mine it with the right pickaxe tier."
 			]
 			dependencies: [
-				"C58ED70008C195D9"
+				"458ED70008C195D9"
 			]
 			tasks: [
 				{
@@ -124,7 +124,7 @@
 			]
 		}
 		{
-			id: "ED3DD5C29FC7157D"
+			id: "6D3DD5C29FC7157D"
 			title: "Find Raw Iron"
 			x: 5.0d
 			y: 1.0d
@@ -132,11 +132,11 @@
 				"Mine it with the right pickaxe tier."
 			]
 			dependencies: [
-				"D7BF859E609C01D5"
+				"57BF859E609C01D5"
 			]
 			tasks: [
 				{
-					id: "9448BFC8C4199E8F"
+					id: "1448BFC8C4199E8F"
 					type: "item"
 					item: {
 						count: 1
@@ -155,11 +155,11 @@
 				"Mine it with the right pickaxe tier."
 			]
 			dependencies: [
-				"ED3DD5C29FC7157D"
+				"6D3DD5C29FC7157D"
 			]
 			tasks: [
 				{
-					id: "8C28C2F29A189F78"
+					id: "0C28C2F29A189F78"
 					type: "item"
 					item: {
 						count: 1
@@ -182,7 +182,7 @@
 			]
 			tasks: [
 				{
-					id: "865F21F1D81661D3"
+					id: "065F21F1D81661D3"
 					type: "item"
 					item: {
 						count: 1
@@ -205,7 +205,7 @@
 			]
 			tasks: [
 				{
-					id: "CF17E560574FD129"
+					id: "4F17E560574FD129"
 					type: "item"
 					item: {
 						count: 1
@@ -216,7 +216,7 @@
 			]
 		}
 		{
-			id: "85C6FF8AE0405683"
+			id: "05C6FF8AE0405683"
 			title: "Find Raw Bismuth"
 			x: 9.0d
 			y: 1.0d
@@ -247,7 +247,7 @@
 				"Alloys are mixed in a crafting table for now (check JEI for the real-world ratios)."
 			]
 			dependencies: [
-				"85C6FF8AE0405683"
+				"05C6FF8AE0405683"
 			]
 			tasks: [
 				{
@@ -286,13 +286,17 @@
 			]
 		}
 		{
-			id: "CE7B42C24C05BDB2"
-			title: "Gear up: Tin Pickaxe"
+			id: "4E7B42C24C05BDB2"
+			title: "Gear up: any tier-3 pickaxe"
 			x: 12.0d
 			y: 0.0d
 			description: [
+				"Any tier-3 pickaxe counts: pick the material whose perk you like best."
 				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
 			]
+			icon: {
+				id: "forgedascent:tin_pickaxe"
+			}
 			dependencies: [
 				"4657658AF27E0444"
 			]
@@ -300,11 +304,14 @@
 				{
 					id: "6A6E6271214EA7CB"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
-						id: "forgedascent:tin_pickaxe"
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							ftbfiltersystem:filter: "item_tag(forgedascent:tier_gear/3/pickaxe)"
+						}
 					}
-					count: 1
 				}
 			]
 			rewards: [
@@ -320,25 +327,32 @@
 			]
 		}
 		{
-			id: "BBDB9BC72BC26846"
-			title: "Gear up: Iron Pickaxe"
+			id: "3BDB9BC72BC26846"
+			title: "Gear up: any tier-3 chestplate"
 			x: 13.0d
 			y: 0.0d
 			description: [
+				"Any tier-3 chestplate counts: pick the material whose perk you like best."
 				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
 			]
+			icon: {
+				id: "minecraft:iron_pickaxe"
+			}
 			dependencies: [
-				"CE7B42C24C05BDB2"
+				"4E7B42C24C05BDB2"
 			]
 			tasks: [
 				{
 					id: "0370606F47545471"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
-						id: "minecraft:iron_pickaxe"
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							ftbfiltersystem:filter: "item_tag(forgedascent:tier_gear/3/chestplate)"
+						}
 					}
-					count: 1
 				}
 			]
 			rewards: [
@@ -354,25 +368,32 @@
 			]
 		}
 		{
-			id: "A7D04715A4A2B8C4"
-			title: "Gear up: Lead Chestplate"
+			id: "27D04715A4A2B8C4"
+			title: "Gear up: any tier-3 sword"
 			x: 14.0d
 			y: 0.0d
 			description: [
+				"Any tier-3 sword counts: pick the material whose perk you like best."
 				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
 			]
+			icon: {
+				id: "forgedascent:lead_chestplate"
+			}
 			dependencies: [
-				"BBDB9BC72BC26846"
+				"3BDB9BC72BC26846"
 			]
 			tasks: [
 				{
-					id: "AA1754C3D7035E25"
+					id: "2A1754C3D7035E25"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
-						id: "forgedascent:lead_chestplate"
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							ftbfiltersystem:filter: "item_tag(forgedascent:tier_gear/3/sword)"
+						}
 					}
-					count: 1
 				}
 			]
 			rewards: [
@@ -388,9 +409,63 @@
 			]
 		}
 		{
+			id: "0D251FA8A8F96ACA"
+			title: "Scavenger's armor"
+			x: 15.0d
+			y: 1.0d
+			description: [
+				"Before metal, scavenge: &aLeaf&r (camouflage), &aBark&r, &aFlint&r (thorns), &aBone&r, &aChitin&r (no poison), &aFeather&r (no fall damage), &aShell&r (breathing), &aSlime&r (bouncy) and &aRotten&r (zombies ignore you)."
+				"Wear a full set to double its perk."
+			]
+			icon: {
+				id: "forgedascent:leaf_chestplate"
+			}
+			dependencies: [
+				"27D04715A4A2B8C4"
+			]
+			optional: true
+			tasks: [
+				{
+					id: "0E9CA945585B428B"
+					type: "item"
+					count: 1
+					item: {
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							ftbfiltersystem:filter: "item_tag(forgedascent:tier_gear/1/chestplate)"
+						}
+					}
+				}
+			]
+		}
+		{
+			id: "742DD43EE13DDE54"
+			title: "Build a Stone Anvil"
+			x: 16.0d
+			y: -1.0d
+			description: [
+				"Smooth stone and iron. It crafts and reinforces tier 1-3 gear and Silent Gear parts, and it's the base of the Bronze Anvil."
+			]
+			dependencies: [
+				"27D04715A4A2B8C4"
+			]
+			tasks: [
+				{
+					id: "0453F57F43EC919E"
+					type: "item"
+					item: {
+						count: 1
+						id: "forgedascent:stone_anvil"
+					}
+					count: 1
+				}
+			]
+		}
+		{
 			id: "24F5D2CEF2001387"
 			title: "Beware the blood moon"
-			x: 15.0d
+			x: 17.0d
 			y: 1.0d
 			description: [
 				"After your first gate boss, roughly 1 night in 8 is a &4blood moon&r: twice the monsters, more elites, no sleeping, better drops."
@@ -400,7 +475,7 @@
 				id: "minecraft:zombie_head"
 			}
 			dependencies: [
-				"A7D04715A4A2B8C4"
+				"742DD43EE13DDE54"
 			]
 			optional: true
 			tasks: [
@@ -411,9 +486,9 @@
 			]
 		}
 		{
-			id: "86F289E501548634"
+			id: "06F289E501548634"
 			title: "Defeat: Naga"
-			x: 17.0d
+			x: 19.0d
 			y: -2.0d
 			subtitle: "Gate I boss"
 			description: [
@@ -421,7 +496,7 @@
 				"Any one boss of this gate is enough."
 			]
 			dependencies: [
-				"A7D04715A4A2B8C4"
+				"742DD43EE13DDE54"
 			]
 			shape: "hexagon"
 			optional: true
@@ -435,9 +510,9 @@
 			]
 		}
 		{
-			id: "849DE3498620532C"
+			id: "049DE3498620532C"
 			title: "Defeat: Slider"
-			x: 17.0d
+			x: 19.0d
 			y: -0.7d
 			subtitle: "Gate I boss"
 			description: [
@@ -445,13 +520,13 @@
 				"Any one boss of this gate is enough."
 			]
 			dependencies: [
-				"A7D04715A4A2B8C4"
+				"742DD43EE13DDE54"
 			]
 			shape: "hexagon"
 			optional: true
 			tasks: [
 				{
-					id: "B0E57FA80ED25E6A"
+					id: "30E57FA80ED25E6A"
 					type: "kill"
 					entity: "aether:slider"
 					value: 1
@@ -459,9 +534,9 @@
 			]
 		}
 		{
-			id: "C4F28B82F7D1BE19"
+			id: "44F28B82F7D1BE19"
 			title: "Defeat: Elder Guardian"
-			x: 17.0d
+			x: 19.0d
 			y: 0.6000000000000001d
 			subtitle: "Gate I boss"
 			description: [
@@ -469,13 +544,13 @@
 				"Any one boss of this gate is enough."
 			]
 			dependencies: [
-				"A7D04715A4A2B8C4"
+				"742DD43EE13DDE54"
 			]
 			shape: "hexagon"
 			optional: true
 			tasks: [
 				{
-					id: "A1C87B1B13CC3A07"
+					id: "21C87B1B13CC3A07"
 					type: "kill"
 					entity: "minecraft:elder_guardian"
 					value: 1
@@ -485,7 +560,7 @@
 		{
 			id: "6126530C21C580EC"
 			title: "Gate I Sigil"
-			x: 19.0d
+			x: 21.0d
 			y: 0.0d
 			subtitle: "Beat any boss above"
 			description: [
@@ -493,7 +568,7 @@
 				"Use the Sigil to forge the next Smithy Anvil."
 			]
 			dependencies: [
-				"A7D04715A4A2B8C4"
+				"742DD43EE13DDE54"
 			]
 			shape: "gear"
 			size: 1.5d
@@ -510,7 +585,7 @@
 			]
 			rewards: [
 				{
-					id: "B2C1F3A044DAD619"
+					id: "32C1F3A044DAD619"
 					type: "xp"
 					xp: 250
 				}

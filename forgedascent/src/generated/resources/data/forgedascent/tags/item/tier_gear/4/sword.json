@@ -1,0 +1,16 @@
+{
+  "values": [
+    "forgedascent:brass_sword",
+    "forgedascent:invar_sword",
+    "forgedascent:constantan_sword",
+    "forgedascent:bismuth_bronze_sword",
+    "forgedascent:duralumin_sword",
+    "forgedascent:electrum_sword",
+    "forgedascent:rose_gold_sword",
+    "forgedascent:amethyst_sword",
+    {
+      "id": "mekanismtools:bronze_sword",
+      "required": false
+    }
+  ]
+}

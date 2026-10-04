@@ -421,7 +421,14 @@
         "boots": 2,
         "toughness": 0.0,
         "knockback": 0.0,
-        "enchant": 8
+        "enchant": 8,
+        "perks": [
+          {
+            "attribute": "minecraft:generic.explosion_knockback_resistance",
+            "amount": 0.08,
+            "op": "add_value"
+          }
+        ]
       }
     },
     {
@@ -472,7 +479,14 @@
         "boots": 2,
         "toughness": 0.0,
         "knockback": 0.0,
-        "enchant": 10
+        "enchant": 10,
+        "perks": [
+          {
+            "attribute": "minecraft:generic.oxygen_bonus",
+            "amount": 0.25,
+            "op": "add_value"
+          }
+        ]
       }
     },
     {
@@ -523,7 +537,14 @@
         "boots": 2,
         "toughness": 0.0,
         "knockback": 0.0,
-        "enchant": 22
+        "enchant": 22,
+        "perks": [
+          {
+            "attribute": "minecraft:generic.luck",
+            "amount": 0.25,
+            "op": "add_value"
+          }
+        ]
       }
     },
     {
@@ -548,7 +569,14 @@
         "boots": 3,
         "toughness": 0.0,
         "knockback": 0.0,
-        "enchant": 14
+        "enchant": 14,
+        "perks": [
+          {
+            "attribute": "minecraft:player.block_break_speed",
+            "amount": 0.03,
+            "op": "add_multiplied_base"
+          }
+        ]
       }
     },
     {
@@ -573,7 +601,14 @@
         "boots": 3,
         "toughness": 0.0,
         "knockback": 0.0,
-        "enchant": 10
+        "enchant": 10,
+        "perks": [
+          {
+            "attribute": "minecraft:generic.armor_toughness",
+            "amount": 0.25,
+            "op": "add_value"
+          }
+        ]
       }
     },
     {
@@ -624,7 +659,14 @@
         "boots": 3,
         "toughness": 0.5,
         "knockback": 0.0,
-        "enchant": 12
+        "enchant": 12,
+        "perks": [
+          {
+            "attribute": "minecraft:generic.safe_fall_distance",
+            "amount": 0.5,
+            "op": "add_value"
+          }
+        ]
       }
     },
     {
@@ -650,7 +692,14 @@
         "toughness": 0.0,
         "knockback": 0.0,
         "enchant": 12,
-        "move_speed": 0.025
+        "move_speed": 0.025,
+        "perks": [
+          {
+            "attribute": "minecraft:generic.step_height",
+            "amount": 0.1,
+            "op": "add_value"
+          }
+        ]
       }
     },
     {
@@ -675,7 +724,14 @@
         "boots": 2,
         "toughness": 0.0,
         "knockback": 0.0,
-        "enchant": 25
+        "enchant": 25,
+        "perks": [
+          {
+            "attribute": "minecraft:player.block_interaction_range",
+            "amount": 0.25,
+            "op": "add_value"
+          }
+        ]
       }
     },
     {
@@ -726,7 +782,14 @@
         "boots": 3,
         "toughness": 0.5,
         "knockback": 0.0,
-        "enchant": 12
+        "enchant": 12,
+        "perks": [
+          {
+            "attribute": "minecraft:player.block_break_speed",
+            "amount": 0.05,
+            "op": "add_multiplied_base"
+          }
+        ]
       }
     },
     {
@@ -776,7 +839,14 @@
         "boots": 3,
         "toughness": 0.0,
         "knockback": 0.0,
-        "enchant": 12
+        "enchant": 12,
+        "perks": [
+          {
+            "attribute": "minecraft:player.entity_interaction_range",
+            "amount": 0.25,
+            "op": "add_value"
+          }
+        ]
       }
     },
     {
@@ -801,7 +871,14 @@
         "boots": 4,
         "toughness": 1.0,
         "knockback": 0.0,
-        "enchant": 22
+        "enchant": 22,
+        "perks": [
+          {
+            "attribute": "minecraft:generic.max_health",
+            "amount": 0.5,
+            "op": "add_value"
+          }
+        ]
       }
     },
     {
@@ -826,7 +903,14 @@
         "boots": 4,
         "toughness": 1.0,
         "knockback": 0.0,
-        "enchant": 12
+        "enchant": 12,
+        "perks": [
+          {
+            "attribute": "minecraft:generic.attack_damage",
+            "amount": 0.25,
+            "op": "add_value"
+          }
+        ]
       }
     },
     {
@@ -851,7 +935,14 @@
         "boots": 4,
         "toughness": 0.5,
         "knockback": 0.0,
-        "enchant": 30
+        "enchant": 30,
+        "perks": [
+          {
+            "attribute": "minecraft:player.sweeping_damage_ratio",
+            "amount": 0.05,
+            "op": "add_value"
+          }
+        ]
       }
     },
     {
@@ -877,7 +968,13 @@
         "toughness": 1.5,
         "knockback": 0.0,
         "enchant": 14,
-        "move_speed": 0.01
+        "perks": [
+          {
+            "attribute": "minecraft:generic.movement_efficiency",
+            "amount": 0.1,
+            "op": "add_value"
+          }
+        ]
       }
     },
     {
@@ -902,7 +999,14 @@
         "boots": 5,
         "toughness": 2.5,
         "knockback": 0.0,
-        "enchant": 10
+        "enchant": 10,
+        "perks": [
+          {
+            "attribute": "minecraft:generic.attack_knockback",
+            "amount": 0.1,
+            "op": "add_value"
+          }
+        ]
       }
     },
     {
@@ -927,7 +1031,14 @@
         "boots": 5,
         "toughness": 1.5,
         "knockback": 0.0,
-        "enchant": 12
+        "enchant": 12,
+        "perks": [
+          {
+            "attribute": "minecraft:player.submerged_mining_speed",
+            "amount": 0.25,
+            "op": "add_value"
+          }
+        ]
       }
     },
     {
@@ -953,7 +1064,14 @@
         "toughness": 1.5,
         "knockback": 0.0,
         "enchant": 12,
-        "move_speed": 0.01
+        "move_speed": 0.01,
+        "perks": [
+          {
+            "attribute": "minecraft:generic.jump_strength",
+            "amount": 0.01,
+            "op": "add_value"
+          }
+        ]
       }
     },
     {
@@ -1030,7 +1148,14 @@
         "boots": 7,
         "toughness": 2.0,
         "knockback": 0.0,
-        "enchant": 10
+        "enchant": 10,
+        "perks": [
+          {
+            "attribute": "minecraft:player.mining_efficiency",
+            "amount": 0.5,
+            "op": "add_value"
+          }
+        ]
       }
     },
     {
@@ -1055,7 +1180,14 @@
         "boots": 7,
         "toughness": 2.0,
         "knockback": 0.0,
-        "enchant": 12
+        "enchant": 12,
+        "perks": [
+          {
+            "attribute": "minecraft:generic.attack_speed",
+            "amount": 0.03,
+            "op": "add_multiplied_base"
+          }
+        ]
       }
     },
     {
@@ -1080,7 +1212,14 @@
         "boots": 7,
         "toughness": 2.0,
         "knockback": 0.0,
-        "enchant": 10
+        "enchant": 10,
+        "perks": [
+          {
+            "attribute": "minecraft:generic.gravity",
+            "amount": -0.02,
+            "op": "add_multiplied_base"
+          }
+        ]
       }
     },
     {
@@ -1131,7 +1270,14 @@
         "boots": 7,
         "toughness": 3.0,
         "knockback": 0.0,
-        "enchant": 14
+        "enchant": 14,
+        "perks": [
+          {
+            "attribute": "minecraft:generic.armor_toughness",
+            "amount": 0.5,
+            "op": "add_value"
+          }
+        ]
       }
     },
     {
@@ -1156,7 +1302,14 @@
         "boots": 7,
         "toughness": 2.5,
         "knockback": 0.0,
-        "enchant": 14
+        "enchant": 14,
+        "perks": [
+          {
+            "attribute": "minecraft:generic.max_health",
+            "amount": 1.0,
+            "op": "add_value"
+          }
+        ]
       }
     },
     {
@@ -1181,7 +1334,14 @@
         "boots": 3,
         "toughness": 0.0,
         "knockback": 0.0,
-        "enchant": 20
+        "enchant": 20,
+        "perks": [
+          {
+            "attribute": "minecraft:player.sneaking_speed",
+            "amount": 0.1,
+            "op": "add_value"
+          }
+        ]
       }
     },
     {
@@ -1206,7 +1366,14 @@
         "boots": 3,
         "toughness": 0.5,
         "knockback": 0.0,
-        "enchant": 12
+        "enchant": 12,
+        "perks": [
+          {
+            "attribute": "minecraft:generic.attack_damage",
+            "amount": 0.15,
+            "op": "add_value"
+          }
+        ]
       }
     },
     {
@@ -1231,7 +1398,14 @@
         "boots": 3,
         "toughness": 0.5,
         "knockback": 0.0,
-        "enchant": 12
+        "enchant": 12,
+        "perks": [
+          {
+            "attribute": "minecraft:generic.fall_damage_multiplier",
+            "amount": -0.05,
+            "op": "add_value"
+          }
+        ]
       }
     },
     {
@@ -1282,7 +1456,14 @@
         "boots": 4,
         "toughness": 1.0,
         "knockback": 0.0,
-        "enchant": 14
+        "enchant": 14,
+        "perks": [
+          {
+            "attribute": "minecraft:player.mining_efficiency",
+            "amount": 0.25,
+            "op": "add_value"
+          }
+        ]
       }
     },
     {
@@ -1307,7 +1488,14 @@
         "boots": 5,
         "toughness": 1.5,
         "knockback": 0.0,
-        "enchant": 16
+        "enchant": 16,
+        "perks": [
+          {
+            "attribute": "minecraft:generic.attack_speed",
+            "amount": 0.02,
+            "op": "add_multiplied_base"
+          }
+        ]
       }
     },
     {
@@ -1332,7 +1520,14 @@
         "boots": 5,
         "toughness": 1.5,
         "knockback": 0.0,
-        "enchant": 14
+        "enchant": 14,
+        "perks": [
+          {
+            "attribute": "minecraft:generic.attack_damage",
+            "amount": 0.25,
+            "op": "add_value"
+          }
+        ]
       }
     },
     {
@@ -1357,7 +1552,14 @@
         "boots": 6,
         "toughness": 2.0,
         "knockback": 0.0,
-        "enchant": 14
+        "enchant": 14,
+        "perks": [
+          {
+            "attribute": "minecraft:generic.knockback_resistance",
+            "amount": 0.025,
+            "op": "add_value"
+          }
+        ]
       }
     },
     {
@@ -1382,7 +1584,307 @@
         "boots": 7,
         "toughness": 3.0,
         "knockback": 0.0,
-        "enchant": 12
+        "enchant": 12,
+        "perks": [
+          {
+            "attribute": "minecraft:generic.max_health",
+            "amount": 1.0,
+            "op": "add_value"
+          }
+        ]
+      }
+    },
+    {
+      "id": "leaf",
+      "name": "Leaf",
+      "tier": 1,
+      "color": "#4F8A2E",
+      "repair": "forgedascent:scavenge/leaf",
+      "armor_only": true,
+      "tools_from": "twilightforest:steeleaf",
+      "armor_from": "twilightforest:steeleaf",
+      "tool": {
+        "uses": 1,
+        "speed": 1.0,
+        "attack": 0.0,
+        "enchant": 10
+      },
+      "armor": {
+        "durability": 4,
+        "helmet": 1,
+        "chestplate": 2,
+        "leggings": 1,
+        "boots": 1,
+        "toughness": 0.0,
+        "knockback": 0.0,
+        "enchant": 10,
+        "perks": []
+      }
+    },
+    {
+      "id": "bark",
+      "name": "Bark",
+      "tier": 1,
+      "color": "#6B4A2B",
+      "repair": "forgedascent:scavenge/bark",
+      "armor_only": true,
+      "tools_from": "twilightforest:ironwood",
+      "armor_from": "twilightforest:ironwood",
+      "tool": {
+        "uses": 1,
+        "speed": 1.0,
+        "attack": 0.0,
+        "enchant": 10
+      },
+      "armor": {
+        "durability": 6,
+        "helmet": 1,
+        "chestplate": 3,
+        "leggings": 2,
+        "boots": 1,
+        "toughness": 0.0,
+        "knockback": 0.0,
+        "enchant": 10,
+        "perks": [
+          {
+            "attribute": "minecraft:generic.knockback_resistance",
+            "amount": 0.05,
+            "op": "add_value"
+          },
+          {
+            "attribute": "minecraft:generic.burning_time",
+            "amount": 0.15,
+            "op": "add_multiplied_base"
+          }
+        ]
+      }
+    },
+    {
+      "id": "flint",
+      "name": "Flint",
+      "tier": 1,
+      "color": "#555555",
+      "repair": "forgedascent:scavenge/flint",
+      "armor_only": true,
+      "tools_from": "minecraft:chainmail",
+      "armor_from": "minecraft:chainmail",
+      "tool": {
+        "uses": 1,
+        "speed": 1.0,
+        "attack": 0.0,
+        "enchant": 10
+      },
+      "armor": {
+        "durability": 7,
+        "helmet": 1,
+        "chestplate": 3,
+        "leggings": 2,
+        "boots": 1,
+        "toughness": 0.0,
+        "knockback": 0.0,
+        "enchant": 10,
+        "perks": []
+      }
+    },
+    {
+      "id": "bone",
+      "name": "Bone",
+      "tier": 2,
+      "color": "#E8E2C8",
+      "repair": "forgedascent:scavenge/bone",
+      "armor_only": true,
+      "tools_from": "minecraft:iron",
+      "armor_from": "minecraft:iron",
+      "tool": {
+        "uses": 1,
+        "speed": 1.0,
+        "attack": 0.0,
+        "enchant": 10
+      },
+      "armor": {
+        "durability": 9,
+        "helmet": 2,
+        "chestplate": 3,
+        "leggings": 3,
+        "boots": 1,
+        "toughness": 0.0,
+        "knockback": 0.0,
+        "enchant": 10,
+        "perks": []
+      }
+    },
+    {
+      "id": "chitin",
+      "name": "Chitin",
+      "tier": 2,
+      "color": "#3A3A2E",
+      "repair": "forgedascent:scavenge/chitin",
+      "armor_only": true,
+      "tools_from": "deeperdarker:resonarium",
+      "armor_from": "deeperdarker:resonarium",
+      "tool": {
+        "uses": 1,
+        "speed": 1.0,
+        "attack": 0.0,
+        "enchant": 10
+      },
+      "armor": {
+        "durability": 9,
+        "helmet": 1,
+        "chestplate": 4,
+        "leggings": 3,
+        "boots": 1,
+        "toughness": 0.0,
+        "knockback": 0.0,
+        "enchant": 10,
+        "perks": [
+          {
+            "attribute": "minecraft:generic.step_height",
+            "amount": 0.1,
+            "op": "add_value"
+          }
+        ]
+      }
+    },
+    {
+      "id": "feather",
+      "name": "Feather",
+      "tier": 1,
+      "color": "#F0F0F0",
+      "repair": "forgedascent:scavenge/feather",
+      "armor_only": true,
+      "tools_from": "undergarden:froststeel",
+      "armor_from": "undergarden:froststeel",
+      "tool": {
+        "uses": 1,
+        "speed": 1.0,
+        "attack": 0.0,
+        "enchant": 10
+      },
+      "armor": {
+        "durability": 5,
+        "helmet": 1,
+        "chestplate": 2,
+        "leggings": 1,
+        "boots": 1,
+        "toughness": 0.0,
+        "knockback": 0.0,
+        "enchant": 10,
+        "perks": [
+          {
+            "attribute": "minecraft:generic.safe_fall_distance",
+            "amount": 1.25,
+            "op": "add_value"
+          },
+          {
+            "attribute": "minecraft:generic.fall_damage_multiplier",
+            "amount": -0.1,
+            "op": "add_value"
+          }
+        ]
+      }
+    },
+    {
+      "id": "shell",
+      "name": "Shell",
+      "tier": 1,
+      "color": "#3FA89A",
+      "repair": "forgedascent:scavenge/shell",
+      "armor_only": true,
+      "tools_from": "eternal_starlight:glacite",
+      "armor_from": "eternal_starlight:glacite",
+      "tool": {
+        "uses": 1,
+        "speed": 1.0,
+        "attack": 0.0,
+        "enchant": 10
+      },
+      "armor": {
+        "durability": 7,
+        "helmet": 1,
+        "chestplate": 3,
+        "leggings": 2,
+        "boots": 1,
+        "toughness": 0.0,
+        "knockback": 0.0,
+        "enchant": 10,
+        "perks": [
+          {
+            "attribute": "minecraft:generic.oxygen_bonus",
+            "amount": 0.5,
+            "op": "add_value"
+          },
+          {
+            "attribute": "minecraft:generic.water_movement_efficiency",
+            "amount": 0.1,
+            "op": "add_value"
+          }
+        ]
+      }
+    },
+    {
+      "id": "slime",
+      "name": "Slime",
+      "tier": 1,
+      "color": "#7FCF5A",
+      "repair": "forgedascent:scavenge/slime",
+      "armor_only": true,
+      "tools_from": "minecraft:chainmail",
+      "armor_from": "minecraft:chainmail",
+      "tool": {
+        "uses": 1,
+        "speed": 1.0,
+        "attack": 0.0,
+        "enchant": 10
+      },
+      "armor": {
+        "durability": 6,
+        "helmet": 1,
+        "chestplate": 2,
+        "leggings": 2,
+        "boots": 1,
+        "toughness": 0.0,
+        "knockback": 0.0,
+        "enchant": 10,
+        "perks": [
+          {
+            "attribute": "minecraft:generic.fall_damage_multiplier",
+            "amount": -0.15,
+            "op": "add_value"
+          },
+          {
+            "attribute": "minecraft:generic.jump_strength",
+            "amount": 0.02,
+            "op": "add_value"
+          }
+        ]
+      }
+    },
+    {
+      "id": "rotten",
+      "name": "Rotten",
+      "tier": 1,
+      "color": "#6E8A4A",
+      "repair": "forgedascent:scavenge/rotten",
+      "armor_only": true,
+      "tools_from": "minecraft:iron",
+      "armor_from": "minecraft:iron",
+      "tool": {
+        "uses": 1,
+        "speed": 1.0,
+        "attack": 0.0,
+        "enchant": 10
+      },
+      "armor": {
+        "durability": 4,
+        "helmet": 1,
+        "chestplate": 1,
+        "leggings": 1,
+        "boots": 1,
+        "toughness": 0.0,
+        "knockback": 0.0,
+        "enchant": 10,
+        "perks": []
       }
     }
   ],
@@ -1658,5 +2160,36 @@
         "relics:roller_skate"
       ]
     }
-  ]
+  ],
+  "scavenged": {
+    "leaf": [
+      "#minecraft:leaves"
+    ],
+    "bark": [
+      "#minecraft:logs"
+    ],
+    "flint": [
+      "minecraft:flint"
+    ],
+    "bone": [
+      "minecraft:bone"
+    ],
+    "chitin": [
+      "minecraft:spider_eye"
+    ],
+    "feather": [
+      "minecraft:feather"
+    ],
+    "shell": [
+      "minecraft:turtle_scute",
+      "minecraft:nautilus_shell",
+      "minecraft:prismarine_shard"
+    ],
+    "slime": [
+      "minecraft:slime_ball"
+    ],
+    "rotten": [
+      "minecraft:rotten_flesh"
+    ]
+  }
 }

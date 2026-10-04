@@ -39,6 +39,15 @@
     "forgedascent:alexandrite_chestplate",
     "forgedascent:ruby_chestplate",
     "forgedascent:sapphire_chestplate",
-    "forgedascent:black_diamond_chestplate"
+    "forgedascent:black_diamond_chestplate",
+    "forgedascent:leaf_chestplate",
+    "forgedascent:bark_chestplate",
+    "forgedascent:flint_chestplate",
+    "forgedascent:bone_chestplate",
+    "forgedascent:chitin_chestplate",
+    "forgedascent:feather_chestplate",
+    "forgedascent:shell_chestplate",
+    "forgedascent:slime_chestplate",
+    "forgedascent:rotten_chestplate"
   ]
 }

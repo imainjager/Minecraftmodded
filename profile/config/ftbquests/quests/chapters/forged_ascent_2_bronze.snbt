@@ -2,7 +2,7 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: "circle"
 	filename: "forged_ascent_2_bronze"
-	group: "F0A6ED5A5CE47001"
+	group: "70A6ED5A5CE47001"
 	icon: {
 		id: "forgedascent:brass_pickaxe"
 	}
@@ -15,7 +15,7 @@
 	title: "Bronze Age"
 	quests: [
 		{
-			id: "C817E3ED19ED7CF8"
+			id: "4817E3ED19ED7CF8"
 			title: "Forge the Bronze Anvil"
 			x: 0.0d
 			y: 0.0d
@@ -29,7 +29,7 @@
 			size: 1.5d
 			tasks: [
 				{
-					id: "B283A45865FDBFFB"
+					id: "3283A45865FDBFFB"
 					type: "item"
 					item: {
 						count: 1
@@ -64,7 +64,7 @@
 				"Needs a tier-3 pickaxe or better."
 			]
 			dependencies: [
-				"C817E3ED19ED7CF8"
+				"4817E3ED19ED7CF8"
 			]
 			tasks: [
 				{
@@ -114,7 +114,7 @@
 			]
 			tasks: [
 				{
-					id: "AEE3BDF9AA84A95E"
+					id: "2EE3BDF9AA84A95E"
 					type: "item"
 					item: {
 						count: 1
@@ -125,7 +125,7 @@
 			]
 		}
 		{
-			id: "902D65BF9FF36C66"
+			id: "102D65BF9FF36C66"
 			title: "Find Raw Osmium"
 			x: 5.0d
 			y: 1.0d
@@ -156,11 +156,11 @@
 				"Needs a tier-3 pickaxe or better."
 			]
 			dependencies: [
-				"902D65BF9FF36C66"
+				"102D65BF9FF36C66"
 			]
 			tasks: [
 				{
-					id: "FEF55D79799C7FDC"
+					id: "7EF55D79799C7FDC"
 					type: "item"
 					item: {
 						count: 1
@@ -183,7 +183,7 @@
 			]
 			tasks: [
 				{
-					id: "B1CF20C6250F6892"
+					id: "31CF20C6250F6892"
 					type: "item"
 					item: {
 						count: 1
@@ -194,7 +194,7 @@
 			]
 		}
 		{
-			id: "D79236EAD57D31DF"
+			id: "579236EAD57D31DF"
 			title: "Alloy: Bronze Ingot"
 			x: 8.0d
 			y: 0.0d
@@ -206,7 +206,7 @@
 			]
 			tasks: [
 				{
-					id: "F1630279EE73CBDA"
+					id: "71630279EE73CBDA"
 					type: "item"
 					item: {
 						count: 1
@@ -217,7 +217,7 @@
 			]
 		}
 		{
-			id: "AE5C2D728DB16B91"
+			id: "2E5C2D728DB16B91"
 			title: "Alloy: Brass Ingot"
 			x: 9.0d
 			y: 0.0d
@@ -225,11 +225,11 @@
 				"Alloys are mixed in a crafting table for now (check JEI for the real-world ratios)."
 			]
 			dependencies: [
-				"D79236EAD57D31DF"
+				"579236EAD57D31DF"
 			]
 			tasks: [
 				{
-					id: "B9B0063AF8103906"
+					id: "39B0063AF8103906"
 					type: "item"
 					item: {
 						count: 1
@@ -240,7 +240,7 @@
 			]
 		}
 		{
-			id: "8B53690FC222B2AE"
+			id: "0B53690FC222B2AE"
 			title: "Alloy: Duralumin Ingot"
 			x: 10.0d
 			y: 0.0d
@@ -248,11 +248,11 @@
 				"Alloys are mixed in a crafting table for now (check JEI for the real-world ratios)."
 			]
 			dependencies: [
-				"AE5C2D728DB16B91"
+				"2E5C2D728DB16B91"
 			]
 			tasks: [
 				{
-					id: "DF3E975477D727F6"
+					id: "5F3E975477D727F6"
 					type: "item"
 					item: {
 						count: 1
@@ -263,7 +263,7 @@
 			]
 		}
 		{
-			id: "EA552A814FD171DF"
+			id: "6A552A814FD171DF"
 			title: "Hammer some plates"
 			x: 11.0d
 			y: -1.0d
@@ -271,7 +271,7 @@
 				"4 plates of this tier make the reinforced plate. Reinforce your best gear at your anvil!"
 			]
 			dependencies: [
-				"8B53690FC222B2AE"
+				"0B53690FC222B2AE"
 			]
 			tasks: [
 				{
@@ -287,24 +287,31 @@
 		}
 		{
 			id: "370EFBDE2A9F6EDF"
-			title: "Gear up: Brass Pickaxe"
+			title: "Gear up: any tier-4 pickaxe"
 			x: 12.0d
 			y: 0.0d
 			description: [
+				"Any tier-4 pickaxe counts: pick the material whose perk you like best."
 				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
 			]
+			icon: {
+				id: "forgedascent:brass_pickaxe"
+			}
 			dependencies: [
-				"EA552A814FD171DF"
+				"6A552A814FD171DF"
 			]
 			tasks: [
 				{
 					id: "48ECF046E5AA201B"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
-						id: "forgedascent:brass_pickaxe"
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							ftbfiltersystem:filter: "item_tag(forgedascent:tier_gear/4/pickaxe)"
+						}
 					}
-					count: 1
 				}
 			]
 			rewards: [
@@ -321,12 +328,16 @@
 		}
 		{
 			id: "22EBAD932DF8617E"
-			title: "Gear up: Invar Chestplate"
+			title: "Gear up: any tier-4 chestplate"
 			x: 13.0d
 			y: 0.0d
 			description: [
+				"Any tier-4 chestplate counts: pick the material whose perk you like best."
 				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
 			]
+			icon: {
+				id: "forgedascent:invar_chestplate"
+			}
 			dependencies: [
 				"370EFBDE2A9F6EDF"
 			]
@@ -334,16 +345,19 @@
 				{
 					id: "73185093CF65C66C"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
-						id: "forgedascent:invar_chestplate"
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							ftbfiltersystem:filter: "item_tag(forgedascent:tier_gear/4/chestplate)"
+						}
 					}
-					count: 1
 				}
 			]
 			rewards: [
 				{
-					id: "EDB59078D83572BB"
+					id: "6DB59078D83572BB"
 					type: "item"
 					item: {
 						count: 1
@@ -355,12 +369,16 @@
 		}
 		{
 			id: "077D9DD315ABC6CD"
-			title: "Gear up: Amethyst Sword"
+			title: "Gear up: any tier-4 sword"
 			x: 14.0d
 			y: 0.0d
 			description: [
+				"Any tier-4 sword counts: pick the material whose perk you like best."
 				"Gear of this tier keeps up with the mobs. Armor matters a lot in this pack."
 			]
+			icon: {
+				id: "forgedascent:amethyst_sword"
+			}
 			dependencies: [
 				"22EBAD932DF8617E"
 			]
@@ -368,16 +386,19 @@
 				{
 					id: "4F63072D8EE67AFF"
 					type: "item"
+					count: 1
 					item: {
 						count: 1
-						id: "forgedascent:amethyst_sword"
+						id: "ftbfiltersystem:smart_filter"
+						components: {
+							ftbfiltersystem:filter: "item_tag(forgedascent:tier_gear/4/sword)"
+						}
 					}
-					count: 1
 				}
 			]
 			rewards: [
 				{
-					id: "A4A304F5F4D0CA45"
+					id: "24A304F5F4D0CA45"
 					type: "item"
 					item: {
 						count: 1
@@ -388,7 +409,7 @@
 			]
 		}
 		{
-			id: "B1D0E8191AA366A9"
+			id: "31D0E8191AA366A9"
 			title: "Cut your first gem"
 			x: 15.0d
 			y: -1.0d
@@ -401,7 +422,7 @@
 			]
 			tasks: [
 				{
-					id: "AD96BD864EF9AC95"
+					id: "2D96BD864EF9AC95"
 					type: "item"
 					item: {
 						count: 1
@@ -412,7 +433,7 @@
 			]
 		}
 		{
-			id: "924B4AB4470C308F"
+			id: "124B4AB4470C308F"
 			title: "Defeat: Lich"
 			x: 17.0d
 			y: -2.0d
@@ -422,13 +443,13 @@
 				"Any one boss of this gate is enough."
 			]
 			dependencies: [
-				"B1D0E8191AA366A9"
+				"31D0E8191AA366A9"
 			]
 			shape: "hexagon"
 			optional: true
 			tasks: [
 				{
-					id: "F16126EA3DFF0858"
+					id: "716126EA3DFF0858"
 					type: "kill"
 					entity: "twilightforest:lich"
 					value: 1
@@ -446,7 +467,7 @@
 				"Any one boss of this gate is enough."
 			]
 			dependencies: [
-				"B1D0E8191AA366A9"
+				"31D0E8191AA366A9"
 			]
 			shape: "hexagon"
 			optional: true
@@ -470,13 +491,13 @@
 				"Any one boss of this gate is enough."
 			]
 			dependencies: [
-				"B1D0E8191AA366A9"
+				"31D0E8191AA366A9"
 			]
 			shape: "hexagon"
 			optional: true
 			tasks: [
 				{
-					id: "B0477558B7891145"
+					id: "30477558B7891145"
 					type: "kill"
 					entity: "undergarden:forgotten_guardian"
 					value: 1
@@ -484,7 +505,7 @@
 			]
 		}
 		{
-			id: "E4C646261C2FF83F"
+			id: "64C646261C2FF83F"
 			title: "Defeat: Dead King"
 			x: 17.0d
 			y: 1.9000000000000004d
@@ -494,13 +515,13 @@
 				"Any one boss of this gate is enough."
 			]
 			dependencies: [
-				"B1D0E8191AA366A9"
+				"31D0E8191AA366A9"
 			]
 			shape: "hexagon"
 			optional: true
 			tasks: [
 				{
-					id: "8A806FC1237D3DBA"
+					id: "0A806FC1237D3DBA"
 					type: "kill"
 					entity: "irons_spellbooks:dead_king"
 					value: 1
@@ -519,7 +540,7 @@
 				"It also unlocks the Apotheosis world tier &eFrontier&r."
 			]
 			dependencies: [
-				"B1D0E8191AA366A9"
+				"31D0E8191AA366A9"
 			]
 			shape: "gear"
 			size: 1.5d
@@ -536,7 +557,7 @@
 			]
 			rewards: [
 				{
-					id: "BC69B7EEF110FBEF"
+					id: "3C69B7EEF110FBEF"
 					type: "xp"
 					xp: 250
 				}

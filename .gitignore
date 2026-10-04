@@ -34,3 +34,7 @@ desktop.ini
 
 # Copied from the Apotheosis jar by forgedascent/tools/gen_assets.py
 profile/kubejs/data/apotheosis/
+profile/kubejs/data/silentgear/
+profile/kubejs/data/silentgems/
+profile/kubejs/data/sgearmetalworks/
+forgedascent/src/generated/resources/data/forgedascent/recipe/sg/

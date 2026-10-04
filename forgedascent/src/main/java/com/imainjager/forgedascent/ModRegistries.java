@@ -117,7 +117,11 @@ public final class ModRegistries {
         Materials.ToolStats t = gear.tool();
         TagKey<Block> incorrect = TagKey.create(Registries.BLOCK, ForgedAscent.id("incorrect_for_tier_" + gear.tier()));
         Tier tier = new SimpleTier(incorrect, t.uses(), t.speed(), t.attack(), t.enchant(), () -> Ingredient.of(repairTag));
+        if (!gear.armorOnly()) registerTools(name, tier, t);
+        registerArmor(gear, name, repairTag);
+    }
 
+    private static void registerTools(String name, Tier tier, Materials.ToolStats t) {
         TAB_ITEMS.add(ITEMS.register(name + "_sword", () -> new SwordItem(tier,
                 new Item.Properties().attributes(SwordItem.createAttributes(tier, 3, -2.4F)))));
         TAB_ITEMS.add(ITEMS.register(name + "_pickaxe", () -> new PickaxeItem(tier,
@@ -128,7 +132,9 @@ public final class ModRegistries {
                 new Item.Properties().attributes(DiggerItem.createAttributes(tier, 1.5F, -3.0F)))));
         TAB_ITEMS.add(ITEMS.register(name + "_hoe", () -> new HoeItem(tier,
                 new Item.Properties().attributes(DiggerItem.createAttributes(tier, -Math.round(t.attack()), -1.0F)))));
+    }
 
+    private static void registerArmor(Materials.Gear gear, String name, TagKey<Item> repairTag) {
         Materials.ArmorStats a = gear.armor();
         EnumMap<ArmorItem.Type, Integer> defense = new EnumMap<>(ArmorItem.Type.class);
         defense.put(ArmorItem.Type.HELMET, a.helmet());

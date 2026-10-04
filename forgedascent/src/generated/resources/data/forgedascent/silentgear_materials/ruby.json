@@ -1,0 +1,74 @@
+{
+  "type": "silentgear:simple",
+  "parent": "silentgear:empty",
+  "crafting": {
+    "can_salvage": true,
+    "categories": [
+      "gem",
+      "forgedascent_tier_7"
+    ],
+    "gear_type_blacklist": [],
+    "ingredient": {
+      "tag": "c:gems/ruby"
+    }
+  },
+  "display": {
+    "color": "#FFC8243A",
+    "main_texture_type": "HIGH_CONTRAST",
+    "name": {
+      "translate": "material.forgedascent.ruby"
+    },
+    "name_prefix": ""
+  },
+  "properties": {
+    "silentgear:main": {
+      "armor": 36.0,
+      "armor/helmet": 5.0,
+      "armor/chestplate": 14.0,
+      "armor/leggings": 12.0,
+      "armor/boots": 5.0,
+      "armor_durability": 36.0,
+      "armor_toughness": 6.0,
+      "attack_damage": 14.9,
+      "attack_speed": 0.0,
+      "charging_value": 1.0,
+      "draw_speed": 0.0,
+      "durability": 1350.0,
+      "enchantment_value": 14.0,
+      "harvest_speed": 8.5,
+      "harvest_tier": {
+        "incorrect_blocks_for_tool": "forgedascent:incorrect_for_tier_7",
+        "level_hint": "7",
+        "name": "ruby"
+      },
+      "magic_armor": 14.4,
+      "magic_damage": 1.0,
+      "ranged_damage": 7.45,
+      "rarity": 70.0,
+      "repair_value": 0.15,
+      "traits": [
+        {
+          "conditions": [],
+          "level": 1,
+          "trait": "silentgear:sharp"
+        }
+      ]
+    },
+    "silentgear:tip": {
+      "attack_damage": {
+        "operation": "ADD",
+        "value": 2.25
+      },
+      "durability": {
+        "operation": "ADD",
+        "value": 350
+      }
+    }
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "silentgear"
+    }
+  ]
+}

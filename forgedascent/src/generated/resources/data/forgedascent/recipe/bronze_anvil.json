@@ -8,14 +8,14 @@
     "S": {
       "item": "forgedascent:sigil_1"
     },
-    "I": {
-      "tag": "c:storage_blocks/iron"
+    "A": {
+      "item": "forgedascent:stone_anvil"
     }
   },
   "pattern": [
     "PPP",
-    " S ",
-    "III"
+    "PAP",
+    "PSP"
   ],
   "result": {
     "count": 1,

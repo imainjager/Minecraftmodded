@@ -1,0 +1,59 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "silentgear"
+    }
+  ],
+  "type": "silentgear:simple",
+  "parent": "silentgear:empty",
+  "crafting": {
+    "can_salvage": false,
+    "categories": [
+      "gem",
+      "forgedascent_tier_6"
+    ],
+    "gear_type_blacklist": [],
+    "ingredient": {
+      "item": "forgedascent:flawless_diamond"
+    }
+  },
+  "display": {
+    "color": "#FF5FE3E0",
+    "main_texture_type": "HIGH_CONTRAST",
+    "name": {
+      "translate": "material.forgedascent.flawless_diamond"
+    },
+    "name_prefix": ""
+  },
+  "properties": {
+    "silentgear:tip": {
+      "attack_damage": {
+        "operation": "ADD",
+        "value": 4.5
+      },
+      "durability": {
+        "operation": "ADD",
+        "value": 900
+      },
+      "harvest_speed": {
+        "operation": "ADD",
+        "value": 3.0
+      }
+    },
+    "silentgear:coating": {
+      "durability": {
+        "operation": "MULTIPLY_TOTAL",
+        "value": 0.35
+      },
+      "attack_damage": {
+        "operation": "MULTIPLY_TOTAL",
+        "value": 0.15
+      },
+      "enchantment_value": {
+        "operation": "ADD",
+        "value": 5.0
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "type": "silentgear:simple",
+  "parent": "silentgear:empty",
+  "crafting": {
+    "can_salvage": true,
+    "categories": [
+      "metal",
+      "forgedascent_tier_5"
+    ],
+    "gear_type_blacklist": [],
+    "ingredient": {
+      "tag": "c:ingots/cobalt"
+    }
+  },
+  "display": {
+    "color": "#FF3F6FD8",
+    "main_texture_type": "HIGH_CONTRAST",
+    "name": {
+      "translate": "material.forgedascent.cobalt"
+    },
+    "name_prefix": ""
+  },
+  "properties": {
+    "silentgear:main": {
+      "armor": 23.0,
+      "armor/helmet": 3.0,
+      "armor/chestplate": 9.0,
+      "armor/leggings": 8.0,
+      "armor/boots": 3.0,
+      "armor_durability": 25.0,
+      "armor_toughness": 2.0,
+      "attack_damage": 6.5,
+      "attack_speed": 0.0,
+      "charging_value": 1.0,
+      "draw_speed": 0.0,
+      "durability": 600.0,
+      "enchantment_value": 12.0,
+      "harvest_speed": 8.5,
+      "harvest_tier": {
+        "incorrect_blocks_for_tool": "forgedascent:incorrect_for_tier_5",
+        "level_hint": "5",
+        "name": "cobalt"
+      },
+      "magic_armor": 9.2,
+      "magic_damage": 1.0,
+      "ranged_damage": 3.25,
+      "rarity": 50.0,
+      "repair_value": 0.15,
+      "traits": [
+        {
+          "conditions": [],
+          "level": 1,
+          "trait": "silentgear:accelerate"
+        }
+      ]
+    }
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "silentgear"
+    }
+  ]
+}

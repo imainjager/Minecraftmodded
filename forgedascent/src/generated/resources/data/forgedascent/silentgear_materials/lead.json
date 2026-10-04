@@ -1,0 +1,65 @@
+{
+  "type": "silentgear:simple",
+  "parent": "silentgear:empty",
+  "crafting": {
+    "can_salvage": true,
+    "categories": [
+      "metal",
+      "forgedascent_tier_3",
+      "forgedascent_low"
+    ],
+    "gear_type_blacklist": [],
+    "ingredient": {
+      "tag": "c:ingots/lead"
+    }
+  },
+  "display": {
+    "color": "#FF6B6F8E",
+    "main_texture_type": "HIGH_CONTRAST",
+    "name": {
+      "translate": "material.forgedascent.lead"
+    },
+    "name_prefix": ""
+  },
+  "properties": {
+    "silentgear:main": {
+      "armor": 17.0,
+      "armor/helmet": 3.0,
+      "armor/chestplate": 7.0,
+      "armor/leggings": 4.0,
+      "armor/boots": 3.0,
+      "armor_durability": 14.0,
+      "armor_toughness": 0.0,
+      "attack_damage": 3.6,
+      "attack_speed": 0.0,
+      "charging_value": 1.0,
+      "draw_speed": 0.0,
+      "durability": 230.0,
+      "enchantment_value": 6.0,
+      "harvest_speed": 5.0,
+      "harvest_tier": {
+        "incorrect_blocks_for_tool": "forgedascent:incorrect_for_tier_3",
+        "level_hint": "3",
+        "name": "lead"
+      },
+      "magic_armor": 6.8,
+      "magic_damage": 1.0,
+      "ranged_damage": 1.8,
+      "rarity": 30.0,
+      "repair_value": 0.15,
+      "traits": [
+        {
+          "conditions": [],
+          "level": 1,
+          "trait": "silentgear:heavy"
+        }
+      ]
+    }
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "silentgear"
+    }
+  ]
+}
