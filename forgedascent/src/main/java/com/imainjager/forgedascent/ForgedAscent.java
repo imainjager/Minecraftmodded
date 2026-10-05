@@ -36,6 +36,7 @@ public class ForgedAscent {
         ModRegistries.register(modBus);
         SmithyRegistries.register(modBus);
         EliteMobs.register(modBus);
+        com.imainjager.forgedascent.cthulhu.CthulhuRegistries.register(modBus);
         GearTiers.register();
         ArmorPerks.register();
         com.imainjager.forgedascent.smithy.GemCutting.register();

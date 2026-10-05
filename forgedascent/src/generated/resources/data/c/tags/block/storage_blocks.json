@@ -23,6 +23,7 @@
     "#c:storage_blocks/inconel",
     "#c:storage_blocks/osmiridium",
     "#c:storage_blocks/nichrome",
+    "#c:storage_blocks/demonite",
     "#c:storage_blocks/ladder_damascus",
     "#c:storage_blocks/mokume_gane",
     "#c:storage_blocks/damascus_steel",
@@ -37,6 +38,7 @@
     "#c:storage_blocks/raw_molybdenum",
     "#c:storage_blocks/raw_vanadium",
     "#c:storage_blocks/raw_titanium",
-    "#c:storage_blocks/raw_chromium"
+    "#c:storage_blocks/raw_chromium",
+    "#c:storage_blocks/raw_demonite"
   ]
 }

@@ -6,6 +6,7 @@
     "#c:raw_materials/molybdenum",
     "#c:raw_materials/vanadium",
     "#c:raw_materials/titanium",
-    "#c:raw_materials/chromium"
+    "#c:raw_materials/chromium",
+    "#c:raw_materials/demonite"
   ]
 }

@@ -90,6 +90,9 @@ if done:
     time.sleep(2)
     rcon = Rcon()
     for command in sys.argv[1:]:
+        if command.startswith("!wait "):          # "!wait 5" pauses 5 seconds so the game can tick
+            pump(seconds=float(command.split()[1]))
+            continue
         reply = rcon.send(2, command)
         print(f">>> {command}\n    {reply[:1500]}")
         pump(seconds=0.5)

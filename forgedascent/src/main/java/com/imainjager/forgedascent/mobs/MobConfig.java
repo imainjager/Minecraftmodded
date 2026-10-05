@@ -20,6 +20,11 @@ public final class MobConfig {
     public static final ModConfigSpec.BooleanValue RESTORE_AT_DAWN;
     public static final ModConfigSpec.IntValue MAX_DIGGERS;
     public static final ModConfigSpec.IntValue MAX_BROKEN;
+    public static final ModConfigSpec.BooleanValue EYE_NATURAL;
+    public static final ModConfigSpec.DoubleValue EYE_CHANCE;
+    public static final ModConfigSpec.IntValue EYE_MIN_ARMOR;
+    public static final ModConfigSpec.IntValue EYE_MIN_DAY;
+    public static final ModConfigSpec.BooleanValue EYE_FLEES;
 
     static {
         ModConfigSpec.Builder b = new ModConfigSpec.Builder();
@@ -45,6 +50,13 @@ public final class MobConfig {
                 .define("restoreAtDawn", false);
         MAX_DIGGERS = b.comment("Most mobs digging at the same time").defineInRange("maxDiggers", 6, 0, 64);
         MAX_BROKEN = b.comment("Most blocks broken per blood moon").defineInRange("maxBrokenBlocks", 150, 0, 10000);
+        b.pop();
+        b.comment("Eye of Cthulhu (Gate I boss)").push("eye_of_cthulhu");
+        EYE_NATURAL = b.comment("The Eye can appear on its own at night until it has been defeated once").define("naturalSpawn", true);
+        EYE_CHANCE = b.comment("Chance per night that it appears (while not yet defeated)").defineInRange("chance", 0.33, 0.0, 1.0);
+        EYE_MIN_ARMOR = b.comment("A player needs at least this much armor before the Eye will pick them").defineInRange("minArmor", 8, 0, 100);
+        EYE_MIN_DAY = b.comment("The Eye never appears on its own before this world day").defineInRange("minDay", 3, 0, 100000);
+        EYE_FLEES = b.comment("Natural and item-summoned Eyes retreat when the sun rises").define("fleesAtDawn", true);
         b.pop();
         SPEC = b.build();
     }

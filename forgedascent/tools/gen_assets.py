@@ -587,7 +587,8 @@ def anvil_shaped(name, result, pattern, key, tier, needs_mod=None):
 def gen_ores():
     for ore in TABLE["ores"]:
         oid, color, style = ore["id"], ore["color"], ore["style"]
-        ORE_TIERS.setdefault(ore["tier"], []).append(f"c:ores/{oid}")
+        if ore["variants"]:
+            ORE_TIERS.setdefault(ore["tier"], []).append(f"c:ores/{oid}")
         for variant in ore["variants"]:
             name = f"{ORE_PREFIX[variant]}{oid}_ore"
             src = SRC.get(f"alltheores:block/{ORE_PREFIX[variant]}{style}_ore")
@@ -608,8 +609,9 @@ def gen_ores():
                     f"{NS}:{oid}_ingot", 0.7, 200)
             cooking(f"blasting/{oid}_ingot_from_{name}", "blasting", {"item": f"{NS}:{name}"},
                     f"{NS}:{oid}_ingot", 0.7, 100)
-        for reg in ("item", "block"):
-            tag(reg, "c:ores", f"#c:ores/{oid}")
+        if ore["variants"]:
+            for reg in ("item", "block"):
+                tag(reg, "c:ores", f"#c:ores/{oid}")
 
         raw, raw_block = f"raw_{oid}", f"raw_{oid}_block"
         save_png(f"assets/{NS}/textures/item/{raw}.png",
@@ -793,6 +795,51 @@ def gen_elites():
                     {"rolls": 1, "conditions": [{"condition": "minecraft:random_chance", "chance": 0.35}],
                      "entries": [{"type": "minecraft:tag", "name": f"{NS}:tier_materials/{loot_tier}",
                                   "expand": True}]}]})
+
+
+def gen_cthulhu():
+    """Eye of Cthulhu (tools/mobforge makes the model, skins and animations): items, recipe, loot, names."""
+    for item in ("suspicious_looking_eye",):
+        item_model(item, "minecraft:item/generated", item)
+    for egg in ("eye_of_cthulhu", "servant_of_cthulhu"):
+        write_json(f"assets/{NS}/models/item/{egg}_spawn_egg.json", {"parent": "minecraft:item/template_spawn_egg"})
+    LANG.update({
+        f"entity.{NS}.eye_of_cthulhu": "Eye of Cthulhu",
+        f"entity.{NS}.servant_of_cthulhu": "Servant of Cthulhu",
+        f"item.{NS}.suspicious_looking_eye": "Suspicious Looking Eye",
+        f"item.{NS}.eye_of_cthulhu_spawn_egg": "Eye of Cthulhu Spawn Egg",
+        f"item.{NS}.servant_of_cthulhu_spawn_egg": "Servant of Cthulhu Spawn Egg",
+        "tooltip.forgedascent.suspicious_looking_eye": "Use at night to summon the Eye of Cthulhu",
+        "message.forgedascent.eye_warning": "You feel an evil presence watching you...",
+        "message.forgedascent.eye_awoken": "Eye of Cthulhu has awoken!",
+        "message.forgedascent.eye_enraged": "The Eye of Cthulhu opens its maw!",
+        "message.forgedascent.eye_retreats": "The Eye of Cthulhu retreats into the dawn...",
+        "message.forgedascent.eye_defeated": "The Eye of Cthulhu has been defeated!",
+        "message.forgedascent.eye_night_only": "The eye only stirs at night.",
+        "message.forgedascent.eye_already_awake": "An Eye of Cthulhu is already watching.",
+    })
+    shapeless("suspicious_looking_eye", [{"item": "minecraft:spider_eye"}] * 6, f"{NS}:suspicious_looking_eye", 1)
+    tag("entity_type", "c:bosses", f"{NS}:eye_of_cthulhu")
+    count = lambda lo, hi: {"function": "minecraft:set_count", "count": {"type": "minecraft:uniform", "min": lo, "max": hi}}
+    looting = lambda lo, hi: {"function": "minecraft:enchanted_count_increase", "enchantment": "minecraft:looting",
+                              "count": {"type": "minecraft:uniform", "min": lo, "max": hi}}
+    write_json(f"data/{NS}/loot_table/entities/eye_of_cthulhu.json", {
+        "type": "minecraft:entity",
+        "pools": [
+            {"rolls": 1, "entries": [{"type": "minecraft:item", "name": f"{NS}:raw_demonite",
+                                      "functions": [count(18, 34), looting(2, 6)]}]},
+            {"rolls": 1, "entries": [{"type": "minecraft:item", "name": "minecraft:spider_eye",
+                                      "functions": [count(2, 5)]}]},
+            {"rolls": 1, "conditions": [{"condition": "minecraft:random_chance", "chance": 0.25}],
+             "entries": [{"type": "minecraft:item", "name": "minecraft:ender_pearl", "functions": [count(1, 2)]}]},
+        ]})
+    write_json(f"data/{NS}/loot_table/entities/servant_of_cthulhu.json", {
+        "type": "minecraft:entity",
+        "pools": [{"rolls": 1, "conditions": [{"condition": "minecraft:random_chance_with_enchanted_bonus",
+                                               "unenchanted_chance": 0.3,
+                                               "enchanted_chance": {"type": "minecraft:linear", "base": 0.4, "per_level_above_first": 0.1},
+                                               "enchantment": "minecraft:looting"}],
+                   "entries": [{"type": "minecraft:item", "name": "minecraft:spider_eye"}]}]})
 
 
 def gen_smithy():
@@ -1275,6 +1322,7 @@ def main():
     gen_tiers()
     gen_alloys()
     gen_elites()
+    gen_cthulhu()
     gen_smithy()
     gen_silentgear()
     gen_loot_modifiers()

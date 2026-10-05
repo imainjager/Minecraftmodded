@@ -164,6 +164,9 @@ AGES = [
 ANVIL_OF_TIER = {3: "stone", 4: "bronze", 5: "steel", 6: "gemstone", 7: "titanium", 8: "tungsten", 9: "netherite"}
 WORLD_TIER_AFTER_GATE = {2: "Frontier", 3: "Ascent", 5: "Summit", 6: "Pinnacle"}
 BOSS_TIPS = {
+    "forgedascent:eye_of_cthulhu": ("Eye of Cthulhu", "It may find you on its own at night, or craft a Suspicious Looking Eye "
+                                    "(6 spider eyes) and use it at night. It dashes at you: keep moving and hit it as it hovers. "
+                                    "At half health it grows a maw and turns nasty."),
     "twilightforest:naga": ("Naga", "Twilight Forest: the stone courtyard in the forest. The easiest gate boss."),
     "aether:slider": ("Slider", "The Aether: Bronze Dungeon. Hit the sliding block with a pickaxe."),
     "minecraft:elder_guardian": ("Elder Guardian", "Ocean Monuments. Bring Water Breathing and milk."),
@@ -279,6 +282,15 @@ def age_chapter(order, key, title, icon, tier, ore_tiers, subtitle, alloys, gate
         ch.quest("stone_anvil", "Build a Stone Anvil", item=f"{NS}:stone_anvil", y=2.5, deps=[spine], optional=True,
                  step=False, desc=["Smooth stone and iron. It forges and reinforces tier 1-3 gear and Silent Gear "
                                    "parts, and it's the base of the Bronze Anvil."])
+    if order == 0:
+        ch.quest("eye_summon", "Suspicious Looking Eye", item=f"{NS}:suspicious_looking_eye", y=-4.0, deps=[spine],
+                 optional=True, step=False,
+                 desc=["Six spider eyes make one. Use it at night to call the &dEye of Cthulhu&r, a Gate I boss.",
+                       "Once you beat it, it stops visiting on its own, but you can always call it again. "
+                       "Servants of Cthulhu drop spider eyes."])
+        ch.quest("demonite", "Demonite", item=f"{NS}:raw_demonite", y=4.0, deps=[spine], optional=True, step=False,
+                 desc=["The Eye of Cthulhu drops raw Demonite. Smelt it into ingots. Demonite is a tier-4 metal with "
+                       "its own armor perk: a little extra damage."])
     if order in (1, 2):
         wheel = f"{NS}:emery_wheel" if order == 1 else f"{NS}:diamond_grit_wheel"
         ch.quest("cutting", "Cut gems", item=wheel, y=-2.5, deps=[spine], optional=True, step=False,

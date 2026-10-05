@@ -43,6 +43,10 @@
     {
       "id": "#c:plates/rose_gold",
       "required": false
+    },
+    {
+      "id": "#c:plates/demonite",
+      "required": false
     }
   ]
 }

@@ -1,0 +1,17 @@
+{
+  "type": "forgedascent:anvil_shaped",
+  "tier": 4,
+  "key": {
+    "X": {
+      "tag": "c:ingots/demonite"
+    }
+  },
+  "pattern": [
+    "X X",
+    "X X"
+  ],
+  "result": {
+    "count": 1,
+    "id": "forgedascent:demonite_boots"
+  }
+}

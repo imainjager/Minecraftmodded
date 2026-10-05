@@ -140,6 +140,12 @@
       "style": "invar"
     },
     {
+      "id": "demonite",
+      "name": "Demonite",
+      "color": "#7B4BB8",
+      "style": "lead"
+    },
+    {
       "id": "ladder_damascus",
       "name": "Ladder Damascus",
       "color": "#C9C9C9",
@@ -490,6 +496,15 @@
           "size": 6
         }
       ]
+    },
+    {
+      "id": "demonite",
+      "name": "Demonite",
+      "color": "#7B4BB8",
+      "tier": 4,
+      "style": "lead",
+      "variants": [],
+      "worldgen": []
     }
   ],
   "gear": [
@@ -878,6 +893,38 @@
         "knockback": 0.0,
         "enchant": 20,
         "luck": 0.5
+      }
+    },
+    {
+      "id": "demonite",
+      "name": "Demonite",
+      "tier": 4,
+      "color": "#7B4BB8",
+      "repair": "c:ingots/demonite",
+      "tools_from": "enderio:dark_steel",
+      "armor_from": "justdirethings:eclipsealloy",
+      "tool": {
+        "uses": 380,
+        "speed": 7.0,
+        "attack": 5.8,
+        "enchant": 15
+      },
+      "armor": {
+        "durability": 19,
+        "helmet": 3,
+        "chestplate": 8,
+        "leggings": 6,
+        "boots": 3,
+        "toughness": 0.5,
+        "knockback": 0.0,
+        "enchant": 15,
+        "perks": [
+          {
+            "attribute": "minecraft:generic.attack_damage",
+            "amount": 0.03,
+            "op": "add_multiplied_base"
+          }
+        ]
       }
     },
     {
@@ -2153,6 +2200,7 @@
       "name": "Gate I",
       "color": "#3FAE4A",
       "bosses": [
+        "forgedascent:eye_of_cthulhu",
         "twilightforest:naga",
         "aether:slider",
         "minecraft:elder_guardian"

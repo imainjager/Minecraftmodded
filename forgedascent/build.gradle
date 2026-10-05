@@ -118,6 +118,9 @@ configurations {
 dependencies {
     // JEI API for the Smithy Anvil recipe tab, compiled against the JEI jar in the local Claude profile (JEI is optional at runtime).
     compileOnly files("${System.getProperty('user.home')}/curseforge/minecraft/Instances/Claude/mods/jei-1.21.1-neoforge-19.57.0.446.jar")
+    // GeckoLib (3D animated mobs: Eye of Cthulhu). It is in the ATM10 pack; compile against and test with the profile's jar.
+    compileOnly files("${System.getProperty('user.home')}/curseforge/minecraft/Instances/Claude/mods/geckolib-neoforge-1.21.1-4.9.3.jar")
+    localRuntime files("${System.getProperty('user.home')}/curseforge/minecraft/Instances/Claude/mods/geckolib-neoforge-1.21.1-4.9.3.jar")
     // Silent Gear + Silent Lib from the local Claude profile, loaded only on the dev test server (tools/smoke_test.py).
     localRuntime files("${System.getProperty('user.home')}/curseforge/minecraft/Instances/Claude/mods/silent-gear-1.21.1-neoforge-4.2.1.1.jar", "${System.getProperty('user.home')}/curseforge/minecraft/Instances/Claude/mods/silent-lib-1.21.1-neoforge-10.6.0.jar")
     // Example optional mod dependency with JEI

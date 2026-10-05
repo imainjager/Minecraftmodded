@@ -824,6 +824,55 @@
 			]
 		}
 		{
+			id: "498531F5C64036A3"
+			title: "Suspicious Looking Eye"
+			x: 33.75d
+			y: -4.0d
+			description: [
+				"Six spider eyes make one. Use it at night to call the &dEye of Cthulhu&r, a Gate I boss."
+				"Once you beat it, it stops visiting on its own, but you can always call it again. Servants of Cthulhu drop spider eyes."
+			]
+			dependencies: [
+				"6E02E90A61DD6AA8"
+			]
+			optional: true
+			tasks: [
+				{
+					id: "0A2FD467CD9CAD27"
+					type: "item"
+					count: 1
+					item: {
+						count: 1
+						id: "forgedascent:suspicious_looking_eye"
+					}
+				}
+			]
+		}
+		{
+			id: "604A7EFC04B7DBB2"
+			title: "Demonite"
+			x: 33.75d
+			y: 4.0d
+			description: [
+				"The Eye of Cthulhu drops raw Demonite. Smelt it into ingots. Demonite is a tier-4 metal with its own armor perk: a little extra damage."
+			]
+			dependencies: [
+				"6E02E90A61DD6AA8"
+			]
+			optional: true
+			tasks: [
+				{
+					id: "711CD489A1F04BE9"
+					type: "item"
+					count: 1
+					item: {
+						count: 1
+						id: "forgedascent:raw_demonite"
+					}
+				}
+			]
+		}
+		{
 			id: "68BD989765C618C6"
 			title: "Prepare for Gate I"
 			x: 33.75d
@@ -848,9 +897,33 @@
 		}
 		{
 			id: "06F289E501548634"
-			title: "Defeat: Naga"
+			title: "Defeat: Eye of Cthulhu"
 			x: 35.0d
 			y: -2.0d
+			subtitle: "Gate I boss"
+			description: [
+				"It may find you on its own at night, or craft a Suspicious Looking Eye (6 spider eyes) and use it at night. It dashes at you: keep moving and hit it as it hovers. At half health it grows a maw and turns nasty."
+				"Any one boss of this gate is enough."
+			]
+			dependencies: [
+				"68BD989765C618C6"
+			]
+			shape: "hexagon"
+			optional: true
+			tasks: [
+				{
+					id: "2EE1B5D4645E103C"
+					type: "kill"
+					entity: "forgedascent:eye_of_cthulhu"
+					value: 1
+				}
+			]
+		}
+		{
+			id: "049DE3498620532C"
+			title: "Defeat: Naga"
+			x: 35.0d
+			y: -0.7d
 			subtitle: "Gate I boss"
 			description: [
 				"Twilight Forest: the stone courtyard in the forest. The easiest gate boss."
@@ -863,7 +936,7 @@
 			optional: true
 			tasks: [
 				{
-					id: "2EE1B5D4645E103C"
+					id: "30E57FA80ED25E6A"
 					type: "kill"
 					entity: "twilightforest:naga"
 					value: 1
@@ -871,10 +944,10 @@
 			]
 		}
 		{
-			id: "049DE3498620532C"
+			id: "44F28B82F7D1BE19"
 			title: "Defeat: Slider"
 			x: 35.0d
-			y: -0.7d
+			y: 0.6000000000000001d
 			subtitle: "Gate I boss"
 			description: [
 				"The Aether: Bronze Dungeon. Hit the sliding block with a pickaxe."
@@ -887,7 +960,7 @@
 			optional: true
 			tasks: [
 				{
-					id: "30E57FA80ED25E6A"
+					id: "21C87B1B13CC3A07"
 					type: "kill"
 					entity: "aether:slider"
 					value: 1
@@ -895,10 +968,10 @@
 			]
 		}
 		{
-			id: "44F28B82F7D1BE19"
+			id: "6D655F19A5E9AA06"
 			title: "Defeat: Elder Guardian"
 			x: 35.0d
-			y: 0.6000000000000001d
+			y: 1.9000000000000004d
 			subtitle: "Gate I boss"
 			description: [
 				"Ocean Monuments. Bring Water Breathing and milk."
@@ -911,7 +984,7 @@
 			optional: true
 			tasks: [
 				{
-					id: "21C87B1B13CC3A07"
+					id: "639E201370B47734"
 					type: "kill"
 					entity: "minecraft:elder_guardian"
 					value: 1

@@ -1,0 +1,100 @@
+{
+ "models": [
+  {
+   "id": "eye_of_cthulhu",
+   "geo": "/forgedascent/src/main/resources/assets/forgedascent/geo/entity/eye_of_cthulhu.geo.json",
+   "animations": "/forgedascent/src/main/resources/assets/forgedascent/animations/entity/eye_of_cthulhu.animation.json",
+   "textures": {
+    "1": "/forgedascent/src/main/resources/assets/forgedascent/textures/entity/eye_of_cthulhu.png",
+    "2": "/forgedascent/src/main/resources/assets/forgedascent/textures/entity/eye_of_cthulhu_phase2.png"
+   },
+   "hide": {
+    "1": [
+     "jaw_upper",
+     "jaw_lower",
+     "maw_fixed",
+     "tendril_a_1",
+     "tendril_a_2",
+     "tendril_a_3",
+     "tendril_a_4",
+     "tendril_a_5",
+     "tendril_b_1",
+     "tendril_b_2",
+     "tendril_b_3",
+     "tendril_b_4",
+     "tendril_b_5",
+     "nerve_5"
+    ],
+    "2": []
+   },
+   "animPhase": {
+    "animation.eye_of_cthulhu.idle_p1": [
+     "1"
+    ],
+    "animation.eye_of_cthulhu.move_p1": [
+     "1"
+    ],
+    "animation.eye_of_cthulhu.windup_p1": [
+     "1"
+    ],
+    "animation.eye_of_cthulhu.charge_p1": [
+     "1"
+    ],
+    "animation.eye_of_cthulhu.summon_p1": [
+     "1"
+    ],
+    "animation.eye_of_cthulhu.idle_p2": [
+     "2"
+    ],
+    "animation.eye_of_cthulhu.move_p2": [
+     "2"
+    ],
+    "animation.eye_of_cthulhu.windup_p2": [
+     "2"
+    ],
+    "animation.eye_of_cthulhu.charge_p2": [
+     "2"
+    ],
+    "animation.eye_of_cthulhu.recover_p2": [
+     "2"
+    ],
+    "animation.eye_of_cthulhu.special_p2": [
+     "2"
+    ],
+    "animation.eye_of_cthulhu.transform": [
+     "1",
+     "2"
+    ],
+    "animation.eye_of_cthulhu.death": [
+     "1",
+     "2"
+    ]
+   },
+   "camDist": 9.0,
+   "camTarget": [
+    0,
+    1.4,
+    0.5
+   ],
+   "defaultPhase": "1"
+  },
+  {
+   "id": "servant_of_cthulhu",
+   "geo": "/forgedascent/src/main/resources/assets/forgedascent/geo/entity/servant_of_cthulhu.geo.json",
+   "animations": "/forgedascent/src/main/resources/assets/forgedascent/animations/entity/servant_of_cthulhu.animation.json",
+   "textures": {
+    "1": "/forgedascent/src/main/resources/assets/forgedascent/textures/entity/servant_of_cthulhu.png",
+    "2": "/forgedascent/src/main/resources/assets/forgedascent/textures/entity/servant_of_cthulhu_angry.png"
+   },
+   "hide": {},
+   "animPhase": {},
+   "camDist": 3.2,
+   "camTarget": [
+    0,
+    0.45,
+    0.2
+   ],
+   "defaultPhase": "1"
+  }
+ ]
+}
